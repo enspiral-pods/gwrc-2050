@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # The first need to check we are running on a 64bit x86 machine
-# Ruby 2.0 only seems to be built for 64bit 
+# Ruby 2.0 only seems to be built for 64bit
 # and I've only tested on x86
 if [ "$(uname -m)" !=  'x86_64' ]; then
   echo "This script is only tested on 64 bit x86 machines. (your system is reported as $(uname -m))"
@@ -11,13 +11,13 @@ fi
 GITHUB="https://github.com/decc/twenty-fifty-new-look"
 
 # The next thing we need to do is check we are running the right version of Ubuntu
-. /etc/lsb-release # This loads variables which contain the Ubuntu version
-if [ "$DISTRIB_ID" != 'Ubuntu' ] || [ "$DISTRIB_RELEASE" != '14.04' ]; then
-  echo "This script is only tested with Ubuntu 14.04. (your system is reported as $DISTRIB_ID $DISTRIB_RELEASE)"
-  exit 1
-fi
+# . /etc/lsb-release # This loads variables which contain the Ubuntu version
+# if [ "$DISTRIB_ID" != 'Ubuntu' ] || [ "$DISTRIB_RELEASE" != '14.04' ]; then
+#   echo "This script is only tested with Ubuntu 14.04. (your system is reported as $DISTRIB_ID $DISTRIB_RELEASE)"
+#   exit 1
+# fi
 
-# First step is to install the general dependencies 
+# First step is to install the general dependencies
 echo "You may be prompted for a password, this is required to install packages"
 sudo apt-get update
 sudo apt-get install -y git # For version control
@@ -35,9 +35,9 @@ sudo apt-get install -y python-software-properties # For the apt-add-repository 
 sudo apt-get install software-properties-common
 
 # Install ruby 2.1 and make it the default
-sudo apt-add-repository -y ppa:brightbox/ruby-ng 
+sudo apt-add-repository -y ppa:brightbox/ruby-ng
 sudo apt-get update
-sudo apt-get install -y ruby2.1 # Install ruby 2.1. 
+sudo apt-get install -y ruby2.1 # Install ruby 2.1.
 sudo apt-get install -y ruby2.1-dev  # Also need development headers for some gems
 sudo apt-get install ruby-switch # Allows us to change the default ruby on the system
 sudo ruby-switch --set ruby2.1 # Make version 2.1 the default ruby
@@ -64,7 +64,7 @@ sudo apt-get install -y nginx
 # Now we are trying to install the passenger system which connects the server to the ruby code
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 561F9B9CAC40B2F7
 sudo apt-get install -y apt-transport-https ca-certificates
-sudo add-apt-repository -y 'deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main' 
+sudo add-apt-repository -y 'deb https://oss-binaries.phusionpassenger.com/apt/passenger trusty main'
 sudo apt-get update
 sudo apt-get install -y nginx-extras passenger
 
