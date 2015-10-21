@@ -1,5 +1,6 @@
 require_relative 'model'
 require_relative 'model_version'
+require 'byebug'
 
 class ModelChoice
   attr_accessor :number
@@ -14,51 +15,59 @@ end
 
 class DataFromModel
   attr_accessor :pathway
-  
+
   # This connects to model.rb which
-  # connects to model.c which is a 
+  # connects to model.c which is a
   # translation of model.xlsx
   def excel
     @excel ||= Model.new
   end
-  
+
   # Data that changes as the user makes choices
   # The code should be in the form i0g2dd2pp1121f1i032211p004314110433304202304320420121
   # Where each letter or digit corresponds to a choice to be set in the Excel
   def calculate_pathway(code)
     # Need to make sure the Excel is ready for a new calculation
     excel.reset
+
     # Turn the i0g2dd2pp1121f1i032211p004314110433304202304320420121 into something like
     # [1.8,0.0,1.6,2.0,1.3,1.3,..]
     choices = convert_letters_to_float(code.split(''))
     # Set the spreadsheet controls (input.choices is a named reference in the Excel)
     excel.input_choices = choices
     # Read out the results, where each of these refers to a named reference in the Excel
-    # (e.g. excel.output_impots_quantity refers to the output.imports.quantity named reference)
-    { 
-      '_id' => code, 
+    # (e.g. excel.output_imports_quantity refers to the output.imports.quantity named reference)
+    {
+      '_id' => code,
       'choices' => choices,
-      'sankey' => excel.output_flows, # output.flows in the Excel
-      'ghg' => hash(excel.output_ghg_by_ipcc_sector), # output.ghg.by.ipcc.sector in Excel
-      'ghg_reduction_from_1990' => excel.output_ghg_percentage_reduction, # output.ghg.percentage.reduction in Excel
-      'final_energy_demand' => hash(excel.output_finalenergydemand), # output.finalenergydemand
-      'primary_energy_supply' => hash(excel.output_primaryenergysupply), # output.primaryenergysupply
-      'electricity' => {
-        'demand' => hash(excel.output_electricity_demand),
-        'supply' => hash(excel.output_electricity_supply),
-        'ghg' => hash(excel.output_electricity_ghg),
-        'capacity' => hash(excel.output_electricity_capacity)
-      },
-      'heating' => heating_format(excel.output_heating_mix), # output.heating.mix
-      'costs' => cost_format(excel.output_costpercapita_detail),
-      'map' => map_format(excel.output_areas), # output.areas
-      'imports' => imports_format( 
-                            excel.output_imports_proportion, # output.imports.proportion
-                            excel.output_imports_quantity # output.imports.quantity
-      ),
-      'diversity' => diversity_format(excel.output_diversity), # output.diversity
-      'balancing' => hash(excel.output_capacity_automaticallybuilt), # output.capacity.automaticallybuilt
-      'air_quality' => air_quality_format(excel.output_airquality)
+      'output_airquality' => air_quality_format(excel.output_airquality),
+      'output_areas' => hash(excel.output_areas),
+      'output_capacity_automaticallybuilt' => hash(excel.output_capacity_automaticallybuilt),
+      'output_costpercapita_detail' => cost_format(excel.output_costpercapita_detail),
+      'output_diversity' => hash(excel.output_diversity),
+      'output_electricity_capacity' => hash(excel.output_electricity_capacity),
+      'output_electricity_demand' => hash(excel.output_electricity_demand),
+      'output_electricity_ghg' => hash(excel.output_electricity_ghg),
+      'output_electricity_supply' => hash(excel.output_electricity_supply),
+      # 'output_emissions_percentage_reduction' => hash(excel.output_emissions_percentage_reduction),
+      'output_finalenergyde' => hash(excel.output_finalenergyde),
+      'output_finalenergydemand' => hash(excel.output_finalenergydemand),
+      'output_flows' => hash(excel.output_flows),
+      'output_ghg_by_ipcc_sector' => hash(excel.output_ghg_by_ipcc_sector),
+      # 'output_ghg_percentage_reduction' => hash(excel.output_ghg_percentage_reduction),
+      'output_heating_mix' => hash(excel.output_heating_mix),
+      'output_imports_proportion' => hash(excel.output_imports_proportion),
+      'output_imports_quantity' => hash(excel.output_imports_quantity),
+      'output_primaryenergysupply' => hash(excel.output_primaryenergysupply),
+      'output_shannonweinerindex' => hash(excel.output_shannonweinerindex),
+      # 'output_version' => hash(excel.output_version),
+      'input_choices' => hash(excel.input_choices),
+      'input_descriptions' => excel.input_descriptions,
+      'input_example_pathways' => hash(excel.input_example_pathways),
+      'input_long_descriptions' => excel.input_long_descriptions,
+      'input_names' => hash(excel.input_names),
+      'input_onepagenotes' => hash(excel.input_onepagenotes),
+      'input_types' => hash(excel.input_types)
     }
   end
 
@@ -89,7 +98,7 @@ class DataFromModel
     proportions.each do |name, proportion|
       quantity = quantities[name]
       hash[name] = {
-        "2007" => { quantity: quantity[0].round, proportion: "#{(proportion[0]*100).round}%" },
+        "2012" => { quantity: quantity[0].round, proportion: "#{(proportion[0]*100).round}%" },
         "2050" => { quantity: quantity[-1].round, proportion: "#{(proportion[-1]*100).round}%" }
       }
     end
@@ -103,7 +112,7 @@ class DataFromModel
   def diversity_format(table)
     hash = {}
     table[1..-1].each do |row| # Skip the header
-      hash[row[0]] = { "2007" => "#{(row[1]*100).round}%", "2050" => "#{(row[-1]*100).round}%" }
+      hash[row[0]] = { "2012" => "#{(row[1]*100).round}%", "2050" => "#{(row[-1]*100).round}%" }
     end
     hash
   end
@@ -128,7 +137,7 @@ class DataFromModel
   end
 
   # Data that doesn't change with user choices (more structural)
-  
+
   def hash(table)
     hash = {}
     table[1..-1].each do |row| # [1..-1] to skip the first row, which is a header
@@ -136,7 +145,7 @@ class DataFromModel
     end
     hash
   end
-  
+
   def choices
     @choices ||= generate_choices
   end
@@ -157,6 +166,7 @@ class DataFromModel
       choice.levels = incremental ? 'A'.upto(choice_type.upcase) : 1.upto(choice_type.to_i)
       choice.doc = one_page_note_filenames[i]
       choices << choice
+      puts "CHOICE", choice
     end
     choices
   end
@@ -164,11 +174,11 @@ class DataFromModel
   def reported_calculator_version
     excel.output_version
   end
-  
+
   def types
     @types ||= excel.input_types.flatten
   end
-  
+
   def choice_sizes
     sizes = {}
     choices.each do |choice|
@@ -183,12 +193,13 @@ class DataFromModel
 
   def descriptions
     @descriptions ||= excel.input_descriptions
+    puts "DESCRIPTIONs", @descriptions
   end
 
   def long_descriptions
     @long_descriptions ||= excel.input_long_descriptions
   end
-    
+
   def example_pathways
     @example_pathways ||= generate_example_pathways
   end
@@ -196,7 +207,7 @@ class DataFromModel
   def one_page_note_filenames
     @one_page_note_filenames ||= excel.input_onepagenotes.flatten
   end
-  
+
   def generate_example_pathways
     # Transpose the data so that every row is an example pathway
     data = excel.input_example_pathways.transpose
@@ -220,14 +231,14 @@ class DataFromModel
       e[:code]
     end
   end
-  
+
   # FIXME: Only wraps one line into two
   def wrap(string, wrap_at_length = 45)
     return "" unless string
     string = string.to_s
     length_so_far = 0
-    string.split.partition do |word| 
-      length_so_far = length_so_far + word.length + 1 # +1 for the trailing space 
+    string.split.partition do |word|
+      length_so_far = length_so_far + word.length + 1 # +1 for the trailing space
       length_so_far > wrap_at_length
     end.reverse.map { |a| a.join(" ") }.join("\n")
   end
@@ -239,9 +250,9 @@ class DataFromModel
   FLOAT_TO_LETTER_MAP[2.0] = '2'
   FLOAT_TO_LETTER_MAP[3.0] = '3'
   FLOAT_TO_LETTER_MAP[4.0] = '4'
-  
+
   LETTER_TO_FLOAT_MAP = FLOAT_TO_LETTER_MAP.invert
-  
+
   def convert_float_to_letters(array)
     array.map do |entry|
       case entry
@@ -251,13 +262,13 @@ class DataFromModel
       end
     end
   end
-  
+
   def convert_letters_to_float(array)
     array.map do |entry|
       LETTER_TO_FLOAT_MAP[entry].to_f || entry.to_f
     end
   end
-  
+
 end
 
 if __FILE__ == $0
