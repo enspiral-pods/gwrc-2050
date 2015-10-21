@@ -16,31 +16,31 @@ define([], function() {
 
     all: function() {
       return {
-        SummaryChart: this.summary(),
+        // SummaryChart: this.summary(),
 
-        OverviewChart: this.overview(),
-
-        EnergyDemandChart: this.energyDemand(),
-        EnergySupplyChart: this.energySupply(),
-
-        ElectricityDemandChart: this.electricityDemand(),
-        ElectricitySupplyChart: this.electricitySupply(),
-
-        EnergyEmissionsChart: this.energyEmissions(),
-        ElectricityEmissionsChart: this.electricityEmissions(),
-
-        FlowsChart: this.flowsBasic(),
-
-        MapChart: this.map(),
-
-        AirQualityChart: this.airQuality(),
-
-        EnergySecurity: this.energySecurity(),
-
-        CostsContextChart: this.costsSensitivity(),
-        CostsComparedChart: this.costsCompared(),
-        CostsSensitivityChart: this.costsSensitivity(),
-        CostsSensitivityComponentsChart: this.costsSensitivity(),
+        // OverviewChart: this.overview(),
+        //
+        // EnergyDemandChart: this.energyDemand(),
+        // EnergySupplyChart: this.energySupply(),
+        //
+        // ElectricityDemandChart: this.electricityDemand(),
+        // ElectricitySupplyChart: this.electricitySupply(),
+        //
+        // EnergyEmissionsChart: this.energyEmissions(),
+        // ElectricityEmissionsChart: this.electricityEmissions(),
+        //
+        // FlowsChart: this.flowsBasic(),
+        //
+        // MapChart: this.map(),
+        //
+        // AirQualityChart: this.airQuality(),
+        //
+        // EnergySecurity: this.energySecurity(),
+        //
+        // CostsContextChart: this.costsSensitivity(),
+        // CostsComparedChart: this.costsCompared(),
+        // CostsSensitivityChart: this.costsSensitivity(),
+        // CostsSensitivityComponentsChart: this.costsSensitivity(),
       }
     },
 
@@ -380,4 +380,3 @@ define([], function() {
 
   return ChartParser;
 });
-

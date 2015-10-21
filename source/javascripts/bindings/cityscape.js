@@ -54,16 +54,17 @@ define(['knockout'], function(ko) {
         /** @returns {integer} - pathway action value */
         // OPTIMIZE: cache results
         getValue: function(levelAction) {
-          var value = pathway.findAction(levelAction).value();
-          var vals = [null, 'A', 'B', 'C', 'D'];
-
-          if(value*1 === value) {
-            value = Math.round(value);
-          } else {
-            value = vals.indexOf(value);
-          }
-
-          return value;
+          // var value = pathway.findAction(levelAction).value();
+          // var vals = [null, 'A', 'B', 'C', 'D'];
+          //
+          // if(value*1 === value) {
+          //   value = Math.round(value);
+          // } else {
+          //   value = vals.indexOf(value);
+          // }
+          //
+          // return value;
+          return 1 // HACK
         },
 
         /**
@@ -831,4 +832,3 @@ define(['knockout'], function(ko) {
     }
   }
 });
-
