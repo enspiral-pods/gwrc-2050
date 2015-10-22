@@ -18,18 +18,18 @@
           section#flows-fullscreen.modal-overlay.scrollable.js-scrollable data-bind="css: { 'is-active': fullscreenVisible() }"
             = partial "partials/flows-fullscreen"
 
-          = partial "partials/cityscape"
+          / = partial "partials/cityscape"
 
           .inner-content data-bind="visible: mainViewVisible"
 
-            .landscape-label-large data-bind="swipe: swipeLandscape, click: openCity, css: { 'is-active': !cityscapeVisible() }"
-              label= t('calculator.header.your_landscape')
-              span.toggle-city data-bind="css: { 'is-active': cityscapeVisible }"
-            .landscape-label-small data-bind="swipe: swipeLandscape, click: closeCity, css: { 'is-active': cityscapeVisible() }"
-              label= t('calculator.header.your_landscape')
-              span.toggle-city data-bind="css: { 'is-active': cityscapeVisible }"
+            / .landscape-label-large data-bind="swipe: swipeLandscape, click: openCity, css: { 'is-active': !cityscapeVisible() }"
+            /   label= t('calculator.header.your_landscape')
+            /   span.toggle-city data-bind="css: { 'is-active': cityscapeVisible }"
+            / .landscape-label-small data-bind="swipe: swipeLandscape, click: closeCity, css: { 'is-active': cityscapeVisible() }"
+            /   label= t('calculator.header.your_landscape')
+            /   span.toggle-city data-bind="css: { 'is-active': cityscapeVisible }"
 
-            .chart-tabs-container data-bind="visible: !shareVisible(), component: { name: 'chart-tabs', params: { pathway: currentPathway, pathwayUpdating: pathwayUpdating, componentsLoaded: componentsLoaded } }, css: { full: !cityscapeVisible() }, transitionEnd: redrawCharts"
+            .chart-tabs-container data-bind="visible: !shareVisible(), component: { name: 'chart-tabs', params: { pathway: currentPathway, pathwayUpdating: pathwayUpdating, componentsLoaded: componentsLoaded } }, css: { full: true }, transitionEnd: redrawCharts"
 
           = partial "partials/pathway-overlay"
 
@@ -38,4 +38,3 @@
           all-pathway-actions params="pathway: currentPathway, visible: overviewVisible"
 
           section#faq.modal-overlay.scrollable.js-scrollable data-bind="css: { 'is-active': faqVisible() }, component: { name: 'faq' }"
-
