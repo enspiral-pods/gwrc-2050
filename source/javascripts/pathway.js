@@ -29,7 +29,13 @@ define(['knockout', 'dataRequester', 'config', 'chartParser', 'action', 'hasher'
         self.updating(true);
 
         DataRequester.pathway(pathwayString, function(data){
+
+
           var data = JSON.parse(data.responseText);
+
+          console.log(data)      
+
+
           self.chartParser = new ChartParser(data);
           self.chartData(self.chartParser.all());
           self.validateValues();
@@ -241,4 +247,3 @@ define(['knockout', 'dataRequester', 'config', 'chartParser', 'action', 'hasher'
 
   return Pathway;
 });
-

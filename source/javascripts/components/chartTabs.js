@@ -35,24 +35,9 @@ define(['knockout', 'text!../../components/chart-tabs.html', 'dataRequester', 'c
           { "id": 1, "name": "FlowsChart", "title": "Flows" }
         ]
       },
-      { "id": 5, "name": "map", "icon": "map", "title": "Map", "charts": [
-          { "id": 1, "name": "MapChart", "title": "Map" }
-        ]
-      },
-      { "id": 6, "name": "airQuality", "icon": "air", "title": "Air Quality", "charts": [
-          { "id": 1, "name": "AirQualityChart", "title": "Air Quality" }
-        ]
-      },
       { "id": 7, "name": "energySecurity", "icon": "energy-security", "title": "Energy Security", "charts": [
           {"id": 1, "name": 'EnergySecurity', "title": 'a chart' }
         ] },
-      { "id": 8, "name": "costs", "icon": "costs", "title": "Costs", "charts": [
-          { "id": 1, "name": "CostsContextChart", "title": "In Context" },
-          { "id": 2, "name": "CostsComparedChart", "title": "Compared" },
-          { "id": 3, "name": "CostsSensitivityChart", "title": "Sensitivity" },
-          { "id": 4, "name": "CostsSensitivityComponentsChart", "title": "Sensitivity Components" }
-        ]
-      },
       { "id": 9, "name": "overview", "icon": "overview", "title": "Overview", "charts": [
           { "id": 1, "name": "OverviewChart", "title": "Overview" }
         ]
@@ -78,4 +63,3 @@ define(['knockout', 'text!../../components/chart-tabs.html', 'dataRequester', 'c
   }
 
 });
-
