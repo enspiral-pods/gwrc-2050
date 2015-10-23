@@ -16,12 +16,12 @@ define([], function() {
 
     all: function() {
       return {
-        // SummaryChart: this.summary(),
+        SummaryChart: this.summary(),
 
-        // OverviewChart: this.overview(),
+        OverviewChart: this.overview(),
         //
-        // EnergyDemandChart: this.energyDemand(),
-        // EnergySupplyChart: this.energySupply(),
+        EnergyDemandChart: this.energyDemand(),
+        EnergySupplyChart: this.energySupply(),
         //
         // ElectricityDemandChart: this.electricityDemand(),
         // ElectricitySupplyChart: this.electricitySupply(),
@@ -75,10 +75,11 @@ define([], function() {
 
     // CO2 reduction overview chart
     summary: function() {
-      return Math.round(this.data.ghg_reduction_from_1990*100);
+      return Math.round(this.data.output_emissions_percentage_reduction*100);
     },
 
     overview: function() {
+      console.log('overview', this.data)
       var data = {
         "Demand": this.data.final_energy_demand,
         "Supply": this.data.primary_energy_supply,
@@ -104,17 +105,19 @@ define([], function() {
         var topic = data[topicName];
 
         for(var item in topic) {
+          console.log(item)
           // Don't parse unused/total layers
           if(!skipLayers.some(function(skip){ return item === skip })) {
             // Loop data points of each GHG
             for(var i = 0; i < topic[item].length; i++) {
               var value = topic[item][i];
               var date = 2010 + i * 5;
+
               overviewYearlyData[topicName][date].push({ key: item, value: value });
             }
           }
         }
-        overviewYearlyData[topicName].percentageReduction = Math.round(data.ghg_reduction_from_1990 * 100);
+        overviewYearlyData[topicName].percentageReduction = Math.round(data.output_emissions_percentage_reduction * 100);
       }
 
       return overviewYearlyData;
@@ -259,68 +262,6 @@ define([], function() {
       var data = {
         nodes: nodes,
         links: links
-      };
-
-      return data;
-    },
-
-
-    map: function() {
-      var data = this.data.map;
-
-      var labels = {
-        'III.a.2': 'Offshore wind',
-        'III.a.1': 'Onshore wind',
-        'IV.c': 'Micro wind',
-        'VI.a.Biocrop': 'Energy crops',
-        'VI.a.Forestry': 'Forest',
-        'VI.c': 'Marine algae',
-        'V.b': 'Biocrops',
-        'IV.a': 'Solar PV',
-        'IV.b': 'Solar thermal',
-        'VII.a': 'Solar PV',
-        'III.b': 'Hydro',
-        'III.c.TidalRange': 'Tidal range',
-        'III.c.TidalStream': 'Tidal stream',
-        'I.a': '2 GW coal gas or biomass power stations without CCS',
-        'I.b': '1.2 GW coal gas or biomass power stations with CCS',
-        'II.a': '3 GW nuclear power station',
-        'III.d': '0.01 GW geothermal stations',
-        'VII.c': '1 GW gas standby power stations',
-        'VI.b': '215 kt/y waste to energy conversion facilities'
-      };
-
-      data = {
-        thermal: [
-          { "key": labels["III.d"], "icon": "geothermal-stations-facilities", "value": Math.ceil(data["III.d"]) },
-          { "key": labels["II.a"], "icon": "nuclear-power-stations", "value": Math.ceil(data["II.a"]) },
-          { "key": labels["VII.c"], "icon": "gas-power-stations", "value": Math.ceil(data["VII.c"]) },
-          { "key": labels["I.b"], "icon": "power-stations-with-ccs", "value": Math.ceil(data["I.b"]) },
-          { "key": labels["I.a"], "icon": "power-stations-without-ccs", "value": Math.ceil(data["I.a"]) },
-          { "key": labels["VI.b"], "icon": "energy-conversion-facilities", "value": Math.ceil(data["VI.b"]) }
-        ],
-        land: [
-          { "key": labels["III.b"], "value": data["III.b"] },
-          { "key": labels["IV.b"], "value": data["IV.b"] },
-          { "key": labels["IV.a"], "value": data["IV.a"] },
-          { "key": labels["IV.c"], "value": data["IV.c"] },
-          { "key": labels["III.a.1"], "value": data["III.a.1"] },
-          { "key": labels["VI.a.Forestry"], "value": data["VI.a.Forestry"] },
-          { "key": labels["VI.a.Biocrop"], "value": data["VI.a.Biocrop"] }
-        ],
-        offshore: [
-          { "key": labels["III.a.2"], "value": data["III.a.2"] },
-          { "key": labels["VI.c"], "value": data["VI.c"] },
-          { "key": labels["III.c.TidalStream"], "value": data["III.c.TidalStream"] },
-          { "key": labels["III.c.TidalRange"], "value": data["III.c.TidalRange"] }
-        ],
-        imports: [
-          { "key": labels["VII.a"], "value": data["VII.a"] },
-          { "key": labels["V.b"], "value": data["V.b"] }
-        ],
-        wave: [
-          { "key": "wave", "value": data["III.c.Wave"] }
-        ]
       };
 
       return data;
