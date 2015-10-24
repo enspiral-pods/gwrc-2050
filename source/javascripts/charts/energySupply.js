@@ -23,7 +23,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       self.height = self.outerHeight - self.margin.top - self.margin.bottom;
 
       var yMin = 0;
-      var yMax = 4000;
+      var yMax = 10000;
 
       var x = d3.scale.linear()
           .domain(d3.extent(chartLayers, function(d) { return d.date; }))
@@ -43,7 +43,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       var yAxis = d3.svg.axis()
           .scale(y)
           .orient("left")
-          .ticks(6);
+          .ticks(3);
 
       self.x = x;
       self.y = y;
@@ -70,4 +70,3 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
 
   return EnergySupplyChart;
 });
-

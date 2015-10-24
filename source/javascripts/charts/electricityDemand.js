@@ -65,9 +65,8 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       // Secondary data
       self.drawLine("Supply");
 
-      self.setupLineAxes("Date", "Energy (TWh/yr)");
+      self.setupLineAxes("Date", "Energy (GWh/yr)");
   };
 
   return ElectricityDemandChart;
 });
-

@@ -23,9 +23,9 @@ define([], function() {
         EnergyDemandChart: this.energyDemand(),
         EnergySupplyChart: this.energySupply(),
         //
-        // ElectricityDemandChart: this.electricityDemand(),
-        // ElectricitySupplyChart: this.electricitySupply(),
-        //
+        ElectricityDemandChart: this.electricityDemand(),
+        ElectricitySupplyChart: this.electricitySupply(),
+
         // EnergyEmissionsChart: this.energyEmissions(),
         // ElectricityEmissionsChart: this.electricityEmissions(),
         //
@@ -105,7 +105,6 @@ define([], function() {
         var topic = data[topicName];
 
         for(var item in topic) {
-          console.log(item)
           // Don't parse unused/total layers
           if(!skipLayers.some(function(skip){ return item === skip })) {
             // Loop data points of each GHG
@@ -119,6 +118,8 @@ define([], function() {
         }
         overviewYearlyData[topicName].percentageReduction = Math.round(data.output_emissions_percentage_reduction * 100);
       }
+
+      console.log('overviewYearlyData', overviewYearlyData)
 
       return overviewYearlyData;
     },
@@ -267,13 +268,6 @@ define([], function() {
       return data;
     },
 
-    airQuality: function() {
-      var data = this.data.air_quality;
-      data.key = "2050 - Your pathway";
-
-      return data;
-    },
-
     energySecurity: function() {
       var data = this.data;
 
@@ -302,22 +296,7 @@ define([], function() {
 
       return out;
     },
-
-    // Groups cost sensitivity data by category
-    costsCompared: function() {
-      var data = this.data.costs;
-      return data;
-    },
-
-    costsSensitivity: function() {
-      var data = this.data.costs;
-      var flattenedData = Object.keys(data).map(function(key) { return { key: key, value: data[key] } })
-
-      return flattenedData;
-    },
   };
-
-
 
   return ChartParser;
 });

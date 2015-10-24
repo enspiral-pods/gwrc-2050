@@ -1,6 +1,7 @@
 require_relative 'model'
 require_relative 'model_version'
 require 'byebug'
+# require 'awesome_print'
 
 class ModelChoice
   attr_accessor :number
@@ -28,46 +29,63 @@ class DataFromModel
   # Where each letter or digit corresponds to a choice to be set in the Excel
   def calculate_pathway(code)
     # Need to make sure the Excel is ready for a new calculation
+    # before = excel.input_choices.map {| k, v |
+    #   {:key => k, :value => v}
+    # }
     excel.reset
+
 
     # Turn the i0g2dd2pp1121f1i032211p004314110433304202304320420121 into something like
     # [1.8,0.0,1.6,2.0,1.3,1.3,..]
     choices = convert_letters_to_float(code.split(''))
     # Set the spreadsheet controls (input.choices is a named reference in the Excel)
     excel.input_choices = choices
+
+    after = excel.input_choices.map {| k, v |
+      k
+    }
+
+    # ap after
+
+
+    puts "EXCEL", excel.output_emissions_percentage_reduction
+    descriptions()
+    choices()
+    types()
+    ch = generate_choices()
+
     # Read out the results, where each of these refers to a named reference in the Excel
     # (e.g. excel.output_imports_quantity refers to the output.imports.quantity named reference)
     {
+      # 'sizes' => ch.map { |choice| {:name => choice.name, :size => choice.levels.to_a.size, :number => choice.number }},
       '_id' => code,
       'choices' => choices,
-      'output_airquality' => air_quality_format(excel.output_airquality),
-      'output_areas' => hash(excel.output_areas),
-      'output_capacity_automaticallybuilt' => hash(excel.output_capacity_automaticallybuilt),
-      'output_costpercapita_detail' => cost_format(excel.output_costpercapita_detail),
-      'output_diversity' => hash(excel.output_diversity),
-      'output_electricity_capacity' => hash(excel.output_electricity_capacity),
-      'output_electricity_demand' => hash(excel.output_electricity_demand),
-      'output_electricity_ghg' => hash(excel.output_electricity_ghg),
-      'output_electricity_supply' => hash(excel.output_electricity_supply),
-      # 'output_emissions_percentage_reduction' => hash(excel.output_emissions_percentage_reduction),
-      'output_finalenergyde' => hash(excel.output_finalenergyde),
-      'output_finalenergydemand' => hash(excel.output_finalenergydemand),
-      'output_flows' => hash(excel.output_flows),
-      'output_ghg_by_ipcc_sector' => hash(excel.output_ghg_by_ipcc_sector),
-      # 'output_ghg_percentage_reduction' => hash(excel.output_ghg_percentage_reduction),
-      'output_heating_mix' => hash(excel.output_heating_mix),
-      'output_imports_proportion' => hash(excel.output_imports_proportion),
-      'output_imports_quantity' => hash(excel.output_imports_quantity),
-      'output_primaryenergysupply' => hash(excel.output_primaryenergysupply),
-      'output_shannonweinerindex' => hash(excel.output_shannonweinerindex),
-      # 'output_version' => hash(excel.output_version),
-      'input_choices' => hash(excel.input_choices),
-      'input_descriptions' => excel.input_descriptions,
-      'input_example_pathways' => hash(excel.input_example_pathways),
-      'input_long_descriptions' => excel.input_long_descriptions,
-      'input_names' => hash(excel.input_names),
-      'input_onepagenotes' => hash(excel.input_onepagenotes),
-      'input_types' => hash(excel.input_types)
+      'ghg' => ghg(excel.output_ghg_by_ipcc_sector),
+      # 'output_airquality' => air_quality_format(excel.output_airquality),
+      # 'output_diversity' => hash(excel.output_diversity),
+
+      'electricity' => {
+      'demand' => hash(excel.output_electricity_demand),
+      'supply' => hash(excel.output_electricity_supply),
+      'ghg' => hash(excel.output_electricity_ghg),
+      'capacity' => hash(excel.output_electricity_capacity)
+    },
+      
+      'output_emissions_percentage_reduction' => excel.output_emissions_percentage_reduction,
+      # 'output_finalenergyde' => hash(excel.output_finalenergyde),
+      'final_energy_demand' => hash(excel.output_finalenergydemand),
+      # 'output_flows' => hash(excel.output_flows),
+      # 'output_ghg_by_ipcc_sector' => hash(excel.output_ghg_by_ipcc_sector),
+      # 'output_heating_mix' => hash(excel.output_heating_mix),
+      # 'output_imports_proportion' => hash(excel.output_imports_proportion),
+      # 'output_imports_quantity' => hash(excel.output_imports_quantity),
+      'primary_energy_supply' => hash(excel.output_primaryenergysupply),
+      # 'output_shannonweinerindex' => hash(excel.output_shannonweinerindex),
+      # 'input_choices' => hash(excel.input_choices),
+      # 'input_example_pathways' => hash(excel.input_example_pathways),
+      # 'input_names' => hash(excel.input_names),
+      # 'input_onepagenotes' => hash(excel.input_onepagenotes),
+      # 'input_types' => hash(excel.input_types)
     }
   end
 
@@ -146,6 +164,21 @@ class DataFromModel
     hash
   end
 
+  # scale ghg to kilotons
+  def ghg(table)
+    hash = {}
+    table[1..-1].each do |row| # [1..-1] to skip the first row, which is a header
+      hash[row[0]] = row[1..-1].map{ |v|
+        if v.nil?
+          v
+        else
+          v * 1000
+        end
+      }
+    end
+    hash
+  end
+
   def choices
     @choices ||= generate_choices
   end
@@ -166,7 +199,6 @@ class DataFromModel
       choice.levels = incremental ? 'A'.upto(choice_type.upcase) : 1.upto(choice_type.to_i)
       choice.doc = one_page_note_filenames[i]
       choices << choice
-      puts "CHOICE", choice
     end
     choices
   end
@@ -193,7 +225,6 @@ class DataFromModel
 
   def descriptions
     @descriptions ||= excel.input_descriptions
-    puts "DESCRIPTIONs", @descriptions
   end
 
   def long_descriptions
