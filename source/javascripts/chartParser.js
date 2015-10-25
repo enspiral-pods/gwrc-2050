@@ -4,7 +4,7 @@ define([], function() {
   // The sankey data has all years
   // this selects just the 2050 year
   function selectSankeyYear(row) {
-    return [row[0], row[11], row[1]];
+    return [row[0], row[10], row[1]];
   }
 
   var ChartParser = function(data) {
@@ -26,16 +26,16 @@ define([], function() {
         ElectricityDemandChart: this.electricityDemand(),
         ElectricitySupplyChart: this.electricitySupply(),
 
-        // EnergyEmissionsChart: this.energyEmissions(),
-        // ElectricityEmissionsChart: this.electricityEmissions(),
+        EnergyEmissionsChart: this.energyEmissions(),
+        ElectricityEmissionsChart: this.electricityEmissions(),
         //
-        // FlowsChart: this.flowsBasic(),
+        FlowsChart: this.flowsBasic(),
         //
         // MapChart: this.map(),
         //
         // AirQualityChart: this.airQuality(),
         //
-        // EnergySecurity: this.energySecurity(),
+        EnergySecurity: this.energySecurity(),
         //
         // CostsContextChart: this.costsSensitivity(),
         // CostsComparedChart: this.costsCompared(),
@@ -289,7 +289,7 @@ define([], function() {
         for(var prop in a) {
           if(a.hasOwnProperty(prop)) {
             value = a[prop];
-            out[importType].push({ name: prop, t2007: value[2007], t2050: value[2050] });
+            out[importType].push({ name: prop, t2012: value[2012], t2050: value[2050] });
           }
         }
       });

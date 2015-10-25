@@ -3,6 +3,8 @@ require_relative 'model_version'
 require 'byebug'
 # require 'awesome_print'
 
+
+
 class ModelChoice
   attr_accessor :number
   attr_accessor :name
@@ -24,6 +26,9 @@ class DataFromModel
     @excel ||= Model.new
   end
 
+  def unused
+    @unused = ['Nuclear fission', 'Hydro', 'Gas reserves', 'Coal reserves', 'Geothermal', 'Agriculture', 'Oil reserves', 'Tidal', 'Wave', 'Wind']
+  end
   # Data that changes as the user makes choices
   # The code should be in the form i0g2dd2pp1121f1i032211p004314110433304202304320420121
   # Where each letter or digit corresponds to a choice to be set in the Excel
@@ -61,16 +66,22 @@ class DataFromModel
       '_id' => code,
       'choices' => choices,
       'ghg' => ghg(excel.output_ghg_by_ipcc_sector),
+      'sankey' => excel.output_flows,
+      'balancing' => hash(excel.output_capacity_automaticallybuilt),
       # 'output_airquality' => air_quality_format(excel.output_airquality),
       # 'output_diversity' => hash(excel.output_diversity),
-
+      'imports' => imports_format(
+                            excel.output_imports_proportion, # output.imports.proportion
+                            excel.output_imports_quantity # output.imports.quantity
+      ),
+      'diversity' => diversity_format(excel.output_diversity), # output.diversity
       'electricity' => {
       'demand' => hash(excel.output_electricity_demand),
       'supply' => hash(excel.output_electricity_supply),
-      'ghg' => hash(excel.output_electricity_ghg),
+      'ghg' => ghg(excel.output_electricity_ghg),
       'capacity' => hash(excel.output_electricity_capacity)
     },
-      
+
       'output_emissions_percentage_reduction' => excel.output_emissions_percentage_reduction,
       # 'output_finalenergyde' => hash(excel.output_finalenergyde),
       'final_energy_demand' => hash(excel.output_finalenergydemand),
@@ -114,11 +125,13 @@ class DataFromModel
     quantities = hash(quantity_table)
     hash = {}
     proportions.each do |name, proportion|
-      quantity = quantities[name]
-      hash[name] = {
-        "2012" => { quantity: quantity[0].round, proportion: "#{(proportion[0]*100).round}%" },
-        "2050" => { quantity: quantity[-1].round, proportion: "#{(proportion[-1]*100).round}%" }
-      }
+      if name != 'Uranium'  #TODO rm in spreadsheet
+        quantity = quantities[name]
+        hash[name] = {
+          "2012" => { quantity: quantity[0].round, proportion: "#{(proportion[0]*100).round}%" },
+          "2050" => { quantity: quantity[-1].round, proportion: "#{(proportion[-1]*100).round}%" }
+        }
+      end
     end
     hash
   end
@@ -130,7 +143,9 @@ class DataFromModel
   def diversity_format(table)
     hash = {}
     table[1..-1].each do |row| # Skip the header
-      hash[row[0]] = { "2012" => "#{(row[1]*100).round}%", "2050" => "#{(row[-1]*100).round}%" }
+      if !unused.include? row[0] #TODO rm in spreadsheet
+        hash[row[0]] = { "2012" => "#{(row[1]*100).round}%", "2050" => "#{(row[-1]*100).round}%" }
+      end
     end
     hash
   end
@@ -169,10 +184,10 @@ class DataFromModel
     hash = {}
     table[1..-1].each do |row| # [1..-1] to skip the first row, which is a header
       hash[row[0]] = row[1..-1].map{ |v|
-        if v.nil?
-          v
-        else
+        if v.is_a? Float
           v * 1000
+        else
+          v
         end
       }
     end
