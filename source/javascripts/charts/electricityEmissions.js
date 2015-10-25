@@ -23,8 +23,8 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       self.width = self.outerWidth - self.margin.left - self.margin.right;
       self.height = self.outerHeight - self.margin.top - self.margin.bottom;
 
-      var yMin = -500;
-      var yMax = 1000;
+      var yMin = -5;
+      var yMax = 10;
 
       var x = d3.scale.linear()
           .domain(d3.extent(chartLayers, function(d) { return d.date; }))
@@ -77,9 +77,8 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       self.lineData = chartLine;
       self.drawLine("Total");
 
-      self.setupLineAxes("Date", "Greenhouse Gas Emissions (MtCO2e/yr)");
+      self.setupLineAxes("Date", "Greenhouse Gas Emissions (ktCO2e/yr)");
   };
 
   return ElectricityEmissionsChart;
 });
-

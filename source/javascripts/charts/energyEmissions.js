@@ -24,7 +24,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       self.height = self.outerHeight - self.margin.top - self.margin.bottom;
 
       var yMin = -500;
-      var yMax = 1000;
+      var yMax = 2000;
 
       var x = d3.scale.linear()
           .domain(d3.extent(chartLayers, function(d) { return d.date; }))
@@ -43,7 +43,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       var yAxis = d3.svg.axis()
           .scale(y)
           .orient("left")
-          .ticks(4);
+          .ticks(5);
 
       self.x = x;
       self.y = y;
@@ -90,9 +90,8 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       self.svg.selectAll('.target-line-label').remove();
       self.highlightedLabel((self.x(self.xMax)), targetEmissions, "Target", "line-label target-line-label");
 
-      self.setupLineAxes("Date", "Greenhouse Gas Emissions (MtCO2e/yr)");
+      self.setupLineAxes("Date", "Greenhouse Gas Emissions (ktCO2e/yr)");
   };
 
   return EnergyEmissionsChart;
 });
-
