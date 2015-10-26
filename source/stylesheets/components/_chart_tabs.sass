@@ -8,8 +8,8 @@
   border-top: 1px solid #fff
   @include transition(transform .3s ease-in-out, height .3s ease-in-out, top .3s ease-in-out)
   pointer-events: none
-  @include transform(translateY($cityscape-height - $cityscape-bar-height))
-  top: #{$cityscape-bar-height}
+  // @include transform(translateY($cityscape-height - $cityscape-bar-height))
+  // top: #{$cityscape-bar-height}
 
   &:after
     content: ''
@@ -38,7 +38,7 @@
 
   @include media($media-city)
     @include transform(translateY(0))
-    height: calc(100% - #{$cityscape-height})
+    height: 100%
     top: $cityscape-height
     pointer-events: auto
 
@@ -46,7 +46,7 @@
       display: none
 
     &.full
-      height: calc(100% - #{$cityscape-bar-height})
+      height: 100%
 
   &.noTop
     top: 0px
