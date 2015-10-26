@@ -1,6 +1,19 @@
 define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
   'use strict';
 
+  function positiveOrZero (num) {
+    return num >= 0 ? num : 0
+  }
+
+  function absolute (num) {
+    return num >= 0 ? num : -num
+  }
+
+  function increaseOrReduction (d) {
+    return d >= 0 ? (d + "% CO₂ Reduction") : (-d + "% CO₂ Increase")
+  }
+
+
   var SummaryChart = function() {};
 
   SummaryChart.prototype = new Chart({});
@@ -35,7 +48,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
     self.xAxis = xAxis;
 
     self.svg.select("#arrow-gradient").remove();
-    self.svg.append("linearGradient").data([data])
+    self.svg.append("linearGradient").data([positiveOrZero(data)])
         .attr("id", "arrow-gradient")
         .attr("gradientUnits", "userSpaceOnUse")
         .attr("x1", x(xMin)).attr("y1", 0)
@@ -57,7 +70,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
         .attr("stop-opacity", function(d, i) { return i === 0 ? (1 - (data / 100)) : "1"; });
 
     var bars = self.svg.selectAll(".bar")
-        .data([data])
+        .data([positiveOrZero(data)])
 
 
     // arrow
@@ -87,7 +100,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
 
     text.transition()
         .attr("x", function(d) { return self.width * 0.4 })
-        .text(function(d) { return (d + "% CO₂ Reduction") })
+        .text(increaseOrReduction)
 
     self.svg.selectAll('.target').remove();
     self.svg.append("line")
@@ -104,4 +117,3 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
 
   return SummaryChart;
 });
-

@@ -99,7 +99,8 @@ en:
   calculator:
     header:
       reduction: "C02 Reduction"
-      target_reached: "Congratulations! You have hit the UK’s 80% emissions target. To share your pathway with others go to 'Finish & Share'."
+      increase: "CO2 Increase"
+      target_reached: "Congratulations! You have hit the 80% emissions reduction target."
       your_landscape: "Your 2050 Landscape"
 
     share:
