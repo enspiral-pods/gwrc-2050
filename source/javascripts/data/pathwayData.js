@@ -110,7 +110,7 @@ define([], function() {
         "4": "Cycling mode share increases to 4-5% and walking mode share increases to 3% by 2050."
        }, pdf: "/assets/onepage/9.pdf", info: "supply/solar-panels-for-hot-water" },
 
-       { name: "Vehicle ocupancy", categoryId: 1, typeId: 1, pathwayStringIndex: 18, tooltips: {
+       { name: "Vehicle occupancy", categoryId: 1, typeId: 1, pathwayStringIndex: 18, tooltips: {
          "1": "Average vehicle occupancies stay at current levels.",
          "2": "Bus loadings increase from 25 to 40 passengers in 2020 as a result of higher capacity buses.",
          "3": "Bus loadings as per Level 2; car occupancy increases from 1.54 to 2.5 by 2050 as a result of increased ride sharing.",
