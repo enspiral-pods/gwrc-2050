@@ -17,8 +17,6 @@ aside.controls-sidebar data-bind="tabs, css: { 'is-active': navVisible }"
             label data-bind="text: name"
           span.value-label data-bind="text: value"
 
-          button.info-button data-bind="click: $parents[2].showOverlay"
-
         .option
           <!-- ko if: getTypeName() === 'rangeInt' -->
             input data-bind="rangeInt: value, params: { name: name, tooltips: tooltips, min: min, max: max, step: step }"
