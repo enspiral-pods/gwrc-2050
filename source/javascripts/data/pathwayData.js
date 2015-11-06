@@ -10,7 +10,7 @@ define([], function() {
 
     PATHWAY_ACTIONS: [
 
-      { name: "Biogas power generation", categoryId: 2, typeId: 1, pathwayStringIndex: 0, tooltips: {
+      { name: "Biogas power generation", categoryId: 2, typeId: 3, max: 3, pathwayStringIndex: 0, tooltips: {
         "1": "100% of local biogas supply is used for electricity generation",
         "2": "From 2020, 50% of local biogas supply is used for electricity generation and the remainder displaces natural gas demand.",
         "3": "From 2020, 100% of local biogas supply is used for non-electricity purposes and displaces natural gas demand.",
@@ -206,14 +206,14 @@ define([], function() {
           }, pdf: "/assets/onepage/9.pdf", info: "supply/solar-panels-for-hot-water" },
 
           // Growth in industry 32
-          { name: "Growth in industry", categoryId: 1, typeId: 1, pathwayStringIndex: 34, tooltips: {
+          { name: "Growth in industry", categoryId: 1, typeId: 3, max: 3, pathwayStringIndex: 34, tooltips: {
             "1": "Industry output grows at 2% per year.",
             "2": "Industry output grows at 0.5% per year.",
             "3": "Industry output declines at 1% per year.",
           }, pdf: "/assets/onepage/9.pdf", info: "supply/solar-panels-for-hot-water" },
 
           // Energy intensity of industry 33
-          { name: "Energy intensity of industry", categoryId: 1, typeId: 1, pathwayStringIndex: 35, tooltips: {
+          { name: "Energy intensity of industry", categoryId: 1, typeId: 3, max: 3, pathwayStringIndex: 35, tooltips: {
             "1": "Energy intensity improves by 0.5% per year; fuel mix remains the same as today.",
             "2": "Energy intensity improves by 1% per year; some substitution of electricity for gas and LPG/diesel.",
             "3": "Energy intensity improves by 1.5% per year; considerable substitution of electricity for gas and LPG/diesel.",
