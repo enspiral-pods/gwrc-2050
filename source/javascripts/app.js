@@ -12,8 +12,10 @@ define(['knockout', 'router', 'appViewModel', 'preloader'],
 
         // first few images of guide
         '/images/guide/map.svg',
-        '/images/guide/screenshot.jpg',
-        '/images/guide/graph.png'
+        '/images/guide/Slide2.PNG',
+        '/images/guide/Slide5.PNG',
+        '/images/guide/Slide6.PNG'
+        
       ];
 
       Preloader.batch(images);
