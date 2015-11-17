@@ -52,7 +52,7 @@ define([], function() {
          "2": "Cow numbers increase by 1% per year, sheep numbers decline by 2% per year, emissions per animal increase at reduced rate of 0.4% per year after 2020.",
          "3": "Cow numbers remain constant, sheep numbers decline by 2% per year, emissions per animal increase remain constant after 2020.",
          "4": "Cow numbers decline by 2% per year, sheep numbers decline by 3% per year, emissions per animal reduce by 0.7% per year after 2020."
-        }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "supply/solar-panels-for-hot-water" },
+        }, pdf: "/assets/onepage/Agriculture.pdf", info: "supply/solar-panels-for-hot-water" },
 
        // Waste volumes  8
        { name: "Waste volumes", categoryId: 2, typeId: 1, pathwayStringIndex: 8, tooltips: {
@@ -63,12 +63,12 @@ define([], function() {
        }, pdf: "/assets/onepage/WasteVolumes.pdf", info: "supply/solar-panels-for-hot-water" },
 
 
-       { name: "Waste volumes", categoryId: 2, typeId: 1, pathwayStringIndex: 9, tooltips: {
+       { name: "Waste processing", categoryId: 2, typeId: 1, pathwayStringIndex: 9, tooltips: {
          "1": "No increase in fraction of waste recycled or composted, no Energy From Waste, no increase in landfill gas capture.",
          "2": "Food waste composting increases to 35% (kerbside organics collection), sewage sludge diverted for EFW from 2020, landfill gas capture and use for energy increases gradually.",
          "3": "35% of food waste diverted for EFW along with sewage sludge from 2020, landfill gas capture and use for energy increases to maximum by 2025.",
          "4": "50% of food waste diverted for EFW along with sewage sludge from 2020, landfill gas capture and use for energy increases to maximum by 2020."
-       }, pdf: "/assets/onepage/WasteVolumes.pdf", info: "supply/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/WasteProcessing.pdf", info: "supply/solar-panels-for-hot-water" },
 
 
        { name: "Biomass supply", categoryId: 2, typeId: 1, pathwayStringIndex: 11, tooltips: {
@@ -84,7 +84,7 @@ define([], function() {
          "2": "All biomass supply in solid form.",
          "3": "All biomass supply converted to liquid fuels.",
          "4": "All biomass supply converted to biogas."
-       }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "supply/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/BioenergyType.pdf", info: "supply/solar-panels-for-hot-water" },
 
        // Travel Demand 13
        { name: "Travel Demand", categoryId: 1, typeId: 1, pathwayStringIndex: 15, tooltips: {
@@ -141,7 +141,7 @@ define([], function() {
           "4": "By 2050, cars 69% more efficient, buses and trains 20-40% more efficient."
          }, pdf: "/assets/onepage/VehicleEfficiencies.pdf", info: "supply/solar-panels-for-hot-water" },
 
-         // Freight volume 21
+         // Freight volume 21. MISSING PDF
          { name: "Freight volume", categoryId: 1, typeId: 1, pathwayStringIndex: 23, tooltips: {
            "1": "By 2050, freight task (in tonne-kilometres) increases 50% from 2015 level.",
            "2": "By 2050, freight task increases 30% from 2015 level.",
@@ -149,7 +149,7 @@ define([], function() {
            "4": "By 2050, freight task decreases 30% from 2015 level."
           }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "supply/solar-panels-for-hot-water" },
 
-          // Mode and efficiency 22
+          // Mode and efficiency 22. MISSING PDF
           { name: "Mode and efficiency", categoryId: 1, typeId: 1, pathwayStringIndex: 24, tooltips: {
             "1": "No change in freight mode share or rail electrification. Small increase in vehicle loadings. Fuel efficiencies assumed fixed.",
             "2": "By 2050, rail mode share increases from 19% to 22%, vehicle loadings increase by roughly 35%.",
@@ -157,7 +157,7 @@ define([], function() {
             "4": "By 2050, rail mode share increases to 30% and all rail travel is electrified, vehicle loadings increase by roughly 80%."
            }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "supply/solar-panels-for-hot-water" },
 
-           // Domestic aviation 23
+           // Domestic aviation 23. MISSING PDF
            { name: "Domestic aviation", categoryId: 1, typeId: 1, pathwayStringIndex: 25, tooltips: {
              "1": "Fuel consumption roughly doubles in line with growth in arrivals.",
              "2": "Fuel consumption remains constant at 2015 level with efficiency gains offsetting passenger growth.",
@@ -165,7 +165,7 @@ define([], function() {
              "4": "By 2050, fuel consumption reduces 25% from 2015 level due to efficiency gains."
             }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "supply/solar-panels-for-hot-water" },
 
-            // Domestic navigation 24
+            // Domestic navigation 24. MISSING PDF
             { name: "Domestic navigation", categoryId: 1, typeId: 1, pathwayStringIndex: 26, tooltips: {
               "1": "Fuel consumption remains constant at 2015 level.",
               "2": "Fuel consumption declines 10% from 2015 level.",
