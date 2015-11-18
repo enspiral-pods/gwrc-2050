@@ -44,7 +44,7 @@ define([], function() {
          "2": "Native vegetation area increases by 3 hectares per year, pine plantations all replanted after harvesting to maintain constant area.",
          "3": "Native vegetation area increases by 6 hectares per year, pine plantation all replanted after harvesting and additional 8 hectares planted per year.",
          "4": "Native vegetation area increases by 9 hectares per year, pine plantation all replanted after harvesting and additional 15 hectares planted per year."
-        }, pdf: "/assets/onepage/Forestry.pdf", info: "supply/solar-panels-for-hot-water" },
+        }, pdf: "/assets/onepage/Forestry.pdf", info: "supply/forestry" },
 
        // Livestock and their management 6
        { name: "Livestock and their management", categoryId: 2, typeId: 1, pathwayStringIndex: 6, tooltips: {
@@ -52,7 +52,7 @@ define([], function() {
          "2": "Cow numbers increase by 1% per year, sheep numbers decline by 2% per year, emissions per animal increase at reduced rate of 0.4% per year after 2020.",
          "3": "Cow numbers remain constant, sheep numbers decline by 2% per year, emissions per animal increase remain constant after 2020.",
          "4": "Cow numbers decline by 2% per year, sheep numbers decline by 3% per year, emissions per animal reduce by 0.7% per year after 2020."
-        }, pdf: "/assets/onepage/Agriculture.pdf", info: "supply/solar-panels-for-hot-water" },
+        }, pdf: "/assets/onepage/Agriculture.pdf", info: "supply/agriculture" },
 
        // Waste volumes  8
        { name: "Waste volumes", categoryId: 2, typeId: 1, pathwayStringIndex: 8, tooltips: {
@@ -60,7 +60,7 @@ define([], function() {
          "2": "Food waste is reduced by 21% from 2020 (Love Food Hate Waste scheme), all other waste volumes the same as Level 1.",
          "3": "Same as Level 2.",
          "4": "Same as Level 2."
-       }, pdf: "/assets/onepage/WasteVolumes.pdf", info: "supply/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/WasteVolumes.pdf", info: "supply/waste-volumes" },
 
 
        { name: "Waste processing", categoryId: 2, typeId: 1, pathwayStringIndex: 9, tooltips: {
@@ -68,7 +68,7 @@ define([], function() {
          "2": "Food waste composting increases to 35% (kerbside organics collection), sewage sludge diverted for EFW from 2020, landfill gas capture and use for energy increases gradually.",
          "3": "35% of food waste diverted for EFW along with sewage sludge from 2020, landfill gas capture and use for energy increases to maximum by 2025.",
          "4": "50% of food waste diverted for EFW along with sewage sludge from 2020, landfill gas capture and use for energy increases to maximum by 2020."
-       }, pdf: "/assets/onepage/WasteProcessing.pdf", info: "supply/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/WasteProcessing.pdf", info: "supply/waste-processing" },
 
 
        { name: "Biomass supply", categoryId: 2, typeId: 1, pathwayStringIndex: 11, tooltips: {
@@ -76,7 +76,7 @@ define([], function() {
          "2": "National supply from biomass residues only; Wellington allocated per capita share.",
          "3": "National supply based on NZ Bioenergy Strategy, with some dedicated biomass plantations; Wellington allocated per capita share.",
          "4": "Extreme biomass scenario via Scion Research - all suitable land converted to woody biomass production (3.3 million ha); Wellington allocated per capita share."
-       }, pdf: "/assets/onepage/BiomassSupply.pdf", info: "supply/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/BiomassSupply.pdf", info: "supply/biomass-supply" },
 
        // Bomass supply 11
        { name: "Type of Fuel", categoryId: 2, typeId: 1, pathwayStringIndex: 12, tooltips: {
@@ -84,7 +84,7 @@ define([], function() {
          "2": "All biomass supply in solid form.",
          "3": "All biomass supply converted to liquid fuels.",
          "4": "All biomass supply converted to biogas."
-       }, pdf: "/assets/onepage/BioenergyType.pdf", info: "supply/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/BioenergyType.pdf", info: "supply/bioenergy-type" },
 
        // Travel Demand 13
        { name: "Travel Demand", categoryId: 1, typeId: 1, pathwayStringIndex: 15, tooltips: {
