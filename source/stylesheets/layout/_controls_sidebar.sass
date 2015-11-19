@@ -119,7 +119,13 @@
           @include transform(translateY(-37%))
 
         .tags
-          top: 66%
+          top: 55%
+          @include media($media-small)
+            top: 66%
+
+
+          .tag
+            margin-right: 1vh
 
       .info-button
         float: right
