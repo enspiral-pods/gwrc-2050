@@ -31,6 +31,7 @@ define(['knockout', 'config'], function(ko, config) {
     self.info = args.info;
     self.pdf = config.apiUrl + args.pdf;
     self.pathwayStringIndex = args.pathwayStringIndex;
+    self.tags = args.tags || [];
     self.tooltips = args.tooltips;
   };
 
@@ -48,6 +49,10 @@ define(['knockout', 'config'], function(ko, config) {
      */
     setValue: function(value) {
       this.value = value;
+    },
+
+    getTags: function() {
+      return this.tags
     },
 
     getTypeName: function() {
@@ -88,4 +93,3 @@ define(['knockout', 'config'], function(ko, config) {
   return Action;
 
 });
-

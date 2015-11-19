@@ -99,28 +99,34 @@
       > div
         overflow: auto
 
+
       .details
         position: relative
+        min-height: 75px
 
-        label
+        .text
           float: left
           position: absolute
           max-width: 72%
-          font-size: 13px
-          top: 50%
-          @include transform(translateY(-50%))
 
+        label
+          font-size: 13px
+          top: 33%
           @include media($media-big)
             font-size: inherit
           @include media($media-bigger)
             font-size: 14px
+          @include transform(translateY(-37%))
 
+        .tags
+          top: 66%
 
       .info-button
         float: right
-        margin-top: 1vh
+        margin-top: 3vh
 
       .value-label
+        margin-top: 1.5vh
         float: right
         padding: 1em 0.5em
         background-color: #ccc
@@ -128,6 +134,7 @@
         min-width: 35px
         text-align: center
         @include transition(background-color .3s)
+
 
         &.high
           background: #D53980
@@ -164,4 +171,3 @@
 
           .arrow
             transition: left 0.3s
-
