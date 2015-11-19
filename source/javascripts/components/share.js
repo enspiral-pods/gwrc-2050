@@ -20,8 +20,8 @@ define(['knockout', 'text!../../components/share.html', 'config']
     self.date = ko.observable(maxDate);
     self.pathway = params.pathway;
 
-    self.shareTitle = "My DECC 2050 Pathway";
-    self.shareSummary = "My DECC 2050 Pathway";
+    self.shareTitle = "My 2050 Climate Calculator Pathway";
+    self.shareSummary = "My 2050 Climate Calculator Pathway";
 
     self.shareString = self.pathway().shareString;
 
