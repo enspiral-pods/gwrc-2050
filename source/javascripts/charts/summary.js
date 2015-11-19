@@ -1,9 +1,6 @@
 define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
   'use strict';
 
-  function positiveOrZero (num) {
-    return num >= 0 ? num : 0
-  }
 
   function absolute (num) {
     return num >= 0 ? num : -num
@@ -33,7 +30,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
     self.width = self.outerWidth - self.margin.left - self.margin.right;
     self.height = self.outerHeight - self.margin.top - self.margin.bottom;
 
-    var xMin = 0;
+    var xMin = -70;
     var xMax = 100;
 
     var x = d3.scale.linear()
@@ -47,8 +44,8 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
     self.x = x;
     self.xAxis = xAxis;
 
-    self.svg.select("#arrow-gradient").remove();
-    self.svg.append("linearGradient").data([positiveOrZero(data)])
+    self.svg.select("#arrow-total-co2-reduction").remove();
+    self.svg.append("linearGradient").data([data])
         .attr("id", "arrow-gradient")
         .attr("gradientUnits", "userSpaceOnUse")
         .attr("x1", x(xMin)).attr("y1", 0)
@@ -66,11 +63,12 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
           // var color = "rgb("+colorness(90)+","+colorness(99)+","+colorness(120)+")";
           // return i === 0 ? color : d.color;
           return data >= 80 ? "#28a197" : "#d53980"
+          }
         })
         .attr("stop-opacity", function(d, i) { return i === 0 ? (1 - (data / 100)) : "1"; });
 
     var bars = self.svg.selectAll(".bar")
-        .data([positiveOrZero(data)])
+        .data([data])
 
 
     // arrow
