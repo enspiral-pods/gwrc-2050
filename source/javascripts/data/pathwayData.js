@@ -100,7 +100,7 @@ define([], function() {
          "2": "Bus mode share increases to 13-14% by 2050, train mode share stays at 2%.",
          "3": "Bus mode share increases to 17-18% and train mode share increases to 4% by 2050.",
          "4": "Bus mode share increases to 21-22% and train mode share increases to 5% by 2050."
-       }, pdf: "/assets/onepage/PublicTransport.pdf", info: "demand/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/PublicTransport.pdf", info: "demand/public-transport" },
 
       // Active Transport 15
       { name: "Active Transport", categoryId: 1, typeId: 1, pathwayStringIndex: 17, tooltips: {
@@ -108,14 +108,14 @@ define([], function() {
         "2": "Cycling mode share increases to 1.5% by 2050, walking mode share stays at 2%.",
         "3": "Cycling mode share increases to 2.5-2.8% by 2050, walking mode share stays at 2%.",
         "4": "Cycling mode share increases to 4-5% and walking mode share increases to 3% by 2050."
-       }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/active-transport" },
 
        { name: "Vehicle occupancy", categoryId: 1, typeId: 1, pathwayStringIndex: 18, tooltips: {
          "1": "Average vehicle occupancies stay at current levels.",
          "2": "Bus loadings increase from 25 to 40 passengers in 2020 as a result of higher capacity buses.",
          "3": "Bus loadings as per Level 2; car occupancy increases from 1.54 to 2.5 by 2050 as a result of increased ride sharing.",
          "4": "Car occupancy increases to 2.5 passengers by 2035 before plateauing, and bus loadings increase further to 60 passengers by 2040."
-        }, pdf: "/assets/onepage/VehicleOccupancies.pdf", info: "demand/solar-panels-for-hot-water" },
+        }, pdf: "/assets/onepage/VehicleOccupancies.pdf", info: "demand/vehicle-occupancy" },
 
       // Electrification of light vehicles 17
       { name: "Electrification of light vehicles", categoryId: 1, typeId: 1, pathwayStringIndex: 19, tooltips: {
@@ -123,7 +123,7 @@ define([], function() {
         "2": "As per Level 1",
         "3": "Plug-in hybrids and full EVs reach 38% and 4% of the light vehicle fleet respectively by 2050.",
         "4": "Plug-in hybrids and full EVs reach 34% and 66% of the light vehicle fleet respectively by 2050."
-       }, pdf: "/assets/onepage/ElectrificationLightVehicles.pdf", info: "demand/solar-panels-for-hot-water" },
+       }, pdf: "/assets/onepage/ElectrificationLightVehicles.pdf", info: "demand/electrification-light-vehicles" },
 
        // Electrification of public transport 18
        { name: "Electrification of public transport", categoryId: 1, typeId: 1, pathwayStringIndex: 20, tooltips: {
@@ -131,7 +131,7 @@ define([], function() {
          "2": "Hybrid buses used for 46% of passenger-kilometres from 2020 with the remainder from diesel phased out for battery electric buses by 2050.",
          "3": "Immediate transition to battery electric buses from 2020 with diesel buses phased out by 2035.",
          "4": "As per Level 3."
-        }, pdf: "/assets/onepage/ElectrificationPT.pdf", info: "demand/solar-panels-for-hot-water" },
+        }, pdf: "/assets/onepage/ElectrificationPT.pdf", info: "demand/electrification-pt" },
 
         // Vehicle fuel efficiencies 19
         { name: "Vehicle fuel efficiencies", categoryId: 1, typeId: 1, pathwayStringIndex: 21, tooltips: {
@@ -139,7 +139,7 @@ define([], function() {
           "2": "By 2050, cars 10% more efficient, buses and trains 5% more efficient.",
           "3": "By 2050, cars 20% more efficient, buses and trains 10% more efficient.",
           "4": "By 2050, cars 69% more efficient, buses and trains 20-40% more efficient."
-         }, pdf: "/assets/onepage/VehicleEfficiencies.pdf", info: "demand/solar-panels-for-hot-water" },
+         }, pdf: "/assets/onepage/VehicleEfficiencies.pdf", info: "demand/vehicle-fuel-efficiencies" },
 
          // Freight volume 21. MISSING PDF
          { name: "Freight volume", categoryId: 1, typeId: 1, pathwayStringIndex: 23, tooltips: {
@@ -179,7 +179,7 @@ define([], function() {
              "2": "Space heating and water heating demand per household reduce at 0.1% and 0.2% per year respectively.",
              "3": "Space heating and water heating demand per household reduce at 0.2% and 0.4% per year respectively.",
              "4": "Space heating and water heating demand per household reduce at 0.4% and 0.8% per year respectively."
-            }, pdf: "/assets/onepage/HouseholdHeatingDemand.pdf", info: "demand/solar-panels-for-hot-water" },
+            }, pdf: "/assets/onepage/HouseholdHeatingDemand.pdf", info: "demand/space-and-water" },
 
           // Heating technology 27
           { name: "Heating technology", categoryId: 1, typeId: 1, pathwayStringIndex: 29, tooltips: {
@@ -187,7 +187,7 @@ define([], function() {
             "2": "All new households use electric space and water heating.",
             "3": "All new households and half of existing households use electric space and water heating by 2050.",
             "4": "All space and water heating electrified by 2050."
-          }, pdf: "/assets/onepage/HouseholdHeatingTech.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/HouseholdHeatingTech.pdf", info: "demand/household-heating-tech" },
 
           // Home lighting & appliances 29
           { name: "Home lighting & appliances", categoryId: 1, typeId: 1, pathwayStringIndex: 31, tooltips: {
@@ -195,7 +195,7 @@ define([], function() {
             "2": "By 2050, electricity demand per household reduces to 67% of 2012 level.",
             "3": "By 2050, electricity demand per household reduces to 50% of 2012 level.",
             "4": "By 2050, electricity demand per household reduces to 33% of 2012 level."
-          }, pdf: "/assets/onepage/HouseholdLightingAndAppliances.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/HouseholdLightingAndAppliances.pdf", info: "demand/household-lighting-and-appliances" },
 
           // Electrification of home cooking 30
           { name: "Electrification of home cooking", categoryId: 1, typeId: 1, pathwayStringIndex: 32, tooltips: {
@@ -203,21 +203,21 @@ define([], function() {
             "2": "All new homes use electric cooking; 75% electricity by 2050.",
             "3": "All new homes and half of existing homes use electric cooking; 88% electric by 2050.",
             "4": "All cooking uses electricity by 2050."
-          }, pdf: "/assets/onepage/HouseholdCookingElectrification.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/HouseholdCookingElectrification.pdf", info: "demand/household-cooking-electrification" },
 
           // Growth in industry 32
           { name: "Growth in industry", categoryId: 1, typeId: 3, max: 3, pathwayStringIndex: 34, tooltips: {
             "1": "Industry output grows at 2% per year.",
             "2": "Industry output grows at 0.5% per year.",
             "3": "Industry output declines at 1% per year.",
-          }, pdf: "/assets/onepage/IndustryGrowth.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/IndustryGrowth.pdf", info: "demand/industry-growth" },
 
           // Energy intensity of industry 33
           { name: "Energy intensity of industry", categoryId: 1, typeId: 3, max: 3, pathwayStringIndex: 35, tooltips: {
             "1": "Energy intensity improves by 0.5% per year; fuel mix remains the same as today.",
             "2": "Energy intensity improves by 1% per year; some substitution of electricity for gas and LPG/diesel.",
             "3": "Energy intensity improves by 1.5% per year; considerable substitution of electricity for gas and LPG/diesel.",
-          }, pdf: "/assets/onepage/IndustrialEnergyIntensity.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/IndustrialEnergyIntensity.pdf", info: "demand/industrial-energy-intensity" },
 
           // Commercial demand for heating and cooling 35
           { name: "Commercial demand for heating and cooling", categoryId: 1, typeId: 1, pathwayStringIndex: 37, tooltips: {
@@ -225,35 +225,35 @@ define([], function() {
             "2": "Space heating demand and water heating demand per square metre reduce at 0.15% and 0.2% per year respectively.",
             "3": "Space heating demand and water heating demand per square metre reduce at 0.3% and 0.4% per year respectively.",
             "4": "Space heating demand and water heating demand per square metre reduce at 0.6% and 0.8% per year respectively."
-          }, pdf: "/assets/onepage/CommercialHeatingDemand.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/CommercialHeatingDemand.pdf", info: "demand/commercial-heating-demand" },
 
           { name: "Commercial heating electrification", categoryId: 1, typeId: 1, pathwayStringIndex: 38, tooltips: {
             "1": "Space and water heating technology mix unchanged from today (53% space heating and 68% water heating electric).",
             "2": "By 2050, 58% of space heating and 74% of water heating electric, growth primarily from heat pumps.",
             "3": "By 2050, 74% of space heating and 82% of water heating electric, growth primarily from heat pumps.",
             "4": "By 2050, 100% of space and water heating electric, growth primarily from heat pumps."
-          }, pdf: "/assets/onepage/CommercialHeatingTech.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/CommercialHeatingTech.pdf", info: "demand/commercial-heating-tech" },
 
           { name: "Commercial lighting & appliances", categoryId: 1, typeId: 1, pathwayStringIndex: 40, tooltips: {
             "1": "Electricity demand per square metre of commercial floor space stays constant at 2012 level.",
             "2": "By 2050, electricity demand per square metre reduces to 95% of 2012 level (-0.15% per year)",
             "3": "By 2050, electricity demand per square metre reduces to 90% of 2012 level (-0.3% per year).",
             "4": "By 2050, electricity demand per square metre reduces to 81% of 2012 level (-0.6% per year)."
-          }, pdf: "/assets/onepage/CommercialLightingAndAppliances.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/CommercialLightingAndAppliances.pdf", info: "demand/commercial-lighting-and-appliances" },
 
           { name: "Electrification of commercial cooking", categoryId: 1, typeId: 1, pathwayStringIndex: 41, tooltips: {
             "1": "Electricity/gas split remains at current level of 48%/52%.",
             "2": "60% of cooking uses electricity by 2050.",
             "3": "75% of cooking uses electricity by 2050.",
             "4": "All cooking uses electricity by 2050."
-          }, pdf: "/assets/onepage/CommercialCookingElectrification.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/CommercialCookingElectrification.pdf", info: "demand/commercial-cooking-electrification" },
 
           { name: "Solvent & product use", categoryId: 1, typeId: 1, pathwayStringIndex: 42, tooltips: {
             "1": "Total GHG emissions increase at 3.5% per year.",
             "2": "Total GHG emissions increase at 1% per year from 2015.",
             "3": "Total GHG emissions reduce at 2% per year from 2015.",
             "4": "Total GHG emissions reduce at 5% per year from 2015."
-          }, pdf: "/assets/onepage/SolventsAndProductUse.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/SolventsAndProductUse.pdf", info: "demand/solvents-and-product-use" },
 
     ],
 
