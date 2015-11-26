@@ -6,12 +6,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
   var green = "#28a197";
 
   function color (d) {
-    console.log('d', d)
-    return d >= 80
-      ? green
-      : d < 0
-        ? peach
-        : pink
+    return d >= 0 ? green : peach
   }
 
   function absolute (num) {
@@ -46,7 +41,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
     var xMax = 100;
 
     var x = d3.scale.linear()
-        .domain([xMin, xMax])
+        .domain([xMax, xMin])
         .range([0, self.width]);
 
     var xAxis = d3.svg.axis()
@@ -104,20 +99,21 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
 
 
     // arrow
-
     var arrowBaseOffset = 15;
     bars.enter().append("polygon")
         .attr("class", "bar")
         .attr('fill', color)
         .attr("points", function(d) {
-          var base = x(d) - arrowBaseOffset;
+          var base = x(d);
+          base += d > 0 ? arrowBaseOffset : - arrowBaseOffset
           return [x(0)+" 0", base+" 0", (x(d))+" "+(self.height/2), base+" "+self.height, x(0)+" "+self.height].join(", ");
         })
 
     bars.transition()
         .attr('fill', color)
         .attr("points", function(d) {
-          var base = x(d) - arrowBaseOffset;
+          var base = x(d);
+          base += d > 0 ? arrowBaseOffset : - arrowBaseOffset
           return [x(0)+" 0", base +" 0", (x(d))+" "+(self.height/2), base +" "+self.height, x(0)+" "+self.height].join(", ");
         })
 
