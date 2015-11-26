@@ -9,6 +9,10 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
     return d >= 0 ? green : peach
   }
 
+  function positiveOrZero (num) {
+    return num >= 0 ? num : 0
+  }
+
   function absolute (num) {
     return num >= 0 ? num : -num
   }
@@ -52,50 +56,31 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
     self.xAxis = xAxis;
 
     self.svg.select("#arrow-total-co2-reduction").remove();
-    // self.svg.append("linearGradient").data([data])
-    //     .attr("id", "arrow-gradient-decrease")
-    //     .attr("gradientUnits", "userSpaceOnUse")
-    //     .attr("x1", x(xMin)).attr("y1", 0)
-    //     .attr("x2", function(d) { return x(d) }).attr("y2", 0)
-    //   .selectAll("stop")
-    //     .data([
-    //       { offset: "0%", color: "#fff" },
-    //       { offset: "100%", color: "#fff" }
-    //     ])
-    //   .enter().append("stop")
-    //     .attr("offset", function(d) { return d.offset; })
-    //     .attr("stop-color", function(d, i) {
-    //       // New color interpolated between original and white depending on chart %
-    //       // var colorness = function(color) { return Math.round(color * (data / 100) + 255 * (1 - (data / 100))); }
-    //       // var color = "rgb("+colorness(90)+","+colorness(99)+","+colorness(120)+")";
-    //       // return i === 0 ? color : d.color;
-    //       return d >= 80 ? "#28a197" : "#d53980"
-    //     })
-    //     .attr("stop-opacity", function(d, i) { return i === 0 ? (1 - (data / 100)) : "1"; });
-    //
-    // self.svg.append("linearGradient").data([data])
-    //     .attr("id", "arrow-gradient-increase")
-    //     .attr("gradientUnits", "userSpaceOnUse")
-    //     .attr("x1", x(xMin)).attr("y1", 0)
-    //     .attr("x2", function(d) { return x(d) }).attr("y2", 0)
-    //   .selectAll("stop")
-    //     .data([
-    //       { offset: "0%", color: "#fff" },
-    //       { offset: "100%", color: "#fff" }
-    //     ])
-    //   .enter().append("stop")
-    //     .attr("offset", function(d) { return d.offset; })
-    //     .attr("stop-color", function(d, i) {
-    //       // New color interpolated between original and white depending on chart %
-    //       // var colorness = function(color) { return Math.round(color * (data / 100) + 255 * (1 - (data / 100))); }
-    //       // var color = "rgb("+colorness(90)+","+colorness(99)+","+colorness(120)+")";
-    //       // return i === 0 ? color : d.color;
-    //       return d >= 80 ? "#28a197" : "#d53980"
-    //     })
-    //     .attr("stop-opacity", function(d, i) { return i === 0 ? (1 - (data / 100)) : "1"; });
+
+    self.svg.select("#arrow-gradient").remove();
+    self.svg.append("linearGradient").data([positiveOrZero(data)])
+        .attr("id", "arrow-gradient")
+        .attr("gradientUnits", "userSpaceOnUse")
+        .attr("x1", x(xMin)).attr("y1", 0)
+        .attr("x2", function(d) { return x(d) }).attr("y2", 0)
+      .selectAll("stop")
+        .data([
+          { offset: "0%", color: "#fff" },
+          { offset: "100%", color: "#fff" }
+        ])
+      .enter().append("stop")
+        .attr("offset", function(d) { return d.offset; })
+        .attr("stop-color", function(d, i) {
+          // New color interpolated between original and white depending on chart %
+          // var colorness = function(color) { return Math.round(color * (data / 100) + 255 * (1 - (data / 100))); }
+          // var color = "rgb("+colorness(90)+","+colorness(99)+","+colorness(120)+")";
+          // return i === 0 ? color : d.color;
+          return data >= 80 ? "#28a197" : "#d53980"
+        })
+        .attr("stop-opacity", function(d, i) { return i === 0 ? (1 - (data / 100)) : "1"; });
 
     var bars = self.svg.selectAll(".bar")
-        .data([data])
+        .data([positiveOrZero(data)])
 
 
     // arrow

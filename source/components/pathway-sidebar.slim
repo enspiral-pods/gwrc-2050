@@ -14,7 +14,10 @@ aside.controls-sidebar data-bind="tabs, css: { 'is-active': navVisible }"
       .item
         .details
           .label
-            label data-bind="text: name"
+            label.text data-bind="text: name"
+            span.tags.text data-bind="foreach: $data.getTags()"
+              span.tag data-bind="text: $data"
+
           span.value-label data-bind="text: value"
 
           button.info-button data-bind="click: $parents[2].showOverlay"
@@ -37,4 +40,3 @@ aside.controls-sidebar data-bind="tabs, css: { 'is-active': navVisible }"
             .text
 
   button.show-overview data-bind="click: toggleOverview, swipe: swipeOverview"= I18n.t('calculator.all.show')
-
