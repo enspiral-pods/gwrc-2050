@@ -6,14 +6,13 @@ define([], function() {
 
     ],
 
+
     // types guide
     // ACTION_TYPES = [
     //   { "id": 1, "name": "rangeInt" },
     //   { "id": 2, "name": "rangeFloat" },
     //   { "id": 3, "name": "radio" }
     // ];
-
-
 
     PATHWAY_ACTIONS: [
 
@@ -24,6 +23,7 @@ define([], function() {
          }, pdf: "/assets/onepage/BiogasUse.pdf" , info: "supply/biogas-use" },
 
       { name: "Solar panels for electricity", categoryId: 2, typeId: 1, pathwayStringIndex: 1, tags: ["Local", "Regional", "National"], tooltips: {
+
         "1": "By 2050, 1.5% of Wellington households have solar PV panels and other installations total 15,000 m2.",
         "2": "By 2050, 11% of Wellington households have solar PV panels and other installations total 36,000 m2.",
         "3": "By 2050, 25% of Wellington households have solar PV panels and other installations total 53,500 m2.",
@@ -46,6 +46,7 @@ define([], function() {
         }, pdf: "/assets/onepage/NationalGridElectricity.pdf", info: "supply/electricity-imports-national-grid" },
 
        // Forestry 5
+
        { name: "Forestry", categoryId: 2, typeId: 1, pathwayStringIndex: 5, tags: ["Regional", "National"], tooltips: {
          "1": "Native vegetation area remains constant, pine plantations all harvested at maturity and not replanted.",
          "2": "Native vegetation area increases by 3 hectares per year, pine plantations all replanted after harvesting to maintain constant area.",
@@ -69,14 +70,12 @@ define([], function() {
          "4": "Same as Level 2."
        }, pdf: "/assets/onepage/WasteVolumes.pdf", info: "supply/waste-volumes" },
 
-
        { name: "Waste processing", categoryId: 2, typeId: 1, pathwayStringIndex: 9, tags: ["Local", "Regional"], tooltips: {
          "1": "No increase in fraction of waste recycled or composted, no Energy From Waste, no increase in landfill gas capture.",
          "2": "Food waste composting increases to 35% (kerbside organics collection), sewage sludge diverted for EFW from 2020, landfill gas capture and use for energy increases gradually.",
          "3": "35% of food waste diverted for EFW along with sewage sludge from 2020, landfill gas capture and use for energy increases to maximum by 2025.",
          "4": "50% of food waste diverted for EFW along with sewage sludge from 2020, landfill gas capture and use for energy increases to maximum by 2020."
        }, pdf: "/assets/onepage/WasteProcessing.pdf", info: "supply/waste-processing" },
-
 
        { name: "Biomass supply", categoryId: 2, typeId: 1, pathwayStringIndex: 11, tags: ["National"], tooltips: {
          "1": "No bioenergy imports.",
@@ -242,6 +241,7 @@ define([], function() {
           }, pdf: "/assets/onepage/CommercialHeatingTech.pdf", info: "demand/commercial-heating-tech" },
 
           { name: "Commercial lighting & appliances", categoryId: 1, typeId: 1, pathwayStringIndex: 40, tags: ["Local", "National"], tooltips: {
+
             "1": "Electricity demand per square metre of commercial floor space stays constant at 2012 level.",
             "2": "By 2050, electricity demand per square metre reduces to 95% of 2012 level (-0.15% per year)",
             "3": "By 2050, electricity demand per square metre reduces to 90% of 2012 level (-0.3% per year).",

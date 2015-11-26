@@ -8,11 +8,13 @@ header.calculator-header
     .chart.compare.top data-bind="chart: 'SummaryChart', data: pathway().chartData, params: { text: '#{I18n.t("calculator.header.reduction")}', margin: { top: 0, right: 0, bottom: 0, left: 0 } }" style="height: 100%"
 
     .goal-wrapper
-      .goal= t('target')
+      ul.goal
+        li= t('target_time')
+        li= t('target')
 
     .spacer
       .target-reached-tooltip.tooltip data-bind="visible: targetReachedVisible, css: { 'is-open': cityscapeVisible }"
-        .arrow
+        / .arrow
         .close data-bind="click: closeTargetReached" &times;
         span = I18n.t('calculator.header.target_reached')
 
@@ -24,4 +26,3 @@ header.calculator-header
     button.help data-bind="click: $parent.toggleFaq, css: $parent.buttonColor"
       span data-bind="visible: !$parent.pathwayUpdating(), text: $parent.faqCloseMode() ? '&times;' : '?'"
       div.spinner data-bind="visible: $parent.pathwayUpdating"
-

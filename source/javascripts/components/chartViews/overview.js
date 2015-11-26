@@ -16,7 +16,7 @@ define(['knockout', 'text!../../../components/chartViews/overview.html'],
     self.chartOptions = [
       { name: 'Demand', title: 'Demand (GWh/yr)', xMin: 0, xMax: 5000 },
       { name: 'Supply', title: 'Supply (GWh/yr)', xMin: 0, xMax: 5000 },
-      { name: 'Emissions', title: 'Emissions (ktCO2e/yr)', xMin: -500, xMax: 1500 }
+      { name: 'Emissions', title: 'Emissions (ktCO2e/yr)', xMin: -1500, xMax: 1500 }
     ];
 
     self.date = ko.observable(maxDate);
