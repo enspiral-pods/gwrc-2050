@@ -85,7 +85,7 @@ define([], function() {
        }, pdf: "/assets/onepage/BiomassSupply.pdf", info: "supply/biomass-supply" },
 
        // Bomass supply 11
-       { name: "Type of Fuel", categoryId: 2, typeId: 1, pathwayStringIndex: 12, tags: ["National"], tooltips: {
+       { name: "Type of Fuel", categoryId: 2, typeId: 3, pathwayStringIndex: 12, tags: ["National"], tooltips: {
          "1": "Equal parts of biomass supply converted to solid, liquid and gaseous fuels (1/3 each).",
          "2": "All biomass supply in solid form.",
          "3": "All biomass supply converted to liquid fuels.",
