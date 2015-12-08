@@ -78,8 +78,10 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
       self.drawLine("Total");
 
       // Target
-      var targetEmissions = y(153);
+      var targetEmissions = y(250);
+      var targetEmissions2020 = y(874);
       var halfLabelLineHeight = 8;
+
       self.svg.selectAll('.target-line').remove();
       self.svg.append("line")
         .attr("x1", x(self.xMin))
@@ -87,8 +89,20 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
         .attr("y1", targetEmissions)
         .attr("y2", targetEmissions)
         .attr("class", "target-line")
-      self.svg.selectAll('.target-line-label').remove();
-      self.highlightedLabel((self.x(self.xMax)), targetEmissions, "Target", "line-label target-line-label");
+
+        // self.svg.selectAll('.target-line').remove();
+      self.svg.append("line")
+        .attr("x1", x(self.xMin))
+        .attr("x2", x(2020))
+        .attr("y1", targetEmissions2020)
+        .attr("y2", targetEmissions2020)
+        .attr("class", "target-line")
+
+      self.highlightedLabel((self.x(self.xMax)), targetEmissions, "2050 Target", "line-label target-line-label");
+      self.highlightedLabel((self.x(2020)), targetEmissions2020, "2020 Target", "line-label target-line-label");
+
+
+
 
       self.setupLineAxes("Date", "Greenhouse Gas Emissions (ktCO2e/yr)");
   };
