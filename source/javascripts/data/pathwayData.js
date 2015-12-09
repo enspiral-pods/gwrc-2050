@@ -147,37 +147,37 @@ define([], function() {
           "4": "By 2050, cars 69% more efficient, buses and trains 20-40% more efficient."
          }, pdf: "/assets/onepage/VehicleEfficiencies.pdf", info: "demand/vehicle-fuel-efficiencies" },
 
-         // Freight volume 21. MISSING PDF
+         // Freight volume 21
          { name: "Freight volume", categoryId: 1, typeId: 1, pathwayStringIndex: 23, tags: ["National"], tooltips: {
            "1": "By 2050, freight task (in tonne-kilometres) increases 50% from 2015 level.",
            "2": "By 2050, freight task increases 30% from 2015 level.",
            "3": "Freight task remains constant at 2015 level.",
            "4": "By 2050, freight task decreases 30% from 2015 level."
-          }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/solar-panels-for-hot-water" },
+         }, pdf: "/assets/onepage/FreightVolume.pdf", info: "demand/freight-volume" },
 
-          // Mode and efficiency 22. MISSING PDF
+          // Mode and efficiency 22.
           { name: "Mode and efficiency", categoryId: 1, typeId: 1, pathwayStringIndex: 24, tags: ["National"], tooltips: {
             "1": "No change in freight mode share or rail electrification. Small increase in vehicle loadings. Fuel efficiencies assumed fixed.",
             "2": "By 2050, rail mode share increases from 19% to 22%, vehicle loadings increase by roughly 35%.",
             "3": "By 2050, rail mode share increases to 25%, vehicle loadings increase by roughly 60%.",
             "4": "By 2050, rail mode share increases to 30% and all rail travel is electrified, vehicle loadings increase by roughly 80%."
-           }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/solar-panels-for-hot-water" },
+          }, pdf: "/assets/onepage/FreightMode&Efficiency.pdf", info: "demand/freight-mode-and-efficiency" },
 
-           // Domestic aviation 23. MISSING PDF
+           // Domestic aviation 23.
            { name: "Domestic aviation", categoryId: 1, typeId: 1, pathwayStringIndex: 25, tags: ["National"], tooltips: {
              "1": "Fuel consumption roughly doubles in line with growth in arrivals.",
              "2": "Fuel consumption remains constant at 2015 level with efficiency gains offsetting passenger growth.",
              "3": "By 2050, fuel consumption reduces 10% from 2015 level due to efficiency gains.",
              "4": "By 2050, fuel consumption reduces 25% from 2015 level due to efficiency gains."
-            }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/solar-panels-for-hot-water" },
+           }, pdf: "/assets/onepage/DomesticAviation.pdf", info: "demand/domestic-aviation" },
 
-            // Domestic navigation 24. MISSING PDF
+            // Domestic navigation 24
             { name: "Domestic navigation", categoryId: 1, typeId: 1, pathwayStringIndex: 26, tags: ["National"], tooltips: {
               "1": "Fuel consumption remains constant at 2015 level.",
               "2": "Fuel consumption declines 10% from 2015 level.",
               "3": "Fuel consumption declines 20% from 2015 level.",
               "4": "Fuel consumption declines 50% from 2015 level."
-             }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/solar-panels-for-hot-water" },
+            }, pdf: "/assets/onepage/DomesticNavigation.pdf", info: "demand/domestic-navigation" },
 
            // Space and water heating demand 26
            { name: "Space and water heating demand", categoryId: 1, typeId: 1, pathwayStringIndex: 28, tags: ["Local", "National"], tooltips: {
