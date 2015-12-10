@@ -3,7 +3,10 @@ define([], function() {
 
   return {
     EXAMPLES: [
-
+      { category: 'Extreme Pathways', name: 'Doesn\'t tackle climate change', slug: 'blank-example', values: '10111111111111110111111001111110111101101101110110111' },
+      { category: 'Moderate Pathways', name: 'Some action (all set to 2)', slug: 'some-action-example', values: '22220220220210022222220222202202202202202220000000001' },
+      { category: 'Moderate Pathways', name: 'Significant action (all set to 3)', slug: 'significant-action-example', values: '33330330330310033333330333303304303303303330000000001' },
+      { category: 'Extreme Pathways', name: 'Extreme action (all actions set to 4)', slug: 'extreme-action-example', values: '34440440440410044444440444404404403304404440000000001' }
     ],
 
 
