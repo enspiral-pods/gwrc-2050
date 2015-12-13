@@ -2,10 +2,13 @@ nav.main-nav
 
   .top-level
     a href="http://wellington.govt.nz/" target="_blank"
-      = image_tag "/images/WCC.png", class: :logo, alt: t('decc')
-      
+      = image_tag "/images/WCC.png", class: :logo, alt: t('wcc')
+
     a href="http://www.neri.org.nz/" target="_blank"
-      = image_tag "/images/NERI.png", class: :logo, alt: t('decc')
+      = image_tag "/images/NERI.png", class: :logo, alt: t('neri')
+
+    a href="http://www.devacademy.co.nz/" target="_blank"
+      = image_tag "/images/enspiral_logo.png", class: 'logo third-logo', alt: t('enspiral')
 
     = link_to I18n.t('calculator.menu.mine.link'), calculator_path, class: "my-pathway tab-button", :'data-bind' => "click: closeNav, css: {'is-active': myPathway }"
 
@@ -23,4 +26,3 @@ nav.main-nav
         ul data-bind="foreach: $parent.pathway.examples($data)"
           li
             a data-bind="text: name, click: $parents[1].closeNav, attr: { href: '/#/calculator/' + slug }, css: { 'is-active': $parents[1].currentPathway().name === name }"
-

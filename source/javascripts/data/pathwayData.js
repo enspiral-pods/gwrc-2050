@@ -3,10 +3,10 @@ define([], function() {
 
   return {
     EXAMPLES: [
-      { category: 'Extreme Pathways', name: 'Doesn\'t tackle climate change', slug: 'blank-example', values: '10111111111111110111111001111110111101101101110110111' },
-      { category: 'Moderate Pathways', name: 'Some action (all set to 2)', slug: 'some-action-example', values: '22220220220210022222220222202202202202202220000000001' },
-      { category: 'Moderate Pathways', name: 'Significant action (all set to 3)', slug: 'significant-action-example', values: '33330330330310033333330333303304303303303330000000001' },
-      { category: 'Extreme Pathways', name: 'Extreme action (all actions set to 4)', slug: 'extreme-action-example', values: '34440440440410044444440444404404403304404440000000001' }
+      { category: 'General Pathways', name: 'Doesn\'t tackle climate change', slug: 'blank-example', values: '10111111111111110111111001111110111101101101110110111' },
+      { category: 'General Pathways', name: 'Some action (all set to 2)', slug: 'some-action-example', values: '22220220220210022222220222202202202202202220000000001' },
+      { category: 'General Pathways', name: 'Significant action (all set to 3)', slug: 'significant-action-example', values: '33330330330310033333330333303304303303303330000000001' },
+      { category: 'General Pathways', name: 'Extreme action (all actions set to 4)', slug: 'extreme-action-example', values: '34440440440410044444440444404404403304404440000000001' }
     ],
 
 
@@ -18,6 +18,30 @@ define([], function() {
     // ];
 
     PATHWAY_ACTIONS: [
+      //supply
+
+       // Electricity imports from national grid 3
+       { name: "Electricity imports from national grid", categoryId: 2, typeId: 1, pathwayStringIndex: 3, tags: ["National"], tooltips: {
+         "1": "Electricity mix remains similar to today resulting in constant emissions factor of 0.14 kg CO2e / kWh.",
+         "2": "Electricity mix moves to 90% renewable by 2025 and then remains steady with emissions factor of 0.07 kg CO2e / kWh.",
+         "3": "Electricity mix transitions smoothly to 100% renewable by 2050 (emissions factor of 0.03 kg CO2e / kWh).",
+         "4": "Electricity mix transitions to 100% renewable by 2030 (emissions factor of 0.03 kg CO2e / kWh)."
+        }, pdf: "/assets/onepage/NationalGridElectricity.pdf", info: "supply/electricity-imports-national-grid" },
+
+       { name: "Biomass supply", categoryId: 2, typeId: 1, pathwayStringIndex: 11, tags: ["National"], tooltips: {
+         "1": "No bioenergy imports.",
+         "2": "National supply from biomass residues only; Wellington allocated per capita share.",
+         "3": "National supply based on NZ Bioenergy Strategy, with some dedicated biomass plantations; Wellington allocated per capita share.",
+         "4": "Extreme biomass scenario via Scion Research - all suitable land converted to woody biomass production (3.3 million ha); Wellington allocated per capita share."
+       }, pdf: "/assets/onepage/BiomassSupply.pdf", info: "supply/biomass-supply" },
+
+       // Bomass supply 11
+       { name: "Biomass End Use", categoryId: 2, typeId: 3, pathwayStringIndex: 12, tags: ["National"], tooltips: {
+         "1": "Equal parts of biomass supply converted to solid, liquid and gaseous fuels (1/3 each).",
+         "2": "All biomass supply in solid form.",
+         "3": "All biomass supply converted to liquid fuels.",
+         "4": "All biomass supply converted to biogas."
+       }, pdf: "/assets/onepage/BioenergyType.pdf", info: "supply/bioenergy-type" },
 
       { name: "Biogas power generation", categoryId: 2, typeId: 3, max: 3, pathwayStringIndex: 0, tags: ['Local'], tooltips: {
         "1": "100% of local biogas supply is used for electricity generation",
@@ -40,31 +64,6 @@ define([], function() {
         "4": "By 2050, 50% of Wellington households have solar hot water and other installations total 70,000 m2."
        }, pdf: "/assets/onepage/SolarHotWater.pdf", info: "supply/solar-panels-for-hot-water" },
 
-       // Electricity imports from national grid 3
-       { name: "Electricity imports from national grid", categoryId: 2, typeId: 1, pathwayStringIndex: 3, tags: ["National"], tooltips: {
-         "1": "Electricity mix remains similar to today resulting in constant emissions factor of 0.14 kg CO2e / kWh.",
-         "2": "Electricity mix moves to 90% renewable by 2025 and then remains steady with emissions factor of 0.07 kg CO2e / kWh.",
-         "3": "Electricity mix transitions smoothly to 100% renewable by 2050 (emissions factor of 0.03 kg CO2e / kWh).",
-         "4": "Electricity mix transitions to 100% renewable by 2030 (emissions factor of 0.03 kg CO2e / kWh)."
-        }, pdf: "/assets/onepage/NationalGridElectricity.pdf", info: "supply/electricity-imports-national-grid" },
-
-       // Forestry 5
-
-       { name: "Forestry", categoryId: 2, typeId: 1, pathwayStringIndex: 5, tags: ["Regional", "National"], tooltips: {
-         "1": "Native vegetation area remains constant, pine plantations all harvested at maturity and not replanted.",
-         "2": "Native vegetation area increases by 3 hectares per year, pine plantations all replanted after harvesting to maintain constant area.",
-         "3": "Native vegetation area increases by 6 hectares per year, pine plantation all replanted after harvesting and additional 8 hectares planted per year.",
-         "4": "Native vegetation area increases by 9 hectares per year, pine plantation all replanted after harvesting and additional 15 hectares planted per year."
-        }, pdf: "/assets/onepage/Forestry.pdf", info: "supply/forestry" },
-
-       // Livestock and their management 6
-       { name: "Livestock and their management", categoryId: 2, typeId: 1, pathwayStringIndex: 6, tags: ["Regional", "National"], tooltips: {
-         "1": "Cow numbers increase by 2% per year, sheep numbers remain constant, emissions per animal keep increasing at 0.7% per year.",
-         "2": "Cow numbers increase by 1% per year, sheep numbers decline by 2% per year, emissions per animal increase at reduced rate of 0.4% per year after 2020.",
-         "3": "Cow numbers remain constant, sheep numbers decline by 2% per year, emissions per animal increase remain constant after 2020.",
-         "4": "Cow numbers decline by 2% per year, sheep numbers decline by 3% per year, emissions per animal reduce by 0.7% per year after 2020."
-        }, pdf: "/assets/onepage/Agriculture.pdf", info: "supply/agriculture" },
-
        // Waste volumes  8
        { name: "Waste volumes", categoryId: 2, typeId: 1, pathwayStringIndex: 8, tags: ["Local", "Regional"], tooltips: {
          "1": "Waste volumes remain at current levels, sewage sludge volumes increase with population.",
@@ -80,21 +79,7 @@ define([], function() {
          "4": "50% of food waste diverted for EFW along with sewage sludge from 2020, landfill gas capture and use for energy increases to maximum by 2020."
        }, pdf: "/assets/onepage/WasteProcessing.pdf", info: "supply/waste-processing" },
 
-       { name: "Biomass supply", categoryId: 2, typeId: 1, pathwayStringIndex: 11, tags: ["National"], tooltips: {
-         "1": "No bioenergy imports.",
-         "2": "National supply from biomass residues only; Wellington allocated per capita share.",
-         "3": "National supply based on NZ Bioenergy Strategy, with some dedicated biomass plantations; Wellington allocated per capita share.",
-         "4": "Extreme biomass scenario via Scion Research - all suitable land converted to woody biomass production (3.3 million ha); Wellington allocated per capita share."
-       }, pdf: "/assets/onepage/BiomassSupply.pdf", info: "supply/biomass-supply" },
-
-       // Bomass supply 11
-       { name: "Type of Fuel", categoryId: 2, typeId: 3, pathwayStringIndex: 12, tags: ["National"], tooltips: {
-         "1": "Equal parts of biomass supply converted to solid, liquid and gaseous fuels (1/3 each).",
-         "2": "All biomass supply in solid form.",
-         "3": "All biomass supply converted to liquid fuels.",
-         "4": "All biomass supply converted to biogas."
-       }, pdf: "/assets/onepage/BioenergyType.pdf", info: "supply/bioenergy-type" },
-
+       //Demand
        // Travel Demand 13
        { name: "Travel Demand", categoryId: 1, typeId: 1, pathwayStringIndex: 15, tags: ["National"], tooltips: {
          "1":  "Travel demand per person (in passenger-kilometres) increases to 27% higher by 2050.",
@@ -102,29 +87,6 @@ define([], function() {
          "3": "Travel demand per person (in passenger-kilometres) declines to 21% lower by 2050.",
          "4": "Travel demand per person (in passenger-kilometres) declines significantly to 40% lower by 2050."
        }, pdf: "/assets/onepage/TravelDemand.pdf", info: "demand/travel-demand" },
-
-       // Public Transport 14
-       { name: "Public Transport", categoryId: 1, typeId: 1, pathwayStringIndex: 16, tags: ["Local", "Regional", "National"], tooltips: {
-         "1": "Bus and train mode shares stay at current levels of approximately 7% and 2% respectively.",
-         "2": "Bus mode share increases to 13-14% by 2050, train mode share stays at 2%.",
-         "3": "Bus mode share increases to 17-18% and train mode share increases to 4% by 2050.",
-         "4": "Bus mode share increases to 21-22% and train mode share increases to 5% by 2050."
-       }, pdf: "/assets/onepage/PublicTransport.pdf", info: "demand/public-transport" },
-
-      // Active Transport 15
-      { name: "Active Transport", categoryId: 1, typeId: 1, pathwayStringIndex: 17, tags: ["Local", "National"], tooltips: {
-        "1": "Walking and cycling mode shares stay at current levels of 2% and 1% respectively.",
-        "2": "Cycling mode share increases to 1.5% by 2050, walking mode share stays at 2%.",
-        "3": "Cycling mode share increases to 2.5-2.8% by 2050, walking mode share stays at 2%.",
-        "4": "Cycling mode share increases to 4-5% and walking mode share increases to 3% by 2050."
-       }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/active-transport" },
-
-       { name: "Vehicle occupancy", categoryId: 1, typeId: 1, pathwayStringIndex: 18, tags: ["Regional", "National"], tooltips: {
-         "1": "Average vehicle occupancies stay at current levels.",
-         "2": "Bus loadings increase from 25 to 40 passengers in 2020 as a result of higher capacity buses.",
-         "3": "Bus loadings as per Level 2; car occupancy increases from 1.54 to 2.5 by 2050 as a result of increased ride sharing.",
-         "4": "Car occupancy increases to 2.5 passengers by 2035 before plateauing, and bus loadings increase further to 60 passengers by 2040."
-        }, pdf: "/assets/onepage/VehicleOccupancies.pdf", info: "demand/vehicle-occupancy" },
 
       // Electrification of light vehicles 17
       { name: "Electrification of light vehicles", categoryId: 1, typeId: 1, pathwayStringIndex: 19, tags: ["National"], tooltips: {
@@ -134,6 +96,22 @@ define([], function() {
         "4": "Plug-in hybrids and full EVs reach 34% and 66% of the light vehicle fleet respectively by 2050."
        }, pdf: "/assets/onepage/ElectrificationLightVehicles.pdf", info: "demand/electrification-light-vehicles" },
 
+      // Active Transport 15
+      { name: "Active Transport", categoryId: 1, typeId: 1, pathwayStringIndex: 17, tags: ["Local", "National"], tooltips: {
+        "1": "Walking and cycling mode shares stay at current levels of 2% and 1% respectively.",
+        "2": "Cycling mode share increases to 1.5% by 2050, walking mode share stays at 2%.",
+        "3": "Cycling mode share increases to 2.5-2.8% by 2050, walking mode share stays at 2%.",
+        "4": "Cycling mode share increases to 4-5% and walking mode share increases to 3% by 2050."
+       }, pdf: "/assets/onepage/ActiveTransport.pdf", info: "demand/active-transport" },
+
+       // Public Transport 14
+       { name: "Public Transport", categoryId: 1, typeId: 1, pathwayStringIndex: 16, tags: ["Local", "Regional", "National"], tooltips: {
+         "1": "Bus and train mode shares stay at current levels of approximately 7% and 2% respectively.",
+         "2": "Bus mode share increases to 13-14% by 2050, train mode share stays at 2%.",
+         "3": "Bus mode share increases to 17-18% and train mode share increases to 4% by 2050.",
+         "4": "Bus mode share increases to 21-22% and train mode share increases to 5% by 2050."
+       }, pdf: "/assets/onepage/PublicTransport.pdf", info: "demand/public-transport" },
+
        // Electrification of public transport 18
        { name: "Electrification of public transport", categoryId: 1, typeId: 1, pathwayStringIndex: 20, tags: ["Local", "Regional", "National"], tooltips: {
          "1": "Electric trolley buses are replaced by diesel buses by 2020 on and no further electrification of passenger rail.",
@@ -141,6 +119,16 @@ define([], function() {
          "3": "Immediate transition to battery electric buses from 2020 with diesel buses phased out by 2035.",
          "4": "As per Level 3."
         }, pdf: "/assets/onepage/ElectrificationPT.pdf", info: "demand/electrification-pt" },
+
+
+       { name: "Vehicle occupancy", categoryId: 1, typeId: 1, pathwayStringIndex: 18, tags: ["Regional", "National"], tooltips: {
+         "1": "Average vehicle occupancies stay at current levels.",
+         "2": "Bus loadings increase from 25 to 40 passengers in 2020 as a result of higher capacity buses.",
+         "3": "Bus loadings as per Level 2; car occupancy increases from 1.54 to 2.5 by 2050 as a result of increased ride sharing.",
+         "4": "Car occupancy increases to 2.5 passengers by 2035 before plateauing, and bus loadings increase further to 60 passengers by 2040."
+        }, pdf: "/assets/onepage/VehicleOccupancies.pdf", info: "demand/vehicle-occupancy" },
+
+
 
         // Vehicle fuel efficiencies 19
         { name: "Vehicle fuel efficiencies", categoryId: 1, typeId: 1, pathwayStringIndex: 21, tags: ["National"], tooltips: {
@@ -158,13 +146,6 @@ define([], function() {
            "4": "By 2050, freight task decreases 30% from 2015 level."
          }, pdf: "/assets/onepage/FreightVolume.pdf", info: "demand/freight-volume" },
 
-          // Mode and efficiency 22.
-          { name: "Mode and efficiency", categoryId: 1, typeId: 1, pathwayStringIndex: 24, tags: ["National"], tooltips: {
-            "1": "No change in freight mode share or rail electrification. Small increase in vehicle loadings. Fuel efficiencies assumed fixed.",
-            "2": "By 2050, rail mode share increases from 19% to 22%, vehicle loadings increase by roughly 35%.",
-            "3": "By 2050, rail mode share increases to 25%, vehicle loadings increase by roughly 60%.",
-            "4": "By 2050, rail mode share increases to 30% and all rail travel is electrified, vehicle loadings increase by roughly 80%."
-          }, pdf: "/assets/onepage/FreightMode&Efficiency.pdf", info: "demand/freight-mode-and-efficiency" },
 
            // Domestic aviation 23.
            { name: "Domestic aviation", categoryId: 1, typeId: 1, pathwayStringIndex: 25, tags: ["National"], tooltips: {
@@ -181,6 +162,14 @@ define([], function() {
               "3": "Fuel consumption declines 20% from 2015 level.",
               "4": "Fuel consumption declines 50% from 2015 level."
             }, pdf: "/assets/onepage/DomesticNavigation.pdf", info: "demand/domestic-navigation" },
+
+          // Mode and efficiency 22.
+          { name: "Mode and efficiency", categoryId: 1, typeId: 1, pathwayStringIndex: 24, tags: ["National"], tooltips: {
+            "1": "No change in freight mode share or rail electrification. Small increase in vehicle loadings. Fuel efficiencies assumed fixed.",
+            "2": "By 2050, rail mode share increases from 19% to 22%, vehicle loadings increase by roughly 35%.",
+            "3": "By 2050, rail mode share increases to 25%, vehicle loadings increase by roughly 60%.",
+            "4": "By 2050, rail mode share increases to 30% and all rail travel is electrified, vehicle loadings increase by roughly 80%."
+          }, pdf: "/assets/onepage/FreightMode&Efficiency.pdf", info: "demand/freight-mode-and-efficiency" },
 
            // Space and water heating demand 26
            { name: "Space and water heating demand", categoryId: 1, typeId: 1, pathwayStringIndex: 28, tags: ["Local", "National"], tooltips: {
@@ -258,13 +247,29 @@ define([], function() {
             "4": "All cooking uses electricity by 2050."
           }, pdf: "/assets/onepage/CommercialCookingElectrification.pdf", info: "demand/commercial-cooking-electrification" },
 
+          //Other
+          // Forestry 5
+          { name: "Forestry", categoryId: 3, typeId: 1, pathwayStringIndex: 5, tags: ["Regional", "National"], tooltips: {
+            "1": "Native vegetation area remains constant, pine plantations all harvested at maturity and not replanted.",
+            "2": "Native vegetation area increases by 3 hectares per year, pine plantations all replanted after harvesting to maintain constant area.",
+            "3": "Native vegetation area increases by 6 hectares per year, pine plantation all replanted after harvesting and additional 8 hectares planted per year.",
+            "4": "Native vegetation area increases by 9 hectares per year, pine plantation all replanted after harvesting and additional 15 hectares planted per year."
+           }, pdf: "/assets/onepage/Forestry.pdf", info: "supply/forestry" },
+
+          // Livestock and their management 6
+          { name: "Livestock and their management", categoryId: 3, typeId: 1, pathwayStringIndex: 6, tags: ["Regional", "National"], tooltips: {
+            "1": "Cow numbers increase by 2% per year, sheep numbers remain constant, emissions per animal keep increasing at 0.7% per year.",
+            "2": "Cow numbers increase by 1% per year, sheep numbers decline by 2% per year, emissions per animal increase at reduced rate of 0.4% per year after 2020.",
+            "3": "Cow numbers remain constant, sheep numbers decline by 2% per year, emissions per animal increase remain constant after 2020.",
+            "4": "Cow numbers decline by 2% per year, sheep numbers decline by 3% per year, emissions per animal reduce by 0.7% per year after 2020."
+           }, pdf: "/assets/onepage/Agriculture.pdf", info: "supply/agriculture" },
+
           { name: "Solvent & product use", categoryId: 3, typeId: 1, pathwayStringIndex: 42, tags: ["National"], tooltips: {
             "1": "Total GHG emissions increase at 3.5% per year.",
             "2": "Total GHG emissions increase at 1% per year from 2015.",
             "3": "Total GHG emissions reduce at 2% per year from 2015.",
             "4": "Total GHG emissions reduce at 5% per year from 2015."
-          }, pdf: "/assets/onepage/SolventsAndProductUse.pdf", info: "demand/solvents-and-product-use" },
-
+          }, pdf: "/assets/onepage/SolventsAndProductUse.pdf", info: "demand/solvents-and-product-use" }
     ],
 
     ACTION_CATEGORIES: [
