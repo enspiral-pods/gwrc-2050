@@ -1,3 +1,7 @@
+if (!window.location.origin) {
+  window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port: '');
+}
+
 define([],
   function() {
   'use strict';
@@ -8,9 +12,8 @@ define([],
     ROTATE_WIDTH: 700,
     // apiUrl: "http://obscure-sierra-8645.herokuapp.com",
     // apiUrl: "http://2050-calculator-tool.decc.gov.uk",
-    apiUrl: (function() { return "http://"+window.location.host }()),
+    apiUrl: (function() { return window.location.origin }()),
     // siteUrl: "http://localhost:4567"
-    siteUrl: (function() { return "http://"+window.location.host }())
+    siteUrl: (function() { return window.location.origin }())
   };
 });
-
