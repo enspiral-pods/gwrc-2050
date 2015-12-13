@@ -4251,7 +4251,147 @@ class Model
     attach_function 'ghg_k25', [], ExcelValue.by_value
     attach_function 'ghg_l25', [], ExcelValue.by_value
     attach_function 'ghg_m25', [], ExcelValue.by_value
+    attach_function 'ghg_d39', [], ExcelValue.by_value
+    attach_function 'ghg_e39', [], ExcelValue.by_value
+    attach_function 'ghg_f39', [], ExcelValue.by_value
+    attach_function 'ghg_g39', [], ExcelValue.by_value
+    attach_function 'ghg_h39', [], ExcelValue.by_value
+    attach_function 'ghg_i39', [], ExcelValue.by_value
+    attach_function 'ghg_j39', [], ExcelValue.by_value
+    attach_function 'ghg_k39', [], ExcelValue.by_value
+    attach_function 'ghg_l39', [], ExcelValue.by_value
+    attach_function 'ghg_m39', [], ExcelValue.by_value
+    attach_function 'ghg_d40', [], ExcelValue.by_value
+    attach_function 'ghg_e40', [], ExcelValue.by_value
+    attach_function 'ghg_f40', [], ExcelValue.by_value
+    attach_function 'ghg_g40', [], ExcelValue.by_value
+    attach_function 'ghg_h40', [], ExcelValue.by_value
+    attach_function 'ghg_i40', [], ExcelValue.by_value
+    attach_function 'ghg_j40', [], ExcelValue.by_value
+    attach_function 'ghg_k40', [], ExcelValue.by_value
+    attach_function 'ghg_l40', [], ExcelValue.by_value
+    attach_function 'ghg_m40', [], ExcelValue.by_value
+    attach_function 'ghg_d41', [], ExcelValue.by_value
+    attach_function 'ghg_e41', [], ExcelValue.by_value
+    attach_function 'ghg_f41', [], ExcelValue.by_value
+    attach_function 'ghg_g41', [], ExcelValue.by_value
+    attach_function 'ghg_h41', [], ExcelValue.by_value
+    attach_function 'ghg_i41', [], ExcelValue.by_value
+    attach_function 'ghg_j41', [], ExcelValue.by_value
+    attach_function 'ghg_k41', [], ExcelValue.by_value
+    attach_function 'ghg_l41', [], ExcelValue.by_value
+    attach_function 'ghg_m41', [], ExcelValue.by_value
+    attach_function 'ghg_d42', [], ExcelValue.by_value
+    attach_function 'ghg_e42', [], ExcelValue.by_value
+    attach_function 'ghg_f42', [], ExcelValue.by_value
+    attach_function 'ghg_g42', [], ExcelValue.by_value
+    attach_function 'ghg_h42', [], ExcelValue.by_value
+    attach_function 'ghg_i42', [], ExcelValue.by_value
+    attach_function 'ghg_j42', [], ExcelValue.by_value
+    attach_function 'ghg_k42', [], ExcelValue.by_value
+    attach_function 'ghg_l42', [], ExcelValue.by_value
+    attach_function 'ghg_m42', [], ExcelValue.by_value
+    attach_function 'ghg_d43', [], ExcelValue.by_value
     attach_function 'ghg_e43', [], ExcelValue.by_value
+    attach_function 'ghg_f43', [], ExcelValue.by_value
+    attach_function 'ghg_g43', [], ExcelValue.by_value
+    attach_function 'ghg_h43', [], ExcelValue.by_value
+    attach_function 'ghg_i43', [], ExcelValue.by_value
+    attach_function 'ghg_j43', [], ExcelValue.by_value
+    attach_function 'ghg_k43', [], ExcelValue.by_value
+    attach_function 'ghg_l43', [], ExcelValue.by_value
+    attach_function 'ghg_m43', [], ExcelValue.by_value
+    attach_function 'ghg_d44', [], ExcelValue.by_value
+    attach_function 'ghg_e44', [], ExcelValue.by_value
+    attach_function 'ghg_f44', [], ExcelValue.by_value
+    attach_function 'ghg_g44', [], ExcelValue.by_value
+    attach_function 'ghg_h44', [], ExcelValue.by_value
+    attach_function 'ghg_i44', [], ExcelValue.by_value
+    attach_function 'ghg_j44', [], ExcelValue.by_value
+    attach_function 'ghg_k44', [], ExcelValue.by_value
+    attach_function 'ghg_l44', [], ExcelValue.by_value
+    attach_function 'ghg_m44', [], ExcelValue.by_value
+    attach_function 'ghg_d45', [], ExcelValue.by_value
+    attach_function 'ghg_e45', [], ExcelValue.by_value
+    attach_function 'ghg_f45', [], ExcelValue.by_value
+    attach_function 'ghg_g45', [], ExcelValue.by_value
+    attach_function 'ghg_h45', [], ExcelValue.by_value
+    attach_function 'ghg_i45', [], ExcelValue.by_value
+    attach_function 'ghg_j45', [], ExcelValue.by_value
+    attach_function 'ghg_k45', [], ExcelValue.by_value
+    attach_function 'ghg_l45', [], ExcelValue.by_value
+    attach_function 'ghg_m45', [], ExcelValue.by_value
+    attach_function 'ghg_d46', [], ExcelValue.by_value
+    attach_function 'ghg_e46', [], ExcelValue.by_value
+    attach_function 'ghg_f46', [], ExcelValue.by_value
+    attach_function 'ghg_g46', [], ExcelValue.by_value
+    attach_function 'ghg_h46', [], ExcelValue.by_value
+    attach_function 'ghg_i46', [], ExcelValue.by_value
+    attach_function 'ghg_j46', [], ExcelValue.by_value
+    attach_function 'ghg_k46', [], ExcelValue.by_value
+    attach_function 'ghg_l46', [], ExcelValue.by_value
+    attach_function 'ghg_m46', [], ExcelValue.by_value
+    attach_function 'ghg_d47', [], ExcelValue.by_value
+    attach_function 'ghg_e47', [], ExcelValue.by_value
+    attach_function 'ghg_f47', [], ExcelValue.by_value
+    attach_function 'ghg_g47', [], ExcelValue.by_value
+    attach_function 'ghg_h47', [], ExcelValue.by_value
+    attach_function 'ghg_i47', [], ExcelValue.by_value
+    attach_function 'ghg_j47', [], ExcelValue.by_value
+    attach_function 'ghg_k47', [], ExcelValue.by_value
+    attach_function 'ghg_l47', [], ExcelValue.by_value
+    attach_function 'ghg_m47', [], ExcelValue.by_value
+    attach_function 'ghg_d48', [], ExcelValue.by_value
+    attach_function 'ghg_e48', [], ExcelValue.by_value
+    attach_function 'ghg_f48', [], ExcelValue.by_value
+    attach_function 'ghg_g48', [], ExcelValue.by_value
+    attach_function 'ghg_h48', [], ExcelValue.by_value
+    attach_function 'ghg_i48', [], ExcelValue.by_value
+    attach_function 'ghg_j48', [], ExcelValue.by_value
+    attach_function 'ghg_k48', [], ExcelValue.by_value
+    attach_function 'ghg_l48', [], ExcelValue.by_value
+    attach_function 'ghg_m48', [], ExcelValue.by_value
+    attach_function 'ghg_d49', [], ExcelValue.by_value
+    attach_function 'ghg_e49', [], ExcelValue.by_value
+    attach_function 'ghg_f49', [], ExcelValue.by_value
+    attach_function 'ghg_g49', [], ExcelValue.by_value
+    attach_function 'ghg_h49', [], ExcelValue.by_value
+    attach_function 'ghg_i49', [], ExcelValue.by_value
+    attach_function 'ghg_j49', [], ExcelValue.by_value
+    attach_function 'ghg_k49', [], ExcelValue.by_value
+    attach_function 'ghg_l49', [], ExcelValue.by_value
+    attach_function 'ghg_m49', [], ExcelValue.by_value
+    attach_function 'ghg_d50', [], ExcelValue.by_value
+    attach_function 'ghg_e50', [], ExcelValue.by_value
+    attach_function 'ghg_f50', [], ExcelValue.by_value
+    attach_function 'ghg_g50', [], ExcelValue.by_value
+    attach_function 'ghg_h50', [], ExcelValue.by_value
+    attach_function 'ghg_i50', [], ExcelValue.by_value
+    attach_function 'ghg_j50', [], ExcelValue.by_value
+    attach_function 'ghg_k50', [], ExcelValue.by_value
+    attach_function 'ghg_l50', [], ExcelValue.by_value
+    attach_function 'ghg_m50', [], ExcelValue.by_value
+    attach_function 'ghg_d51', [], ExcelValue.by_value
+    attach_function 'ghg_e51', [], ExcelValue.by_value
+    attach_function 'ghg_f51', [], ExcelValue.by_value
+    attach_function 'ghg_g51', [], ExcelValue.by_value
+    attach_function 'ghg_h51', [], ExcelValue.by_value
+    attach_function 'ghg_i51', [], ExcelValue.by_value
+    attach_function 'ghg_j51', [], ExcelValue.by_value
+    attach_function 'ghg_k51', [], ExcelValue.by_value
+    attach_function 'ghg_l51', [], ExcelValue.by_value
+    attach_function 'ghg_m51', [], ExcelValue.by_value
+    attach_function 'ghg_d52', [], ExcelValue.by_value
+    attach_function 'ghg_e52', [], ExcelValue.by_value
+    attach_function 'ghg_f52', [], ExcelValue.by_value
+    attach_function 'ghg_g52', [], ExcelValue.by_value
+    attach_function 'ghg_h52', [], ExcelValue.by_value
+    attach_function 'ghg_i52', [], ExcelValue.by_value
+    attach_function 'ghg_j52', [], ExcelValue.by_value
+    attach_function 'ghg_k52', [], ExcelValue.by_value
+    attach_function 'ghg_l52', [], ExcelValue.by_value
+    attach_function 'ghg_m52', [], ExcelValue.by_value
+    attach_function 'ghg_e69', [], ExcelValue.by_value
     # end of GHG
     attach_function 'electricity_d63', [], ExcelValue.by_value
     attach_function 'electricity_e63', [], ExcelValue.by_value
@@ -4513,6 +4653,16 @@ class Model
     attach_function 'electricity_k115', [], ExcelValue.by_value
     attach_function 'electricity_l115', [], ExcelValue.by_value
     attach_function 'electricity_m115', [], ExcelValue.by_value
+    attach_function 'electricity_d116', [], ExcelValue.by_value
+    attach_function 'electricity_e116', [], ExcelValue.by_value
+    attach_function 'electricity_f116', [], ExcelValue.by_value
+    attach_function 'electricity_g116', [], ExcelValue.by_value
+    attach_function 'electricity_h116', [], ExcelValue.by_value
+    attach_function 'electricity_i116', [], ExcelValue.by_value
+    attach_function 'electricity_j116', [], ExcelValue.by_value
+    attach_function 'electricity_k116', [], ExcelValue.by_value
+    attach_function 'electricity_l116', [], ExcelValue.by_value
+    attach_function 'electricity_m116', [], ExcelValue.by_value
     attach_function 'electricity_d45', [], ExcelValue.by_value
     attach_function 'electricity_e45', [], ExcelValue.by_value
     attach_function 'electricity_f45', [], ExcelValue.by_value
@@ -6648,6 +6798,8 @@ class Model
     attach_function 'output_finalenergydemand', [], ExcelValue.by_value
     attach_function 'output_flows', [], ExcelValue.by_value
     attach_function 'output_ghg_by_ipcc_sector', [], ExcelValue.by_value
+    attach_function 'output_ghg_by_sector', [], ExcelValue.by_value
+    attach_function 'output_ghg_by_sector2', [], ExcelValue.by_value
     attach_function 'output_ghg_percentage_reduction', [], ExcelValue.by_value
     attach_function 'output_heating_mix', [], ExcelValue.by_value
     attach_function 'output_imports_proportion', [], ExcelValue.by_value
@@ -6676,6 +6828,8 @@ class Model
     attach_function 'output_finalenergydemand', [], ExcelValue.by_value
     attach_function 'output_flows', [], ExcelValue.by_value
     attach_function 'output_ghg_by_ipcc_sector', [], ExcelValue.by_value
+    attach_function 'output_ghg_by_sector', [], ExcelValue.by_value
+    attach_function 'output_ghg_by_sector2', [], ExcelValue.by_value
     attach_function 'output_ghg_percentage_reduction', [], ExcelValue.by_value
     attach_function 'output_heating_mix', [], ExcelValue.by_value
     attach_function 'output_imports_proportion', [], ExcelValue.by_value
