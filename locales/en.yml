@@ -1,6 +1,9 @@
 ---
 en:
-  decc: 'Department of energy and climate change'
+  wcc: 'Wellington City Council'
+  neri: 'NERI'
+  enspiral: 'Enspiral Dev Academy'
+
   your_pathway: 'Your pathway'
   nav: 'Pathway actions'
   target_time: '2050 target:'
@@ -177,25 +180,18 @@ en:
       question: "Why can't I hit the 80% target?"
       answer: "You must reduce energy demand and decarbonise energy supply - so make sure you change both demand and supply levers. Have you electrified transport, heat or industry? If not, these sectors will be consuming fossil fuels and could stop you from meeting the target. Despite big increases in electricity use, liquid fuel, such as biofuel, will still be needed in 2050. So take a look at the 'flow' view to make sure you have enough low carbon liquid fuel."
     q4:
-      question: "What does the dynamic landscape do?"
-      answer: "As you make changes to each slider, the image will change to reflect the decision you take. For example, if you increase the level of offshore wind, more turbines at sea will appear."
-    q5:
       question: "Where do the figures come from?"
-      answer: "The data behind the calculator is rooted in scientific and engineering realities, looking at what is thought to be physically and technically possible in each sector. To do this, a broad range of experts were consulted from inside and outside government. For more background on the calculator go to: <a href=\"https://www.gov.uk/2050-pathways-analysis\" target=\"_blank\">https://www.gov.uk/2050-pathways-analysis</a>."
-    q6:
+      answer: "The data behind the calculator is rooted in scientific and engineering realities, looking at what is thought to be physically and technically possible in each sector. To do this, a broad range of experts were consulted from inside and outside government."
+    q5:
       question: "Why do the graph views show that demand is lower than supply?"
       answer: "Some of the energy supply creates wasted energy - or a 'loss' - when converted from one format to another (such as when generating electricity). So supply will always have to exceed the total energy demand. Take a look at the 'flow' view to see where these losses come from."
 
-
   share:
     congratulate: "Congratulations on completing your pathway!"
-    body: "These three charts summarise your choices for the demand and supply options you have selected and – crucially – the impact on emissions. The landscape above provides a visual overview of the changes you’ve made.
-
+    body: "These three charts summarise your choices for the demand and supply options you have selected and – crucially – the impact on emissions.
 
 Hopefully the calculator has highlighted the scale of the challenge – and the range of options available – to decarbonise the way we use energy.
 
+Please share your pathway with others to help build interest in the future of energy in Wellington City and New Zealand using the hashtag #Welly2050.
 
-Please share your pathway with others to help build interest in the future of energy in the UK.
-
-
-To find out more about the calculator take a look at <a href=\"https://www.gov.uk/2050-pathways-analysis\" target=\"_blank\">https://www.gov.uk/2050-pathways-analysis</a>"
+If you wish to share your pathway or have any questions, feel free to contact Tom.Pettit@wcc.govt.nz"
