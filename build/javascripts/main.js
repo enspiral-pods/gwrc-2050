@@ -18423,10 +18423,10 @@ define('data/pathwayData',[], function() {
 
        // Electricity imports from national grid 3
        { name: "Electricity imports from national grid", categoryId: 2, typeId: 1, pathwayStringIndex: 3, tags: ["National"], tooltips: {
-         "1": "Electricity mix remains similar to today resulting in constant emissions factor of 0.14 kg CO2e / kWh.",
-         "2": "Electricity mix moves to 90% renewable by 2025 and then remains steady with emissions factor of 0.07 kg CO2e / kWh.",
-         "3": "Electricity mix transitions smoothly to 100% renewable by 2050 (emissions factor of 0.03 kg CO2e / kWh).",
-         "4": "Electricity mix transitions to 100% renewable by 2030 (emissions factor of 0.03 kg CO2e / kWh)."
+         "1": "Electricity mix remains similar to today, emissions factor increases to 0.17 kg CO2e / kWh in 2050.",
+         "2": "Electricity mix moves to 85% renewable by 2025 and then remains steady; emissions factor of 0.085 kg CO2e / kWh in 2050.",
+         "3": "Electricity mix moves to 90% renewable by 2025 and then remains steady; emissions factor of 0.053 kg CO2e / kWh in 2050",
+         "4": "Electricity mix moves to 100% renewable by 2030; emissions factor of 0.023 kg CO2e / kWh in 2050."
         }, pdf: "/assets/onepage/NationalGridElectricity.pdf", info: "supply/electricity-imports-national-grid" },
 
        { name: "Biomass supply", categoryId: 2, typeId: 1, pathwayStringIndex: 11, tags: ["National"], tooltips: {
@@ -18437,8 +18437,8 @@ define('data/pathwayData',[], function() {
        }, pdf: "/assets/onepage/BiomassSupply.pdf", info: "supply/biomass-supply" },
 
        // Bomass supply 11
-       { name: "Biomass End Use", categoryId: 2, typeId: 3, pathwayStringIndex: 12, tags: ["National"], tooltips: {
-         "1": "Equal parts of biomass supply converted to solid, liquid and gaseous fuels (1/3 each).",
+       { name: "Type of bioenergy", categoryId: 2, typeId: 3, pathwayStringIndex: 12, tags: ["National"], tooltips: {
+         "1": "Prioritised to replace solid, then liquid, then gaseous fuels.",
          "2": "All biomass supply in solid form.",
          "3": "All biomass supply converted to liquid fuels.",
          "4": "All biomass supply converted to biogas."
@@ -18491,10 +18491,10 @@ define('data/pathwayData',[], function() {
 
       // Electrification of light vehicles 17
       { name: "Electrification of light vehicles", categoryId: 1, typeId: 1, pathwayStringIndex: 19, tags: ["National"], tooltips: {
-        "1": "Limited uptake of electric vehicles and plug-in hybrids, totalling 7% of the light vehicle fleet by 2050.",
-        "2": "As per Level 1",
-        "3": "Plug-in hybrids and full EVs reach 38% and 4% of the light vehicle fleet respectively by 2050.",
-        "4": "Plug-in hybrids and full EVs reach 34% and 66% of the light vehicle fleet respectively by 2050."
+        "1": "By 2050, 4% of car travel is done in plug-in hybrids and 2% in pure EVs.",
+        "2": "By 2050, 16% of car travel is done in plug-in hybrids and 8% in pure EVs.",
+        "3": "By 2050, 30% of car travel is done in plug-in hybrids and 16% in pure EVs.",
+        "4": "By 2050, 20% of car travel is done in plug-in hybrids and 80% in pure EVs."
        }, pdf: "/assets/onepage/ElectrificationLightVehicles.pdf", info: "demand/electrification-light-vehicles" },
 
       // Active Transport 15
@@ -18507,10 +18507,10 @@ define('data/pathwayData',[], function() {
 
        // Public Transport 14
        { name: "Public Transport", categoryId: 1, typeId: 1, pathwayStringIndex: 16, tags: ["Local", "Regional", "National"], tooltips: {
-         "1": "Bus and train mode shares stay at current levels of approximately 7% and 2% respectively.",
-         "2": "Bus mode share increases to 13-14% by 2050, train mode share stays at 2%.",
-         "3": "Bus mode share increases to 17-18% and train mode share increases to 4% by 2050.",
-         "4": "Bus mode share increases to 21-22% and train mode share increases to 5% by 2050."
+         "1": "Bus and train mode shares stay at current levels of approximately 4% and 5% respectively.",
+         "2": "Bus mode share increases to 7-8% by 2050; train mode share stays at 5%.",
+         "3": "Bus mode share increases to 9-10%; train mode share increases to 8% by 2050.",
+         "4": "Bus mode share increases to 12-13%; train mode share increases to 10% by 2050."
        }, pdf: "/assets/onepage/PublicTransport.pdf", info: "demand/public-transport" },
 
        // Electrification of public transport 18
@@ -18565,11 +18565,11 @@ define('data/pathwayData',[], function() {
             }, pdf: "/assets/onepage/DomesticNavigation.pdf", info: "demand/domestic-navigation" },
 
           // Mode and efficiency 22.
-          { name: "Mode and efficiency", categoryId: 1, typeId: 1, pathwayStringIndex: 24, tags: ["National"], tooltips: {
-            "1": "No change in freight mode share or rail electrification. Small increase in vehicle loadings. Fuel efficiencies assumed fixed.",
-            "2": "By 2050, rail mode share increases from 19% to 22%, vehicle loadings increase by roughly 35%.",
-            "3": "By 2050, rail mode share increases to 25%, vehicle loadings increase by roughly 60%.",
-            "4": "By 2050, rail mode share increases to 30% and all rail travel is electrified, vehicle loadings increase by roughly 80%."
+          { name: "Freight Mode and efficiency", categoryId: 1, typeId: 1, pathwayStringIndex: 24, tags: ["National"], tooltips: {
+            "1": "By 2050, share of freight moved by rail decreases from 14% to 12%. Freight movements are 7% more energy-efficient.",
+            "2": "By 2050, share of freight moved by rail increases from 14% to 16%. Freight movements are 27% more energy-efficient.",
+            "3": "By 2050, share of freight moved by rail increases from 14% to 18%. Freight movements are 37% more energy-efficient.",
+            "4": "By 2050, share of freight moved by rail increases from 14% to 25%. Freight movements are 45% more energy-efficient."
           }, pdf: "/assets/onepage/FreightMode&Efficiency.pdf", info: "demand/freight-mode-and-efficiency" },
 
            // Space and water heating demand 26
@@ -18613,9 +18613,9 @@ define('data/pathwayData',[], function() {
 
           // Energy intensity of industry 33
           { name: "Energy intensity of industry", categoryId: 1, typeId: 3, max: 3, pathwayStringIndex: 35, tags: ["National"], tooltips: {
-            "1": "Energy intensity improves by 0.5% per year; fuel mix remains the same as today.",
-            "2": "Energy intensity improves by 1% per year; some substitution of electricity for gas and LPG/diesel.",
-            "3": "Energy intensity improves by 1.5% per year; considerable substitution of electricity for gas and LPG/diesel.",
+            "1": "Energy intensity improves by 1% per year; fuel mix remains the same as today.",
+            "2": "Energy intensity improves by 1.5% per year; some substitution of electricity for gas and LPG/diesel.",
+            "3": "Energy intensity improves by 2% per year; considerable substitution of electricity for gas and LPG/diesel.",
           }, pdf: "/assets/onepage/IndustrialEnergyIntensity.pdf", info: "demand/industrial-energy-intensity" },
 
           // Commercial demand for heating and cooling 35
