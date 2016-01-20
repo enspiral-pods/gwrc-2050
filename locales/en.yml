@@ -174,17 +174,30 @@ en:
       question: "How does the calculator work?"
       answer: "For a re-cap of the introduction slides click <a href=\"/#/home\">here</a>."
     q2:
-      question: "Why won't the emissions change when I move the supply sliders?"
-      answer: "Take a look at the 'Electricity' tab. Are you oversupplying electricity? Excess electricity supply will not help achieve an 80% cut."
-    q3:
       question: "Why can't I hit the 80% target?"
       answer: "You must reduce energy demand and decarbonise energy supply - so make sure you change both demand and supply levers. Have you electrified transport, heat or industry? If not, these sectors will be consuming fossil fuels and could stop you from meeting the target. Despite big increases in electricity use, liquid fuel, such as biofuel, will still be needed in 2050. So take a look at the 'flow' view to make sure you have enough low carbon liquid fuel."
-    q4:
+    q3:
       question: "Where do the figures come from?"
-      answer: "The data behind the calculator is rooted in scientific and engineering realities, looking at what is thought to be physically and technically possible in each sector. To do this, a broad range of experts were consulted from inside and outside government."
+      answer: "The data behind the calculator is rooted in scientific and engineering realities, looking at what is thought to be physically and technically possible in each sector. To do this, published data and projections were used wherever possible, and a broad range of experts were consulted. Source include the [Wellington Greenhouse Gas Inventory](http://www.gw.govt.nz/ghg/), the [EECA Energy End Use Database](http://enduse.eeca.govt.nz/), and many more."
+    q4:
+      question: "How are the slider levels set?"
+      answer: "The levels have been developed based on the following working definitions:
+        Level 1 - the least effort possible and no significant technological or behavioural changes.
+        Level 2 - a reasonable level of effort.
+        Level 3 - a highly ambitious level of effort.
+        Level 4 - an optimistic upper end of what is thought to be physically plausible.
+        For most sliders, 'Business as usual' will be somewhere between Level 1 and Level 2. When the choice is A to D, this describes different scenarios rather than changes in effort. If you wish to give feedback on the assumptions made, see 'How can I see the full model and give feedback?'"
     q5:
+      question: "How are Wellington City's emissions calculated?"
+      answer: "The calculator uses the same methodology as, and is calibrated to, [Wellington Greenhouse Gas Inventory](http://www.gw.govt.nz/ghg/). This follows an internationally accepted emissions accounting method for cities."
+    q6:
       question: "Why do the graph views show that demand is lower than supply?"
       answer: "Some of the energy supply creates wasted energy - or a 'loss' - when converted from one format to another (such as when generating electricity). So supply will always have to exceed the total energy demand. Take a look at the 'flow' view to see where these losses come from."
+    q7:
+      question: "How can I see the full model and give feedback?"
+      answer: "The calculator is an open tool and WCC intends to update it based on new or better information. WCC invites feedback on improvements to the tool and its underlying data and assumptions, or requests to access the full spreadsheet model, by email to tom.pettit@wcc.govt.nz."
+    
+
 
   share:
     congratulate: "Congratulations on completing your pathway!"
