@@ -7,10 +7,10 @@
 
 .main-nav
   height: 100vh
-  color: #ffffff
+  color: $color-intro-text
 
   a
-    color: #ffffff
+    color: $color-intro-text
     text-decoration: none
 
   ul
@@ -20,7 +20,7 @@
     position: relative
     height: 100%
     @include col(50%)
-    background: #2C313B
+    background: $color-darkest  
     padding: 2em 0
 
     .logo
@@ -54,6 +54,7 @@
 
       &.is-active
         background: $color-highlight
+        color: $color-intro-text
 
     .exit
       position: absolute
@@ -70,17 +71,20 @@
     background: $color-highlight
     padding: 2em 1em
     overflow: auto
-
+    color: $color-button-text
+    
     h3
       padding: 1em 0 0
-
+      font-family: $font-bold
     ul
       li
 
         a
+          font-family: $font-bold
           display: inline-block
           width: 100%
           padding: 0.5em 0.75em
+          color: $color-button-text
 
           &.is-active
             font-family: $font-bold

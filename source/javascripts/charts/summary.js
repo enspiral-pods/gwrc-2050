@@ -2,8 +2,8 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
   'use strict';
 
   var pink = "#d53980";
-  var peach = "#d43939";
-  var green = "#28a197";
+  var peach = "#C8306E";
+  var green = "#11CDDE";
 
   function color (d) {
     return d >= 0 ? green : peach
@@ -32,7 +32,7 @@ define(['knockout', 'd3', 'charts/chart'], function(ko, d3, Chart) {
     }
 
     self.outerWidth = width || self.outerWidth;
-    self.outerHeight = height ||self.outerHeight;
+    self.outerHeight = height || self.outerHeight;
 
     self.width = self.outerWidth - self.margin.left - self.margin.right;
     self.height = self.outerHeight - self.margin.top - self.margin.bottom;

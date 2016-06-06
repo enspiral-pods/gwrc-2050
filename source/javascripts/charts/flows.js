@@ -53,45 +53,45 @@ define(['knockout', 'd3', 'charts/chart', 'raphael', 'sankey'], function(ko, d3,
 
     // Colours
     self.sankey.setColors({
-      "Coal reserves": self.colours(0),
-      "Coal": self.colours(0),
-      "Coal imports": self.colours(0),
+      "Coal reserves": self.colours(3),
+      "Coal": self.colours(3),
+      "Coal imports": self.colours(3),
 
-      "Oil reserves": self.colours(1),
-      "Oil": self.colours(1),
-      "Oil imports": self.colours(1),
+      "Oil reserves": self.colours(2),
+      "Oil": self.colours(2),
+      "Oil imports": self.colours(2),
 
-      "Gas reserves": self.colours(2),
-      "Natural Gas": self.colours(2),
-      "Gas imports": self.colours(2),
+      "Gas reserves": self.colours(8),
+      "Natural Gas": self.colours(8),
+      "Gas imports": self.colours(8),
 
-      "Solar": self.colours(3),
-      "Solar Thermal": self.colours(3),
-      "Solar PV": self.colours(3),
+      "Solar": self.colours(0),
+      "Solar Thermal": self.colours(0),
+      "Solar PV": self.colours(0),
 
       "UK land based bioenergy": self.colours(4),
-      "Bio-conversion": self.colours(4),
-      "Marine algae": self.colours(4),
-      "Agricultural 'waste'": self.colours(4),
-      "Other waste": self.colours(4),
-      "Biomass imports": self.colours(4),
-      "Biofuel imports": self.colours(4),
+      "Bio-conversion": self.colours(11),
+      "Marine algae": self.colours(11),
+      "Agricultural 'waste'": self.colours(11),
+      "Other waste": self.colours(11),
+      "Biomass imports": self.colours(11),
+      "Biofuel imports": self.colours(11),
 
-      "Solid": self.colours(5),
-      "Liquid": self.colours(6),
-      "Gas": self.colours(7),
+      "Solid": self.colours(3),
+      "Liquid": self.colours(2),
+      "Gas": self.colours(1),
 
-      "Electricity grid": self.colours(8),
-      "Thermal generation": self.colours(8),
-      "CHP": self.colours(9),
-      "Nuclear": self.colours(10),
+      "Electricity grid": self.colours(12),
+      "Thermal generation": self.colours(9),
+      "CHP": self.colours(10),
+      "Nuclear": self.colours(0),
 
-      "District heating": self.colours(9),
-      "Pumped heat": self.colours(9),
+      "District heating": self.colours(7),
+      "Pumped heat": self.colours(8),
       "Useful district heat": self.colours(9),
-      "CHP Heat": self.colours(9),
+      "CHP Heat": self.colours(10),
 
-      "Electricity imports": self.colours(8),
+      "Electricity imports": self.colours(14),
       "Wind": self.colours(11),
       "Tidal": self.colours(11),
       "Wave": self.colours(11),
@@ -99,9 +99,9 @@ define(['knockout', 'd3', 'charts/chart', 'raphael', 'sankey'], function(ko, d3,
       "Hydro": self.colours(11),
 
       "H2 conversion": self.colours(12),
-      "Final electricity": self.colours(8),
-      "Over generation / exports": self.colours(8),
-      "H2": self.colours(12)
+      "Final electricity": self.colours(11),
+      "Over generation / exports": self.colours(6),
+      "H2": self.colours(5)
     });
 
     // Add the emissions
