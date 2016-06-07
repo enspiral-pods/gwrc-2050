@@ -133,11 +133,16 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
       var box, box_name, color, _results;
       _results = [];
       for (box_name in colors) {
+        console.log('box_name', box_name, !__hasProp.call(colors, box_name))
         if (!__hasProp.call(colors, box_name)) continue;
         color = colors[box_name];
+        console.log('color', color)
         box = this.find_or_create_transformation_box(box_name);
+        console.log('box', box)
         _results.push(box.line_colour = colors[box.name] || box.line_colour);
+        // NOTE electricity imports setting to pink?
       }
+      console.log('_results', _results)
       return _results;
     };
 
