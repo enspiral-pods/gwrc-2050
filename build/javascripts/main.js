@@ -10261,93 +10261,58 @@ define('charts/chart',['d3'], function(d3) {
       }
 
       self.colours = function(index, key) {
-
         var colors = [
 
-          "#28A197", // green
+          "#FFDD00", // wcc yellow 0
+          
+          "#474747", // dark grey 1
+          "#58595B",
+          "#000",
 
-          "#C23474", // pink
+          "#DBDBDB", // light grey 4
+          "#fff",
+          "#BDBDBD",
 
-          "#5A6378", // blue
+          "#FF2F84", // pink 7
+          "#C8306E",
+          "#A93061",
+          "#873B5A",
 
-          "#A7CECB", // green
-
-          "#A12B61", // pink
-
-          "#3867AF", // blue
-
-          "#2D7883", // green
-
-          "#782048", // pink
-
-          // more greens
-
-          "#26A197",
-          "#028090",
-          "#8BA6A9",
-          "#85BDBF",
-          "#C9FBFF",
-          "#037171",
-          "#00B9AE",
-          "#40ACA4",
-          "#68BDB6",
-          "#8ACCC7",
-          "#B3DEDB",
-          "#D6EDEB",
-          "#95CFCA",
-          "#29827E",
-
-          // more pinks
-
-          "#531632",
-          "#D53980",
-          "#C96E79",
-          "#9E1946",
-          "#710627",
-          "#A04668",
-          "#9A275A",
-          "#F75FA4",
-
-          // more blues
-
-          "#2978A0",
-          "#2D3E5B",
-          "#8193AD",
-          "#253031"
+          "#11CDDE", // blue 11
+          "#23B0BD",
+          "#34939C",
+          "#46767B"
         ];
 
         var keys = {
-          "0.01 gw geothermal stations": 18,
-          "1 gw gas standby power stations": 25,
-          "1.2 gw coal gas or biomass power stations with ccs": 0,
-          "2 gw coal gas or biomass power stations without ccs": 14,
-          "215 kt/y waste to energy conversion facilities": 32,
-          "3 gw nuclear power station": 7,
-          "agriculture": 19,
-          "agriculture and land use": 19,
-          "agricultural 'waste'": 19,
+          "0.01 gw geothermal stations": 11,
+          "1 gw gas standby power stations": 7,
+          "1.2 gw coal gas or biomass power stations with ccs": 3,
+          "2 gw coal gas or biomass power stations without ccs": 2,
+          "215 kt/y waste to energy conversion facilities": 12,
+          "agriculture": 11,
+          "agriculture and land use": 12,
+          "agricultural 'waste'": 13,
           "bikes": 6,
-          "biocrops": 4,
-          "bioenergy": 27,
-          "uk bioenergy": 27,
-          "imported bioenergy": 27,
-          "bioenergy credit": 27,
-          "bioenergy imports": 27,
+          "biocrops": 13,
+          "bioenergy": 12,
+          "imported bioenergy": 14,
+          "bioenergy credit": 11,
+          "bioenergy imports": 12,
           "biomass/coal power stations": 14,
           "biomatter to fuel conversion": 12,
-          "buildings": 23,
-          "carbon capture": 0,
-          "carbon capture storage (ccs)": 0,
-          "coal": 5,
-          "uk coal": 5,
+          "buildings": 1,
+          "carbon capture": 2,
+          "carbon capture storage (ccs)": 3,
+          "coal": 3,
           "imported coal": 5,
           "combustion + ccs": 0,
           //"commercial heating and cooling": 0,
           //"commercial lighting, appliances, and catering": 0,
           //"conventional cars and buses": 0,
           //"conventional thermal plant": 0,
-          "distributed solar pv": 20,
-          "distributed solar thermal": 24,
+          "distributed solar pv": 0,
+          "distributed solar thermal": 0,
           //"district heating effective demand": 0,
           //"domestic aviation": 0,
           //"domestic freight": 0,
@@ -10355,71 +10320,68 @@ define('charts/chart',['d3'], function(d3) {
           //"domestic insulation": 0,
           //"domestic lighting, appliances, and cooking": 0,
           //"domestic space heating and hot water": 0,
-          "electric cars and buses": 30,
-          "electricity": 31,
-          "electricity exports": 31,
-          "electricity grid distribution": 31,
-          "electricity imports": 31,
-          "energy crops": 4,
-          "energy from waste": 32,
-          "environmental heat": 1,
-          "finance": 21,
-          "finance cost": 21,
-          "forest": 9,
-          "fossil fuel transfers": 33,
-          "fossil fuels": 33,
-          "fuel cell cars and buses": 2,
-          "fuel combustion": 33,
-          "gas": 25,
-          "imported gas": 26,
-          "uk gas": 25,
-          "geosequestration": 10,
-          "geothermal": 18,
-          "geothermal electricity": 18,
-          "h2 production": 16,
-          "heating and cooling": 33,
+          "electric cars and buses": 11,
+          "electricity": 12,
+          "electricity exports": 13,
+          "electricity grid distribution": 14,
+          "electricity imports": 11,
+          "energy crops": 7,
+          "energy from waste": 8,
+          "environmental heat": 7,
+          "finance": 4,
+          "finance cost": 5,
+          "forest": 8,
+          "fossil fuel transfers": 3,
+          "fossil fuels": 1,
+          "fuel cell cars and buses": 11,
+          "fuel combustion": 1,
+          "gas": 7,
+          "imported gas": 9,
+          "geosequestration": 2,
+          "geothermal": 4,
+          "geothermal electricity": 5,
+          "h2 production": 12,
+          "heating and cooling": 10,
+          "heating & cooling": 10, 
           "hybrid cars and buses": 11,
-          "hydro": 8,
-          "hydroelectric": 8,
-          "hydroelectric power stations": 8,
-          "industrial processes": 13,
-          "industry": 13,
-          "international aviation": 3,
-          "international aviation and shipping": 3,
-          "international shipping (maritime bunkers)": 3,
-          "land use, land-use change and forestry": 18,
-          "lighting & appliances": 28,
-          "marine algae": 22,
-          "micro wind": 17,
-          "natural gas": 25,
+          "hydro": 11,
+          "hydroelectric": 11,
+          "hydroelectric power stations": 12,
+          "industrial processes": 14,
+          "industry": 6,
+          "international aviation": 4,
+          "international aviation and shipping": 5,
+          "international shipping (maritime bunkers)": 6,
+          "land use, land-use change and forestry": 11,
+          "lighting & appliances": 0,
+          "lulucf": 7,
+          "marine algae": 12,
+          "micro wind": 13,
+          "natural gas": 7,
           //"non-thermal renewable generation": 0,
-          "nuclear fission": 7,
-          "nuclear power": 7,
-          "offshore wind": 15,
-          "oil": 33,
-          "imported oil": 34,
-          "uk oil": 33,
-          "onshore wind": 28,
+          "oil": 1,
+          "imported oil": 2,
+          "onshore wind": 12,
           //"other": 0,
-          "petroleum refineries": 33,
-          "rail": 16,
-          "solar": 20,
-          "solar pv": 20,
-          "solar thermal": 24,
-          //"solvent and other product use": 0,
-          "storage of captured co2": 0,
-          "storage, demand shifting, backup": 0,
-          "tidal": 29,
-          "tidal and wave": 29,
-          "tidal range": 29,
-          "tidal stream": 29,
-          "transport": 26,
-          "unabated thermal generation": 29,
-          "waste": 32,
-          "waste arising": 32,
-          "wave": 29,
-          "wave and tidal": 29,
-          "wind": 17
+          "petroleum refineries": 1,
+          "rail": 6,
+          "solar": 0,
+          "solar pv": 0,
+          "solar thermal": 0,
+          "solvent and other product use": 0,
+          "storage of captured co2": 3,
+          "storage, demand shifting, backup": 4,
+          "tidal": 11,
+          "tidal and wave": 12,
+          "tidal range": 12,
+          "tidal stream": 12,
+          "transport": 1,
+          "unabated thermal generation": 9,
+          "waste": 9,
+          "waste arising": 9,
+          "wave": 12,
+          "wave and tidal": 13,
+          "wind": 13
         };
 
         if (typeof key != 'undefined') {
@@ -10936,8 +10898,8 @@ define('charts/summary',['knockout', 'd3', 'charts/chart'], function(ko, d3, Cha
   
 
   var pink = "#d53980";
-  var peach = "#d43939";
-  var green = "#28a197";
+  var peach = "#C8306E";
+  var green = "#11CDDE";
 
   function color (d) {
     return d >= 0 ? green : peach
@@ -10966,7 +10928,7 @@ define('charts/summary',['knockout', 'd3', 'charts/chart'], function(ko, d3, Cha
     }
 
     self.outerWidth = width || self.outerWidth;
-    self.outerHeight = height ||self.outerHeight;
+    self.outerHeight = height || self.outerHeight;
 
     self.width = self.outerWidth - self.margin.left - self.margin.right;
     self.height = self.outerHeight - self.margin.top - self.margin.bottom;
@@ -11639,7 +11601,9 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
       if (datum[0] === 0) {
         return;
       }
+      console.log('datum', datum)
       new_line = new FlowLine(this, datum[0], datum[1], datum[2]);
+      console.log('new_line', new_line.colour)
       this.lines[this.lineName(datum[0], datum[2])] = new_line;
       return this.line_array.push(new_line);
     };
@@ -11717,11 +11681,16 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
       var box, box_name, color, _results;
       _results = [];
       for (box_name in colors) {
+        // console.log('box_name', box_name, !__hasProp.call(colors, box_name))
         if (!__hasProp.call(colors, box_name)) continue;
         color = colors[box_name];
+        // console.log('color', color)
         box = this.find_or_create_transformation_box(box_name);
-        _results.push(box.line_colour = colors[box.name] || box.line_colour);
+        console.log('box', box)
+        _results.push(box.line_colour = colors[box.name] || '#11CDDE');
+        // NOTE electricity imports setting to pink?
       }
+      console.log('_results', _results)
       return _results;
     };
 
@@ -11921,10 +11890,15 @@ Licence: MIT Open Source licence http://www.opensource.org/licenses/mit-license.
           c.b = c.b + 0.15;
         }
       }
+      console.log('*************************', this, c, Raphael.hsb2rgb(c.h, c.s, c.b))
+      if (Raphael.hsb2rgb(c.h, c.s, c.b) === '#C8306E') {
+        console.log('#C8306E')
+      }
       return Raphael.hsb2rgb(c.h, c.s, c.b);
     };
 
     FlowLine.prototype.draw = function(r) {
+      console.log(this.colour, this.innerColor())
       this.outer_line = r.path(this.path()).attr({
         'stroke-width': this.size,
         'stroke': this.colour
@@ -12432,7 +12406,7 @@ define('charts/flows',['knockout', 'd3', 'charts/chart', 'raphael', 'sankey'], f
     }
     self.sankey = new Sankey(self.element.id);
 
-    self.sankey.stack(0, ["Pumped heat", "Solar", "Wind", "Tidal", "Wave", "Geothermal", "Hydro", "Electricity imports", "Nuclear", "Coal reserves", "Coal imports", "Biomass imports", "Gas reserves", "Gas imports", "Oil reserves", "Oil imports", "Biofuel imports", "UK land based bioenergy", "Agricultural 'waste'", "Other waste", "Marine algae"]);
+    self.sankey.stack(0, ["Pumped heat", "Solar", "Wind", "Tidal", "Wave", "Geothermal", "Hydro", "Electricity imports", "Coal reserves", "Coal imports", "Biomass imports", "Gas reserves", "Gas imports", "Oil reserves", "Oil imports", "Biofuel imports", "Agricultural 'waste'", "Other waste", "Marine algae"]);
     self.sankey.stack(1, ["Coal"], "Coal reserves");
     self.sankey.stack(1, ["Natural Gas"], "Gas reserves");
     self.sankey.stack(1, ["Oil"], "Oil reserves");
@@ -12443,7 +12417,7 @@ define('charts/flows',['knockout', 'd3', 'charts/chart', 'raphael', 'sankey'], f
     self.sankey.stack(4, ["Electricity grid", "District heating"], "Wind");
     self.sankey.stack(5, ["H2 conversion"], "Electricity grid");
     self.sankey.stack(6, ["H2"], "H2 conversion");
-    self.sankey.stack(7, ["Heating and cooling - homes", "Heating and cooling - commercial", "Lighting & appliances - homes", "Lighting & appliances - commercial", "Industry", "Road transport", "Rail transport", "Domestic aviation", "International aviation", "National navigation", "International shipping", "Agriculture", "Geosequestration", "Over generation / exports", "Losses"]);
+    self.sankey.stack(7, ["Heating and cooling - homes", "Heating and cooling - commercial", "Lighting & appliances - homes", "Lighting & appliances - commercial", "Industry", "Road transport", "Rail transport", "Domestic aviation", "International aviation", "National navigation", "International shipping", "Agriculture", "Over generation / exports", "Losses"]);
 
     self.sankey.nudge_boxes_callback = function() {
       this.boxes["Losses"].y = this.boxes["Marine algae"].b() - this.boxes["Losses"].size();
@@ -12457,45 +12431,44 @@ define('charts/flows',['knockout', 'd3', 'charts/chart', 'raphael', 'sankey'], f
 
     // Colours
     self.sankey.setColors({
-      "Coal reserves": self.colours(0),
-      "Coal": self.colours(0),
-      "Coal imports": self.colours(0),
+      "Coal reserves": self.colours(3),
+      "Coal": self.colours(3),
+      "Coal imports": self.colours(3),
 
-      "Oil reserves": self.colours(1),
-      "Oil": self.colours(1),
-      "Oil imports": self.colours(1),
+      "Oil reserves": self.colours(2),
+      "Oil": self.colours(2),
+      "Oil imports": self.colours(2),
 
-      "Gas reserves": self.colours(2),
-      "Natural Gas": self.colours(2),
-      "Gas imports": self.colours(2),
+      "Gas reserves": self.colours(7),
+      "Natural Gas": self.colours(7),
+      "Gas imports": self.colours(7),
 
-      "Solar": self.colours(3),
-      "Solar Thermal": self.colours(3),
-      "Solar PV": self.colours(3),
+      "Solar": self.colours(0),
+      "Solar Thermal": self.colours(0),
+      "Solar PV": self.colours(0),
 
       "UK land based bioenergy": self.colours(4),
-      "Bio-conversion": self.colours(4),
-      "Marine algae": self.colours(4),
-      "Agricultural 'waste'": self.colours(4),
-      "Other waste": self.colours(4),
-      "Biomass imports": self.colours(4),
-      "Biofuel imports": self.colours(4),
+      "Bio-conversion": self.colours(11),
+      "Marine algae": self.colours(11),
+      "Agricultural 'waste'": self.colours(11),
+      "Other waste": self.colours(11),
+      "Biomass imports": self.colours(11),
+      "Biofuel imports": self.colours(11),
 
-      "Solid": self.colours(5),
-      "Liquid": self.colours(6),
+      "Solid": self.colours(3),
+      "Liquid": self.colours(2),
       "Gas": self.colours(7),
 
-      "Electricity grid": self.colours(8),
-      "Thermal generation": self.colours(8),
-      "CHP": self.colours(9),
-      "Nuclear": self.colours(10),
+      "Electricity imports": self.colours(11),
+      "Electricity grid": self.colours(11),
 
-      "District heating": self.colours(9),
-      "Pumped heat": self.colours(9),
+      "Thermal generation": self.colours(9),
+
+      "District heating": self.colours(7),
+      "Pumped heat": self.colours(8),
       "Useful district heat": self.colours(9),
-      "CHP Heat": self.colours(9),
+      "CHP Heat": self.colours(10),
 
-      "Electricity imports": self.colours(8),
       "Wind": self.colours(11),
       "Tidal": self.colours(11),
       "Wave": self.colours(11),
@@ -12503,9 +12476,9 @@ define('charts/flows',['knockout', 'd3', 'charts/chart', 'raphael', 'sankey'], f
       "Hydro": self.colours(11),
 
       "H2 conversion": self.colours(12),
-      "Final electricity": self.colours(8),
-      "Over generation / exports": self.colours(8),
-      "H2": self.colours(12)
+      "Final electricity": self.colours(11),
+      "Over generation / exports": self.colours(6),
+      "H2": self.colours(5)
     });
 
     // Add the emissions

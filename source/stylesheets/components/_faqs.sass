@@ -24,15 +24,20 @@
 
     &.is-active
       header
+        color: $color-darkest
+        background: $color-highlight
+        
         &:after
           @extend %icon-content-close
           right: 1.3em
           margin-top: 2px
+          color: $color-darkest
+
 
     header
       overflow: auto
       cursor: pointer
-      background: rgba(0, 0, 0, 0.3)
+      background: $color-background
       position: relative
       padding: 1em 2em
 
@@ -43,6 +48,7 @@
         top: 50%
         @include transform(translateY(-50%))
         font-size: 1.5em
+        color: $color-highlight
 
       h5
         margin: 0
@@ -61,7 +67,7 @@
         color: #666
 
     section
-      background: rgba(0, 0, 0, 0.6)
+      background: $color-background
       height: 0
       overflow: hidden
       transition: height .2s ease-out
