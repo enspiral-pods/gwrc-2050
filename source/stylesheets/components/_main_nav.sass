@@ -7,10 +7,10 @@
 
 .main-nav
   height: 100vh
-  color: #ffffff
+  color: $color-intro-text
 
   a
-    color: #ffffff
+    color: $color-intro-text
     text-decoration: none
 
   ul
@@ -20,13 +20,19 @@
     position: relative
     height: 100%
     @include col(50%)
-    background: #2C313B
+    background: $color-darkest  
     padding: 2em 0
 
     .logo
       margin: 0 24px 16px 16px
       max-width: 180px
       width: calc(100% - 40px)
+
+    .third-logo
+      top: 11em
+      width: calc(100% - 220px)
+      margin-top: -12px
+      margin-left: 36px
 
     .tab-nav
       margin-top: 1.5em
@@ -45,9 +51,11 @@
       &.my-pathway
         &.is-active
           background: $color-background-dark
+          color: $color-intro-text
 
       &.is-active
         background: $color-highlight
+        color: $color-text-main
 
     .exit
       position: absolute
@@ -64,19 +72,20 @@
     background: $color-highlight
     padding: 2em 1em
     overflow: auto
-
+    color: $color-button-text
+    
     h3
       padding: 1em 0 0
-
+      font-family: $font-bold
     ul
       li
 
         a
+          font-family: $font-bold
           display: inline-block
           width: 100%
           padding: 0.5em 0.75em
+          color: $color-button-text
 
           &.is-active
             font-family: $font-bold
-
-

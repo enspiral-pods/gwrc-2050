@@ -26,7 +26,7 @@
       left: 0
       width: $chart-tabs-width-small
       height: 100%
-      color: $color-button-text
+      color: $color-intro-text
 
       &:before
         position: absolute
@@ -94,27 +94,29 @@
 
   .goal-wrapper
     z-index: 30
-    top: 0
-    width: 100%
+    top: 30%
+    width: 12%
     height: 100%
     // margin-top: -69px
     @include transform(translateY(-100%))
     position: relative
 
-    .goal
-      position: absolute
+    ul.goal
+      text-align: center
+      padding-left: 0px
+      list-style-type: none
       top: 50%
-      left: 81%
+      left: 0%
       color: #fff
       @include transform(translateY(-50%))
-      @extend %icon-chevron-before
+      // @extend %icon-chevron-right
 
       @include media($media-big)
-        left: 82%
-        font-size: $font-size-header
+        left: 0%
+        font-size: $font-size-goal
 
         &:before
-          padding-right: 10px
+
 
   .spacer
     position: relative
@@ -128,7 +130,7 @@
     position: fixed
     top: 0
     margin-top: 89px
-    right: 16%
+    left: 16%
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3)
     background-color: $color-background-light
     color: $color-background-dark
@@ -142,17 +144,17 @@
         border-color: $color-highlight transparent
 
     @include media ('(min-width: 800px)')
-      right: 15%
+      left: 15%
     @include media ('(min-width: 860px)')
-      right: 9%
+      left: 9%
     @include media ('(min-width: 1000px)')
-      right: 21%
+      left: 21%
     @include media ('(min-width: 1070px)')
-      right: 19%
+      left: 19%
     @include media ('(min-width: 1200px)')
-      right: 17%
+      left: 17%
     @include media($media-big)
-      right: 20px
+      left: 20px
       top: 100%
       position: absolute
       margin-top: -49px
@@ -259,4 +261,3 @@
       span
         width: 100%
         height: 100%
-

@@ -27,7 +27,7 @@ $scroll-nav-width: 25px
 
     a
       display: block
-      border: 3px solid $color-scroll-nav
+      border: 3px solid $color-highlight
       border-radius: 50px
       width: $scroll-nav-width
       height: $scroll-nav-width
@@ -35,7 +35,7 @@ $scroll-nav-width: 25px
       overflow: hidden
 
       &.active
-        background: $color-scroll-nav
+        background: $color-highlight
 
 .scrollable-next
   @extend %icon-button, %icon-down_arrow-before
@@ -126,20 +126,20 @@ $scroll-nav-width: 25px
       display: block
 
       @include media($media-medium)
-        width: auto
+        // width: auto
 
     a
-      color: rgba(149, 207, 202, 1)
+      color: $color-highlight
       text-decoration: none
 
       &.button
         @extend .button
 
   .intro
-    background-image: url(https://placehold.it/150x350)
+    background-image: url(/images/guide/map.svg)
     background-position: center
     background-repeat: no-repeat
-    background-size: auto 65%
+    background-size: auto 50%
 
     @include media($media-medium)
       background-position: 90% 50%

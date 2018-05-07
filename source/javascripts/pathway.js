@@ -33,7 +33,7 @@ define(['knockout', 'dataRequester', 'config', 'chartParser', 'action', 'hasher'
 
           var data = JSON.parse(data.responseText);
 
-          console.log(data)      
+          console.log(data)
 
 
           self.chartParser = new ChartParser(data);
@@ -54,6 +54,7 @@ define(['knockout', 'dataRequester', 'config', 'chartParser', 'action', 'hasher'
 
     // make this work... replace this.values?!?!?!?
     self.shareString = ko.computed(function() {
+      console.log('share string', self.values())
       return [config.siteUrl, '#share', self.values()].join('/');
     });
   }
@@ -216,6 +217,8 @@ define(['knockout', 'dataRequester', 'config', 'chartParser', 'action', 'hasher'
 
   /** @returns {array} Pathway examples (all or by category) */
   Pathway.examples = function(category) {
+    console.log('category', category)
+
     var EXAMPLES = PathwayData.EXAMPLES;
 
     if(typeof category === "undefined") {

@@ -1,9 +1,13 @@
 ---
 en:
-  decc: 'Department of energy and climate change'
+  wcc: 'Wellington City Council'
+  neri: 'NERI'
+  enspiral: 'Enspiral Dev Academy'
+
   your_pathway: 'Your pathway'
   nav: 'Pathway actions'
-  target: '80% target'
+  target_time: '2050 target:'
+  target: '80% ->'
 
   rotate:
     heading: 'Turn me around'
@@ -17,37 +21,36 @@ en:
     The [classic version](http://classic.2050.org.uk) might work.'
 
   splash:
-    heading: "2050 Energy Calculator"
-    content: "By the year 2050 we need to dramatically change the way we produce and consume energy.
+    heading: "The Wellington 2050 Energy Calculator"
+    content: "It is now clear that by the year 2050 we need to dramatically change the way we produce and consume energy across the globe.
 
 
-      Government targets require us to reduce emissions to [XX%] of 1990 levels."
+      Wellington City has set targets to reduce emissions by 30% of 2001 levels by 2020 and by 80% of 2001 levels by 2050. "
+
     button: "Start"
 
   guide:
-    '1': "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+    '1': "We need significant help from our national and regional government partners, as well as buy in from the private sector.
+
+      However, in achieving these carbon reduction goals we would fulfil our commitment to be part of the climate solution rather than part
+      of the climate problem."
+
+    '2': "How should this be done? The 2050 Calculator lets you take control and create your own energy pathway for the city, based on various changes to the energy environment that could inform policy efforts.
 
 
-      Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. "
+      The calculator allows you to consider the choices and trade-offs we face. It covers all parts of the economy and all greenhouse gas emissions released in the city."
 
-    '2': "Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+    '3': "The model is based heavily on a model created for the United Kingdom – available from the Department of Energy and Climate Change in the UK. The open source code and assumptions for the UK model are available here: 
 
-
-      sunt in culpa qui officia deserunt mollit anim id est laborum."
-
-    '3': "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-
-
-      The model, all its assumptions and the code for this interface are all available open source.
       [https://github.com/decc/twenty-fifty-new-look](https://github.com/decc/twenty-fifty-new-look)
 
 
       For more information go to:
-      [https://www.gov.uk/2050-pathways-analysis](https://www.gov.uk/2050-pathways-analysis)"
+      [https://www.gov.uk/2050-pathways-analysis](https://www.gov.uk/2050-pathways-analysis)\n
 
-    '4': "### Let's get started...
+      The Wellington 2050 Calculator also draws upon data, modelling and input from government and research entities at various levels of scope ranging from local to regional to national. Some topics could not be addressed on a local level(e.g. bioenergy) but will play a large role in any potential pathway to meet our ambitious targets. For these topics modelling or data was downscaled."
 
-      The purpose of the calculator is to build an energy pathway for Wellington that hits the [XX%] CO<sub>2</sub> emission reduction target at the top of the page. As you get closer to achieving this the arrow will move to the right."
+    '4': "The purpose of the calculator is to build an energy pathway for Wellington that hits the 80% CO2 emission reduction target at the top of the page. As you get closer to achieving this the arrow will move to the left."
 
     '5': "The sliders represent each sector of the Wellington energy system. Moving the sliders allows you to cut emissions by adjusting the level of change for energy demand, supply and other factors such as storage. Use the \"Demand\", \"Supply\" and \"Other\" tabs to toggle between the different groups of sliders.
 
@@ -60,25 +63,9 @@ en:
     '6': "As the sliders are adjusted your progress towards achieving the 80% target is updated.
 
 
-      There are five ways to see the impact of your choices, which include: supply and demand of energy and electricity, total emissions, energy flows, and energy security"
+      There are five ways to see the impact of your choices, which include: supply and demand of energy and electricity, total emissions, and energy flows"
 
-    '7': "If you experience any problems creating a pathway that achieves an [XX%]cut in emissions it’s worth considering the following factors:
-
-
-<em>You need to reduce energy demand and decarbonise energy supply</em>
-
-
-<em>Have you electrified transport, heat or industry? If not, these sectors will be consuming fossil fuels.</em>
-
-
-<em>Look at the ‘Electricity’ tab – are you oversupplying electricity? Excess electricity supply will not help achieve an 80% cut.</em>
-
-
-<em>Despite big increases in electricity use, liquid fuel, such as bioenergy, will still be needed in 2050.</em>"
-
-    '8': "There are many different ways to create a pathway that hits the [XX%] target. To see some example pathways go to the menu button on the top left of the page and click on \"Example Pathways\"."
-
-    '9': "Once you've hit the target use the \"Finish & Share\" button for an overview of your pathway results and share with friends and colleagues."
+    # '7': "There are many different ways to create a pathway that hits the 80% target. To see some example pathways go to the menu button on the top left of the page and click on 'Example Pathways'."
 
     done:
       title: "You're all set to go!"
@@ -187,31 +174,37 @@ en:
       question: "How does the calculator work?"
       answer: "For a re-cap of the introduction slides click <a href=\"/#/home\">here</a>."
     q2:
-      question: "Why won't the emissions change when I move the supply sliders?"
-      answer: "Take a look at the 'Electricity' tab. Are you oversupplying electricity? Excess electricity supply will not help achieve an 80% cut."
-    q3:
       question: "Why can't I hit the 80% target?"
       answer: "You must reduce energy demand and decarbonise energy supply - so make sure you change both demand and supply levers. Have you electrified transport, heat or industry? If not, these sectors will be consuming fossil fuels and could stop you from meeting the target. Despite big increases in electricity use, liquid fuel, such as biofuel, will still be needed in 2050. So take a look at the 'flow' view to make sure you have enough low carbon liquid fuel."
-    q4:
-      question: "What does the dynamic landscape do?"
-      answer: "As you make changes to each slider, the image will change to reflect the decision you take. For example, if you increase the level of offshore wind, more turbines at sea will appear."
-    q5:
+    q3:
       question: "Where do the figures come from?"
-      answer: "The data behind the calculator is rooted in scientific and engineering realities, looking at what is thought to be physically and technically possible in each sector. To do this, a broad range of experts were consulted from inside and outside government. For more background on the calculator go to: <a href=\"https://www.gov.uk/2050-pathways-analysis\" target=\"_blank\">https://www.gov.uk/2050-pathways-analysis</a>."
+      answer: "The data behind the calculator is rooted in scientific and engineering realities, looking at what is thought to be physically and technically possible in each sector. To do this, published data and projections were used wherever possible, and a broad range of experts were consulted. Source include the [Wellington Greenhouse Gas Inventory](http://www.gw.govt.nz/ghg/), the [EECA Energy End Use Database](http://enduse.eeca.govt.nz/), and many more."
+    q4:
+      question: "How are the slider levels set?"
+      answer: "The levels have been developed based on the following working definitions:
+        Level 1 - the least effort possible and no significant technological or behavioural changes.
+        Level 2 - a reasonable level of effort.
+        Level 3 - a highly ambitious level of effort.
+        Level 4 - an optimistic upper end of what is thought to be physically plausible.
+        For most sliders, 'Business as usual' will be somewhere between Level 1 and Level 2. When the choice is A to D, this describes different scenarios rather than changes in effort. If you wish to give feedback on the assumptions made, see 'How can I see the full model and give feedback?'"
+    q5:
+      question: "How are Wellington City's emissions calculated?"
+      answer: "The calculator uses the same methodology as, and is calibrated to, [Wellington Greenhouse Gas Inventory](http://www.gw.govt.nz/ghg/). This follows an internationally accepted emissions accounting method for cities."
     q6:
       question: "Why do the graph views show that demand is lower than supply?"
       answer: "Some of the energy supply creates wasted energy - or a 'loss' - when converted from one format to another (such as when generating electricity). So supply will always have to exceed the total energy demand. Take a look at the 'flow' view to see where these losses come from."
+    q7:
+      question: "How can I see the full model and give feedback?"
+      answer: "The calculator is an open tool and WCC intends to update it based on new or better information. WCC invites feedback on improvements to the tool and its underlying data and assumptions, or requests to access the full spreadsheet model, by email to tom.pettit@wcc.govt.nz."
+    
 
 
   share:
     congratulate: "Congratulations on completing your pathway!"
-    body: "These three charts summarise your choices for the demand and supply options you have selected and – crucially – the impact on emissions. The landscape above provides a visual overview of the changes you’ve made.
+    body: "These three charts summarise your choices for the demand and supply options you have selected and – crucially – the impact on emissions.\n
 
+Hopefully the calculator has highlighted the scale of the challenge – and the range of options available – to decarbonise the way we use energy.\n
 
-Hopefully the calculator has highlighted the scale of the challenge – and the range of options available – to decarbonise the way we use energy.
+Please share your pathway with others to help build interest in the future of energy in Wellington City and New Zealand using the hashtag #Welly2050.\n
 
-
-Please share your pathway with others to help build interest in the future of energy in the UK.
-
-
-To find out more about the calculator take a look at <a href=\"https://www.gov.uk/2050-pathways-analysis\" target=\"_blank\">https://www.gov.uk/2050-pathways-analysis</a>"
+If you wish to share your pathway or have any questions, feel free to contact Tom.Pettit@wcc.govt.nz"

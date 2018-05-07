@@ -3,11 +3,10 @@
 
   div.faqs
 
-    - [*1..6].each do |faq|
+    - [*1..7].each do |faq|
       article data-bind="faq"
         header
           h5 = t "faqs.q#{faq}.question"
 
         section.js-content-wrapper
           div.js-content = m "faqs.q#{faq}.answer"
-

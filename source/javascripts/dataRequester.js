@@ -15,4 +15,3 @@ define(['ajax', 'config'], function(Ajax, config) {
 
   return DataRequester;
 });
-

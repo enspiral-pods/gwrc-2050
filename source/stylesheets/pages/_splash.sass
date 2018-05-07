@@ -1,4 +1,5 @@
 .fixed-logo
+  cursor: pointer
   position: fixed
   top: 10px
   left: 10px
@@ -8,6 +9,12 @@
   @include media($media-medium)
     top: 2em
     left: 2em
+.second-logo
+  top: 6em
+.third-logo
+  top: 11em
+  width: 5%
+  left: 5%
 
 #classic
   position: fixed
@@ -58,4 +65,3 @@
   opacity: 0
   @include animation(fade 0.75s ease-in-out)
   @include animation-fill-mode(forwards)
-
