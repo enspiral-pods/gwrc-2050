@@ -1,6 +1,6 @@
 require 'jshintrb/jshinttask'
 require 'json'
-require 'pry'
+# require 'pry'
 
 Jshintrb::JshintTask.new :jshint do |t|
   t.pattern = 'source/javascripts/**/*.js'
@@ -33,3 +33,7 @@ task :preview do
     --protocol https`
 end
 
+desc 'start the sinatra API and react client in development'
+task :dev do
+  exec 'foreman start -f Procfile.dev'
+end
