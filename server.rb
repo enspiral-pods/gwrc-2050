@@ -9,7 +9,7 @@ require_relative './model/data_from_model'
 # If you are developing your own calculator, delete from here to the line marked STOP DELETING HERE
 class TwentyFiftyServer < Sinatra::Base
 
-  set :public_folder, File.join(File.dirname(__FILE__), 'build')
+  # set :public_folder, File.join(File.dirname(__FILE__), 'build')
 
   enable :lock # The C 2050 model is not thread safe
 
@@ -33,7 +33,7 @@ class TwentyFiftyServer < Sinatra::Base
     end
   end
 
-  get '/pathways/11111111111111111111111111111111111111111111111111111/primary_energy_chart' do 
+  get '/pathways/11111111111111111111111111111111111111111111111111111/primary_energy_chart' do
     redirect to('/')
   end
 
@@ -45,8 +45,12 @@ class TwentyFiftyServer < Sinatra::Base
     redirect "http://old-interface.2050.org.uk/pathways/#{id}"
   end
 
-  get '*' do 
-    send_file 'build/index.html'
+  # get '*' do
+  #   send_file 'build/index.html'
+  # end
+
+  get '*' do
+    status 400
   end
 
 end
