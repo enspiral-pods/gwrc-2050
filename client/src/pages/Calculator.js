@@ -8,7 +8,7 @@ const Calculator = props => {
     <div>
       <Graph />
     </div>
-  );
+  )
 }
 
 export default connect(Calculator)

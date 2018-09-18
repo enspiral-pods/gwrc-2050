@@ -12,8 +12,4 @@ const Layout = ({ doUpdateUrl, route }) => {
   )
 }
 
-export default connect(
-  'doUpdateUrl',
-  'selectRoute',
-  Layout
-)
+export default connect('doUpdateUrl', 'selectRoute', Layout)
