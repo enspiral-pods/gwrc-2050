@@ -1,5 +1,3 @@
 export default {
-  breakpoints: [
-    '415px'
-  ]
+  breakpoints: ['415px']
 }

@@ -3,14 +3,12 @@ import { connect } from 'redux-bundler-react'
 
 import Graph from '../components/Graph'
 
-const Calculator = (props) => {
+const Calculator = props => {
   return (
     <div>
       <Graph />
     </div>
-  )
+  );
 }
 
-export default connect(
-  Calculator
-)
+export default connect(Calculator)
