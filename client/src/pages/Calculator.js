@@ -1,15 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
+import { connect } from 'redux-bundler-react'
 
-class Calculator extends Component {
-  render () {
-    return (
-      <div>
-        <header>
-          <h1>Welcome to GWRC 2050</h1>
-        </header>
-      </div>
-    )
-  }
+import Graph from '../components/Graph'
+
+const Calculator = (props) => {
+  return (
+    <div>
+      <Graph />
+    </div>
+  )
 }
 
-export default Calculator
+export default connect(
+  Calculator
+)

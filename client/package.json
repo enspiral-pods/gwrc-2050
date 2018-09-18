@@ -8,14 +8,13 @@
     }
   },
   "dependencies": {
-    "fela": "^6.2.1",
-    "fela-dom": "^8.0.1",
-    "fela-preset-web": "^8.0.10",
+    "emotion": "^9.2.9",
+    "emotion-theming": "^9.2.9",
     "internal-nav-helper": "^1.0.2",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
-    "react-fela": "^8.0.1",
+    "react-emotion": "^9.2.9",
     "react-scripts": "1.1.5",
     "rebass": "^3.0.0-8",
     "redux-bundler": "^21.2.2",
