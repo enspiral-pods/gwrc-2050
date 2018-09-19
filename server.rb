@@ -8,7 +8,6 @@ require_relative './model/data_from_model'
 # This deals with urls that relate to previous versions of the 2050 calculator.
 # If you are developing your own calculator, delete from here to the line marked STOP DELETING HERE
 class TwentyFiftyServer < Sinatra::Base
-
   # set :public_folder, File.join(File.dirname(__FILE__), 'build')
 
   enable :lock # The C 2050 model is not thread safe
