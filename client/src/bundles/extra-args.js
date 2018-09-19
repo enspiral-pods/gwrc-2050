@@ -5,15 +5,15 @@ export default {
   getExtraArgs: store => {
     return {
       apiFetch: (urlPath, config = {}) => {
-        return fetch(`/api/${urlPath}`, {
+        return fetch(`${process.env.REACT_APP_API_URL}${urlPath}`, {
           ...config,
           headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            Accept: 'application/json'
           }
         }).then(res => {
           if (!res.ok) {
-            console.error(res)
+            console.error('err', res)
             return Promise.reject(new Error(res.status))
           }
           return res.json()

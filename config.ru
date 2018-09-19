@@ -2,6 +2,9 @@
 require 'rubygems'
 require 'bundler'
 Bundler.setup
+require 'rack/cors'
+require 'dotenv'
+Dotenv.load('.env.development')
 
 # The actual server code is in src/server.rb
 require './server'
@@ -11,7 +14,16 @@ require './server'
 ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
 # This sets up the bits of the server
-
+# enable CORS for the client app
+use Rack::Cors do |config|
+  config.allow do |allow|
+    allow.origins "#{ENV['CLIENT_URL']}"
+    allow.resource '*',
+      :methods => [:get, :options],
+      :headers => :any,
+      :max_age => 0
+  end
+end
 # To compress the data going back and forth
 use Rack::Deflater
 # This logs access and errors
