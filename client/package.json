@@ -21,6 +21,7 @@
     "emotion": "^9.2.9",
     "emotion-theming": "^9.2.9",
     "internal-nav-helper": "^1.0.2",
+    "lodash": "^4.17.11",
     "prop-types": "^15.6.2",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",

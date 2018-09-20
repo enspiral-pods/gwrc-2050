@@ -8,12 +8,9 @@ export default ({ data }) => {
 
   return (
     <VictoryStack>
-      <VictoryArea data={data['Bioenergy credit']} />
-      <VictoryArea data={data['LULUCF']} />
-      <VictoryArea data={data['Fuel Combustion']} />
-      <VictoryArea data={data['Solvent and Other Product Use']} />
-      <VictoryArea data={data['Agriculture']} />
-      <VictoryArea data={data['Waste']} />
+      {data.map((d, i) => (
+        <VictoryArea key={i} data={d} />
+      ))}
     </VictoryStack>
   )
 }
