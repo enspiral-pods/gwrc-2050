@@ -1,12 +1,12 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
 
-import Graph from '../components/Graph'
+import Emissions from '../hocs/Emissions'
 
 const Calculator = props => {
   return (
     <div>
-      <Graph />
+      <Emissions />
     </div>
   )
 }

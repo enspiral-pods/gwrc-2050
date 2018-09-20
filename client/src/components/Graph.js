@@ -1,6 +1,19 @@
 import React from 'react'
-import { Heading } from 'rebass/emotion'
+import { VictoryStack, VictoryArea } from 'victory'
 
-export default props => {
-  return <Heading fontSize={[20, 40]}>GRAPH</Heading>
+export default ({ data }) => {
+  if (!data) {
+    return null
+  }
+
+  return (
+    <VictoryStack>
+      <VictoryArea data={data['Bioenergy credit']} />
+      <VictoryArea data={data['LULUCF']} />
+      <VictoryArea data={data['Fuel Combustion']} />
+      <VictoryArea data={data['Solvent and Other Product Use']} />
+      <VictoryArea data={data['Agriculture']} />
+      <VictoryArea data={data['Waste']} />
+    </VictoryStack>
+  )
 }
