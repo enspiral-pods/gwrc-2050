@@ -24,8 +24,6 @@ const initialState = {
   isOutdated: false,
   lastSuccess: null,
   // other state
-  string_REPLACE_ME_WITH_INDIVIDUAL_LEVER_STATE:
-    '11111111111111111111111111111111111111111111111111111',
   levers: {
     travelDemand: 1,
     activeTransport: 1,
@@ -38,6 +36,21 @@ bundle.reducer = (state = initialState, action) => {
   if (action.type === 'LEVER_UPDATE_TRAVEL_DEMAND') {
     return Object.assign({}, state, {
       levers: { ...state.levers, travelDemand: action.payload }
+    })
+  }
+  if (action.type === 'LEVER_UPDATE_ACTIVE_TRANSPORT') {
+    return Object.assign({}, state, {
+      levers: { ...state.levers, activeTransport: action.payload }
+    })
+  }
+  if (action.type === 'LEVER_UPDATE_ACTIVE_TRANSPORT') {
+    return Object.assign({}, state, {
+      levers: { ...state.levers, activeTransport: action.payload }
+    })
+  }
+  if (action.type === 'LEVER_UPDATE_PUBLIC_TRANSPORT') {
+    return Object.assign({}, state, {
+      levers: { ...state.levers, publicTransport: action.payload }
     })
   }
   return baseReducer(state, action)
@@ -60,9 +73,21 @@ bundle.selectElectricitySupply = state =>
   state.pathways.data ? state.pathways.data.electricity.supply : null
 
 bundle.selectTravelDemand = state => state.pathways.levers.travelDemand
+bundle.selectActiveTransport = state => state.pathways.levers.activeTransport
+bundle.selectPublicTransport = state => state.pathways.levers.publicTransport
 
 bundle.doUpdateTravelDemand = value => ({ dispatch, store }) => {
   dispatch({ type: 'LEVER_UPDATE_TRAVEL_DEMAND', payload: value })
+  store.doMarkPathwaysAsOutdated()
+}
+
+bundle.doUpdateActiveTransport = value => ({ dispatch, store }) => {
+  dispatch({ type: 'LEVER_UPDATE_ACTIVE_TRANSPORT', payload: value })
+  store.doMarkPathwaysAsOutdated()
+}
+
+bundle.doUpdatePublicTransport = value => ({ dispatch, store }) => {
+  dispatch({ type: 'LEVER_UPDATE_PUBLIC_TRANSPORT', payload: value })
   store.doMarkPathwaysAsOutdated()
 }
 
