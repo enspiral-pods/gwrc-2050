@@ -3,9 +3,12 @@ import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
 const bundle = createAsyncResourceBundle({
   name: 'pathways',
   getPromise: async ({ getState, apiFetch }) => {
-    const leversId = getState().pathways
-      .string_REPLACE_ME_WITH_INDIVIDUAL_LEVER_STATE
-    return apiFetch(`/pathways/${leversId}/data`)
+    const travelDemand = getState().pathways.levers.travelDemand
+    const publicTransport = getState().pathways.levers.publicTransport
+    const activeTransport = getState().pathways.levers.activeTransport
+    return apiFetch(
+      `/pathways/111101101101100${travelDemand}${publicTransport}${activeTransport}11110111101101101101101110000000001/data`
+    )
   },
   staleAfter: Infinity
 })
@@ -22,11 +25,21 @@ const initialState = {
   lastSuccess: null,
   // other state
   string_REPLACE_ME_WITH_INDIVIDUAL_LEVER_STATE:
-    '11111111111111111111111111111111111111111111111111111'
+    '11111111111111111111111111111111111111111111111111111',
+  levers: {
+    travelDemand: 1,
+    activeTransport: 1,
+    publicTransport: 1
+  }
 }
 
 const baseReducer = bundle.reducer
 bundle.reducer = (state = initialState, action) => {
+  if (action.type === 'LEVER_UPDATE_TRAVEL_DEMAND') {
+    return Object.assign({}, state, {
+      levers: { ...state.levers, travelDemand: action.payload }
+    })
+  }
   return baseReducer(state, action)
 }
 
@@ -45,6 +58,13 @@ bundle.selectElectricityDemand = state =>
   state.pathways.data ? state.pathways.data.electricity.demand : null
 bundle.selectElectricitySupply = state =>
   state.pathways.data ? state.pathways.data.electricity.supply : null
+
+bundle.selectTravelDemand = state => state.pathways.levers.travelDemand
+
+bundle.doUpdateTravelDemand = value => ({ dispatch, store }) => {
+  dispatch({ type: 'LEVER_UPDATE_TRAVEL_DEMAND', payload: value })
+  store.doMarkPathwaysAsOutdated()
+}
 
 bundle.reactInitialPathwaysFetch = createSelector(
   'selectPathwaysShouldUpdate',
