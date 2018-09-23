@@ -1,5 +1,7 @@
 import React from 'react'
-import { Box, Flex, Heading, Text } from 'rebass/emotion'
+import { Box, Flex, Text } from 'rebass/emotion'
+
+import MobileFlex from './MobileFlex'
 
 export default ({ data }) => {
   if (!data) {
@@ -7,15 +9,15 @@ export default ({ data }) => {
   }
 
   return (
-    <Flex flexDirection={'row'} flexWrap={'wrap'}>
-      {data.map(d => {
+    <MobileFlex flexDirection={'row'} flexWrap={'wrap'}>
+      {data.map((d, i) => {
         return (
-          <Flex alignItems={'center'} mr={20}>
+          <Flex key={i} alignItems={'center'} mr={20}>
             <Box width={14} css={{ height: 14 }} bg={'red'} mr={10} />
             <Text>{d}</Text>
           </Flex>
         )
       })}
-    </Flex>
+    </MobileFlex>
   )
 }
