@@ -1,9 +1,9 @@
 import { createRouteBundle } from 'redux-bundler'
 
-import Calculator from './pages/Calculator'
+import Emissions from './pages/Emissions'
 
 let routes = {
-  '/': Calculator
+  '/': Emissions
 }
 
 export default createRouteBundle(routes)
