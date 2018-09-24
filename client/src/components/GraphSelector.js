@@ -10,7 +10,11 @@ const GraphSelector = ({ isMobileGraphsMenuOpen }) => {
   const mobileDisplay = isMobileGraphsMenuOpen ? 'flex' : 'none'
 
   return (
-    <MobileFullScreen mobileDisplay={mobileDisplay} desktopWidth={256}>
+    <MobileFullScreen
+      mobileDisplay={mobileDisplay}
+      desktopWidth={256}
+      bg={'darkBackground'}
+    >
       <FlexWithExtras
         display={['flex', 'none']}
         flexDirection={'row'}

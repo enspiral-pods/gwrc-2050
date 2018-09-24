@@ -17,7 +17,11 @@ const Layout = ({
   const Page = route
 
   return (
-    <Flex flexDirection={['column', 'row']} onClick={navHelper(doUpdateUrl)}>
+    <Flex
+      flexDirection={['column', 'row']}
+      bg={'background'}
+      onClick={navHelper(doUpdateUrl)}
+    >
       <MobileNav doToggleMobileGraphsMenu={doToggleMobileGraphsMenu} />
       <GraphSelector
         isMobileGraphsMenuOpen={isMobileGraphsMenuOpen}
