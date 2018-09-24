@@ -3,7 +3,7 @@ import { connect } from 'redux-bundler-react'
 import { Flex, Button } from 'rebass/emotion'
 import navHelper from 'internal-nav-helper'
 
-import MobileNav from '../components/MobileNav'
+import PageWrapper from '../components/PageWrapper'
 import FlexWithExtras from '../components/FlexWithExtras'
 import GraphSelector from '../components/GraphSelector'
 
@@ -23,12 +23,17 @@ const Layout = ({
       bg={'background'}
       onClick={navHelper(doUpdateUrl)}
     >
-      <MobileNav doToggleMobileGraphsMenu={doToggleMobileGraphsMenu} />
-      <GraphSelector
-        isMobileGraphsMenuOpen={isMobileGraphsMenuOpen}
-        doToggleMobileGraphsMenu={doToggleMobileGraphsMenu}
-      />
-      <Page />
+      <GraphSelector display={['none', 'flex']} />
+      {isMobileGraphsMenuOpen ? (
+        <GraphSelector
+          display={['flex', 'none']}
+          doToggleMobileGraphsMenu={doToggleMobileGraphsMenu}
+        />
+      ) : (
+        <PageWrapper doToggleMobileGraphsMenu={doToggleMobileGraphsMenu}>
+          <Page />
+        </PageWrapper>
+      )}
     </FlexWithExtras>
   )
 }

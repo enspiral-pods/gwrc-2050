@@ -1,4 +1,16 @@
 import React from 'react'
-import { Box } from 'rebass/emotion'
+import { Flex, Button } from 'rebass/emotion'
 
-export default props => <Box p={15} {...props} />
+import FlexWithExtras from './FlexWithExtras'
+
+export default props => {
+  const { doToggleMobileGraphsMenu } = props
+  return (
+    <Flex flexDirection={'column'} p={15}>
+      <FlexWithExtras display={['flex', 'none']}>
+        <Button onClick={doToggleMobileGraphsMenu}>{'< Graphs'}</Button>
+      </FlexWithExtras>
+      {props.children}
+    </Flex>
+  )
+}

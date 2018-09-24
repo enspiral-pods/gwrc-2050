@@ -2,26 +2,21 @@ import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Flex, Heading, Text, Button } from 'rebass/emotion'
 
-import MobileFullScreen from './MobileFullScreen'
 import FlexWithExtras from './FlexWithExtras'
 import GraphSelectorMenuItem from './GraphSelectorMenuItem'
 
-const GraphSelector = ({
-  isMobileGraphsMenuOpen,
-  doToggleMobileGraphsMenu
-}) => {
-  const mobileDisplay = isMobileGraphsMenuOpen ? 'flex' : 'none'
-
+const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
   return (
-    <MobileFullScreen
-      mobileDisplay={mobileDisplay}
-      desktopWidth={256}
-      bg={'darkBackground'}
+    <FlexWithExtras
+      display={display}
+      flexDirection={'column'}
+      width={['100%', 256]}
     >
       <FlexWithExtras
         display={['flex', 'none']}
         flexDirection={'row'}
         justifyContent={'space-between'}
+        p={20}
       >
         <Text css={{ visibility: 'hidden' }}>Back ></Text>
         <Heading>Graphs</Heading>
@@ -59,7 +54,7 @@ const GraphSelector = ({
       </Flex>
 
       <Button>Share your scenario</Button>
-    </MobileFullScreen>
+    </FlexWithExtras>
   )
 }
 
