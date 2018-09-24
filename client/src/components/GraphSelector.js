@@ -37,13 +37,25 @@ const GraphSelector = ({
       </Flex>
 
       <Flex flexDirection={'column'}>
-        <GraphSelectorMenuItem graphName={'Emissions'} />
-        <GraphSelectorMenuItem graphName={'Energy Demand'} />
-        <GraphSelectorMenuItem graphName={'Energy Supply'} />
-        <GraphSelectorMenuItem graphName={'Electricity Demand'} />
-        <GraphSelectorMenuItem graphName={'Electricity Supply'} />
-        <GraphSelectorMenuItem graphName={'Flows'} />
-        <GraphSelectorMenuItem graphName={'Overview'} />
+        <GraphSelectorMenuItem graphName={'Emissions'} route={'/emissions'} />
+        <GraphSelectorMenuItem
+          graphName={'Energy Demand'}
+          route={'/energy-demand'}
+        />
+        <GraphSelectorMenuItem
+          graphName={'Energy Supply'}
+          route={'/energy-supply'}
+        />
+        <GraphSelectorMenuItem
+          graphName={'Electricity Demand'}
+          route={'/electricity-demand'}
+        />
+        <GraphSelectorMenuItem
+          graphName={'Electricity Supply'}
+          route={'/electricity-supply'}
+        />
+        <GraphSelectorMenuItem graphName={'Flows'} route={'/flows'} />
+        <GraphSelectorMenuItem graphName={'Overview'} route={'/overview'} />
       </Flex>
 
       <Button>Share your scenario</Button>
