@@ -8,6 +8,7 @@ import keys from 'lodash/keys'
 import PageWrapper from '../components/PageWrapper'
 import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
+import EmissionsBar from '../components/EmissionsBar'
 
 const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
   const usedData = pick(energyEmissions, [
@@ -29,6 +30,7 @@ const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
         data={graphAreas}
       />
       <MobileLegend data={graphNames} />
+      <EmissionsBar />
     </Flex>
   )
 }
