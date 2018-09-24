@@ -17,8 +17,9 @@ const Layout = ({
   const Page = route
 
   return (
-    <Flex
+    <FlexWithExtras
       flexDirection={['column', 'row']}
+      height={'100%'}
       bg={'background'}
       onClick={navHelper(doUpdateUrl)}
     >
@@ -28,7 +29,7 @@ const Layout = ({
         doToggleMobileGraphsMenu={doToggleMobileGraphsMenu}
       />
       <Page />
-    </Flex>
+    </FlexWithExtras>
   )
 }
 

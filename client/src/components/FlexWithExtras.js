@@ -3,6 +3,7 @@ import styled from 'react-emotion'
 import {
   display,
   position,
+  height,
   top,
   right,
   bottom,
@@ -10,4 +11,13 @@ import {
   zIndex
 } from 'styled-system'
 
-export default styled(Flex)(display, position, top, right, bottom, left, zIndex)
+export default styled(Flex)(
+  display,
+  position,
+  height,
+  top,
+  right,
+  bottom,
+  left,
+  zIndex
+)
