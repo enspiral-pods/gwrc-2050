@@ -9,6 +9,7 @@ import PageWrapper from '../components/PageWrapper'
 import Table from '../components/Table'
 import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
+import EmissionsBar from '../components/EmissionsBar'
 
 const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
   const usedData = pick(energyEmissions, [
@@ -30,7 +31,8 @@ const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
         axes={'ktCO2/yr / Date'}
         data={graphAreas}
       />
-      <MobileLegend data={graphNames} /> */}
+      <MobileLegend data={graphNames} />*/}
+      <EmissionsBar />
     </Flex>
   )
 }
