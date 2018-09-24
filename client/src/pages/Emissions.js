@@ -9,7 +9,7 @@ import PageWrapper from '../components/PageWrapper'
 import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
 
-const Emissions = ({ energyEmissions }) => {
+const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
   const usedData = pick(energyEmissions, [
     'Bioenergy credit',
     'LULUCF',
