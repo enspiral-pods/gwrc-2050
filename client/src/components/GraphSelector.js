@@ -6,7 +6,10 @@ import MobileFullScreen from './MobileFullScreen'
 import FlexWithExtras from './FlexWithExtras'
 import GraphSelectorMenuItem from './GraphSelectorMenuItem'
 
-const GraphSelector = ({ isMobileGraphsMenuOpen }) => {
+const GraphSelector = ({
+  isMobileGraphsMenuOpen,
+  doToggleMobileGraphsMenu
+}) => {
   const mobileDisplay = isMobileGraphsMenuOpen ? 'flex' : 'none'
 
   return (
@@ -22,7 +25,7 @@ const GraphSelector = ({ isMobileGraphsMenuOpen }) => {
       >
         <Text css={{ visibility: 'hidden' }}>Back ></Text>
         <Heading>Graphs</Heading>
-        <Text>Back ></Text>
+        <Button onClick={doToggleMobileGraphsMenu}>Back ></Button>
       </FlexWithExtras>
       <FlexWithExtras display={['none', 'flex']}>
         <Heading>Graphs</Heading>
