@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
 import Lever from './Lever'
+import FlexWithExtras from './FlexWithExtras'
 
 const Levers = ({
   travelDemand,
@@ -11,7 +12,7 @@ const Levers = ({
   doUpdatePublicTransport
 }) => {
   return (
-    <div>
+    <FlexWithExtras flexDirection={'column'} flexWrap={'wrap'}>
       <Lever
         value={travelDemand}
         label='Travel Demand'
@@ -27,7 +28,7 @@ const Levers = ({
         label='Public Transport'
         onValueChange={doUpdatePublicTransport}
       />
-    </div>
+    </FlexWithExtras>
   )
 }
 

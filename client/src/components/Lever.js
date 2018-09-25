@@ -1,9 +1,10 @@
 import React from 'react'
+import { Text } from 'rebass/emotion'
 
 export default ({ onValueChange, label, value }) => {
   return (
     <div>
-      <p>{label}</p>
+      <Text>{label}</Text>
       <input
         value={value}
         type='range'
