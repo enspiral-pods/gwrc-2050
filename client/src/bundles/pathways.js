@@ -2,13 +2,8 @@ import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
 
 const bundle = createAsyncResourceBundle({
   name: 'pathways',
-  getPromise: async ({ getState, apiFetch }) => {
-    const travelDemand = getState().pathways.levers.travelDemand
-    const publicTransport = getState().pathways.levers.publicTransport
-    const activeTransport = getState().pathways.levers.activeTransport
-    return apiFetch(
-      `/pathways/111101101101100${travelDemand}${publicTransport}${activeTransport}11110111101101101101101110000000001/data`
-    )
+  getPromise: async ({ getState, apiFetch, store }) => {
+    return apiFetch(`/pathways/${store.selectLeverString()}/data`)
   },
   staleAfter: Infinity
 })
@@ -75,6 +70,10 @@ bundle.selectElectricitySupply = state =>
 bundle.selectTravelDemand = state => state.pathways.levers.travelDemand
 bundle.selectActiveTransport = state => state.pathways.levers.activeTransport
 bundle.selectPublicTransport = state => state.pathways.levers.publicTransport
+bundle.selectLeverString = state =>
+  `111101101101100${state.pathways.levers.travelDemand}${
+    state.pathways.levers.publicTransport
+  }${state.pathways.levers.activeTransport}11110111101101101101101110000000001`
 
 bundle.doUpdateTravelDemand = value => ({ dispatch, store }) => {
   dispatch({ type: 'LEVER_UPDATE_TRAVEL_DEMAND', payload: value })
