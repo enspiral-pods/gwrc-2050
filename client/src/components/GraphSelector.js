@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Heading, Text, Button } from 'rebass/emotion'
+import { Flex, Heading, Text, Button } from 'rebass'
 
 import FlexWithExtras from './FlexWithExtras'
 import GraphSelectorMenuItem from './GraphSelectorMenuItem'

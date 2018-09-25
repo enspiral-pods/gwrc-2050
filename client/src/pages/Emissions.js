@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex } from 'rebass/emotion'
+import { Flex } from 'rebass'
 import pick from 'lodash/pick'
 import values from 'lodash/values'
 import keys from 'lodash/keys'

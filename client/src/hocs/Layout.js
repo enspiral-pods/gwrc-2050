@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Button } from 'rebass/emotion'
+import { Flex, Button } from 'rebass'
 import navHelper from 'internal-nav-helper'
 
 import PageWrapper from '../components/PageWrapper'
