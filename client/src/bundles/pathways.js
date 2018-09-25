@@ -28,24 +28,12 @@ const initialState = {
 
 const baseReducer = bundle.reducer
 bundle.reducer = (state = initialState, action) => {
-  if (action.type === 'LEVER_UPDATE_TRAVEL_DEMAND') {
+  if (action.type === 'LEVER_UPDATE') {
+    const { lever, value } = action.payload
+    let levers = { ...state.levers }
+    levers[lever] = value
     return Object.assign({}, state, {
-      levers: { ...state.levers, travelDemand: action.payload }
-    })
-  }
-  if (action.type === 'LEVER_UPDATE_ACTIVE_TRANSPORT') {
-    return Object.assign({}, state, {
-      levers: { ...state.levers, activeTransport: action.payload }
-    })
-  }
-  if (action.type === 'LEVER_UPDATE_ACTIVE_TRANSPORT') {
-    return Object.assign({}, state, {
-      levers: { ...state.levers, activeTransport: action.payload }
-    })
-  }
-  if (action.type === 'LEVER_UPDATE_PUBLIC_TRANSPORT') {
-    return Object.assign({}, state, {
-      levers: { ...state.levers, publicTransport: action.payload }
+      levers
     })
   }
   return baseReducer(state, action)
@@ -80,13 +68,8 @@ bundle.doUpdateTravelDemand = value => ({ dispatch, store }) => {
   store.doMarkPathwaysAsOutdated()
 }
 
-bundle.doUpdateActiveTransport = value => ({ dispatch, store }) => {
-  dispatch({ type: 'LEVER_UPDATE_ACTIVE_TRANSPORT', payload: value })
-  store.doMarkPathwaysAsOutdated()
-}
-
-bundle.doUpdatePublicTransport = value => ({ dispatch, store }) => {
-  dispatch({ type: 'LEVER_UPDATE_PUBLIC_TRANSPORT', payload: value })
+bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {
+  dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })
   store.doMarkPathwaysAsOutdated()
 }
 

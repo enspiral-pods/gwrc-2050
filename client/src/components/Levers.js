@@ -7,26 +7,24 @@ const Levers = ({
   travelDemand,
   activeTransport,
   publicTransport,
-  doUpdateTravelDemand,
-  doUpdateActiveTransport,
-  doUpdatePublicTransport
+  doUpdateLever
 }) => {
   return (
     <FlexWithExtras flexDirection={'column'} flexWrap={'wrap'}>
       <Lever
         value={travelDemand}
         label='Travel Demand'
-        onValueChange={doUpdateTravelDemand}
+        onValueChange={value => doUpdateLever('travelDemand', value)}
       />
       <Lever
         value={activeTransport}
         label='Active Transport'
-        onValueChange={doUpdateActiveTransport}
+        onValueChange={value => doUpdateLever('activeTransport', value)}
       />
       <Lever
         value={publicTransport}
         label='Public Transport'
-        onValueChange={doUpdatePublicTransport}
+        onValueChange={value => doUpdateLever('publicTransport', value)}
       />
     </FlexWithExtras>
   )
@@ -36,8 +34,6 @@ export default connect(
   'selectTravelDemand',
   'selectActiveTransport',
   'selectPublicTransport',
-  'doUpdateTravelDemand',
-  'doUpdateActiveTransport',
-  'doUpdatePublicTransport',
+  'doUpdateLever',
   Levers
 )
