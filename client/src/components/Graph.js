@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading, Text } from 'rebass/emotion'
+import { Flex, Heading, Text } from 'rebass'
 import { VictoryChart, VictoryAxis, VictoryStack, VictoryArea } from 'victory'
 
 export default ({ name, axes, data }) => {

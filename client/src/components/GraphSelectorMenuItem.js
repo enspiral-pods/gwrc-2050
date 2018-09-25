@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Link } from 'rebass/emotion'
+import { Flex, Text, Link } from 'rebass'
 
 import Image from './Image'
 

@@ -1,5 +1,5 @@
-import { Flex } from 'rebass/emotion'
-import styled from 'react-emotion'
+import { Flex } from 'rebass'
+import styled from 'styled-components'
 import {
   display,
   position,

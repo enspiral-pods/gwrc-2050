@@ -1,8 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'redux-bundler-react'
-import { ThemeProvider } from 'emotion-theming'
-import { injectGlobal } from 'emotion'
+import { ThemeProvider, injectGlobal } from 'styled-components'
 
 import getStore from './bundles'
 import theme from './theme'
