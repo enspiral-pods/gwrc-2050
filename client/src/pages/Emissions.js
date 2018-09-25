@@ -11,7 +11,11 @@ import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
 import EmissionsBar from '../components/EmissionsBar'
 
-const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
+const Emissions = ({
+  energyEmissions,
+  emissionsDecrease,
+  doToggleMobileGraphsMenu
+}) => {
   const usedData = pick(energyEmissions, [
     'Bioenergy credit',
     'LULUCF',
@@ -32,9 +36,13 @@ const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
         data={graphAreas}
       />
       <MobileLegend data={graphNames} />*/}
-      <EmissionsBar />
+      <EmissionsBar emissionsDecrease={emissionsDecrease} />
     </Flex>
   )
 }
 
-export default connect('selectEnergyEmissions', Emissions)
+export default connect(
+  'selectEnergyEmissions',
+  'selectEmissionsDecrease',
+  Emissions
+)

@@ -3,11 +3,19 @@ import { Box, Flex } from 'rebass/emotion'
 
 import FlexWithExtras from './FlexWithExtras'
 
-export default props => {
+export default ({ emissionsDecrease }) => {
   return (
     <Flex p={20}>
-      <FlexWithExtras height={5} width={'100%'} bg={'red'} />
-      <FlexWithExtras height={5} width={'100%'} bg={'darkBackground'} />
+      <svg height={'100%'} width={'100%'}>
+        <rect x='0' y='0' width='100%' height='10' fill={'black'} />
+        <rect
+          x='50%'
+          y='0'
+          width={emissionsDecrease}
+          height='10'
+          fill={'red'}
+        />
+      </svg>
     </Flex>
   )
 }
