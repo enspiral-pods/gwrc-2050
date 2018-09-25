@@ -1,7 +1,5 @@
 import React from 'react'
-import { Flex, Text, Link } from 'rebass'
-
-import Image from './Image'
+import { Flex, Text, Link, Image } from 'rebass'
 
 export default ({ graphName, route, icon }) => {
   return (
