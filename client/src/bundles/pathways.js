@@ -41,6 +41,10 @@ bundle.selectEnergyDemand = state =>
   state.pathways.data ? state.pathways.data.final_energy_demand : null
 bundle.selectEnergySupply = state =>
   state.pathways.data ? state.pathways.data.primary_energy_supply : null
+bundle.selectElectricityDemand = state =>
+  state.pathways.data ? state.pathways.data.electricity.demand : null
+bundle.selectElectricitySupply = state =>
+  state.pathways.data ? state.pathways.data.electricity.supply : null
 
 bundle.reactInitialPathwaysFetch = createSelector(
   'selectPathwaysShouldUpdate',

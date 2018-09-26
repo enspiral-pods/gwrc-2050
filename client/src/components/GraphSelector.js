@@ -34,25 +34,34 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
       </Flex>
 
       <Flex flexDirection={'column'}>
-        <GraphSelectorMenuItem graphName={'Emissions'} route={'/emissions'} />
+        <GraphSelectorMenuItem
+          graphName={'Emissions'}
+          route={'/calculator/emissions'}
+        />
         <GraphSelectorMenuItem
           graphName={'Energy Demand'}
-          route={'/energy-demand'}
+          route={'/calculator/energy-demand'}
         />
         <GraphSelectorMenuItem
           graphName={'Energy Supply'}
-          route={'/energy-supply'}
+          route={'/calculator/energy-supply'}
         />
         <GraphSelectorMenuItem
           graphName={'Electricity Demand'}
-          route={'/electricity-demand'}
+          route={'/calculator/electricity-demand'}
         />
         <GraphSelectorMenuItem
           graphName={'Electricity Supply'}
-          route={'/electricity-supply'}
+          route={'/calculator/electricity-supply'}
         />
-        <GraphSelectorMenuItem graphName={'Flows'} route={'/flows'} />
-        <GraphSelectorMenuItem graphName={'Overview'} route={'/overview'} />
+        <GraphSelectorMenuItem
+          graphName={'Flows'}
+          route={'/calculator/flows'}
+        />
+        <GraphSelectorMenuItem
+          graphName={'Overview'}
+          route={'/calculator/overview'}
+        />
       </Flex>
 
       <Flex py={20}>
