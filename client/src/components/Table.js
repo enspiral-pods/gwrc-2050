@@ -42,7 +42,7 @@ export default ({ data }) => {
           </Heading>
         )
       })}
-      {map(data, (emissionsType, name, i) => {
+      {map(data, (dataArray, name, i) => {
         return (
           <React.Fragment>
             <Heading
@@ -52,7 +52,7 @@ export default ({ data }) => {
             >
               {name}
             </Heading>
-            {emissionsType.map(d => {
+            {dataArray.map(d => {
               return (
                 <Text
                   fontSize={14}
