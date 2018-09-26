@@ -1,5 +1,6 @@
 import React from 'react'
-import { Flex, Heading, Text } from 'rebass'
+import { Box, Flex, Heading, Text } from 'rebass'
+import map from 'lodash/map'
 
 // N.B. hardcoded as data doesn't come with years
 const years = [
@@ -14,22 +15,57 @@ const years = [
   '2050'
 ]
 
-export default props => {
+export default ({ data }) => {
   return (
-    <Flex flexDirection={'column'}>
-      <Flex css={{ border: '1px solid white' }}>
-        {years.map(year => {
-          return (
-            <Text
-              fontSize={[14]}
-              width={50}
-              css={{ borderRight: '1px solid white' }}
+    <Box
+      css={{
+        display: 'grid',
+        gridTemplateColumns: `100px repeat(${years.length}, 50px)`,
+        overflowX: 'scroll'
+      }}
+    >
+      <Heading
+        fontSize={[14, 18]}
+        textAlign={'center'}
+        css={{ border: '1px solid white' }}
+      >
+        Name
+      </Heading>
+      {years.map(year => {
+        return (
+          <Heading
+            fontSize={[14, 18]}
+            textAlign={'center'}
+            css={{ border: '1px solid white' }}
+          >
+            {year}
+          </Heading>
+        )
+      })}
+      {map(data, (emissionsType, name, i) => {
+        return (
+          <React.Fragment>
+            <Heading
+              fontSize={14}
+              textAlign={'center'}
+              css={{ border: '1px solid white' }}
             >
-              {year}
-            </Text>
-          )
-        })}
-      </Flex>
-    </Flex>
+              {name}
+            </Heading>
+            {emissionsType.map(d => {
+              return (
+                <Text
+                  fontSize={14}
+                  textAlign={'center'}
+                  css={{ border: '1px solid white' }}
+                >
+                  {d.toFixed(2)}
+                </Text>
+              )
+            })}
+          </React.Fragment>
+        )
+      })}
+    </Box>
   )
 }
