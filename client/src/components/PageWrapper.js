@@ -6,11 +6,11 @@ import FlexWithExtras from './FlexWithExtras'
 export default props => {
   const { doToggleMobileGraphsMenu } = props
   return (
-    <Flex flexDirection={'column'} p={15}>
+    <FlexWithExtras flexDirection={'column'} height={'100%'} p={15}>
       <FlexWithExtras display={['flex', 'none']}>
         <Button onClick={doToggleMobileGraphsMenu}>{'< Graphs'}</Button>
       </FlexWithExtras>
       {props.children}
-    </Flex>
+    </FlexWithExtras>
   )
 }

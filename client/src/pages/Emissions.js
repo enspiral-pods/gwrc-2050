@@ -6,6 +6,7 @@ import values from 'lodash/values'
 import keys from 'lodash/keys'
 
 import PageWrapper from '../components/PageWrapper'
+import Table from '../components/Table'
 import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
 
@@ -23,17 +24,15 @@ const Emissions = ({ energyEmissions, doToggleMobileGraphsMenu }) => {
 
   return (
     <Flex flexDirection={'column'}>
-      <Graph
+      <Table data={usedData} />
+      {/* <Graph
         name={'Greenhouse Gas Emissions'}
         axes={'ktCO2/yr / Date'}
         data={graphAreas}
       />
-      <MobileLegend data={graphNames} />
+      <MobileLegend data={graphNames} /> */}
     </Flex>
   )
 }
 
-export default connect(
-  'selectEnergyEmissions',
-  Emissions
-)
+export default connect('selectEnergyEmissions', Emissions)
