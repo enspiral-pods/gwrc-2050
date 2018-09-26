@@ -1,4 +1,5 @@
 import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
+import levers from './util/levers'
 
 const bundle = createAsyncResourceBundle({
   name: 'pathways',
@@ -19,11 +20,7 @@ const initialState = {
   isOutdated: false,
   lastSuccess: null,
   // other state
-  levers: {
-    travelDemand: 1,
-    activeTransport: 1,
-    publicTransport: 1
-  }
+  levers
 }
 
 const baseReducer = bundle.reducer
@@ -55,18 +52,25 @@ bundle.selectElectricityDemand = state =>
 bundle.selectElectricitySupply = state =>
   state.pathways.data ? state.pathways.data.electricity.supply : null
 
-bundle.selectTravelDemand = state => state.pathways.levers.travelDemand
-bundle.selectActiveTransport = state => state.pathways.levers.activeTransport
-bundle.selectPublicTransport = state => state.pathways.levers.publicTransport
+bundle.selectLevers = state => state.pathways.levers
 bundle.selectLeverString = state =>
-  `111101101101100${state.pathways.levers.travelDemand}${
-    state.pathways.levers.publicTransport
-  }${state.pathways.levers.activeTransport}11110111101101101101101110000000001`
-
-bundle.doUpdateTravelDemand = value => ({ dispatch, store }) => {
-  dispatch({ type: 'LEVER_UPDATE_TRAVEL_DEMAND', payload: value })
-  store.doMarkPathwaysAsOutdated()
-}
+  `111101101101100${state.pathways.levers['Travel demand']}${
+    state.pathways.levers['Public transport']
+  }${state.pathways.levers['Active transport']}${
+    state.pathways.levers['Vehicle occupancy']
+  }${state.pathways.levers['Electrification of light vehicles']}${
+    state.pathways.levers['Electrification of public transport']
+  }${state.pathways.levers['Vehicle fuel efficiencies']}0${
+    state.pathways.levers['Freight volume']
+  }${state.pathways.levers['Freight Mode and efficiency']}${
+    state.pathways.levers['Domestic aviation']
+  }${state.pathways.levers['Domestic navigation']}0${
+    state.pathways.levers['Space and water heating demand']
+  }${state.pathways.levers['Heating technology']}0${
+    state.pathways.levers['Home lighting & appliances']
+  }${
+    state.pathways.levers['Electrification of home cooking']
+  }01101101110000000001`
 
 bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {
   dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })

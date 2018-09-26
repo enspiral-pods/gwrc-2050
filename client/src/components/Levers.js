@@ -3,37 +3,18 @@ import { connect } from 'redux-bundler-react'
 import Lever from './Lever'
 import FlexWithExtras from './FlexWithExtras'
 
-const Levers = ({
-  travelDemand,
-  activeTransport,
-  publicTransport,
-  doUpdateLever
-}) => {
+const Levers = ({ levers, doUpdateLever }) => {
   return (
     <FlexWithExtras flexDirection={'column'} flexWrap={'wrap'}>
-      <Lever
-        value={travelDemand}
-        label='Travel Demand'
-        onValueChange={value => doUpdateLever('travelDemand', value)}
-      />
-      <Lever
-        value={activeTransport}
-        label='Active Transport'
-        onValueChange={value => doUpdateLever('activeTransport', value)}
-      />
-      <Lever
-        value={publicTransport}
-        label='Public Transport'
-        onValueChange={value => doUpdateLever('publicTransport', value)}
-      />
+      {Object.keys(levers).map(leverKey => (
+        <Lever
+          value={levers[leverKey]}
+          label={leverKey}
+          onValueChange={value => doUpdateLever(leverKey, value)}
+        />
+      ))}
     </FlexWithExtras>
   )
 }
 
-export default connect(
-  'selectTravelDemand',
-  'selectActiveTransport',
-  'selectPublicTransport',
-  'doUpdateLever',
-  Levers
-)
+export default connect('selectLevers', 'doUpdateLever', Levers)
