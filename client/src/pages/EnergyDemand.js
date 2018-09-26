@@ -5,7 +5,7 @@ import pick from 'lodash/pick'
 import values from 'lodash/values'
 import keys from 'lodash/keys'
 
-import PageWrapper from '../components/PageWrapper'
+import Calculator from '../hocs/Calculator'
 import Table from '../components/Table'
 import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
@@ -16,9 +16,8 @@ const EnergyDemand = ({
   emissionsDecrease,
   doToggleMobileGraphsMenu
 }) => {
-  console.log('energyDemand', energyDemand)
   return (
-    <Flex flexDirection={'column'}>
+    <Calculator>
       <Table data={energyDemand} />
       {/* <Graph
         name={'Greenhouse Gas Emissions'}
@@ -27,7 +26,7 @@ const EnergyDemand = ({
       />
       <MobileLegend data={graphNames} /> */}
       <EmissionsBar emissionsDecrease={emissionsDecrease} />
-    </Flex>
+    </Calculator>
   )
 }
 
