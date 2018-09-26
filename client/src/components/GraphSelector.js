@@ -11,6 +11,7 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
       display={display}
       flexDirection={'column'}
       width={['100%', 256]}
+      bg={'darkBackground'}
       p={20}
     >
       <FlexWithExtras

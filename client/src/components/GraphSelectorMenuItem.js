@@ -3,7 +3,7 @@ import { Flex, Text, Link, Image } from 'rebass'
 
 export default ({ graphName, route, icon }) => {
   return (
-    <Link href={route}>
+    <Link href={route} css={{ ':hover': { backgroundColor: '#262D33' } }}>
       <Flex py={10} alignItems={'center'}>
         <Image
           width={20}
