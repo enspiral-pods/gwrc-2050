@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Flex } from 'rebass/emotion'
+import { Box, Flex } from 'rebass'
 
 import FlexWithExtras from './FlexWithExtras'
 
