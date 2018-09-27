@@ -33,6 +33,10 @@ bundle.reducer = (state = initialState, action) => {
 // TODO: IK: probably needs to be rolled into a single emissions selector once we figure out what data that should be
 bundle.selectEnergyEmissions = state =>
   state.pathways.data ? state.pathways.data.ghg : null
+bundle.selectEmissionsDecrease = state =>
+  state.pathways.data
+    ? state.pathways.data.output_emissions_percentage_reduction
+    : null
 
 bundle.reactInitialPathwaysFetch = createSelector(
   'selectPathwaysShouldUpdate',
