@@ -7,6 +7,7 @@ import ElectricityDemand from './pages/ElectricityDemand'
 import ElectricitySupply from './pages/ElectricitySupply'
 
 let routes = {
+  '/': Emissions,
   '/calculator': Emissions,
   '/calculator/emissions': Emissions,
   '/calculator/energy-demand': EnergyDemand,
