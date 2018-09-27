@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Box, Flex, Button } from 'rebass'
-import navHelper from 'internal-nav-helper'
 
 import FlexWithExtras from '../components/FlexWithExtras'
 import GraphSelector from '../components/GraphSelector'
