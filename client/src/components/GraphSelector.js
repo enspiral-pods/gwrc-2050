@@ -11,6 +11,8 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
       display={display}
       flexDirection={'column'}
       width={['100%', 256]}
+      bg={'darkBackground'}
+      p={20}
     >
       <FlexWithExtras
         display={['flex', 'none']}
@@ -26,34 +28,45 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
         <Heading>Graphs</Heading>
       </FlexWithExtras>
 
-      <Flex flexDirection={'column'}>
-        <Text>Select Region</Text>
-        <Text>DROPDOWN PLACEHOLDER</Text>
+      <Flex flexDirection={'column'} py={20}>
+        <Text fontSize={12}>Select Region</Text>
+        <Text>All of Wellington</Text>
       </Flex>
 
       <Flex flexDirection={'column'}>
-        <GraphSelectorMenuItem graphName={'Emissions'} route={'/emissions'} />
+        <GraphSelectorMenuItem
+          graphName={'Emissions'}
+          route={'/calculator/emissions'}
+        />
         <GraphSelectorMenuItem
           graphName={'Energy Demand'}
-          route={'/energy-demand'}
+          route={'/calculator/energy-demand'}
         />
         <GraphSelectorMenuItem
           graphName={'Energy Supply'}
-          route={'/energy-supply'}
+          route={'/calculator/energy-supply'}
         />
         <GraphSelectorMenuItem
           graphName={'Electricity Demand'}
-          route={'/electricity-demand'}
+          route={'/calculator/electricity-demand'}
         />
         <GraphSelectorMenuItem
           graphName={'Electricity Supply'}
-          route={'/electricity-supply'}
+          route={'/calculator/electricity-supply'}
         />
-        <GraphSelectorMenuItem graphName={'Flows'} route={'/flows'} />
-        <GraphSelectorMenuItem graphName={'Overview'} route={'/overview'} />
+        <GraphSelectorMenuItem
+          graphName={'Flows'}
+          route={'/calculator/flows'}
+        />
+        <GraphSelectorMenuItem
+          graphName={'Overview'}
+          route={'/calculator/overview'}
+        />
       </Flex>
 
-      <Button>Share your scenario</Button>
+      <Flex py={20}>
+        <Button>Share your scenario</Button>
+      </Flex>
     </FlexWithExtras>
   )
 }

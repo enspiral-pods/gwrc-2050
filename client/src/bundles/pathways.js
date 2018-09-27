@@ -30,13 +30,21 @@ bundle.reducer = (state = initialState, action) => {
   return baseReducer(state, action)
 }
 
-// TODO: IK: probably needs to be rolled into a single emissions selector once we figure out what data that should be
-bundle.selectEnergyEmissions = state =>
-  state.pathways.data ? state.pathways.data.ghg : null
 bundle.selectEmissionsDecrease = state =>
   state.pathways.data
     ? state.pathways.data.output_emissions_percentage_reduction
     : null
+// TODO: IK: probably needs to be rolled into a single emissions selector once we figure out what data that should be
+bundle.selectEnergyEmissions = state =>
+  state.pathways.data ? state.pathways.data.ghg : null
+bundle.selectEnergyDemand = state =>
+  state.pathways.data ? state.pathways.data.final_energy_demand : null
+bundle.selectEnergySupply = state =>
+  state.pathways.data ? state.pathways.data.primary_energy_supply : null
+bundle.selectElectricityDemand = state =>
+  state.pathways.data ? state.pathways.data.electricity.demand : null
+bundle.selectElectricitySupply = state =>
+  state.pathways.data ? state.pathways.data.electricity.supply : null
 
 bundle.reactInitialPathwaysFetch = createSelector(
   'selectPathwaysShouldUpdate',

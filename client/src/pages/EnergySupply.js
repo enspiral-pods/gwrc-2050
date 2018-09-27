@@ -11,25 +11,14 @@ import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
 import EmissionsBar from '../components/EmissionsBar'
 
-const Emissions = ({
-  energyEmissions,
+const EnergySupply = ({
+  energySupply,
   emissionsDecrease,
   doToggleMobileGraphsMenu
 }) => {
-  const usedData = pick(energyEmissions, [
-    'Bioenergy credit',
-    'LULUCF',
-    'Fuel Combustion',
-    'Solvent and Other Product Use',
-    'Agriculture',
-    'Waste'
-  ])
-  const graphAreas = values(usedData)
-  const graphNames = keys(usedData)
-
   return (
     <Calculator>
-      <Table data={usedData} />
+      <Table data={energySupply} />
       {/* <Graph
         name={'Greenhouse Gas Emissions'}
         axes={'ktCO2/yr / Date'}
@@ -42,7 +31,7 @@ const Emissions = ({
 }
 
 export default connect(
-  'selectEnergyEmissions',
+  'selectEnergySupply',
   'selectEmissionsDecrease',
-  Emissions
+  EnergySupply
 )

@@ -10,6 +10,12 @@ const reducer = (state = initialState, action) => {
     })
   }
 
+  if (action.type === 'URL_UPDATED') {
+    return Object.assign({}, state, {
+      isMobileGraphsMenuOpen: false
+    })
+  }
+
   return state
 }
 
