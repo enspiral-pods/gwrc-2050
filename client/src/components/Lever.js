@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from 'rebass/emotion'
+import { Text } from 'rebass'
 
 export default ({ onValueChange, label, value }) => {
   return (
