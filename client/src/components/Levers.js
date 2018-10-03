@@ -28,7 +28,7 @@ const Levers = ({ display, leversByGroup, doUpdateLever }) => {
               doUpdateLever(toCamelCase(lever.label), value)
             }
           />
-        ))}))}
+        ))}
       </Flex>
     </FlexWithExtras>
   )
