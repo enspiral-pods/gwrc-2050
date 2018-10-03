@@ -5,6 +5,7 @@ export default ({ onValueChange, label, value }) => {
   return (
     <div>
       <Text>{label}</Text>
+      {/* MS: How do I style this with no rebass component? */}
       <input
         value={value}
         type='range'

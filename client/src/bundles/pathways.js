@@ -1,4 +1,5 @@
 import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
+import groupBy from 'lodash/groupBy'
 import levers from './util/levers'
 
 const bundle = createAsyncResourceBundle({
@@ -28,7 +29,7 @@ bundle.reducer = (state = initialState, action) => {
   if (action.type === 'LEVER_UPDATE') {
     const { lever, value } = action.payload
     let levers = { ...state.levers }
-    levers[lever] = value
+    levers[lever].value = value
     return Object.assign({}, state, {
       levers
     })
@@ -53,23 +54,26 @@ bundle.selectElectricitySupply = state =>
   state.pathways.data ? state.pathways.data.electricity.supply : null
 
 bundle.selectLevers = state => state.pathways.levers
+bundle.selectLeversByGroup = state =>
+  groupBy(state.pathways.levers, lever => lever.group)
+
 bundle.selectLeverString = state =>
-  `111101101101100${state.pathways.levers['Travel demand']}${
-    state.pathways.levers['Public transport']
-  }${state.pathways.levers['Active transport']}${
-    state.pathways.levers['Vehicle occupancy']
-  }${state.pathways.levers['Electrification of light vehicles']}${
-    state.pathways.levers['Electrification of public transport']
-  }${state.pathways.levers['Vehicle fuel efficiencies']}0${
-    state.pathways.levers['Freight volume']
-  }${state.pathways.levers['Freight Mode and efficiency']}${
-    state.pathways.levers['Domestic aviation']
-  }${state.pathways.levers['Domestic navigation']}0${
-    state.pathways.levers['Space and water heating demand']
-  }${state.pathways.levers['Heating technology']}0${
-    state.pathways.levers['Home lighting & appliances']
+  `111101101101100${state.pathways.levers.travelDemand.value}${
+    state.pathways.levers.publicTransport.value
+  }${state.pathways.levers.activeTransport.value}${
+    state.pathways.levers.vehicleOccupancy.value
+  }${state.pathways.levers.electrificationOfLightVehicles.value}${
+    state.pathways.levers.electrificationOfPublicTransport.value
+  }${state.pathways.levers.vehicleFuelEfficiencies.value}0${
+    state.pathways.levers.freightVolume.value
+  }${state.pathways.levers.freightModeAndEfficiency.value}${
+    state.pathways.levers.domesticAviation.value
+  }${state.pathways.levers.domesticNavigation.value}0${
+    state.pathways.levers.spaceAndWaterHeatingDemand.value
+  }${state.pathways.levers.heatingTechnology.value}0${
+    state.pathways.levers.homeLightingAndAppliances.value
   }${
-    state.pathways.levers['Electrification of home cooking']
+    state.pathways.levers.electrificationOfHomeCooking.value
   }01101101110000000001`
 
 bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {
