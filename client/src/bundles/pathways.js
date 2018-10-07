@@ -1,6 +1,6 @@
 import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
 import groupBy from 'lodash/groupBy'
-import levers from './util/levers'
+import leversState from './util/levers'
 
 const bundle = createAsyncResourceBundle({
   name: 'pathways',
@@ -21,7 +21,7 @@ const initialState = {
   isOutdated: false,
   lastSuccess: null,
   // other state
-  levers
+  levers: leversState
 }
 
 const baseReducer = bundle.reducer
