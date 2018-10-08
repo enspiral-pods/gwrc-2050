@@ -4,7 +4,6 @@ import { Flex, Button } from 'rebass'
 import navHelper from 'internal-nav-helper'
 
 import FlexWithExtras from '../components/FlexWithExtras'
-import Levers from '../components/Levers'
 
 const Layout = ({ doUpdateUrl, route, routeInfo }) => {
   const Page = route
@@ -12,11 +11,11 @@ const Layout = ({ doUpdateUrl, route, routeInfo }) => {
   return (
     <FlexWithExtras
       height={'100%'}
+      width={'100%'}
       bg={'background'}
       onClick={navHelper(doUpdateUrl)}
     >
       <Page />
-      <Levers />
     </FlexWithExtras>
   )
 }

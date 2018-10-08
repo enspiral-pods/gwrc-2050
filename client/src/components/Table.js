@@ -18,6 +18,7 @@ const years = [
 export default ({ data }) => {
   return (
     <Box
+      width={'100%'}
       css={{
         display: 'grid',
         gridTemplateColumns: `100px repeat(${years.length}, 50px)`,
