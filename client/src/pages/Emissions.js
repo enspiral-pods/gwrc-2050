@@ -29,13 +29,13 @@ const Emissions = ({
 
   return (
     <Calculator>
-      <Table data={usedData} />
-      {/* <Graph
+      {/* <Table data={usedData} /> */}
+      <Graph
         name={'Greenhouse Gas Emissions'}
         axes={'ktCO2/yr / Date'}
         data={graphAreas}
       />
-      <MobileLegend data={graphNames} /> */}
+      <MobileLegend data={graphNames} />
       <EmissionsBar emissionsDecrease={emissionsDecrease} />
     </Calculator>
   )
