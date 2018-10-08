@@ -1,9 +1,9 @@
 import React from 'react'
-import { Text } from 'rebass'
+import { Flex, Text } from 'rebass'
 
 export default ({ onValueChange, label, value }) => {
   return (
-    <div>
+    <Flex flexDirection={'column'}>
       <Text>{label}</Text>
       {/* MS: How do I style this with no rebass component? */}
       <input
@@ -13,6 +13,6 @@ export default ({ onValueChange, label, value }) => {
         max='4'
         onChange={event => onValueChange(event.target.value)}
       />
-    </div>
+    </Flex>
   )
 }

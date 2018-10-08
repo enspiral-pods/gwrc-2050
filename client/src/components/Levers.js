@@ -23,7 +23,7 @@ const Levers = ({
         <Heading>Options</Heading>
       </FlexWithExtras>
 
-      <Flex flexDirection={'column'} css={{ overflowY: 'scroll' }}>
+      <Flex flexDirection={'column'}>
         {/* TODO: MS: top level groups */}
         {leversByGroup['Demand'].map(lever => (
           <Lever
