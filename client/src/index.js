@@ -9,9 +9,9 @@ import theme from './theme'
 import Layout from './hocs/Layout'
 // import registerServiceWorker from './registerServiceWorker'
 
-import interBold from './fonts/Inter-UI-Bold.woff2'
-import interMedium from './fonts/Inter-UI-Medium.woff2'
-import interRegular from './fonts/Inter-UI-Regular.woff2'
+import interBold from './assets/fonts/Inter-UI-Bold.woff2'
+import interMedium from './assets/fonts/Inter-UI-Medium.woff2'
+import interRegular from './assets/fonts/Inter-UI-Regular.woff2'
 
 const GlobalStyle = createGlobalStyle`
   @font-face {

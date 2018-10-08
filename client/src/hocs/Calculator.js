@@ -1,11 +1,13 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Box, Flex, Button } from 'rebass'
+import { Box, Flex, Button, Image } from 'rebass'
 
 import TextMedium from '../components/TextMedium'
 import FlexWithExtras from '../components/FlexWithExtras'
 import GraphSelector from '../components/GraphSelector'
 import Levers from '../components/Levers'
+
+import leftArrow from '../assets/images/left-arrow.svg'
 
 const Layout = ({
   children,
@@ -35,7 +37,12 @@ const Layout = ({
           p={15}
         >
           <FlexWithExtras display={['flex', 'none']}>
-            <Button onClick={doToggleMobileGraphsMenu}>{'< Graphs'}</Button>
+            <Button onClick={doToggleMobileGraphsMenu}>
+              <Flex alignItems={'center'}>
+                <Image src={leftArrow} />
+                {'Graphs'}
+              </Flex>
+            </Button>
           </FlexWithExtras>
           {children}
           <FlexWithExtras display={['flex', 'none']}>
