@@ -17,10 +17,10 @@ export default ({ data, colors }) => {
     >
       {data.map((d, i) => {
         return (
-          <Flex key={i} alignItems={'center'} mr={20}>
+          <Flex key={i} alignItems={'center'} width={'50%'} pr={20} pb={'5px'}>
             <Box
               width={14}
-              css={{ height: '14px' }}
+              css={{ height: '14px', minWidth: '14px' }}
               bg={colors[i % 3]}
               mr={10}
             />
