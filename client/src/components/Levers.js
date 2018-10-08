@@ -3,9 +3,14 @@ import { connect } from 'redux-bundler-react'
 import toCamelCase from 'lodash/camelCase'
 import Lever from './Lever'
 import FlexWithExtras from './FlexWithExtras'
-import { Flex, Heading } from 'rebass'
+import { Flex, Heading, Button } from 'rebass'
 
-const Levers = ({ display, leversByGroup, doUpdateLever }) => {
+const Levers = ({
+  display,
+  doToggleMobileLeversMenu,
+  leversByGroup,
+  doUpdateLever
+}) => {
   return (
     <FlexWithExtras
       display={display}
@@ -30,6 +35,10 @@ const Levers = ({ display, leversByGroup, doUpdateLever }) => {
           />
         ))}
       </Flex>
+
+      <FlexWithExtras display={['flex', 'none']}>
+        <Button onClick={doToggleMobileLeversMenu}>View your impact</Button>
+      </FlexWithExtras>
     </FlexWithExtras>
   )
 }
