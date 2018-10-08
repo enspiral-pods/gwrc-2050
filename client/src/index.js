@@ -9,7 +9,23 @@ import theme from './theme'
 import Layout from './hocs/Layout'
 // import registerServiceWorker from './registerServiceWorker'
 
+import interBold from './fonts/Inter-UI-Bold.woff2'
+import interMedium from './fonts/Inter-UI-Medium.woff2'
+import interRegular from './fonts/Inter-UI-Regular.woff2'
+
 const GlobalStyle = createGlobalStyle`
+  @font-face {
+    font-family: 'Inter-UI-Bold';
+    src: local('Inter-UI-Bold'), url(${interBold}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Inter-UI-Medium';
+    src: local('Inter-UI-Medium'), url(${interMedium}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Inter-UI-Regular';
+    src: local('Inter-UI-Regular'), url(${interRegular}) format('woff2');
+  }
   * {
     box-sizing: border-box;
   }

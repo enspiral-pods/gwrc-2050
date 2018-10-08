@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Box, Flex, Button } from 'rebass'
 
+import TextMedium from '../components/TextMedium'
 import FlexWithExtras from '../components/FlexWithExtras'
 import GraphSelector from '../components/GraphSelector'
 import Levers from '../components/Levers'
@@ -39,7 +40,7 @@ const Layout = ({
           {children}
           <FlexWithExtras display={['flex', 'none']}>
             <Button onClick={doToggleMobileLeversMenu}>
-              {'Choose your actions'}
+              <TextMedium fontSize={16}>{'Choose your actions'}</TextMedium>
             </Button>
           </FlexWithExtras>
         </Flex>

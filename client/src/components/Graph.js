@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading, Text } from 'rebass'
+import { Flex, Heading } from 'rebass'
 import {
   VictoryChart,
   VictoryAxis,
@@ -8,6 +8,7 @@ import {
   VictoryLabel
 } from 'victory'
 
+import TextRegular from './TextRegular'
 import LinearGradient from './LinearGradient'
 import GraphLabelMobile from './GraphLabelMobile'
 
@@ -18,8 +19,8 @@ export default ({ name, axes, data, colors }) => {
 
   return (
     <Flex flexDirection={'column'}>
-      <Heading>{name}</Heading>
-      <Text>{axes}</Text>
+      <Heading fontSize={20}>{name}</Heading>
+      <TextRegular fontSize={12}>{axes}</TextRegular>
       <svg height={0} width={0}>
         <defs>
           {colors.map(color => (
@@ -48,8 +49,16 @@ export default ({ name, axes, data, colors }) => {
           axisLabelComponent={<GraphLabelMobile />}
           offsetY={50}
           style={{
-            axisLabel: { fill: 'white', fontSize: 20 },
-            tickLabels: { fill: 'white', fontSize: 15 },
+            axisLabel: {
+              fill: 'white',
+              fontSize: 20,
+              fontFamily: 'Inter-UI-Regular'
+            },
+            tickLabels: {
+              fill: 'white',
+              fontSize: 12,
+              fontFamily: 'Inter-UI-Regular'
+            },
             grid: {
               stroke: 'white',
               strokeOpacity: (d, i) => (i % 2 == 0 ? '0.1' : '0')
@@ -63,8 +72,16 @@ export default ({ name, axes, data, colors }) => {
           label={'Emissions (ktCO2/yr)'}
           axisLabelComponent={<GraphLabelMobile />}
           style={{
-            axisLabel: { fill: 'white', fontSize: 20 },
-            tickLabels: { fill: 'white', fontSize: 15 },
+            axisLabel: {
+              fill: 'white',
+              fontSize: 20,
+              fontFamily: 'Inter-UI-Regular'
+            },
+            tickLabels: {
+              fill: 'white',
+              fontSize: 12,
+              fontFamily: 'Inter-UI-Regular'
+            },
             grid: { stroke: 'white', strokeOpacity: '0.1' }
           }}
         />

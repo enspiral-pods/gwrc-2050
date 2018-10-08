@@ -1,7 +1,8 @@
 import React from 'react'
-import { Box, Flex, Text } from 'rebass'
+import { Box, Flex } from 'rebass'
 
 import FlexWithExtras from './FlexWithExtras'
+import TextRegular from './TextRegular'
 
 export default ({ data, colors }) => {
   if (!data) {
@@ -23,7 +24,7 @@ export default ({ data, colors }) => {
               bg={colors[i % 3]}
               mr={10}
             />
-            <Text>{d}</Text>
+            <TextRegular fontSize={11}>{d}</TextRegular>
           </Flex>
         )
       })}
