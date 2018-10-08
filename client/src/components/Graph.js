@@ -14,7 +14,7 @@ export default ({ name, axes, data }) => {
     <Flex flexDirection={'column'}>
       <Heading>{name}</Heading>
       <Text>{axes}</Text>
-      <svg>
+      <svg height={0} width={0}>
         <defs>
           {areaColors.map(color => (
             <LinearGradient id={`gradient-${color}`} color={color} />
