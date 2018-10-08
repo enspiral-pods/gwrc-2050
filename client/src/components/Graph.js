@@ -11,11 +11,10 @@ import {
 import LinearGradient from './LinearGradient'
 import GraphLabelMobile from './GraphLabelMobile'
 
-export default ({ name, axes, data }) => {
+export default ({ name, axes, data, colors }) => {
   if (!data) {
     return null
   }
-  const areaColors = ['#FFC700', '#3285D9', '#00C06F']
 
   return (
     <Flex flexDirection={'column'}>
@@ -23,7 +22,7 @@ export default ({ name, axes, data }) => {
       <Text>{axes}</Text>
       <svg height={0} width={0}>
         <defs>
-          {areaColors.map(color => (
+          {colors.map(color => (
             <LinearGradient id={`gradient-${color}`} color={color} />
           ))}
         </defs>
@@ -36,7 +35,7 @@ export default ({ name, axes, data }) => {
               data={d}
               style={{
                 data: {
-                  fill: d => `url(#gradient-${areaColors[i % 3]})`
+                  fill: d => `url(#gradient-${colors[i % 3]})`
                 }
               }}
             />

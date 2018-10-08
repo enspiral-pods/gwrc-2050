@@ -3,7 +3,7 @@ import { Box, Flex, Text } from 'rebass'
 
 import FlexWithExtras from './FlexWithExtras'
 
-export default ({ data }) => {
+export default ({ data, colors }) => {
   if (!data) {
     return null
   }
@@ -17,7 +17,12 @@ export default ({ data }) => {
       {data.map((d, i) => {
         return (
           <Flex key={i} alignItems={'center'} mr={20}>
-            <Box width={14} css={{ height: 14 }} bg={'red'} mr={10} />
+            <Box
+              width={14}
+              css={{ height: '14px' }}
+              bg={colors[i % 3]}
+              mr={10}
+            />
             <Text>{d}</Text>
           </Flex>
         )
