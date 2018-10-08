@@ -2,6 +2,8 @@ import React from 'react'
 import { Flex, Heading, Text } from 'rebass'
 import { VictoryChart, VictoryAxis, VictoryStack, VictoryArea } from 'victory'
 
+import LinearGradient from './LinearGradient'
+
 export default ({ name, axes, data }) => {
   if (!data) {
     return null
@@ -12,6 +14,13 @@ export default ({ name, axes, data }) => {
     <Flex flexDirection={'column'}>
       <Heading>{name}</Heading>
       <Text>{axes}</Text>
+      <svg>
+        <defs>
+          {areaColors.map(color => (
+            <LinearGradient id={`gradient-${color}`} color={color} />
+          ))}
+        </defs>
+      </svg>
       <VictoryChart>
         <VictoryStack>
           {data.map((d, i) => (
@@ -20,7 +29,7 @@ export default ({ name, axes, data }) => {
               data={d}
               style={{
                 data: {
-                  fill: d => areaColors[i % 3]
+                  fill: d => `url(#gradient-${areaColors[i % 3]})`
                 }
               }}
             />
