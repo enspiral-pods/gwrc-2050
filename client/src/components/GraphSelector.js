@@ -1,9 +1,12 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Heading, Text, Button } from 'rebass'
+import { Flex, Heading, Button, Image } from 'rebass'
 
+import TextRegular from './TextRegular'
 import FlexWithExtras from './FlexWithExtras'
 import GraphSelectorMenuItem from './GraphSelectorMenuItem'
+
+import rightArrow from '../assets/images/right-arrow.svg'
 
 const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
   return (
@@ -12,25 +15,31 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
       flexDirection={'column'}
       width={['100%', 256]}
       bg={'darkBackground'}
-      p={20}
+      p={15}
     >
       <FlexWithExtras
         display={['flex', 'none']}
         flexDirection={'row'}
         justifyContent={'space-between'}
-        p={20}
+        alignItems={'center'}
+        pb={20}
       >
-        <Text css={{ visibility: 'hidden' }}>Back ></Text>
-        <Heading>Graphs</Heading>
-        <Button onClick={doToggleMobileGraphsMenu}>Back ></Button>
+        <Heading css={{ visibility: 'hidden' }}>Back ></Heading>
+        <Heading fontSize={16}>Graphs</Heading>
+        <Button onClick={doToggleMobileGraphsMenu} variant={'nav'}>
+          <Flex alignItems={'center'}>
+            <Heading fontSize={14}>{'Back'}</Heading>
+            <Image src={rightArrow} height={24} width={24} />
+          </Flex>
+        </Button>
       </FlexWithExtras>
       <FlexWithExtras display={['none', 'flex']}>
         <Heading>Graphs</Heading>
       </FlexWithExtras>
 
       <Flex flexDirection={'column'} py={20}>
-        <Text fontSize={12}>Select Region</Text>
-        <Text>All of Wellington</Text>
+        <Heading fontSize={12}>Select Region</Heading>
+        <TextRegular fontSize={16}>All of Wellington</TextRegular>
       </Flex>
 
       <Flex flexDirection={'column'}>
