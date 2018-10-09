@@ -3,7 +3,11 @@ import { connect } from 'redux-bundler-react'
 import toCamelCase from 'lodash/camelCase'
 import Lever from './Lever'
 import FlexWithExtras from './FlexWithExtras'
-import { Flex, Heading, Button } from 'rebass'
+import { Flex, Heading, Button, Image } from 'rebass'
+
+import TextMedium from './TextMedium'
+
+import downArrow from '../assets/images/down-arrow.svg'
 
 const Levers = ({
   display,
@@ -37,7 +41,16 @@ const Levers = ({
       </Flex>
 
       <FlexWithExtras display={['flex', 'none']}>
-        <Button onClick={doToggleMobileLeversMenu}>View your impact</Button>
+        <Button
+          onClick={doToggleMobileLeversMenu}
+          bg={'darkFluroGreen'}
+          width={'100%'}
+        >
+          <Flex justifyContent={'center'} alignItems={'center'}>
+            <Image src={downArrow} height={24} width={24} mr={10} />
+            <TextMedium fontSize={16}>{'View your impact'}</TextMedium>
+          </Flex>
+        </Button>
       </FlexWithExtras>
     </FlexWithExtras>
   )
