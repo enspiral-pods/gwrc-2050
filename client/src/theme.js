@@ -3,7 +3,9 @@ export default {
   colors: {
     background: '#262D33',
     darkBackground: '#1A1F23',
-    red: '#FF5252'
+    red: '#FF5252',
+    darkFluroGreen: '#00CC9B',
+    lightFluroGreen: '#00FFC2'
   },
   fonts: {
     bold: 'Inter-UI-Bold',
