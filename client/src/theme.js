@@ -10,6 +10,15 @@ export default {
     medium: 'Inter-UI-Medium',
     regular: 'Inter-UI-Regular'
   },
+  buttons: {
+    nav: {
+      backgroundColor: 'rgba(0,0,0,0)',
+      paddingLeft: 0,
+      paddingRight: 0,
+      paddingTop: 10,
+      paddingBottom: 10
+    }
+  },
   Text: {
     color: 'white'
   },

@@ -18,8 +18,10 @@ export default ({ name, axes, data, colors }) => {
   }
 
   return (
-    <Flex flexDirection={'column'}>
-      <Heading fontSize={20}>{name}</Heading>
+    <Flex flexDirection={'column'} width={'100%'}>
+      <Heading fontSize={20} py={'5px'}>
+        {name}
+      </Heading>
       <TextRegular fontSize={12}>{axes}</TextRegular>
       <svg height={0} width={0}>
         <defs>
@@ -28,7 +30,7 @@ export default ({ name, axes, data, colors }) => {
           ))}
         </defs>
       </svg>
-      <VictoryChart>
+      <VictoryChart animate={{ duration: 400, onLoad: { duration: 500 } }}>
         <VictoryStack>
           {data.map((d, i) => (
             <VictoryArea

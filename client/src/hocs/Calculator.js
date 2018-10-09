@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Box, Flex, Button, Image } from 'rebass'
+import { Box, Flex, Button, Image, Heading } from 'rebass'
 
 import TextMedium from '../components/TextMedium'
 import FlexWithExtras from '../components/FlexWithExtras'
@@ -36,11 +36,11 @@ const Layout = ({
           width={'100%'}
           p={15}
         >
-          <FlexWithExtras display={['flex', 'none']}>
-            <Button onClick={doToggleMobileGraphsMenu}>
+          <FlexWithExtras display={['flex', 'none']} width={'100%'} mb={10}>
+            <Button onClick={doToggleMobileGraphsMenu} variant={'nav'}>
               <Flex alignItems={'center'}>
-                <Image src={leftArrow} />
-                {'Graphs'}
+                <Image src={leftArrow} height={24} width={24} />
+                <Heading fontSize={14}>{'Graphs'}</Heading>
               </Flex>
             </Button>
           </FlexWithExtras>
