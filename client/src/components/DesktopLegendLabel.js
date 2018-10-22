@@ -1,5 +1,6 @@
 import React from 'react'
-import { VictoryLabel } from 'victory'
+
+import GraphLabelMobile from './GraphLabelMobile'
 
 // TODO: IK:
 // could compute the scaled start and end Y coords of each area in the stack, as we have access to the scale func and the originalData?
@@ -24,5 +25,5 @@ function computeMiddleY (originalData, index, scale) {
 export default props => {
   const { originalData, index, scale } = props
   const labelY = computeMiddleY(originalData, index, scale)
-  return <VictoryLabel {...props} y={scale.y(labelY)} />
+  return <GraphLabelMobile {...props} y={scale.y(labelY)} />
 }
