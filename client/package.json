@@ -24,6 +24,7 @@
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
     "react-scripts": "1.1.5",
+    "react-virtualized": "^9.20.1",
     "rebass": "^3.0.0-8",
     "redux-bundler": "^21.2.2",
     "redux-bundler-react": "^1.0.1",

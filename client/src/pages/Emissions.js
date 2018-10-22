@@ -35,6 +35,7 @@ const Emissions = ({
         name={'Greenhouse Gas Emissions'}
         axes={'ktCO2/yr / Date'}
         data={graphAreas}
+        labels={graphNames}
         colors={colors}
       />
       <MobileLegend data={graphNames} colors={colors} />

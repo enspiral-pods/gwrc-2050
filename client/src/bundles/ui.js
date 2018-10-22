@@ -1,8 +1,11 @@
+import debounce from 'lodash/debounce'
+
 const name = 'ui'
 
 const initialState = {
   isMobileGraphsMenuOpen: false,
-  isMobileLeversMenuOpen: false
+  isMobileLeversMenuOpen: false,
+  windowWidth: null
 }
 const reducer = (state = initialState, action) => {
   if (action.type === 'TOGGLE_MOBILE_GRAPHS_MENU') {
@@ -23,12 +26,18 @@ const reducer = (state = initialState, action) => {
     })
   }
 
+  if (action.type === 'WINDOW_RESIZE_WIDTH') {
+    return { ...state, windowWidth: action.payload }
+  }
+
   return state
 }
 
 const selectors = {
   selectIsMobileGraphsMenuOpen: state => state.ui.isMobileGraphsMenuOpen,
-  selectIsMobileLeversMenuOpen: state => state.ui.isMobileLeversMenuOpen
+  selectIsMobileLeversMenuOpen: state => state.ui.isMobileLeversMenuOpen,
+  selectWindowWidth: state => state.ui.windowWidth,
+  selectIsMobileUI: state => state.ui.windowWidth < 800
 }
 
 const actionCreators = {
@@ -40,10 +49,23 @@ const actionCreators = {
 
 const reactors = {}
 
+const init = store => {
+  store.dispatch({ type: 'WINDOW_RESIZE_WIDTH', payload: window.innerWidth })
+  window.addEventListener(
+    'resize',
+    debounce(e => {
+      const width = e.target.innerWidth
+      store.dispatch({ type: 'WINDOW_RESIZE_WIDTH', payload: width })
+    }),
+    100
+  )
+}
+
 export default {
   name,
   reducer,
   ...selectors,
   ...actionCreators,
-  ...reactors
+  ...reactors,
+  init
 }
