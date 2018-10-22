@@ -3,76 +3,76 @@ export default {
   travelDemand: {
     label: 'Travel demand',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   activeTransport: {
     label: 'Active transport',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   publicTransport: {
     label: 'Public transport',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   electrificationOfLightVehicles: {
     label: 'Electrification of light vehicles',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   electrificationOfPublicTransport: {
     label: 'Electrification of public transport',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   vehicleOccupancy: {
     label: 'Vehicle occupancy',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   vehicleFuelEfficiencies: {
     label: 'Vehicle fuel efficiencies',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   freightVolume: {
     label: 'Freight volume',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   domesticAviation: {
     label: 'Domestic aviation',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   domesticNavigation: {
     label: 'Domestic navigation',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   freightModeAndEfficiency: {
     label: 'Freight Mode and efficiency',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   spaceAndWaterHeatingDemand: {
     label: 'Space and water heating demand',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   heatingTechnology: {
     label: 'Heating technology',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   homeLightingAndAppliances: {
     label: 'Home lighting and appliances',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
     value: 1,
-    group: 'Demand'
+    group: 'Transport'
   }
 }
