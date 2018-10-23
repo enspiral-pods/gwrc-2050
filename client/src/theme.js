@@ -18,7 +18,14 @@ export default {
       paddingLeft: 0,
       paddingRight: 0,
       paddingTop: 10,
-      paddingBottom: 10
+      paddingBottom: 10,
+      cursor: 'pointer',
+      ':focus': {
+        outline: 0
+      },
+      ':hover': {
+        opacity: 0.7
+      }
     },
     leverGroup: {
       paddingLeft: 0,

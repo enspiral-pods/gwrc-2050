@@ -1,27 +1,17 @@
 import React from 'react'
-import { Flex, Heading, Button, Image } from 'rebass'
+import { Flex, Text, Image, Button } from 'rebass'
 
-import Lever from './Lever'
+import leftArrow from '../assets/images/left-arrow.svg'
 
-import rightArrow from '../assets/images/right-arrow.svg'
-
-export default ({ group, levers }) => {
+export default ({ doToggleLeverGroup, selectedLeverGroup, levers }) => {
   return (
-    <Button width={'100%'} bg={'darkBackground'} variant={'leverGroup'}>
-      <Flex flexDirection={'column'} width={'100%'} p={20}>
-        <Flex
-          flexDirection={'row'}
-          justifyContent={'space-between'}
-          width={'100%'}
-          mb={10}
-        >
-          <Heading fontSize={16} textAlign={'left'}>{`${group} (${
-            levers.length
-          } levers)`}</Heading>
-          <Image src={rightArrow} height={24} width={24} mr={10} />
+    <Flex flexDirection={'column'}>
+      <Button variant={'nav'} onClick={() => doToggleLeverGroup()}>
+        <Flex flexDirection={'row'}>
+          <Image src={leftArrow} height={24} width={24} mr={10} />
+          <Text>{selectedLeverGroup}</Text>
         </Flex>
-        <Lever />
-      </Flex>
-    </Button>
+      </Button>
+    </Flex>
   )
 }

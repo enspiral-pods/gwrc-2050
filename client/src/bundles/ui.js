@@ -5,6 +5,8 @@ const name = 'ui'
 const initialState = {
   isMobileGraphsMenuOpen: false,
   isMobileLeversMenuOpen: false,
+  isLeverGroupOpen: false,
+  selectedLeverGroup: null,
   windowWidth: null
 }
 const reducer = (state = initialState, action) => {
@@ -16,6 +18,12 @@ const reducer = (state = initialState, action) => {
   if (action.type === 'TOGGLE_MOBILE_LEVERS_MENU') {
     return Object.assign({}, state, {
       isMobileLeversMenuOpen: !state.isMobileLeversMenuOpen
+    })
+  }
+  if (action.type === 'TOGGLE_LEVER_GROUP') {
+    return Object.assign({}, state, {
+      isLeverGroupOpen: !state.isLeverGroupOpen,
+      selectedLeverGroup: action.payload || null
     })
   }
 
@@ -36,6 +44,8 @@ const reducer = (state = initialState, action) => {
 const selectors = {
   selectIsMobileGraphsMenuOpen: state => state.ui.isMobileGraphsMenuOpen,
   selectIsMobileLeversMenuOpen: state => state.ui.isMobileLeversMenuOpen,
+  selectIsLeverGroupOpen: state => state.ui.isLeverGroupOpen,
+  selectSelectedLeverGroup: state => state.ui.selectedLeverGroup,
   selectWindowWidth: state => state.ui.windowWidth,
   selectIsMobileUI: state => state.ui.windowWidth < 800
 }
@@ -44,7 +54,9 @@ const actionCreators = {
   doToggleMobileGraphsMenu: () => ({ dispatch }) =>
     dispatch({ type: 'TOGGLE_MOBILE_GRAPHS_MENU' }),
   doToggleMobileLeversMenu: () => ({ dispatch }) =>
-    dispatch({ type: 'TOGGLE_MOBILE_LEVERS_MENU' })
+    dispatch({ type: 'TOGGLE_MOBILE_LEVERS_MENU' }),
+  doToggleLeverGroup: leverGroup => ({ dispatch }) =>
+    dispatch({ type: 'TOGGLE_LEVER_GROUP', payload: leverGroup })
 }
 
 const reactors = {}
