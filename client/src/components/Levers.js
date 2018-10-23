@@ -1,7 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Flex, Heading, Button, Image } from 'rebass'
-import toCamelCase from 'lodash/camelCase'
 import keys from 'lodash/keys'
 
 import LeverGroupListItem from './LeverGroupListItem'
@@ -27,6 +26,7 @@ const Levers = ({
           doToggleLeverGroup={doToggleLeverGroup}
           selectedLeverGroup={selectedLeverGroup}
           levers={leversByGroup[selectedLeverGroup]}
+          doUpdateLever={doUpdateLever}
         />
       ) : (
         <FlexWithExtras flexDirection={'column'} width={'100%'}>
@@ -71,13 +71,3 @@ export default connect(
   'doToggleLeverGroup',
   Levers
 )
-
-{
-  /* <LeverGroupListItem
-  value={lever.value}
-  label={lever.label}
-  onValueChange={value =>
-    doUpdateLever(toCamelCase(lever.label), value)
-  }
-/> */
-}
