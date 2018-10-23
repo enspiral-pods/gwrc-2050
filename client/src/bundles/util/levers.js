@@ -58,21 +58,21 @@ export default {
   spaceAndWaterHeatingDemand: {
     label: 'Space and water heating demand',
     value: 1,
-    group: 'Transport'
+    group: 'Households'
   },
   heatingTechnology: {
     label: 'Heating technology',
     value: 1,
-    group: 'Transport'
+    group: 'Households'
   },
   homeLightingAndAppliances: {
     label: 'Home lighting and appliances',
     value: 1,
-    group: 'Transport'
+    group: 'Households'
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
     value: 1,
-    group: 'Transport'
+    group: 'Households'
   }
 }
