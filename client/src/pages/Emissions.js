@@ -26,16 +26,19 @@ const Emissions = ({
   ])
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
+  const colors = ['#FFC700', '#3285D9', '#00C06F']
 
   return (
     <Calculator>
-      <Table data={usedData} />
-      {/* <Graph
+      {/* <Table data={usedData} /> */}
+      <Graph
         name={'Greenhouse Gas Emissions'}
         axes={'ktCO2/yr / Date'}
         data={graphAreas}
+        labels={graphNames}
+        colors={colors}
       />
-      <MobileLegend data={graphNames} /> */}
+      <MobileLegend data={graphNames} colors={colors} />
       <EmissionsBar emissionsDecrease={emissionsDecrease} />
     </Calculator>
   )

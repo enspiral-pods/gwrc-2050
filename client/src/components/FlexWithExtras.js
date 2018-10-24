@@ -8,6 +8,7 @@ import {
   right,
   bottom,
   left,
+  borders,
   zIndex
 } from 'styled-system'
 
@@ -19,5 +20,6 @@ export default styled(Flex)(
   right,
   bottom,
   left,
+  borders,
   zIndex
 )
