@@ -33,8 +33,8 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
           </Flex>
         </Button>
       </FlexWithExtras>
-      <FlexWithExtras display={['none', 'flex']}>
-        <Heading>Graphs</Heading>
+      <FlexWithExtras display={['none', 'flex']} mb={40}>
+        <Heading fontSize={20}>Graphs</Heading>
       </FlexWithExtras>
 
       <Flex flexDirection={'column'} py={20}>

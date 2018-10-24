@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Text, Image, Button } from 'rebass'
+import { Flex, Heading, Image, Button } from 'rebass'
 import toCamelCase from 'lodash/camelCase'
 
 import Lever from './Lever'
@@ -14,10 +14,10 @@ export default ({
 }) => {
   return (
     <Flex flexDirection={'column'}>
-      <Button variant={'nav'} onClick={() => doToggleLeverGroup()}>
-        <Flex flexDirection={'row'}>
+      <Button variant={'nav'} onClick={() => doToggleLeverGroup()} mb={40}>
+        <Flex flexDirection={'row'} alignItems={'center'}>
           <Image src={leftArrow} height={24} width={24} mr={10} />
-          <Text>{selectedLeverGroup}</Text>
+          <Heading fontSize={20}>{selectedLeverGroup}</Heading>
         </Flex>
       </Button>
       {levers.map(lever => {

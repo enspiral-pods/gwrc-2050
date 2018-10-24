@@ -20,7 +20,12 @@ const Levers = ({
   doToggleLeverGroup
 }) => {
   return (
-    <FlexWithExtras display={display} width={['100%', 350]} p={20}>
+    <FlexWithExtras
+      display={display}
+      width={['100%', 350]}
+      p={20}
+      borderLeft={'1px solid rgb(255,255,255,0.1)'}
+    >
       {isLeverGroupOpen ? (
         <LeverGroup
           doToggleLeverGroup={doToggleLeverGroup}
@@ -30,8 +35,8 @@ const Levers = ({
         />
       ) : (
         <FlexWithExtras flexDirection={'column'} width={'100%'}>
-          <FlexWithExtras display={['none', 'flex']}>
-            <Heading>Options</Heading>
+          <FlexWithExtras display={['none', 'flex']} mb={40}>
+            <Heading fontSize={20}>Options</Heading>
           </FlexWithExtras>
 
           <Flex flexDirection={'column'}>

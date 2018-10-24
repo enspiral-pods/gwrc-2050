@@ -12,6 +12,7 @@ export default ({ group, levers, doToggleLeverGroup }) => {
       bg={'darkBackground'}
       variant={'leverGroup'}
       onClick={() => doToggleLeverGroup(group)}
+      mb={15}
     >
       <Flex flexDirection={'column'} width={'100%'} p={20}>
         <Flex
