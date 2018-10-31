@@ -7,19 +7,27 @@ export default ({ emissionsDecrease }) => {
   if (!emissionsDecrease) {
     return null
   }
-  const prefix =
-    Math.sign(emissionsDecrease) === 1 ? 'Decrease of' : 'Increase of'
+
+  const isDecrease = Math.sign(emissionsDecrease) === 1
+  const prefix = isDecrease ? 'Decrease of' : 'Increase of'
+  const roundedChange = (emissionsDecrease * 100).toFixed(2)
+  const absoluteChange = Math.abs(roundedChange)
+  const percentageChange = absoluteChange / 100
+
   return (
-    <Flex flexDirection={'column'} justifyContent={'center'} p={20}>
-      <Heading>{`${prefix} ${Math.abs(
-        (emissionsDecrease * 100).toFixed(2)
-      )}%`}</Heading>
+    <Flex
+      flexDirection={'column'}
+      justifyContent={'center'}
+      width={'100%'}
+      p={20}
+    >
+      <Heading>{`${prefix} ${absoluteChange}%`}</Heading>
       <svg height={'100%'} width={'100%'}>
         <rect x='0' y='0' width='100%' height='10' fill={'black'} />
         <rect
-          x='50%'
+          x={isDecrease ? '50%' : `${(1 - percentageChange) * 50}%`}
           y='0'
-          width={`${Math.abs((emissionsDecrease * 100).toFixed(2))}%`}
+          width={`${percentageChange * 50}%`}
           height='10'
           fill={'red'}
         />
