@@ -23,12 +23,12 @@ export default ({ emissionsDecrease }) => {
     >
       <Heading>{`${prefix} ${absoluteChange}%`}</Heading>
       <svg height={'100%'} width={'100%'}>
-        <rect x='0' y='0' width='100%' height='10' fill={'black'} />
+        <rect x='0' y='0' width='100%' height='5' fill={'black'} />
         <rect
           x={isDecrease ? '50%' : `${(1 - percentageChange) * 50}%`}
           y='0'
           width={`${percentageChange * 50}%`}
-          height='10'
+          height='5'
           fill={'red'}
         />
       </svg>
