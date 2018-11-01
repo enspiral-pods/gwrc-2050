@@ -19,6 +19,13 @@ export default ({ emissionsDecrease }) => {
     ? `${percentageChange * 50 + 50}%`
     : `${(1 - percentageChange) * 50}%`
 
+  const fill =
+    emissionsDecrease < -0.25
+      ? '#FF5252'
+      : emissionsDecrease < 0
+        ? '#ECAA2A'
+        : emissionsDecrease < 0.25 ? '#00B4C0' : '#00C06F'
+
   return (
     <Flex
       flexDirection={'column'}
@@ -34,7 +41,7 @@ export default ({ emissionsDecrease }) => {
             y='45'
             width={`${percentageChange * 50}%`}
             height='5'
-            fill={'red'}
+            fill={fill}
           />
         </g>
         <g>
@@ -45,7 +52,7 @@ export default ({ emissionsDecrease }) => {
             ry={3}
             width={tooltipWidth}
             height='30'
-            fill={'red'}
+            fill={fill}
             transform={`translate(-${tooltipWidth / 2})`}
           />
           <svg
@@ -55,7 +62,7 @@ export default ({ emissionsDecrease }) => {
             height={5}
           >
             <polygon
-              fill={'red'}
+              fill={fill}
               points={`0,0 10,0 5,5`}
               transform={`translate(-5)`}
             />
