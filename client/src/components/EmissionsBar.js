@@ -3,7 +3,7 @@ import { Box, Flex, Heading } from 'rebass'
 
 import FlexWithExtras from './FlexWithExtras'
 
-export default ({ emissionsDecrease }) => {
+export default ({ emissionsDecrease, isMobileUI }) => {
   if (!emissionsDecrease) {
     return null
   }
@@ -14,7 +14,7 @@ export default ({ emissionsDecrease }) => {
   const absoluteChange = Math.abs(roundedChange)
   const percentageChange = absoluteChange / 100
 
-  const tooltipWidth = 150
+  const tooltipWidth = isMobileUI ? 120 : 150
   const barXPointAsWidthPercentage = isDecrease
     ? `${percentageChange * 50 + 50}%`
     : `${(1 - percentageChange) * 50}%`
@@ -47,11 +47,11 @@ export default ({ emissionsDecrease }) => {
         <g>
           <rect
             x={barXPointAsWidthPercentage}
-            y='0'
+            y={isMobileUI ? 10 : 0}
             rx={3}
             ry={3}
             width={tooltipWidth}
-            height='30'
+            height={isMobileUI ? 20 : 30}
             fill={fill}
             transform={`translate(-${tooltipWidth / 2})`}
           />
@@ -69,10 +69,10 @@ export default ({ emissionsDecrease }) => {
           </svg>
           <text
             x={barXPointAsWidthPercentage}
-            y='15'
+            y={isMobileUI ? 20 : 15}
             stroke={'white'}
             fill={'white'}
-            fontSize={'14px'}
+            fontSize={isMobileUI ? '10px' : '14px'}
             fontFamily={'Inter-UI-Regular'}
             alignmentBaseline={'middle'}
             textAnchor={'middle'}
