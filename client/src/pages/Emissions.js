@@ -14,6 +14,7 @@ import EmissionsBar from '../components/EmissionsBar'
 const Emissions = ({
   energyEmissions,
   emissionsDecrease,
+  isMobileUI,
   doToggleMobileGraphsMenu
 }) => {
   const usedData = pick(energyEmissions, [
@@ -37,9 +38,13 @@ const Emissions = ({
         data={graphAreas}
         labels={graphNames}
         colors={colors}
+        isMobileUI={isMobileUI}
       />
       <MobileLegend data={graphNames} colors={colors} />
-      <EmissionsBar emissionsDecrease={emissionsDecrease} />
+      <EmissionsBar
+        emissionsDecrease={emissionsDecrease}
+        isMobileUI={isMobileUI}
+      />
     </Calculator>
   )
 }
@@ -47,5 +52,6 @@ const Emissions = ({
 export default connect(
   'selectEnergyEmissions',
   'selectEmissionsDecrease',
+  'selectIsMobileUI',
   Emissions
 )
