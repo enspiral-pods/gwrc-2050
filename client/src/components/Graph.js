@@ -16,7 +16,15 @@ import LinearGradient from './LinearGradient'
 import GraphLabelMobile from './GraphLabelMobile'
 import DesktopLegendLabel from './DesktopLegendLabel'
 
-export default ({ isMobileUI, name, axes, data, labels, colors }) => {
+export default ({
+  isMobileUI,
+  name,
+  axes,
+  axesTickValues,
+  data,
+  labels,
+  colors
+}) => {
   if (!data) {
     return null
   }
@@ -112,7 +120,7 @@ export default ({ isMobileUI, name, axes, data, labels, colors }) => {
                   />
                   <VictoryAxis
                     dependentAxis={true}
-                    tickValues={[-500, 0, 500, 1000, 1500, 2000, 2500]}
+                    tickValues={axesTickValues}
                     tickFormat={d => d.toLocaleString()}
                     label={'Emissions (ktCO2/yr)'}
                     axisLabelComponent={<GraphLabelMobile />}

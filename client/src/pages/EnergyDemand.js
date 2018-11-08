@@ -14,17 +14,32 @@ import EmissionsBar from '../components/EmissionsBar'
 const EnergyDemand = ({
   energyDemand,
   emissionsDecrease,
+  isMobileUI,
   doToggleMobileGraphsMenu
 }) => {
+  const usedData = pick(energyDemand, [
+    'Heating & cooling',
+    'Industry',
+    'Lighting & appliances',
+    'Transport'
+  ])
+  const graphAreas = values(usedData)
+  const graphNames = keys(usedData)
+  const colors = ['#00C06F', '#FFC700', '#3285D9']
+  const tickValues = [0, 5000, 10000]
   return (
     <Calculator>
-      <Table data={energyDemand} />
-      {/* <Graph
-        name={'Greenhouse Gas Emissions'}
-        axes={'ktCO2/yr / Date'}
+      {/* <Table data={energyDemand} /> */}
+      <Graph
+        name={'Energy Demand'}
+        axes={'Energy (GWh/yr)'}
+        axesTickValues={tickValues}
         data={graphAreas}
+        labels={graphNames}
+        colors={colors}
+        isMobileUI={isMobileUI}
       />
-      <MobileLegend data={graphNames} /> */}
+      <MobileLegend data={graphNames} colors={colors} />
       <EmissionsBar emissionsDecrease={emissionsDecrease} />
     </Calculator>
   )
@@ -33,5 +48,6 @@ const EnergyDemand = ({
 export default connect(
   'selectEnergyDemand',
   'selectEmissionsDecrease',
+  'selectIsMobileUI',
   EnergyDemand
 )
