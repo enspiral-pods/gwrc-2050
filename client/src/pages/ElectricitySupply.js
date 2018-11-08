@@ -28,7 +28,7 @@ const ElectricitySupply = ({
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
   const colors = ['#FFC700', '#3285D9', '#00C06F']
-  const tickValues = [-500, 0, 500, 1000, 1500, 2000, 2500]
+  const tickValues = [0, 1000, 2000, 3000, 4000]
 
   return (
     <Calculator>
