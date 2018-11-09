@@ -28,6 +28,7 @@ const Emissions = ({
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
   const colors = ['#FFC700', '#3285D9', '#00C06F']
+  const tickValues = [-500, 0, 500, 1000, 1500, 2000, 2500]
 
   return (
     <Calculator>
@@ -35,6 +36,7 @@ const Emissions = ({
       <Graph
         name={'Greenhouse Gas Emissions'}
         axes={'ktCO2/yr / Date'}
+        axesTickValues={tickValues}
         data={graphAreas}
         labels={graphNames}
         colors={colors}
