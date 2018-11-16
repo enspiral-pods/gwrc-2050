@@ -57,7 +57,6 @@ export default ({
                     right: isMobileUI ? 25 : 150,
                     bottom: isMobileUI ? 50 : 100
                   }}
-                  animate={{ duration: 400 }}
                 >
                   <VictoryStack
                     labelComponent={
@@ -78,7 +77,8 @@ export default ({
                         data={d}
                         style={{
                           data: {
-                            fill: d => `url(#gradient-${colors[i % 3]})`
+                            fill: d =>
+                              `url(#gradient-${colors[i % colors.length]})`
                           }
                         }}
                       />
