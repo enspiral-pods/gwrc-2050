@@ -78,7 +78,8 @@ export default ({
                         data={d}
                         style={{
                           data: {
-                            fill: d => `url(#gradient-${colors[i % 3]})`
+                            fill: d =>
+                              `url(#gradient-${colors[i % colors.length]})`
                           }
                         }}
                       />

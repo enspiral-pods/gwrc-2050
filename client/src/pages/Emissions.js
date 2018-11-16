@@ -27,7 +27,17 @@ const Emissions = ({
   ])
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
-  const colors = ['#FFC700', '#3285D9', '#00C06F']
+
+  const colors = [
+    '#FFC700',
+    '#359AFF',
+    '#316BFF',
+    '#00C06F',
+    '#FF6363',
+    '#00B4C0',
+    '#905BFF',
+    '#FC5BFF'
+  ]
   const tickValues = [-500, 0, 500, 1000, 1500, 2000, 2500]
 
   return (

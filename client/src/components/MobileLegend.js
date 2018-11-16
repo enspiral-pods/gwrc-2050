@@ -21,7 +21,7 @@ export default ({ data, colors }) => {
             <Box
               width={14}
               css={{ height: '14px', minWidth: '14px' }}
-              bg={colors[i % 3]}
+              bg={colors[i % colors.length]}
               mr={10}
             />
             <TextRegular fontSize={11}>{d}</TextRegular>
