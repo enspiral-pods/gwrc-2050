@@ -57,7 +57,6 @@ export default ({
                     right: isMobileUI ? 25 : 150,
                     bottom: isMobileUI ? 50 : 100
                   }}
-                  animate={{ duration: 400 }}
                 >
                   <VictoryStack
                     labelComponent={
