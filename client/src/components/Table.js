@@ -26,6 +26,7 @@ export default ({ data }) => {
       }}
     >
       <Heading
+        color={'white'}
         fontSize={[14, 18]}
         textAlign={'center'}
         css={{ border: '1px solid white' }}
@@ -35,6 +36,7 @@ export default ({ data }) => {
       {years.map(year => {
         return (
           <Heading
+            color={'white'}
             fontSize={[14, 18]}
             textAlign={'center'}
             css={{ border: '1px solid white' }}
@@ -47,6 +49,7 @@ export default ({ data }) => {
         return (
           <React.Fragment>
             <Heading
+              color={'white'}
               fontSize={14}
               textAlign={'center'}
               css={{ border: '1px solid white' }}

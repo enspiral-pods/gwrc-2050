@@ -21,9 +21,11 @@ export default ({ group, levers, doToggleLeverGroup }) => {
           width={'100%'}
           mb={10}
         >
-          <Heading fontSize={16} textAlign={'left'}>{`${group} (${
-            levers.length
-          } levers)`}</Heading>
+          <Heading
+            color={'white'}
+            fontSize={16}
+            textAlign={'left'}
+          >{`${group} (${levers.length} levers)`}</Heading>
           <Image src={rightArrow} height={24} width={24} mr={10} />
         </Flex>
         <Lever />

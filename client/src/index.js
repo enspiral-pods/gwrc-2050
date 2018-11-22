@@ -10,6 +10,7 @@ import Layout from './hocs/Layout'
 // import registerServiceWorker from './registerServiceWorker'
 
 import interBold from './assets/fonts/Inter-UI-Bold.woff2'
+import interBlack from './assets/fonts/Inter-UI-Black.woff2'
 import interMedium from './assets/fonts/Inter-UI-Medium.woff2'
 import interRegular from './assets/fonts/Inter-UI-Regular.woff2'
 
@@ -17,6 +18,10 @@ const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'Inter-UI-Bold';
     src: local('Inter-UI-Bold'), url(${interBold}) format('woff2');
+  }
+  @font-face {
+    font-family: 'Inter-UI-Black';
+    src: local('Inter-UI-Black'), url(${interBlack}) format('woff2');
   }
   @font-face {
     font-family: 'Inter-UI-Medium';
