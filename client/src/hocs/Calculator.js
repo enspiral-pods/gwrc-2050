@@ -41,7 +41,9 @@ const Layout = ({
             <Button onClick={doToggleMobileGraphsMenu} variant={'nav'}>
               <Flex alignItems={'center'}>
                 <Image src={leftArrow} height={24} width={24} />
-                <Heading fontSize={14}>{'Graphs'}</Heading>
+                <Heading color={'white'} fontSize={14}>
+                  {'Graphs'}
+                </Heading>
               </Flex>
             </Button>
           </FlexWithExtras>

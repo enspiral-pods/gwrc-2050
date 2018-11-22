@@ -9,6 +9,7 @@ export default {
   },
   fonts: {
     bold: 'Inter-UI-Bold',
+    black: 'Inter-UI-Black',
     medium: 'Inter-UI-Medium',
     regular: 'Inter-UI-Regular'
   },
@@ -41,11 +42,7 @@ export default {
       }
     }
   },
-  Text: {
-    color: 'white'
-  },
   Heading: {
-    color: 'white',
     fontFamily: 'Inter-UI-Bold'
   }
 }

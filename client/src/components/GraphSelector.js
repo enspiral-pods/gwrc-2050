@@ -24,21 +24,31 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
         alignItems={'center'}
         pb={20}
       >
-        <Heading css={{ visibility: 'hidden' }}>Back ></Heading>
-        <Heading fontSize={16}>Graphs</Heading>
+        <Heading color={'white'} css={{ visibility: 'hidden' }}>
+          Back >
+        </Heading>
+        <Heading color={'white'} fontSize={16}>
+          Graphs
+        </Heading>
         <Button onClick={doToggleMobileGraphsMenu} variant={'nav'}>
           <Flex alignItems={'center'}>
-            <Heading fontSize={14}>{'Back'}</Heading>
+            <Heading color={'white'} fontSize={14}>
+              {'Back'}
+            </Heading>
             <Image src={rightArrow} height={24} width={24} />
           </Flex>
         </Button>
       </FlexWithExtras>
       <FlexWithExtras display={['none', 'flex']} mb={40}>
-        <Heading fontSize={20}>Graphs</Heading>
+        <Heading color={'white'} fontSize={20}>
+          Graphs
+        </Heading>
       </FlexWithExtras>
 
       <Flex flexDirection={'column'} py={20}>
-        <Heading fontSize={12}>Select Region</Heading>
+        <Heading color={'white'} fontSize={12}>
+          Select Region
+        </Heading>
         <TextRegular fontSize={16}>All of Wellington</TextRegular>
       </Flex>
 

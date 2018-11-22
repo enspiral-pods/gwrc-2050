@@ -37,7 +37,9 @@ const Levers = ({
       ) : (
         <FlexWithExtras flexDirection={'column'} width={'100%'}>
           <FlexWithExtras display={['none', 'flex']} mb={40}>
-            <Heading fontSize={20}>Options</Heading>
+            <Heading color={'white'} fontSize={20}>
+              Options
+            </Heading>
           </FlexWithExtras>
 
           <Flex flexDirection={'column'}>
