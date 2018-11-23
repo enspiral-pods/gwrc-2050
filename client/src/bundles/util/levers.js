@@ -1,78 +1,178 @@
 // Adding another lever? Make sure to add to `selectLeverString` in the correct location
 export default {
+  biogasPowerGeneration: {
+    label: 'Biogas power generation',
+    value: 1,
+    group: 'Electricity Supply'
+  },
+  solarPanelsForElectricity: {
+    label: 'Solar panels for electricity',
+    value: 1,
+    group: 'Electricity Supply'
+  },
+  solarPanelsForHotWater: {
+    label: 'Solar panels for hot water',
+    value: 1,
+    group: 'Electricity Supply'
+  },
+  nationalGridElectricity: {
+    label: 'National grid electricity',
+    value: 1,
+    group: 'Electricity Supply'
+  },
+  landUseChange: {
+    label: 'Land use change',
+    value: 1,
+    group: 'Agriculture & Land Use'
+  },
+  forestType: {
+    label: 'Forest type',
+    value: 1,
+    group: 'Agriculture & Land Use'
+  },
+  livestockStockingRates: {
+    label: 'Livestock stocking rates',
+    value: 1,
+    group: 'Agriculture & Land Use'
+  },
+  livestockEmissionsIntensityPracticeChange: {
+    label: 'Livestock emissions intensity - practice change',
+    value: 1,
+    group: 'Agriculture & Land Use'
+  },
+  livestockEmissionsIntensityNewTech: {
+    label: 'Livestock emissions intensity - new tech',
+    value: 1,
+    group: 'Agriculture & Land Use'
+  },
+  wasteVolumes: {
+    label: 'Waste volumes',
+    value: 1,
+    group: 'Waste & Biofuel'
+  },
+  landfillGasCaptureAndEFW: {
+    label: 'Landfill gas capture and EFW',
+    value: 1,
+    group: 'Waste & Biofuel'
+  },
+  biofuelSupply: {
+    label: 'Biofuel supply',
+    value: 1,
+    group: 'Waste & Biofuel'
+  },
   travelDemand: {
     label: 'Travel demand',
     value: 1,
-    group: 'Transport'
+    group: 'Transport (Light Vehicles)'
   },
-  activeTransport: {
-    label: 'Active transport',
+  modeShare: {
+    label: 'Mode share',
     value: 1,
-    group: 'Transport'
-  },
-  publicTransport: {
-    label: 'Public transport',
-    value: 1,
-    group: 'Transport'
-  },
-  electrificationOfLightVehicles: {
-    label: 'Electrification of light vehicles',
-    value: 1,
-    group: 'Transport'
-  },
-  electrificationOfPublicTransport: {
-    label: 'Electrification of public transport',
-    value: 1,
-    group: 'Transport'
+    group: 'Transport (Light Vehicles)'
   },
   vehicleOccupancy: {
     label: 'Vehicle occupancy',
     value: 1,
-    group: 'Transport'
+    group: 'Transport (Light Vehicles)'
+  },
+  electrificationOfLightVehicles: {
+    label: 'Electrification of light vehicles',
+    value: 1,
+    group: 'Transport (Light Vehicles)'
+  },
+  electrificationOfPublicTransport: {
+    label: 'Electrification of public transport',
+    value: 1,
+    group: 'Transport (Light Vehicles)'
   },
   vehicleFuelEfficiencies: {
     label: 'Vehicle fuel efficiencies',
     value: 1,
-    group: 'Transport'
+    group: 'Transport (Light Vehicles)'
   },
   freightVolume: {
     label: 'Freight volume',
     value: 1,
-    group: 'Transport'
+    group: 'Transport (Heavy Vehicles)'
   },
-  domesticAviation: {
-    label: 'Domestic aviation',
+  electrificationOfTrucks: {
+    label: 'Electrification of trucks',
     value: 1,
-    group: 'Transport'
-  },
-  domesticNavigation: {
-    label: 'Domestic navigation',
-    value: 1,
-    group: 'Transport'
+    group: 'Transport (Heavy Vehicles)'
   },
   freightModeAndEfficiency: {
     label: 'Freight Mode and efficiency',
     value: 1,
-    group: 'Transport'
+    group: 'Transport (Heavy Vehicles)'
   },
-  spaceAndWaterHeatingDemand: {
-    label: 'Space and water heating demand',
+  demand: {
+    label: 'Demand',
     value: 1,
-    group: 'Households'
+    group: 'Transport (Heavy Vehicles)'
   },
-  heatingTechnology: {
-    label: 'Heating technology',
+  efficiency: {
+    label: 'Efficiency',
     value: 1,
-    group: 'Households'
+    group: 'Transport (Heavy Vehicles)'
+  },
+  nationalMarineTransport: {
+    label: 'National marine transport',
+    value: 1,
+    group: 'Transport (Heavy Vehicles)'
+  },
+  homeSpaceAndWaterHeatingDemand: {
+    label: 'Home space & water heating demand',
+    value: 1,
+    group: 'Residential buildings'
+  },
+  homeHeatingTechnology: {
+    label: 'Home heating technology',
+    value: 1,
+    group: 'Residential buildings'
   },
   homeLightingAndAppliances: {
     label: 'Home lighting and appliances',
     value: 1,
-    group: 'Households'
+    group: 'Residential buildings'
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
     value: 1,
-    group: 'Households'
+    group: 'Residential buildings'
+  },
+  growthInManufacturing: {
+    label: 'Growth in manufacturing',
+    value: 1,
+    group: 'Commercial buildings'
+  },
+  energyEfficiencyAndFuelSwitching: {
+    label: 'Energy efficiency and fuel switching',
+    value: 1,
+    group: 'Commercial buildings'
+  },
+  commercialSpaceAndWaterHeatingDemand: {
+    label: 'Commercial space & water heating demand',
+    value: 1,
+    group: 'Commercial buildings'
+  },
+  commercialHeatingTechnology: {
+    label: 'Commercial heating technology',
+    value: 1,
+    group: 'Commercial buildings'
+  },
+  commercialLightingAndAppliances: {
+    label: 'Commercial lighting & appliances',
+    value: 1,
+    group: 'Commercial buildings'
+  },
+  electrificationOfCommercialCooking: {
+    label: 'Electrification of commercial cooking',
+    value: 1,
+    group: 'Commercial buildings'
+  },
+  solventAndProductUse: {
+    label: 'Solvent & product use',
+    value: 1,
+    group: 'Solvent & product use'
   }
 }
