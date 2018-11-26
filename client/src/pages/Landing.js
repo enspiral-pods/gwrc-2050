@@ -9,72 +9,136 @@ import TextRegular from '../components/TextRegular'
 import landingGraph from '../assets/images/landing-graph.png'
 import bambooLogo from '../assets/images/Bamboo-logo.png'
 import gwrcLogo from '../assets/images/GRWC-logo.png'
+import nz from '../assets/images/landing-nz.png'
+import tas from '../assets/images/tas.png'
+import bambooLogoWhite from '../assets/images/Bamboo-logo-white.png'
+import enspiral from '../assets/images/enspiral.png'
 
 const Landing = props => {
   return (
-    <Flex flexDirection={'column'} width={'100%'} px={200}>
-      <Flex
-        flexDirection={'row'}
-        justifyContent={'space-between'}
-        width={'100%'}
-        py={40}
-      >
-        <Flex flexDirection={'row'} alignItems={'center'}>
-          <Image src={'https://via.placeholder.com/48'} />
-          <TextMedium color={'black'} px={20}>
-            Wellington Region 2050 Emissions Calculator
-          </TextMedium>
-        </Flex>
-        <Flex flexDirection={'row'} alignItems={'center'}>
-          <Button>About the data</Button>
-          <Button>Launch</Button>
-        </Flex>
-      </Flex>
-
-      <Flex flexDirection={'row'} py={60}>
-        <Flex flexDirection={'column'} width={'50%'}>
-          <Heading fontSize={18} mb={10}>
-            A.
-          </Heading>
-          <Heading fontSize={25}>Electrify 100% of light vehicles?</Heading>
-        </Flex>
-        <Flex flexDirection={'column'} width={'50%'}>
-          <Heading fontSize={18} mb={10}>
-            B.
-          </Heading>
-          <Heading fontSize={25}>
-            Convert all marginal land to native forestry?
-          </Heading>
-        </Flex>
-      </Flex>
-
-      <TextRegular color={'black'} fontSize={18}>
-        What choices would reduce the emissions most in the Wellington Region?
-        How much would you need to to do to hit climate targets? 2050 Emissions
-        Calculator lets you simulate changes to the economy in the Wellington
-        Region to forecast our emissions leading up to 2050 to help you consider
-        the challenges and opportunities in front of us.{' '}
-      </TextRegular>
-      <Flex flexDirection={'row'} alignItems={'center'} py={20}>
-        <Button mr={15}>Launch the Calculator</Button>
-        <Button>Learn More</Button>
-      </Flex>
-
-      <Image src={landingGraph} />
-
-      <Flex flexDirection={'column'} alignItems={'center'}>
-        <Text fontFamily={'black'} fontSize={14} mb={10} css={{ opacity: 0.2 }}>
-          A COLLABORATION BETWEEN
-        </Text>
+    <Flex flexDirection={'column'} width={'100%'}>
+      <Flex flexDirection={'column'} width={'100%'} px={200}>
         <Flex
           flexDirection={'row'}
-          justifyContent={'center'}
-          alignItems={'center'}
+          justifyContent={'space-between'}
           width={'100%'}
-          py={20}
+          py={40}
         >
-          <Image src={gwrcLogo} px={30} />
-          <Image src={bambooLogo} px={30} />
+          <Flex flexDirection={'row'} alignItems={'center'}>
+            <Image src={'https://via.placeholder.com/48'} />
+            <TextMedium color={'black'} px={20}>
+              Wellington Region 2050 Emissions Calculator
+            </TextMedium>
+          </Flex>
+          <Flex flexDirection={'row'} alignItems={'center'}>
+            <Button>About the data</Button>
+            <Button>Launch</Button>
+          </Flex>
+        </Flex>
+
+        <Flex flexDirection={'row'} py={60}>
+          <Flex flexDirection={'column'} width={'50%'}>
+            <Heading fontSize={18} mb={10}>
+              A.
+            </Heading>
+            <Heading fontSize={25}>Electrify 100% of light vehicles?</Heading>
+          </Flex>
+          <Flex flexDirection={'column'} width={'50%'}>
+            <Heading fontSize={18} mb={10}>
+              B.
+            </Heading>
+            <Heading fontSize={25}>
+              Convert all marginal land to native forestry?
+            </Heading>
+          </Flex>
+        </Flex>
+
+        <TextRegular color={'black'} fontSize={18}>
+          What choices would reduce the emissions most in the Wellington Region?
+          How much would you need to to do to hit climate targets? 2050
+          Emissions Calculator lets you simulate changes to the economy in the
+          Wellington Region to forecast our emissions leading up to 2050 to help
+          you consider the challenges and opportunities in front of us.{' '}
+        </TextRegular>
+        <Flex flexDirection={'row'} alignItems={'center'} py={20}>
+          <Button mr={15}>Launch the Calculator</Button>
+          <Button>Learn More</Button>
+        </Flex>
+
+        <Image src={landingGraph} />
+
+        <Flex flexDirection={'column'} alignItems={'center'}>
+          <Text
+            fontFamily={'black'}
+            fontSize={14}
+            mb={10}
+            css={{ opacity: 0.2 }}
+          >
+            A COLLABORATION BETWEEN
+          </Text>
+          <Flex
+            flexDirection={'row'}
+            justifyContent={'center'}
+            alignItems={'center'}
+            width={'100%'}
+            py={20}
+          >
+            <Image src={gwrcLogo} px={30} />
+            <Image src={bambooLogo} px={30} />
+          </Flex>
+        </Flex>
+
+        <Flex flexDirection={'column'} py={80}>
+          <Heading fontSize={25} mb={20}>
+            Our Challenge
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`The New Zealand Government has stated its ambition to reduce emissions to become net zero by 2050.  By achieving this target, we would fulfil our contribution to achieving the goal of the Paris Agreement, becoming part of the climate solution rather than part of the climate problem. But changes need to start happening today to get there.
+
+            Everyone, from central, regional and local government, businesses, community groups and individuals, needs to play their part. This tool lets you take control and make your own choices for things like where we get out energy, how we get about and what land is used for, and then see what effect this would have on the emissions of the region and individual districts.
+
+            When we understand what needs to change in practice, we can talk seriously about the policies that  could be used to make these changes happen.`}
+          </TextRegular>
+        </Flex>
+      </Flex>
+
+      <Flex
+        flexDirection={'column'}
+        width={'100%'}
+        px={200}
+        py={60}
+        css={{ backgroundImage: `url(${nz})` }}
+      >
+        <Heading color={'white'} mt={50} mb={20}>
+          The Data
+        </Heading>
+        <TextRegular color={'white'} fontSize={18}>
+          The Wellington Region 2050 Emissions Calculator also draws upon data,
+          modelling and input from government and research entities at various
+          levels of scope ranging from local to regional to national. To read
+          more about the assumptions made by this calculator here.{' '}
+        </TextRegular>
+        <Button
+          width={140}
+          my={30}
+          border={'3px solid white'}
+          css={{ height: '50px', backgroundColor: 'transparent' }}
+        >
+          <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
+            Read more
+          </TextRegular>
+        </Button>
+        <Image my={90} src={tas} />
+        <Text fontFamily={'black'} color={'white'} fontSize={14}>
+          BROUGHT TO YOU BY:
+        </Text>
+        <Flex flexDirection={'row'} alignItems={'center'}>
+          <Image src={bambooLogoWhite} pr={30} />
+          <Image src={enspiral} pr={30} />
         </Flex>
       </Flex>
     </Flex>
