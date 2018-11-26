@@ -1,4 +1,5 @@
 // Adding another lever? Make sure to add to `selectLeverString` in the correct location
+// Label must match the key of each object. TODO: fix
 export default {
   biogasPowerGeneration: {
     label: 'Biogas power generation',
@@ -36,12 +37,12 @@ export default {
     group: 'Agriculture & Land Use'
   },
   livestockEmissionsIntensityPracticeChange: {
-    label: 'Livestock emissions intensity - practice change',
+    label: 'Livestock emissions intensity practice change',
     value: 1,
     group: 'Agriculture & Land Use'
   },
   livestockEmissionsIntensityNewTech: {
-    label: 'Livestock emissions intensity - new tech',
+    label: 'Livestock emissions intensity new tech',
     value: 1,
     group: 'Agriculture & Land Use'
   },
@@ -50,7 +51,7 @@ export default {
     value: 1,
     group: 'Waste & Biofuel'
   },
-  landfillGasCaptureAndEFW: {
+  landfillGasCaptureAndEfw: {
     label: 'Landfill gas capture and EFW',
     value: 1,
     group: 'Waste & Biofuel'
@@ -121,7 +122,7 @@ export default {
     group: 'Transport (Heavy Vehicles)'
   },
   homeSpaceAndWaterHeatingDemand: {
-    label: 'Home space & water heating demand',
+    label: 'Home space and water heating demand',
     value: 1,
     group: 'Residential buildings'
   },
@@ -151,7 +152,7 @@ export default {
     group: 'Commercial buildings'
   },
   commercialSpaceAndWaterHeatingDemand: {
-    label: 'Commercial space & water heating demand',
+    label: 'Commercial space and water heating demand',
     value: 1,
     group: 'Commercial buildings'
   },
@@ -161,7 +162,7 @@ export default {
     group: 'Commercial buildings'
   },
   commercialLightingAndAppliances: {
-    label: 'Commercial lighting & appliances',
+    label: 'Commercial lighting and appliances',
     value: 1,
     group: 'Commercial buildings'
   },
@@ -171,7 +172,7 @@ export default {
     group: 'Commercial buildings'
   },
   solventAndProductUse: {
-    label: 'Solvent & product use',
+    label: 'Solvent and product use',
     value: 1,
     group: 'Solvent & product use'
   }

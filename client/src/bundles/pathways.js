@@ -72,7 +72,7 @@ bundle.selectLeverString = state => oneLineTrim`
   ${state.pathways.levers.livestockEmissionsIntensityNewTech.value}
   0
   ${state.pathways.levers.wasteVolumes.value}
-  ${state.pathways.levers.landfillGasCaptureAndEFW.value}
+  ${state.pathways.levers.landfillGasCaptureAndEfw.value}
   0
   ${state.pathways.levers.biofuelSupply.value}
   0
