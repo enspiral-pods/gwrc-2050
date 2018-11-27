@@ -11,14 +11,14 @@ def setup(command)
   command.output_directory = '.'
   command.output_name = 'model'
 
-  command.named_references_that_can_be_set_at_runtime = ['input.choices']
+  command.named_references_that_can_be_set_at_runtime = ['input.choices', 'Region.Choice']
 
   command.named_references_to_keep = lambda do |named_reference|
-    named_reference =~ /^(input|output)\./i
+    named_reference =~ /^(input|output|Region)\./i
   end
 
   command.cells_to_keep = {
-    "Intermediate output" => :all, 
+    "Intermediate output" => :all,
   }
 
   command.create_makefile = false

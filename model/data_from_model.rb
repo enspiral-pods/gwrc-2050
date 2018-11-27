@@ -39,6 +39,7 @@ class DataFromModel
     # }
     excel.reset
 
+    excel.region_choice = 'Kapiti Coast'
 
     # Turn the i0g2dd2pp1121f1i032211p004314110433304202304320420121 into something like
     # [1.8,0.0,1.6,2.0,1.3,1.3,..]
@@ -64,6 +65,7 @@ class DataFromModel
     {
       # 'sizes' => ch.map { |choice| {:name => choice.name, :size => choice.levels.to_a.size, :number => choice.number }},
       '_id' => code,
+      'region' => excel.region_choice,
       'choices' => choices,
       'ghg' => ghg(excel.output_ghg_by_ipcc_sector),
       'sankey' => excel.output_flows,

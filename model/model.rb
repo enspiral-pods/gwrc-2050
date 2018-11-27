@@ -162,6 +162,7 @@ class Model
     attach_function 'set_control_e53', [ExcelValue.by_value], :void
     attach_function 'set_control_e54', [ExcelValue.by_value], :void
     attach_function 'set_control_e55', [ExcelValue.by_value], :void
+    attach_function 'set_control_e6', [ExcelValue.by_value], :void
     attach_function 'control_e8', [], ExcelValue.by_value
     attach_function 'control_e9', [], ExcelValue.by_value
     attach_function 'control_e10', [], ExcelValue.by_value
@@ -1096,6 +1097,7 @@ class Model
     attach_function 'control_f54', [], ExcelValue.by_value
     attach_function 'control_f55', [], ExcelValue.by_value
     attach_function 'control_n2', [], ExcelValue.by_value
+    attach_function 'control_e6', [], ExcelValue.by_value
     # end of Control
     # end of Preferences
     attach_function 'intermediate_output_b2', [], ExcelValue.by_value
@@ -6931,6 +6933,7 @@ class Model
     attach_function 'output_primaryenergysupply', [], ExcelValue.by_value
     attach_function 'output_shannonweinerindex', [], ExcelValue.by_value
     attach_function 'output_version', [], ExcelValue.by_value
+    attach_function 'region_choice', [], ExcelValue.by_value
     attach_function 'input_choices', [], ExcelValue.by_value
     attach_function 'input_descriptions', [], ExcelValue.by_value
     attach_function 'input_example_pathways', [], ExcelValue.by_value
@@ -6961,7 +6964,9 @@ class Model
     attach_function 'output_primaryenergysupply', [], ExcelValue.by_value
     attach_function 'output_shannonweinerindex', [], ExcelValue.by_value
     attach_function 'output_version', [], ExcelValue.by_value
+    attach_function 'region_choice', [], ExcelValue.by_value
     attach_function 'set_input_choices', [ExcelValue.by_value], :void
+    attach_function 'set_region_choice', [ExcelValue.by_value], :void
     # End of named references
   end # C module
 end # Model
