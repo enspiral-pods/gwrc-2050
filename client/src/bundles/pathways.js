@@ -56,7 +56,9 @@ bundle.selectElectricitySupply = state =>
 
 bundle.selectLevers = state => state.pathways.levers
 bundle.selectLeversByGroup = state =>
-  groupBy(state.pathways.levers, lever => lever.group)
+  groupBy(state.pathways.levers, lever => lever.group.label)
+bundle.selectLeversByTabWithGroup = state =>
+  groupBy(state.pathways.levers, lever => lever.group.tab)
 
 bundle.selectLeverString = state => oneLineTrim`
   ${state.pathways.levers.biogasPowerGeneration.value}

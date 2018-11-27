@@ -14,6 +14,7 @@ const Levers = ({
   display,
   doToggleMobileLeversMenu,
   leversByGroup,
+  leversByTabWithGroup,
   doUpdateLever,
   isLeverGroupOpen,
   selectedLeverGroup,
@@ -70,6 +71,7 @@ const Levers = ({
 
 export default connect(
   'selectLeversByGroup',
+  'selectLeversByTabWithGroup',
   'doUpdateLever',
   'selectIsLeverGroupOpen',
   'selectSelectedLeverGroup',
