@@ -1,6 +1,7 @@
 export default {
   breakpoints: ['800px'],
   colors: {
+    lightBackground: '#F3F3F3',
     background: '#262D33',
     darkBackground: '#1A1F23',
     red: '#FF5252',
@@ -9,10 +10,42 @@ export default {
   },
   fonts: {
     bold: 'Inter-UI-Bold',
+    black: 'Inter-UI-Black',
     medium: 'Inter-UI-Medium',
     regular: 'Inter-UI-Regular'
   },
   buttons: {
+    landingGreen: {
+      backgroundColor: '#00CC9B',
+      cursor: 'pointer',
+      ':focus': {
+        outline: 0
+      },
+      ':hover': {
+        opacity: 0.7
+      }
+    },
+    landingGray: {
+      backgroundColor: '#EBEBEB',
+      cursor: 'pointer',
+      ':focus': {
+        outline: 0
+      },
+      ':hover': {
+        opacity: 0.7
+      }
+    },
+    landingTransparent: {
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      border: '3px solid white',
+      ':focus': {
+        outline: 0
+      },
+      ':hover': {
+        opacity: 0.7
+      }
+    },
     nav: {
       backgroundColor: 'rgba(0,0,0,0)',
       paddingLeft: 0,
@@ -41,11 +74,7 @@ export default {
       }
     }
   },
-  Text: {
-    color: 'white'
-  },
   Heading: {
-    color: 'white',
     fontFamily: 'Inter-UI-Bold'
   }
 }

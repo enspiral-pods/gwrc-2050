@@ -31,7 +31,7 @@ export default ({
 
   return (
     <Flex flexDirection={'column'} width={'100%'}>
-      <Heading fontSize={20} py={'5px'}>
+      <Heading color={'white'} fontSize={20} py={'5px'}>
         {name}
       </Heading>
       <TextRegular fontSize={12}>{axes}</TextRegular>

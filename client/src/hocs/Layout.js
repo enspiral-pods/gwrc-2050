@@ -7,12 +7,14 @@ import FlexWithExtras from '../components/FlexWithExtras'
 
 const Layout = ({ doUpdateUrl, route, routeInfo }) => {
   const Page = route
+  // TODO: move this logic to a property of a route itself?
+  const isCalculatorPage = routeInfo.url !== '/' && routeInfo.url !== '/data'
 
   return (
     <FlexWithExtras
-      height={'100%'}
+      height={isCalculatorPage ? '100%' : 'auto'}
       width={'100%'}
-      bg={'background'}
+      bg={isCalculatorPage ? 'background' : 'white'}
       onClick={navHelper(doUpdateUrl)}
     >
       <Page />

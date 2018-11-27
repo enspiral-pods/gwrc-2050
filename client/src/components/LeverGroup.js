@@ -17,7 +17,9 @@ export default ({
       <Button variant={'nav'} onClick={() => doToggleLeverGroup()} mb={40}>
         <Flex flexDirection={'row'} alignItems={'center'}>
           <Image src={leftArrow} height={24} width={24} mr={10} />
-          <Heading fontSize={20}>{selectedLeverGroup}</Heading>
+          <Heading color={'white'} fontSize={20}>
+            {selectedLeverGroup}
+          </Heading>
         </Flex>
       </Button>
       {levers.map(lever => {
