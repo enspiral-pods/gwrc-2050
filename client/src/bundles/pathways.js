@@ -6,7 +6,9 @@ import leversState from './util/levers'
 const bundle = createAsyncResourceBundle({
   name: 'pathways',
   getPromise: async ({ getState, apiFetch, store }) => {
-    return apiFetch(`/pathways/${store.selectLeverString()}/data`)
+    return apiFetch(
+      `/pathways/${store.selectSelectedTerritorialAuthority()}/${store.selectLeverString()}/data`
+    )
   },
   staleAfter: Infinity
 })

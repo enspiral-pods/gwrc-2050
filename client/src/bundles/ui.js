@@ -3,6 +3,7 @@ import debounce from 'lodash/debounce'
 const name = 'ui'
 
 const initialState = {
+  selectedTerritorialAuthority: 'greater_wellington',
   isMobileGraphsMenuOpen: false,
   isMobileLeversMenuOpen: false,
   isLeverGroupOpen: false,
@@ -10,6 +11,12 @@ const initialState = {
   windowWidth: null
 }
 const reducer = (state = initialState, action) => {
+  if (action.type === 'SELECT_TERRITORIAL_AUTHORITY') {
+    return Object.assign({}, state, {
+      selectedTerritorialAuthority: action.payload
+    })
+  }
+
   if (action.type === 'TOGGLE_MOBILE_GRAPHS_MENU') {
     return Object.assign({}, state, {
       isMobileGraphsMenuOpen: !state.isMobileGraphsMenuOpen
@@ -42,6 +49,8 @@ const reducer = (state = initialState, action) => {
 }
 
 const selectors = {
+  selectSelectedTerritorialAuthority: state =>
+    state.ui.selectedTerritorialAuthority,
   selectIsMobileGraphsMenuOpen: state => state.ui.isMobileGraphsMenuOpen,
   selectIsMobileLeversMenuOpen: state => state.ui.isMobileLeversMenuOpen,
   selectIsLeverGroupOpen: state => state.ui.isLeverGroupOpen,
@@ -51,6 +60,16 @@ const selectors = {
 }
 
 const actionCreators = {
+  doSelectTerritorialAuthority: territorialAuthority => ({
+    dispatch,
+    store
+  }) => {
+    dispatch({
+      type: 'SELECT_TERRITORIAL_AUTHORITY',
+      payload: territorialAuthority
+    })
+    store.doMarkPathwaysAsOutdated()
+  },
   doToggleMobileGraphsMenu: () => ({ dispatch }) =>
     dispatch({ type: 'TOGGLE_MOBILE_GRAPHS_MENU' }),
   doToggleMobileLeversMenu: () => ({ dispatch }) =>
