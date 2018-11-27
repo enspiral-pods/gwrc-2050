@@ -8,7 +8,7 @@ import FlexWithExtras from '../components/FlexWithExtras'
 const Layout = ({ doUpdateUrl, route, routeInfo }) => {
   const Page = route
   // TODO: move this logic to a property of a route itself?
-  const isCalculatorPage = routeInfo.url !== '/'
+  const isCalculatorPage = routeInfo.url !== '/' && routeInfo.url !== '/data'
 
   return (
     <FlexWithExtras
