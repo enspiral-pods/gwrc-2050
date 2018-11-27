@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'redux-bundler-react'
 import { ThemeProvider, createGlobalStyle } from 'styled-components'
+import ReactModal from 'react-modal'
 
 import getStore from './bundles'
 import theme from './theme'
@@ -41,6 +42,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100%;
   }
 `
+ReactModal.setAppElement(document.getElementById('root'))
 
 ReactDOM.render(
   <Provider store={getStore()}>
