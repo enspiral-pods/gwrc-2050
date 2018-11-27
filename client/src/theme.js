@@ -14,6 +14,37 @@ export default {
     regular: 'Inter-UI-Regular'
   },
   buttons: {
+    landingGreen: {
+      backgroundColor: '#00CC9B',
+      cursor: 'pointer',
+      ':focus': {
+        outline: 0
+      },
+      ':hover': {
+        opacity: 0.7
+      }
+    },
+    landingGray: {
+      backgroundColor: '#EBEBEB',
+      cursor: 'pointer',
+      ':focus': {
+        outline: 0
+      },
+      ':hover': {
+        opacity: 0.7
+      }
+    },
+    landingTransparent: {
+      backgroundColor: 'transparent',
+      cursor: 'pointer',
+      border: '3px solid white',
+      ':focus': {
+        outline: 0
+      },
+      ':hover': {
+        opacity: 0.7
+      }
+    },
     nav: {
       backgroundColor: 'rgba(0,0,0,0)',
       paddingLeft: 0,

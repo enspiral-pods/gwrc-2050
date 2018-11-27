@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Button, Image, Heading, Text } from 'rebass'
+import { Flex, Button, Image, Heading, Text, Link } from 'rebass'
 
 import Navbar from '../components/Navbar'
 import TextMedium from '../components/TextMedium'
@@ -31,8 +31,31 @@ const Landing = props => {
             </TextMedium>
           </Flex>
           <Flex flexDirection={'row'} alignItems={'center'}>
-            <Button>About the data</Button>
-            <Button>Launch</Button>
+            <Link href={'/data'} css={{ minWidth: '120px' }}>
+              <TextRegular
+                fontFamily={'bold'}
+                fontSize={16}
+                color={'black'}
+                css={{ textDecoration: 'underline', opacity: 0.6 }}
+              >
+                About the data
+              </TextRegular>
+            </Link>
+            <Link href={'/calculator'}>
+              <Button
+                variant={'landingGray'}
+                ml={40}
+                css={{ height: '50px', minWidth: '100px' }}
+              >
+                <TextRegular
+                  fontFamily={'bold'}
+                  fontSize={16}
+                  color={'background'}
+                >
+                  Launch
+                </TextRegular>
+              </Button>
+            </Link>
           </Flex>
         </Flex>
 
@@ -61,8 +84,22 @@ const Landing = props => {
           you consider the challenges and opportunities in front of us.{' '}
         </TextRegular>
         <Flex flexDirection={'row'} alignItems={'center'} py={20}>
-          <Button mr={15}>Launch the Calculator</Button>
-          <Button>Learn More</Button>
+          <Link href={'/calculator'}>
+            <Button variant={'landingGreen'} mr={15} css={{ height: '50px' }}>
+              <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
+                Launch the Calculator
+              </TextRegular>
+            </Button>
+          </Link>
+          <Button
+            variant={'landingGray'}
+            mr={15}
+            css={{ height: '50px', minWidth: '140px' }}
+          >
+            <TextRegular fontFamily={'bold'} fontSize={16} color={'background'}>
+              Learn More
+            </TextRegular>
+          </Button>
         </Flex>
 
         <Image src={landingGraph} />
@@ -122,16 +159,18 @@ const Landing = props => {
           levels of scope ranging from local to regional to national. To read
           more about the assumptions made by this calculator here.{' '}
         </TextRegular>
-        <Button
-          width={140}
-          my={30}
-          border={'3px solid white'}
-          css={{ height: '50px', backgroundColor: 'transparent' }}
-        >
-          <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
-            Read more
-          </TextRegular>
-        </Button>
+        <Link href={'/data'}>
+          <Button
+            variant={'landingTransparent'}
+            my={30}
+            width={140}
+            css={{ height: '50px' }}
+          >
+            <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
+              Read more
+            </TextRegular>
+          </Button>
+        </Link>
         <Image my={90} src={tas} />
         <Text fontFamily={'black'} color={'white'} fontSize={14}>
           BROUGHT TO YOU BY:
