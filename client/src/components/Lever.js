@@ -13,7 +13,7 @@ export default ({ onValueChange, label, value }) => {
           flexDirection={'row'}
           justifyContent={'space-between'}
           alignItems={'center'}
-          mb={'5px'}
+          mb={'20px'}
         >
           <TextRegular fontSize={16}>{label}</TextRegular>
           <Image src={infoIcon} height={24} width={24} />

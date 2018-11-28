@@ -23,7 +23,7 @@ const Levers = ({
   return (
     <FlexWithExtras
       display={display}
-      width={['100%', 350]}
+      width={['100%', 400]}
       p={20}
       borderLeft={'1px solid rgb(255,255,255,0.1)'}
     >
