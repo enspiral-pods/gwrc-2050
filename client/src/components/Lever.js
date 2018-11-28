@@ -27,6 +27,7 @@ export default ({ onValueChange, label, value }) => {
         min='1'
         max='4'
         onChange={event => onValueChange(event.target.value)}
+        style={{ width: '100%', '-webkit-appearance': 'none' }}
       />
     </Flex>
   )

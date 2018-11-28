@@ -35,6 +35,32 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     width: 100%;
   }
+  input[type=range]::-moz-range-track,input[type=range]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #000000;
+    border-radius: 1.3px;
+  }
+  input[type=range]::-moz-range-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #00FFC2;
+    cursor: pointer;
+  }
+  input[type=range]::-webkit-slider-runnable-track {
+    height: 8px;
+    background: #000000;
+    border-radius: 1.3px;
+  }
+  input[type=range]::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 12px;
+    background: #00FFC2;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -8px;
+  }
 `
 
 ReactDOM.render(
