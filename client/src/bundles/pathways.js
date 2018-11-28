@@ -61,6 +61,8 @@ bundle.selectElectricityDemand = state =>
   state.pathways.data ? state.pathways.data.electricity.demand : null
 bundle.selectElectricitySupply = state =>
   state.pathways.data ? state.pathways.data.electricity.supply : null
+bundle.selectSankeyData = state =>
+  state.pathways.data ? state.pathways.data.sankey : null
 
 bundle.selectLevers = state => state.pathways.levers
 bundle.selectLeversByGroup = state =>
