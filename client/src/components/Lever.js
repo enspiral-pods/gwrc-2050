@@ -2,6 +2,7 @@ import React from 'react'
 import { Flex, Image } from 'rebass'
 
 import TextRegular from './TextRegular'
+import Slider from './Slider'
 
 import infoIcon from '../assets/images/info-icon.svg'
 
@@ -20,14 +21,12 @@ export default ({ onValueChange, label, value }) => {
         </Flex>
       ) : null}
 
-      {/* MS: How do I style this with no rebass component? */}
-      <input
+      <Slider
         value={value}
         type='range'
         min='1'
         max='4'
         onChange={event => onValueChange(event.target.value)}
-        style={{ width: '100%', '-webkit-appearance': 'none' }}
       />
     </Flex>
   )
