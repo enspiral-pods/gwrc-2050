@@ -32,13 +32,15 @@ class DataFromModel
   # Data that changes as the user makes choices
   # The code should be in the form i0g2dd2pp1121f1i032211p004314110433304202304320420121
   # Where each letter or digit corresponds to a choice to be set in the Excel
-  def calculate_pathway(code)
+  def calculate_pathway(region, code)
     # Need to make sure the Excel is ready for a new calculation
     # before = excel.input_choices.map {| k, v |
     #   {:key => k, :value => v}
     # }
     excel.reset
 
+    # pass region in as titlecase with spaces instead of lower and snake case
+    excel.region_choice = region.split('_').map(&:capitalize).join(' ')
 
     # Turn the i0g2dd2pp1121f1i032211p004314110433304202304320420121 into something like
     # [1.8,0.0,1.6,2.0,1.3,1.3,..]
@@ -64,6 +66,7 @@ class DataFromModel
     {
       # 'sizes' => ch.map { |choice| {:name => choice.name, :size => choice.levels.to_a.size, :number => choice.number }},
       '_id' => code,
+      'region' => excel.region_choice,
       'choices' => choices,
       'ghg' => ghg(excel.output_ghg_by_ipcc_sector),
       'sankey' => excel.output_flows,

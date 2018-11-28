@@ -19,30 +19,30 @@ class TwentyFiftyServer < Sinatra::Base
 
   if development?
     # This is the main method for getting data
-    get '/pathways/:id/data' do |id|
-      DataFromModel.new.calculate_pathway(id).to_json
+    get '/pathways/:region/:id/data' do |region, id|
+      DataFromModel.new.calculate_pathway(region, id).to_json
     end
   else
     # This is the main method for getting data
-    get '/pathways/:id/data' do |id|
+    get '/pathways/:region/:id/data' do |region, id|
       last_modified Model.last_modified_date # Don't bother recalculating unless the model has changed
       expires (24*60*60), :public # cache for 1 day
       content_type :json # We return json
-      DataFromModel.new.calculate_pathway(id).to_json
+      DataFromModel.new.calculate_pathway(region, id).to_json
     end
   end
 
-  get '/pathways/11111111111111111111111111111111111111111111111111111/primary_energy_chart' do
-    redirect to('/')
-  end
-
-  get '/pathways/:id/:action' do |id, action|
-    redirect "http://old-interface.2050.org.uk/pathways/#{id}/#{action}"
-  end
-
-  get '/pathways/:id' do |id|
-    redirect "http://old-interface.2050.org.uk/pathways/#{id}"
-  end
+  # get '/pathways/11111111111111111111111111111111111111111111111111111/primary_energy_chart' do
+  #   redirect to('/')
+  # end
+  #
+  # get '/pathways/:id/:action' do |id, action|
+  #   redirect "http://old-interface.2050.org.uk/pathways/#{id}/#{action}"
+  # end
+  #
+  # get '/pathways/:id' do |id|
+  #   redirect "http://old-interface.2050.org.uk/pathways/#{id}"
+  # end
 
   # get '*' do
   #   send_file 'build/index.html'

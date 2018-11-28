@@ -8,7 +8,12 @@ import GraphSelectorMenuItem from './GraphSelectorMenuItem'
 
 import rightArrow from '../assets/images/right-arrow.svg'
 
-const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
+const GraphSelector = ({
+  display,
+  doToggleMobileGraphsMenu,
+  selectedTerritorialAuthority,
+  doSelectTerritorialAuthority
+}) => {
   return (
     <FlexWithExtras
       display={display}
@@ -49,7 +54,18 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
         <Heading color={'white'} fontSize={12}>
           Select Region
         </Heading>
-        <TextRegular fontSize={16}>All of Wellington</TextRegular>
+        <select
+          value={selectedTerritorialAuthority}
+          onChange={e => doSelectTerritorialAuthority(e.target.value)}
+        >
+          <option value={'greater_wellington'}>Greater Wellington</option>
+          <option value={'wellington_city'}>Wellington City</option>
+          <option value={'porirua'}>Porirua</option>
+          <option value={'kapiti_coast'}>Kapiti Coast</option>
+          <option value={'lower_hutt'}>Lower Hutt</option>
+          <option value={'upper_hutt'}>Upper Hutt</option>
+          <option value={'wairarapa'}>Wairarapa</option>
+        </select>
       </Flex>
 
       <Flex flexDirection={'column'}>
@@ -90,4 +106,8 @@ const GraphSelector = ({ display, doToggleMobileGraphsMenu }) => {
   )
 }
 
-export default connect(GraphSelector)
+export default connect(
+  'selectSelectedTerritorialAuthority',
+  'doSelectTerritorialAuthority',
+  GraphSelector
+)

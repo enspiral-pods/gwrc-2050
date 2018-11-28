@@ -46,6 +46,7 @@ class TestModel < Minitest::Unit::TestCase
   def test_control_e53; assert_in_epsilon(3.0, worksheet.control_e53, 0.002); end
   def test_control_e54; assert_in_epsilon(3.0, worksheet.control_e54, 0.002); end
   def test_control_e55; assert_in_epsilon(2.0, worksheet.control_e55, 0.002); end
+  def test_control_e6; assert_equal("Greater Wellington", worksheet.control_e6.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_i8; assert_equal("100% of local biogas supply used for electricity generation", worksheet.control_i8.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_j8; assert_equal("50% of local biogas supply used for electricity generation, 50% replaces natural gas", worksheet.control_j8.to_s.gsub(/[\n\r]+/,'')); end
   def test_control_k8; assert_equal("100% of local biogas supply used to replace natural gas", worksheet.control_k8.to_s.gsub(/[\n\r]+/,'')); end

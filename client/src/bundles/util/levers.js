@@ -1,78 +1,221 @@
 // Adding another lever? Make sure to add to `selectLeverString` in the correct location
+// Label must match the key of each object. TODO: fix
+
+const tabs = {
+  demand: 'Demand',
+  supply: 'Supply',
+  other: 'Other'
+}
+
+const groups = {
+  electricitySupply: {
+    label: 'Electricity Supply',
+    tab: tabs.demand
+  },
+  agricultureAndLandUse: {
+    label: 'Agriculture & Land Use',
+    tab: tabs.demand
+  },
+  wasteAndBiofuel: {
+    label: 'Waste & Biofuel',
+    tab: tabs.demand
+  },
+  transportLightVehicles: {
+    label: 'Transport (Light Vehicles)',
+    tab: tabs.demand
+  },
+  transportHeavyVehicles: {
+    label: 'Transport (Heavy Vehicles)',
+    tab: tabs.demand
+  },
+  residentialBuildings: {
+    label: 'Residential Buildings',
+    tab: tabs.demand
+  },
+  commercialBuildings: {
+    label: 'Commercial buildings',
+    tab: tabs.supply
+  },
+  solventAndProductUse: {
+    label: 'Solvent & product use',
+    tab: tabs.other
+  }
+}
+
 export default {
+  biogasPowerGeneration: {
+    label: 'Biogas power generation',
+    value: 1,
+    group: groups.electricitySupply
+  },
+  solarPanelsForElectricity: {
+    label: 'Solar panels for electricity',
+    value: 1,
+    group: groups.electricitySupply
+  },
+  solarPanelsForHotWater: {
+    label: 'Solar panels for hot water',
+    value: 1,
+    group: groups.electricitySupply
+  },
+  nationalGridElectricity: {
+    label: 'National grid electricity',
+    value: 1,
+    group: groups.electricitySupply
+  },
+  landUseChange: {
+    label: 'Land use change',
+    value: 1,
+    group: groups.agricultureAndLandUse
+  },
+  forestType: {
+    label: 'Forest type',
+    value: 1,
+    group: groups.agricultureAndLandUse
+  },
+  livestockStockingRates: {
+    label: 'Livestock stocking rates',
+    value: 1,
+    group: groups.agricultureAndLandUse
+  },
+  livestockEmissionsIntensityPracticeChange: {
+    label: 'Livestock emissions intensity practice change',
+    value: 1,
+    group: groups.agricultureAndLandUse
+  },
+  livestockEmissionsIntensityNewTech: {
+    label: 'Livestock emissions intensity new tech',
+    value: 1,
+    group: groups.agricultureAndLandUse
+  },
+  wasteVolumes: {
+    label: 'Waste volumes',
+    value: 1,
+    group: groups.wasteAndBiofuel
+  },
+  landfillGasCaptureAndEfw: {
+    label: 'Landfill gas capture and EFW',
+    value: 1,
+    group: groups.wasteAndBiofuel
+  },
+  biofuelSupply: {
+    label: 'Biofuel supply',
+    value: 1,
+    group: groups.wasteAndBiofuel
+  },
   travelDemand: {
     label: 'Travel demand',
     value: 1,
-    group: 'Transport'
+    group: groups.transportLightVehicles
   },
-  activeTransport: {
-    label: 'Active transport',
+  modeShare: {
+    label: 'Mode share',
     value: 1,
-    group: 'Transport'
-  },
-  publicTransport: {
-    label: 'Public transport',
-    value: 1,
-    group: 'Transport'
-  },
-  electrificationOfLightVehicles: {
-    label: 'Electrification of light vehicles',
-    value: 1,
-    group: 'Transport'
-  },
-  electrificationOfPublicTransport: {
-    label: 'Electrification of public transport',
-    value: 1,
-    group: 'Transport'
+    group: groups.transportLightVehicles
   },
   vehicleOccupancy: {
     label: 'Vehicle occupancy',
     value: 1,
-    group: 'Transport'
+    group: groups.transportLightVehicles
+  },
+  electrificationOfLightVehicles: {
+    label: 'Electrification of light vehicles',
+    value: 1,
+    group: groups.transportLightVehicles
+  },
+  electrificationOfPublicTransport: {
+    label: 'Electrification of public transport',
+    value: 1,
+    group: groups.transportLightVehicles
   },
   vehicleFuelEfficiencies: {
     label: 'Vehicle fuel efficiencies',
     value: 1,
-    group: 'Transport'
+    group: groups.transportLightVehicles
   },
   freightVolume: {
     label: 'Freight volume',
     value: 1,
-    group: 'Transport'
+    group: groups.transportHeavyVehicles
   },
-  domesticAviation: {
-    label: 'Domestic aviation',
+  electrificationOfTrucks: {
+    label: 'Electrification of trucks',
     value: 1,
-    group: 'Transport'
-  },
-  domesticNavigation: {
-    label: 'Domestic navigation',
-    value: 1,
-    group: 'Transport'
+    group: groups.transportHeavyVehicles
   },
   freightModeAndEfficiency: {
     label: 'Freight Mode and efficiency',
     value: 1,
-    group: 'Transport'
+    group: groups.transportHeavyVehicles
   },
-  spaceAndWaterHeatingDemand: {
-    label: 'Space and water heating demand',
+  demand: {
+    label: 'Demand',
     value: 1,
-    group: 'Households'
+    group: groups.transportHeavyVehicles
   },
-  heatingTechnology: {
-    label: 'Heating technology',
+  efficiency: {
+    label: 'Efficiency',
     value: 1,
-    group: 'Households'
+    group: groups.transportHeavyVehicles
+  },
+  nationalMarineTransport: {
+    label: 'National marine transport',
+    value: 1,
+    group: groups.transportHeavyVehicles
+  },
+  homeSpaceAndWaterHeatingDemand: {
+    label: 'Home space and water heating demand',
+    value: 1,
+    group: groups.residentialBuildings
+  },
+  homeHeatingTechnology: {
+    label: 'Home heating technology',
+    value: 1,
+    group: groups.residentialBuildings
   },
   homeLightingAndAppliances: {
     label: 'Home lighting and appliances',
     value: 1,
-    group: 'Households'
+    group: groups.residentialBuildings
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
     value: 1,
-    group: 'Households'
+    group: groups.residentialBuildings
+  },
+  growthInManufacturing: {
+    label: 'Growth in manufacturing',
+    value: 1,
+    group: groups.commercialBuildings
+  },
+  energyEfficiencyAndFuelSwitching: {
+    label: 'Energy efficiency and fuel switching',
+    value: 1,
+    group: groups.commercialBuildings
+  },
+  commercialSpaceAndWaterHeatingDemand: {
+    label: 'Commercial space and water heating demand',
+    value: 1,
+    group: groups.commercialBuildings
+  },
+  commercialHeatingTechnology: {
+    label: 'Commercial heating technology',
+    value: 1,
+    group: groups.commercialBuildings
+  },
+  commercialLightingAndAppliances: {
+    label: 'Commercial lighting and appliances',
+    value: 1,
+    group: groups.commercialBuildings
+  },
+  electrificationOfCommercialCooking: {
+    label: 'Electrification of commercial cooking',
+    value: 1,
+    group: groups.commercialBuildings
+  },
+  solventAndProductUse: {
+    label: 'Solvent and product use',
+    value: 1,
+    group: groups.solventAndProductUse
   }
 }

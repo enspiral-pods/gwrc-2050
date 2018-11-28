@@ -1,11 +1,14 @@
 import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
 import groupBy from 'lodash/groupBy'
+import { oneLineTrim } from 'common-tags'
 import leversState from './util/levers'
 
 const bundle = createAsyncResourceBundle({
   name: 'pathways',
   getPromise: async ({ getState, apiFetch, store }) => {
-    return apiFetch(`/pathways/${store.selectLeverString()}/data`)
+    return apiFetch(
+      `/pathways/${store.selectSelectedTerritorialAuthority()}/${store.selectLeverString()}/data`
+    )
   },
   staleAfter: Infinity
 })
@@ -55,26 +58,60 @@ bundle.selectElectricitySupply = state =>
 
 bundle.selectLevers = state => state.pathways.levers
 bundle.selectLeversByGroup = state =>
-  groupBy(state.pathways.levers, lever => lever.group)
+  groupBy(state.pathways.levers, lever => lever.group.label)
+bundle.selectLeversByTabWithGroup = state =>
+  groupBy(state.pathways.levers, lever => lever.group.tab)
 
-bundle.selectLeverString = state =>
-  `111101101101100${state.pathways.levers.travelDemand.value}${
-    state.pathways.levers.publicTransport.value
-  }${state.pathways.levers.activeTransport.value}${
-    state.pathways.levers.vehicleOccupancy.value
-  }${state.pathways.levers.electrificationOfLightVehicles.value}${
-    state.pathways.levers.electrificationOfPublicTransport.value
-  }${state.pathways.levers.vehicleFuelEfficiencies.value}0${
-    state.pathways.levers.freightVolume.value
-  }${state.pathways.levers.freightModeAndEfficiency.value}${
-    state.pathways.levers.domesticAviation.value
-  }${state.pathways.levers.domesticNavigation.value}0${
-    state.pathways.levers.spaceAndWaterHeatingDemand.value
-  }${state.pathways.levers.heatingTechnology.value}0${
-    state.pathways.levers.homeLightingAndAppliances.value
-  }${
-    state.pathways.levers.electrificationOfHomeCooking.value
-  }01101101110000000001`
+bundle.selectLeverString = state => oneLineTrim`
+  ${state.pathways.levers.biogasPowerGeneration.value}
+  ${state.pathways.levers.solarPanelsForElectricity.value}
+  ${state.pathways.levers.solarPanelsForHotWater.value}
+  ${state.pathways.levers.nationalGridElectricity.value}
+  0
+  ${state.pathways.levers.landUseChange.value}
+  ${state.pathways.levers.forestType.value}
+  2
+  ${state.pathways.levers.livestockStockingRates.value}
+  ${state.pathways.levers.livestockEmissionsIntensityPracticeChange.value}
+  ${state.pathways.levers.livestockEmissionsIntensityNewTech.value}
+  0
+  ${state.pathways.levers.wasteVolumes.value}
+  ${state.pathways.levers.landfillGasCaptureAndEfw.value}
+  0
+  ${state.pathways.levers.biofuelSupply.value}
+  0
+  0
+  ${state.pathways.levers.travelDemand.value}
+  ${state.pathways.levers.modeShare.value}
+  ${state.pathways.levers.vehicleOccupancy.value}
+  ${state.pathways.levers.electrificationOfLightVehicles.value}
+  ${state.pathways.levers.electrificationOfPublicTransport.value}
+  ${state.pathways.levers.vehicleFuelEfficiencies.value}
+  0
+  ${state.pathways.levers.freightVolume.value}
+  ${state.pathways.levers.electrificationOfTrucks.value}
+  ${state.pathways.levers.freightModeAndEfficiency.value}
+  0
+  ${state.pathways.levers.demand.value}
+  ${state.pathways.levers.efficiency.value}
+  ${state.pathways.levers.nationalMarineTransport.value}
+  0
+  ${state.pathways.levers.homeSpaceAndWaterHeatingDemand.value}
+  ${state.pathways.levers.homeHeatingTechnology.value}
+  0
+  ${state.pathways.levers.homeLightingAndAppliances.value}
+  ${state.pathways.levers.electrificationOfHomeCooking.value}
+  0
+  ${state.pathways.levers.growthInManufacturing.value}
+  ${state.pathways.levers.energyEfficiencyAndFuelSwitching.value}
+  0
+  ${state.pathways.levers.commercialSpaceAndWaterHeatingDemand.value}
+  ${state.pathways.levers.commercialHeatingTechnology.value}
+  0
+  ${state.pathways.levers.commercialLightingAndAppliances.value}
+  ${state.pathways.levers.electrificationOfCommercialCooking.value}
+  ${state.pathways.levers.solventAndProductUse.value}
+`
 
 bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {
   dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })
