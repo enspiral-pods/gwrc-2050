@@ -1,5 +1,7 @@
 import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
 import groupBy from 'lodash/groupBy'
+import flatMap from 'lodash/flatMap'
+import uniq from 'lodash/uniq'
 import { oneLineTrim } from 'common-tags'
 import leversState from './util/levers'
 
@@ -63,6 +65,42 @@ bundle.selectElectricitySupply = state =>
   state.pathways.data ? state.pathways.data.electricity.supply : null
 bundle.selectSankeyData = state =>
   state.pathways.data ? state.pathways.data.sankey : null
+
+bundle.selectSankeyDataNodes = createSelector('selectSankeyData', data => {
+  if (!data) return []
+  const nodeNames = uniq(
+    flatMap(data, d => {
+      return [d[0], d[1]]
+    })
+  )
+  return nodeNames
+    .map(n => {
+      return { name: n }
+    })
+    .slice(2) // remove the headers
+})
+
+bundle.selectSankeyDataLinks = createSelector('selectSankeyData', data => {
+  if (!data) return []
+  return data
+    .map(d => {
+      return {
+        source: d[0],
+        target: d[1],
+        value: d[d.length - 1] // pick the 2050 value for now, this could be configurable with a year slider later
+      }
+    })
+    .slice(1) // remove the headers
+})
+
+bundle.selectSankeyDataForGraph = createSelector(
+  'selectSankeyDataNodes',
+  'selectSankeyDataLinks',
+  (nodes, links) => {
+    if (!nodes || !links) return null
+    return { nodes, links }
+  }
+)
 
 bundle.selectLevers = state => state.pathways.levers
 bundle.selectLeversByGroup = state =>
