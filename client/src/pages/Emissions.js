@@ -4,6 +4,7 @@ import pick from 'lodash/pick'
 import values from 'lodash/values'
 import keys from 'lodash/keys'
 import Onboarding from '../components/Onboarding'
+import First from '../components/onboarding/first'
 
 import Calculator from '../hocs/Calculator'
 import Graph from '../components/Graph'
@@ -63,7 +64,7 @@ const Emissions = ({
     <div>
       <Onboarding
         isOnboardingOpen={isOnboardingOpen}
-        steps={[<div>Hello 1</div>, <div>Hello 2</div>, <div>Hello 3</div>]}
+        steps={[<First />]}
         currentStep={onboardingCurrentStep}
         onNext={doOnBoardingNextStep}
         onBack={doOnBoardingPreviousStep}
