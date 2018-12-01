@@ -10,9 +10,9 @@ import MobileLegend from '../components/MobileLegend'
 import EmissionsBar from '../components/EmissionsBar'
 
 const sankeyGraph = sankey()
-  .nodeWidth(10)
-  .nodePadding(5)
-  .extent([[1, 1], [600, 600]])
+  .nodeWidth(15)
+  .nodePadding(10)
+  .size([1000, 1000])
   .nodeId(d => d.name)
 const sankeyLinkGenerator = sankeyLinkHorizontal()
 
@@ -29,7 +29,10 @@ const Emissions = ({
   return (
     <Calculator>
       <Box width={'100%'}>
-        <svg style={{ width: '100%', height: '1000px' }}>
+        <svg
+          style={{ width: '100%', height: 'auto' }}
+          viewBox={'0 0 1000 1000'}
+        >
           <g stroke={'#000'}>
             {nodes.map(n => {
               const isNodeHovered =
