@@ -10,13 +10,20 @@ import MobileLegend from '../components/MobileLegend'
 import EmissionsBar from '../components/EmissionsBar'
 
 const sankeyGraph = sankey()
-  .nodeWidth(15)
-  .nodePadding(10)
+  .nodeWidth(10)
+  .nodePadding(5)
   .extent([[1, 1], [600, 600]])
   .nodeId(d => d.name)
 const sankeyLinkGenerator = sankeyLinkHorizontal()
 
-const Emissions = ({ sankeyDataForGraph, emissionsDecrease, isMobileUI }) => {
+const Emissions = ({
+  sankeyDataForGraph,
+  hoveredSankeyData,
+  sankeyDataToHighlight,
+  doHoverSankeyData,
+  emissionsDecrease,
+  isMobileUI
+}) => {
   const { nodes, links } = sankeyGraph(sankeyDataForGraph)
 
   return (
@@ -25,13 +32,22 @@ const Emissions = ({ sankeyDataForGraph, emissionsDecrease, isMobileUI }) => {
         <svg style={{ width: '100%', height: '1000px' }}>
           <g stroke={'#000'}>
             {nodes.map(n => {
+              const isNodeHovered =
+                hoveredSankeyData &&
+                sankeyDataToHighlight.nodes.includes(n.index)
               return (
                 <rect
                   x={n.x0}
                   y={n.y0}
                   height={n.y1 - n.y0}
                   width={n.x1 - n.x0}
-                  fill={'red'}
+                  fill={
+                    hoveredSankeyData ? (isNodeHovered ? 'red' : 'grey') : 'red'
+                  }
+                  onMouseEnter={() =>
+                    doHoverSankeyData({ type: 'node', index: n.index })
+                  }
+                  onMouseLeave={() => doHoverSankeyData(null)}
                 >
                   <title>{n.name}</title>
                 </rect>
@@ -40,11 +56,23 @@ const Emissions = ({ sankeyDataForGraph, emissionsDecrease, isMobileUI }) => {
           </g>
           <g fill={'none'} strokeOpacity={'0.5'}>
             {links.map(l => {
+              const isLinkHovered =
+                hoveredSankeyData &&
+                sankeyDataToHighlight.links.includes(l.index)
               return (
-                <g>
+                <g
+                  onMouseEnter={() =>
+                    doHoverSankeyData({ type: 'link', index: l.index })
+                  }
+                  onMouseLeave={() => doHoverSankeyData(null)}
+                >
                   <path
                     d={sankeyLinkGenerator(l)}
-                    stroke={'green'}
+                    stroke={
+                      hoveredSankeyData
+                        ? isLinkHovered ? 'green' : 'grey'
+                        : 'green'
+                    }
                     strokeWidth={Math.max(1, l.width)}
                   />
                 </g>
@@ -63,6 +91,9 @@ const Emissions = ({ sankeyDataForGraph, emissionsDecrease, isMobileUI }) => {
 
 export default connect(
   'selectSankeyDataForGraph',
+  'selectHoveredSankeyData',
+  'selectSankeyDataToHighlight',
+  'doHoverSankeyData',
   'selectEmissionsDecrease',
   'selectIsMobileUI',
   Emissions
