@@ -26,7 +26,7 @@ export default ({ onValueChange, label, value }) => {
         type='range'
         min='1'
         max='4'
-        onChange={event => onValueChange(event.target.value)}
+        onChange={event => onValueChange(parseInt(event.target.value))}
       />
     </Flex>
   )

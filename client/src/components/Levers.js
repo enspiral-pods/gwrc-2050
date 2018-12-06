@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Flex, Heading, Button, Image } from 'rebass'
 import keys from 'lodash/keys'
+import toCamelCase from 'lodash/camelCase'
 
 import LeverGroupListItem from './LeverGroupListItem'
 import LeverGroup from './LeverGroup'
@@ -43,12 +44,16 @@ const Levers = ({
           </FlexWithExtras>
 
           <Flex flexDirection={'column'}>
-            {/* TODO: MS: top level groups */}
             {keys(leversByGroup).map(group => (
               <LeverGroupListItem
                 group={group}
                 levers={leversByGroup[group]}
                 doToggleLeverGroup={doToggleLeverGroup}
+                doChangeGroupLeverValue={value => {
+                  leversByGroup[group].forEach(lever => {
+                    doUpdateLever(toCamelCase(lever.label), value)
+                  })
+                }}
               />
             ))}
           </Flex>
