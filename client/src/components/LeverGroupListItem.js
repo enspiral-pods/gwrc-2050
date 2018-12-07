@@ -20,6 +20,7 @@ export default ({
       width={'100%'}
       bg={'darkBackground'}
       variant={'leverGroup'}
+      css={{ minHeight: '130px' }}
       pb={15}
     >
       <Button bg={'darkBackground'} onClick={() => doToggleLeverGroup(group)}>

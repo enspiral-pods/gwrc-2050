@@ -1,8 +1,9 @@
 import React from 'react'
-import { Flex, Button, Image, Link } from 'rebass'
+import { Flex, Button, Image, Link, Box } from 'rebass'
 
 import TextMedium from '../components/TextMedium'
 import TextRegular from '../components/TextRegular'
+import WorldLogo from '../components/WorldLogo'
 
 export default () => {
   return (
@@ -13,7 +14,7 @@ export default () => {
       py={40}
     >
       <Flex flexDirection={'row'} alignItems={'center'}>
-        <Image src={'https://via.placeholder.com/48'} />
+        <WorldLogo />
         <TextMedium color={'black'} px={20}>
           Wellington Region 2050 Emissions Calculator
         </TextMedium>
