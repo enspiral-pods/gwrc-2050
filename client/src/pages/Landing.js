@@ -1,23 +1,28 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Button, Image, Heading, Text, Link } from 'rebass'
+import { Flex, Button, Image, Heading, Text, Link, Box } from 'rebass'
 
 import Navbar from '../components/Navbar'
 import TextMedium from '../components/TextMedium'
 import TextRegular from '../components/TextRegular'
 
-import landingGraph from '../assets/images/landing-graph.png'
+import landingGraph from '../assets/images/landing-graph.jpg'
 import bambooLogo from '../assets/images/Bamboo-logo.png'
 import gwrcLogo from '../assets/images/GRWC-logo.png'
-import nz from '../assets/images/landing-nz.png'
+import nz from '../assets/images/landing-nz.jpg'
 import tas from '../assets/images/tas.png'
 import bambooLogoWhite from '../assets/images/Bamboo-logo-white.png'
 import enspiral from '../assets/images/enspiral.png'
 
 const Landing = props => {
   return (
-    <Flex flexDirection={'column'} width={'100%'}>
-      <Flex flexDirection={'column'} width={'100%'} px={200}>
+    <Flex flexDirection={'column'} width={'100%'} alignItems={'center'}>
+      <Flex
+        flexDirection={'column'}
+        width={'100%'}
+        px={[20, 200]}
+        css={{ maxWidth: '1360px' }}
+      >
         <Navbar />
 
         <Flex flexDirection={'row'} py={60}>
@@ -106,40 +111,47 @@ const Landing = props => {
 
       <Flex
         flexDirection={'column'}
+        alignItems={'center'}
         width={'100%'}
-        px={200}
+        px={[20, 200]}
         py={60}
-        css={{ backgroundImage: `url(${nz})` }}
+        css={{
+          backgroundImage: `url(${nz})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center'
+        }}
       >
-        <Heading color={'white'} mt={50} mb={20}>
-          The Data
-        </Heading>
-        <TextRegular color={'white'} fontSize={18}>
-          The Wellington Region 2050 Emissions Calculator also draws upon data,
-          modelling and input from government and research entities at various
-          levels of scope ranging from local to regional to national. To read
-          more about the assumptions made by this calculator here.{' '}
-        </TextRegular>
-        <Link href={'/data'}>
-          <Button
-            variant={'landingTransparent'}
-            my={30}
-            width={140}
-            css={{ height: '50px' }}
-          >
-            <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
-              Read more
-            </TextRegular>
-          </Button>
-        </Link>
-        <Image my={90} src={tas} />
-        <Text fontFamily={'black'} color={'white'} fontSize={14}>
-          BROUGHT TO YOU BY:
-        </Text>
-        <Flex flexDirection={'row'} alignItems={'center'}>
-          <Image src={bambooLogoWhite} pr={30} />
-          <Image src={enspiral} pr={30} />
-        </Flex>
+        <Box width={'100%'} css={{ maxWidth: '960px' }}>
+          <Heading color={'white'} mt={50} mb={20}>
+            The Data
+          </Heading>
+          <TextRegular color={'white'} fontSize={18}>
+            The Wellington Region 2050 Emissions Calculator also draws upon
+            data, modelling and input from government and research entities at
+            various levels of scope ranging from local to regional to national.
+            To read more about the assumptions made by this calculator here.{' '}
+          </TextRegular>
+          <Link href={'/data'}>
+            <Button
+              variant={'landingTransparent'}
+              my={30}
+              width={140}
+              css={{ height: '50px' }}
+            >
+              <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
+                Read more
+              </TextRegular>
+            </Button>
+          </Link>
+          <Image my={90} src={tas} />
+          <Text fontFamily={'black'} color={'white'} fontSize={14}>
+            BROUGHT TO YOU BY:
+          </Text>
+          <Flex flexDirection={'row'} alignItems={'center'}>
+            <Image src={bambooLogoWhite} pr={30} />
+            <Image src={enspiral} pr={30} />
+          </Flex>
+        </Box>
       </Flex>
     </Flex>
   )
