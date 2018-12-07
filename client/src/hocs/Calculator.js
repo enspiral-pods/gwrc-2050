@@ -18,7 +18,11 @@ const Layout = ({
   doToggleMobileLeversMenu
 }) => {
   return (
-    <Flex flexDirection={['column', 'row']} width={'100%'}>
+    <Flex
+      flexDirection={['column', 'row']}
+      width={'100%'}
+      justifyContent={'space-between'}
+    >
       <GraphSelector display={['none', 'flex']} />
       {isMobileGraphsMenuOpen ? (
         <GraphSelector
@@ -35,6 +39,7 @@ const Layout = ({
           flexDirection={'column'}
           alignItems={'center'}
           width={'100%'}
+          css={{ maxWidth: '1000px' }}
           p={15}
         >
           <FlexWithExtras display={['flex', 'none']} width={'100%'} mb={10}>
