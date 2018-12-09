@@ -38,7 +38,23 @@ const Emissions = ({
     '#905BFF',
     '#FC5BFF'
   ]
-  const tickValues = [-500, 0, 500, 1000, 1500, 2000, 2500]
+  console.log('graphAreas', graphAreas)
+  const tickValues = [
+    -1500,
+    -1000,
+    -500,
+    0,
+    500,
+    1000,
+    1500,
+    2000,
+    2500,
+    3000,
+    3500,
+    4000,
+    4500,
+    5000
+  ]
 
   return (
     <Calculator>
@@ -46,7 +62,7 @@ const Emissions = ({
       <Graph
         name={'Greenhouse Gas Emissions'}
         axes={'ktCO2/yr / Date'}
-        axesTickValues={tickValues}
+        // axesTickValues={tickValues}
         data={graphAreas}
         labels={graphNames}
         colors={colors}

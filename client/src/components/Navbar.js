@@ -8,17 +8,20 @@ import WorldLogo from '../components/WorldLogo'
 export default () => {
   return (
     <Flex
-      flexDirection={'row'}
+      flexDirection={['column', 'row']}
+      alignItems={['center']}
       justifyContent={'space-between'}
       width={'100%'}
       py={40}
     >
-      <Flex flexDirection={'row'} alignItems={'center'}>
-        <WorldLogo />
-        <TextMedium color={'black'} px={20}>
-          Wellington Region 2050 Emissions Calculator
-        </TextMedium>
-      </Flex>
+      <Link href={'/'} css={{ textDecoration: 'none' }}>
+        <Flex flexDirection={'row'} alignItems={'center'} pb={[20, 0]}>
+          <WorldLogo />
+          <TextMedium color={'black'} px={20}>
+            Wellington Region 2050 Emissions Calculator
+          </TextMedium>
+        </Flex>
+      </Link>
       <Flex flexDirection={'row'} alignItems={'center'}>
         <Link href={'/data'} css={{ minWidth: '120px' }}>
           <TextRegular
