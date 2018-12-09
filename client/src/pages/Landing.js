@@ -20,7 +20,7 @@ const Landing = props => {
       <Flex
         flexDirection={'column'}
         width={'100%'}
-        px={[20, 200]}
+        px={[40, 200]}
         css={{ maxWidth: '1360px' }}
       >
         <Navbar />

@@ -36,7 +36,7 @@ const ElectricitySupply = ({
       <Graph
         name={'Electricity Supply'}
         axes={'Energy (GWh/yr)'}
-        axesTickValues={tickValues}
+        // axesTickValues={tickValues}
         data={graphAreas}
         labels={graphNames}
         colors={colors}
