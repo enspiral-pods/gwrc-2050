@@ -8,12 +8,13 @@ import WorldLogo from '../components/WorldLogo'
 export default () => {
   return (
     <Flex
-      flexDirection={'row'}
+      flexDirection={['column', 'row']}
+      alignItems={['center']}
       justifyContent={'space-between'}
       width={'100%'}
       py={40}
     >
-      <Flex flexDirection={'row'} alignItems={'center'}>
+      <Flex flexDirection={'row'} alignItems={'center'} pb={[20, 0]}>
         <WorldLogo />
         <TextMedium color={'black'} px={20}>
           Wellington Region 2050 Emissions Calculator

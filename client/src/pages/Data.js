@@ -11,7 +11,7 @@ import map from '../assets/images/map.svg'
 const Data = props => {
   return (
     <Flex flexDirection={'column'} width={'100%'}>
-      <Flex flexDirection={'column'} width={'100%'} px={200}>
+      <Flex flexDirection={'column'} width={'100%'} px={[40, 200]}>
         <Navbar />
 
         <Box mt={60}>
