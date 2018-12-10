@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Button } from 'rebass'
+import { Flex, Button, Box } from 'rebass'
 import ReactModal from 'react-modal'
 
 import TextRegular from '../components/TextRegular'
@@ -50,11 +50,19 @@ const Onboarding = props => {
         <Flex flexDirection={'column'} width={'100%'}>
           {steps[currentStep]}
         </Flex>
-        <Flex flexDirection={'row'} alignItems={'center'}>
+        <Flex
+          flexDirection={'row'}
+          alignItems={'center'}
+          width={'100%'}
+          justifyContent={'space-between'}
+        >
           <Button
             variant={'landingGray'}
             mr={15}
-            css={{ height: '50px' }}
+            css={{
+              height: '50px',
+              visibility: currentStep === 0 ? 'hidden' : 'visible'
+            }}
             onClick={onBack}
           >
             {/* TODO: remove button when no step to go back to */}
@@ -62,7 +70,20 @@ const Onboarding = props => {
               Back
             </TextRegular>
           </Button>
-          {steps.map(element => <span>o</span>)}
+          <Flex>
+            {steps.map((element, index) => (
+              <Box
+                width={10}
+                m={2}
+                css={{
+                  height: '10px',
+                  backgroundColor:
+                    index === currentStep ? '#00CC9B' : '#EBEBEB',
+                  borderRadius: '10px'
+                }}
+              />
+            ))}
+          </Flex>
           <Button
             variant={'landingGreen'}
             mr={15}
