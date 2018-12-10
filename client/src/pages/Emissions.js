@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'redux-bundler-react'
 import pick from 'lodash/pick'
 import values from 'lodash/values'
@@ -64,7 +64,7 @@ const Emissions = ({
   ]
 
   return (
-    <div>
+    <Fragment>
       <Onboarding
         isOnboardingOpen={isOnboardingOpen}
         steps={[<First />, <Second />, <Third />, <Fourth />]}
@@ -90,7 +90,7 @@ const Emissions = ({
           isMobileUI={isMobileUI}
         />
       </Calculator>
-    </div>
+    </Fragment>
   )
 }
 
