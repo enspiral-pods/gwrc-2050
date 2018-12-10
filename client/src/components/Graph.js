@@ -49,6 +49,7 @@ export default ({
             return (
               <Box width={width} css={{ height: heightByRatio }}>
                 <VictoryChart
+                  animate={{ duration: 500 }}
                   width={width}
                   height={heightByRatio}
                   padding={{
@@ -62,7 +63,7 @@ export default ({
                     labelComponent={
                       <DesktopLegendLabel
                         originalData={data}
-                        renderInPortal={true}
+                        renderInPortal
                         x={width}
                         dx={-100}
                         style={{ fill: 'white', textAnchor: 'start' }}
@@ -119,7 +120,7 @@ export default ({
                     }}
                   />
                   <VictoryAxis
-                    dependentAxis={true}
+                    dependentAxis
                     tickValues={axesTickValues}
                     tickFormat={d => d.toLocaleString()}
                     label={'Emissions (ktCO2/yr)'}
