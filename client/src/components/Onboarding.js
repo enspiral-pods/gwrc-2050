@@ -38,6 +38,7 @@ const Onboarding = props => {
       }}
       isOpen={isOnboardingOpen}
       onRequestClose={onClose}
+      shouldCloseOnOverlayClick
     >
       <Flex
         flexDirection={'column'}
@@ -65,7 +66,6 @@ const Onboarding = props => {
             }}
             onClick={onBack}
           >
-            {/* TODO: remove button when no step to go back to */}
             <TextRegular fontFamily={'bold'} fontSize={16} color={'background'}>
               Back
             </TextRegular>
@@ -91,7 +91,7 @@ const Onboarding = props => {
             onClick={lastStep ? onClose : onNext}
           >
             <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
-              {lastStep ? 'Finish' : 'Next'}
+              {lastStep ? 'Go!' : 'Next'}
             </TextRegular>
           </Button>
         </Flex>
