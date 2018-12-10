@@ -16,12 +16,41 @@ const Onboarding = props => {
   } = props
   const lastStep = currentStep === steps.length - 1
   return (
-    <ReactModal isOpen={isOnboardingOpen} onRequestClose={onClose}>
-      <Flex flexDirection={'column'} width={'100%'} px={200}>
+    <ReactModal
+      style={{
+        content: {
+          top: '50%',
+          left: '0px',
+          right: '0px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          transform: 'translate(0, -50%)',
+          maxWidth: '513px',
+          maxHeight: '410px',
+          border: '1px solid #ccc',
+          background: '#fff',
+          overflow: 'auto',
+          WebkitOverflowScrolling: 'touch',
+          borderRadius: '4px',
+          outline: 'none',
+          padding: '20px'
+        }
+      }}
+      isOpen={isOnboardingOpen}
+      onRequestClose={onClose}
+    >
+      <Flex
+        flexDirection={'column'}
+        width={'100%'}
+        css={{ height: '100%' }}
+        px={20}
+        justifyContent={'space-between'}
+        alignItems={'center'}
+      >
         <Flex flexDirection={'column'} width={'100%'}>
           {steps[currentStep]}
         </Flex>
-        <Flex flexDirection={'row'} width={'100%'}>
+        <Flex flexDirection={'row'} alignItems={'center'}>
           <Button
             variant={'landingGray'}
             mr={15}
