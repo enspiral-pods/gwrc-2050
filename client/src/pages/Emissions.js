@@ -1,12 +1,15 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex } from 'rebass'
 import pick from 'lodash/pick'
 import values from 'lodash/values'
 import keys from 'lodash/keys'
+import Onboarding from '../components/Onboarding'
+import First from '../components/onboarding/first'
+import Second from '../components/onboarding/second'
+import Third from '../components/onboarding/third'
+import Fourth from '../components/onboarding/fourth'
 
 import Calculator from '../hocs/Calculator'
-import Table from '../components/Table'
 import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
 import EmissionsBar from '../components/EmissionsBar'
@@ -15,7 +18,11 @@ const Emissions = ({
   energyEmissions,
   emissionsDecrease,
   isMobileUI,
-  doToggleMobileGraphsMenu
+  isOnboardingOpen,
+  onboardingCurrentStep,
+  doOnBoardingNextStep,
+  doOnBoardingPreviousStep,
+  doOnBoardingClose
 }) => {
   const usedData = pick(energyEmissions, [
     'Bioenergy credit',
@@ -57,23 +64,33 @@ const Emissions = ({
   ]
 
   return (
-    <Calculator>
-      {/* <Table data={usedData} /> */}
-      <Graph
-        name={'Greenhouse Gas Emissions'}
-        axes={'ktCO2/yr / Date'}
-        // axesTickValues={tickValues}
-        data={graphAreas}
-        labels={graphNames}
-        colors={colors}
-        isMobileUI={isMobileUI}
+    <Fragment>
+      <Onboarding
+        isOnboardingOpen={isOnboardingOpen}
+        steps={[<First />, <Second />, <Third />, <Fourth />]}
+        currentStep={onboardingCurrentStep}
+        onNext={doOnBoardingNextStep}
+        onBack={doOnBoardingPreviousStep}
+        onClose={doOnBoardingClose}
       />
-      <MobileLegend data={graphNames} colors={colors} />
-      <EmissionsBar
-        emissionsDecrease={emissionsDecrease}
-        isMobileUI={isMobileUI}
-      />
-    </Calculator>
+      <Calculator>
+        {/* <Table data={usedData} /> */}
+        <Graph
+          name={'Greenhouse Gas Emissions'}
+          axes={'ktCO2/yr / Date'}
+          // axesTickValues={tickValues}
+          data={graphAreas}
+          labels={graphNames}
+          colors={colors}
+          isMobileUI={isMobileUI}
+        />
+        <MobileLegend data={graphNames} colors={colors} />
+        <EmissionsBar
+          emissionsDecrease={emissionsDecrease}
+          isMobileUI={isMobileUI}
+        />
+      </Calculator>
+    </Fragment>
   )
 }
 
@@ -81,5 +98,10 @@ export default connect(
   'selectEnergyEmissions',
   'selectEmissionsDecrease',
   'selectIsMobileUI',
+  'selectIsOnboardingOpen',
+  'selectOnboardingCurrentStep',
+  'doOnBoardingNextStep',
+  'doOnBoardingPreviousStep',
+  'doOnBoardingClose',
   Emissions
 )
