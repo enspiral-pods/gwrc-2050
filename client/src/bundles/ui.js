@@ -8,7 +8,9 @@ const initialState = {
   isMobileLeversMenuOpen: false,
   isLeverGroupOpen: false,
   selectedLeverGroup: null,
-  windowWidth: null
+  windowWidth: null,
+  isOnboardingOpen: true,
+  onBoardingCurrentStep: 0
 }
 const reducer = (state = initialState, action) => {
   if (action.type === 'SELECT_TERRITORIAL_AUTHORITY') {
@@ -41,6 +43,31 @@ const reducer = (state = initialState, action) => {
     })
   }
 
+  if (action.type === 'ONBOARDING_OPEN') {
+    return Object.assign({}, state, {
+      isOnboardingOpen: true
+    })
+  }
+
+  if (action.type === 'ONBOARDING_CLOSE') {
+    return Object.assign({}, state, {
+      isOnboardingOpen: false,
+      onBoardingCurrentStep: 0
+    })
+  }
+
+  if (action.type === 'ONBOARDING_NEXT_STEP') {
+    return Object.assign({}, state, {
+      onBoardingCurrentStep: state.onBoardingCurrentStep + 1
+    })
+  }
+
+  if (action.type === 'ONBOARDING_PREVIOUS_STEP') {
+    return Object.assign({}, state, {
+      onBoardingCurrentStep: state.onBoardingCurrentStep - 1
+    })
+  }
+
   if (action.type === 'WINDOW_RESIZE_WIDTH') {
     return { ...state, windowWidth: action.payload }
   }
@@ -56,7 +83,9 @@ const selectors = {
   selectIsLeverGroupOpen: state => state.ui.isLeverGroupOpen,
   selectSelectedLeverGroup: state => state.ui.selectedLeverGroup,
   selectWindowWidth: state => state.ui.windowWidth,
-  selectIsMobileUI: state => state.ui.windowWidth < 800
+  selectIsMobileUI: state => state.ui.windowWidth < 800,
+  selectIsOnboardingOpen: state => state.ui.isOnboardingOpen,
+  selectOnboardingCurrentStep: state => state.ui.onBoardingCurrentStep
 }
 
 const actionCreators = {
@@ -75,7 +104,15 @@ const actionCreators = {
   doToggleMobileLeversMenu: () => ({ dispatch }) =>
     dispatch({ type: 'TOGGLE_MOBILE_LEVERS_MENU' }),
   doToggleLeverGroup: leverGroup => ({ dispatch }) =>
-    dispatch({ type: 'TOGGLE_LEVER_GROUP', payload: leverGroup })
+    dispatch({ type: 'TOGGLE_LEVER_GROUP', payload: leverGroup }),
+  doOnBoardingNextStep: () => ({ dispatch }) =>
+    dispatch({ type: 'ONBOARDING_NEXT_STEP' }),
+  doOnBoardingPreviousStep: () => ({ dispatch }) =>
+    dispatch({ type: 'ONBOARDING_PREVIOUS_STEP' }),
+  doOnBoardingOpen: () => ({ dispatch }) =>
+    dispatch({ type: 'ONBOARDING_OPEN' }),
+  doOnBoardingClose: () => ({ dispatch }) =>
+    dispatch({ type: 'ONBOARDING_CLOSE' })
 }
 
 const reactors = {}
