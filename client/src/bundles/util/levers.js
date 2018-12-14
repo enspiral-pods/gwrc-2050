@@ -28,16 +28,12 @@ const groups = {
     label: 'Transport (Heavy Vehicles)',
     tab: tabs.demand
   },
-  residentialBuildings: {
-    label: 'Residential Buildings',
-    tab: tabs.demand
-  },
-  commercialBuildings: {
-    label: 'Commercial buildings',
+  buildings: {
+    label: 'Buildings',
     tab: tabs.supply
   },
-  solventAndProductUse: {
-    label: 'Solvent & product use',
+  refrigerantGases: {
+    label: 'Refrigerant gases',
     tab: tabs.other
   }
 }
@@ -166,56 +162,56 @@ export default {
   homeSpaceAndWaterHeatingDemand: {
     label: 'Home space and water heating demand',
     value: 1,
-    group: groups.residentialBuildings
+    group: groups.buildings
   },
   homeHeatingTechnology: {
     label: 'Home heating technology',
     value: 1,
-    group: groups.residentialBuildings
+    group: groups.buildings
   },
   homeLightingAndAppliances: {
     label: 'Home lighting and appliances',
     value: 1,
-    group: groups.residentialBuildings
+    group: groups.buildings
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
     value: 1,
-    group: groups.residentialBuildings
+    group: groups.buildings
   },
   growthInManufacturing: {
     label: 'Growth in manufacturing',
     value: 1,
-    group: groups.commercialBuildings
+    group: groups.buildings
   },
   energyEfficiencyAndFuelSwitching: {
     label: 'Energy efficiency and fuel switching',
     value: 1,
-    group: groups.commercialBuildings
+    group: groups.buildings
   },
   commercialSpaceAndWaterHeatingDemand: {
     label: 'Commercial space and water heating demand',
     value: 1,
-    group: groups.commercialBuildings
+    group: groups.buildings
   },
   commercialHeatingTechnology: {
     label: 'Commercial heating technology',
     value: 1,
-    group: groups.commercialBuildings
+    group: groups.buildings
   },
   commercialLightingAndAppliances: {
     label: 'Commercial lighting and appliances',
     value: 1,
-    group: groups.commercialBuildings
+    group: groups.buildings
   },
   electrificationOfCommercialCooking: {
     label: 'Electrification of commercial cooking',
     value: 1,
-    group: groups.commercialBuildings
+    group: groups.buildings
   },
   solventAndProductUse: {
     label: 'Solvent and product use',
     value: 1,
-    group: groups.solventAndProductUse
+    group: groups.refrigerantGases
   }
 }
