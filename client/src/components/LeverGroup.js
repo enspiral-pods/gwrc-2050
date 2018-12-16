@@ -10,7 +10,8 @@ export default ({
   doToggleLeverGroup,
   selectedLeverGroup,
   levers,
-  doUpdateLever
+  doUpdateLever,
+  doInfoModalOpen
 }) => {
   return (
     <Flex flexDirection={'column'}>
@@ -30,6 +31,9 @@ export default ({
             onValueChange={value =>
               doUpdateLever(toCamelCase(lever.label), value)
             }
+            onInfoClicked={() => {
+              doInfoModalOpen(toCamelCase(lever.label))
+            }}
           />
         )
       })}

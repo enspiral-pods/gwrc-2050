@@ -61,6 +61,10 @@ bundle.selectLeversByGroup = state =>
   groupBy(state.pathways.levers, lever => lever.group.label)
 bundle.selectLeversByTabWithGroup = state =>
   groupBy(state.pathways.levers, lever => lever.group.tab)
+bundle.selectInfoModalLeverObject = state =>
+  state.ui.infoModalLever
+    ? state.pathways.levers[state.ui.infoModalLever]
+    : null
 
 bundle.selectLeverString = state => oneLineTrim`
   ${state.pathways.levers.biogasPowerGeneration.value}

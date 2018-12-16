@@ -6,7 +6,7 @@ import Slider from './Slider'
 
 import infoIcon from '../assets/images/info-icon.svg'
 
-export default ({ onValueChange, label, value }) => {
+export default ({ onValueChange, onInfoClicked, label, value }) => {
   return (
     <Flex flexDirection={'column'} py={10}>
       {label ? (
@@ -17,7 +17,12 @@ export default ({ onValueChange, label, value }) => {
           mb={'20px'}
         >
           <TextRegular fontSize={16}>{label}</TextRegular>
-          <Image src={infoIcon} height={24} width={24} />
+          <Image
+            src={infoIcon}
+            height={24}
+            width={24}
+            onClick={onInfoClicked}
+          />
         </Flex>
       ) : null}
 

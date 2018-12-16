@@ -10,7 +10,9 @@ const initialState = {
   selectedLeverGroup: null,
   windowWidth: null,
   isOnboardingOpen: true,
-  onBoardingCurrentStep: 0
+  onBoardingCurrentStep: 0,
+  isInfoModalOpen: false,
+  infoModalLever: null
 }
 const reducer = (state = initialState, action) => {
   if (action.type === 'SELECT_TERRITORIAL_AUTHORITY') {
@@ -68,6 +70,19 @@ const reducer = (state = initialState, action) => {
     })
   }
 
+  if (action.type === 'INFO_MODAL_OPEN') {
+    return Object.assign({}, state, {
+      isInfoModalOpen: true,
+      infoModalLever: action.payload
+    })
+  }
+
+  if (action.type === 'INFO_MODAL_CLOSE') {
+    return Object.assign({}, state, {
+      isInfoModalOpen: false
+    })
+  }
+
   if (action.type === 'WINDOW_RESIZE_WIDTH') {
     return { ...state, windowWidth: action.payload }
   }
@@ -85,7 +100,8 @@ const selectors = {
   selectWindowWidth: state => state.ui.windowWidth,
   selectIsMobileUI: state => state.ui.windowWidth < 800,
   selectIsOnboardingOpen: state => state.ui.isOnboardingOpen,
-  selectOnboardingCurrentStep: state => state.ui.onBoardingCurrentStep
+  selectOnboardingCurrentStep: state => state.ui.onBoardingCurrentStep,
+  selectIsInfoModalOpen: state => state.ui.isInfoModalOpen
 }
 
 const actionCreators = {
@@ -112,7 +128,11 @@ const actionCreators = {
   doOnBoardingOpen: () => ({ dispatch }) =>
     dispatch({ type: 'ONBOARDING_OPEN' }),
   doOnBoardingClose: () => ({ dispatch }) =>
-    dispatch({ type: 'ONBOARDING_CLOSE' })
+    dispatch({ type: 'ONBOARDING_CLOSE' }),
+  doInfoModalOpen: lever => ({ dispatch }) =>
+    dispatch({ type: 'INFO_MODAL_OPEN', payload: lever }),
+  doInfoModalClose: () => ({ dispatch }) =>
+    dispatch({ type: 'INFO_MODAL_CLOSE' })
 }
 
 const reactors = {}
