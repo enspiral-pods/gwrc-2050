@@ -18,6 +18,7 @@ const Levers = ({
   leversByTabWithGroup,
   doUpdateLever,
   isLeverGroupOpen,
+  doInfoModalOpen,
   selectedLeverGroup,
   doToggleLeverGroup
 }) => {
@@ -34,6 +35,7 @@ const Levers = ({
           selectedLeverGroup={selectedLeverGroup}
           levers={leversByGroup[selectedLeverGroup]}
           doUpdateLever={doUpdateLever}
+          doInfoModalOpen={doInfoModalOpen}
         />
       ) : (
         <FlexWithExtras flexDirection={'column'} width={'100%'}>
@@ -86,5 +88,6 @@ export default connect(
   'selectIsLeverGroupOpen',
   'selectSelectedLeverGroup',
   'doToggleLeverGroup',
+  'doInfoModalOpen',
   Levers
 )
