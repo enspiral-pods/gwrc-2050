@@ -42,6 +42,7 @@ export default ({
       <Lever
         value={groupLeverTotalValue / levers.length}
         onValueChange={doChangeGroupLeverValue}
+        maxLevel={4}
       />
     </Flex>
   )
