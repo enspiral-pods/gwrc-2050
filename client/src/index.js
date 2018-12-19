@@ -16,6 +16,20 @@ import interMedium from './assets/fonts/Inter-UI-Medium.woff2'
 import interRegular from './assets/fonts/Inter-UI-Regular.woff2'
 
 const GlobalStyle = createGlobalStyle`
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+  background-color: rgba(0,0,0,0.2);
+  border-radius: 4px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 4px;
+  }
+
   @font-face {
     font-family: 'Inter-UI-Bold';
     src: local('Inter-UI-Bold'), url(${interBold}) format('woff2');
