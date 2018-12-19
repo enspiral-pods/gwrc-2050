@@ -28,6 +28,7 @@ const Levers = ({
       width={['100%', 400]}
       p={20}
       borderLeft={'1px solid rgb(255,255,255,0.1)'}
+      css={{ overflowX: 'auto' }}
     >
       {isLeverGroupOpen ? (
         <LeverGroup

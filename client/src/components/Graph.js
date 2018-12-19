@@ -30,7 +30,7 @@ export default ({
   }
 
   return (
-    <Flex flexDirection={'column'} width={'100%'} css={{ minHeight: '700px' }}>
+    <Flex flexDirection={'column'} width={'100%'}>
       <Heading color={'white'} fontSize={20} py={'5px'}>
         {name}
       </Heading>
