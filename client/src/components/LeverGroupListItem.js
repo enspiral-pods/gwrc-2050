@@ -21,7 +21,7 @@ export default ({
       bg={'darkBackground'}
       variant={'leverGroup'}
       css={{ minHeight: '130px' }}
-      pb={15}
+      mb={15}
     >
       <Button bg={'darkBackground'} onClick={() => doToggleLeverGroup(group)}>
         <Flex flexDirection={'column'} width={'100%'} p={20}>
