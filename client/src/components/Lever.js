@@ -6,7 +6,7 @@ import Slider from './Slider'
 
 import infoIcon from '../assets/images/info-icon.svg'
 
-export default ({ onValueChange, onInfoClicked, label, value }) => {
+export default ({ onValueChange, onInfoClicked, label, value, maxLevel }) => {
   return (
     <Flex flexDirection={'column'} py={10}>
       {label ? (
@@ -30,8 +30,10 @@ export default ({ onValueChange, onInfoClicked, label, value }) => {
         value={value}
         type='range'
         min='1'
-        max='4'
+        max={maxLevel}
         onChange={event => onValueChange(parseInt(event.target.value))}
+        // to show all lever steps as the same distance.
+        style={{ width: `${maxLevel / 4 * 100}%` }}
       />
     </Flex>
   )

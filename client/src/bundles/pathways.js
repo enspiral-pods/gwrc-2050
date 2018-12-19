@@ -114,7 +114,7 @@ bundle.selectLeverString = state => oneLineTrim`
   0
   ${state.pathways.levers.commercialLightingAndAppliances.value}
   ${state.pathways.levers.electrificationOfCommercialCooking.value}
-  ${state.pathways.levers.solventAndProductUse.value}
+  ${state.pathways.levers.refrigerantGases.value}
 `
 
 bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {

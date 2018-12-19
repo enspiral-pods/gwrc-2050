@@ -34,6 +34,7 @@ export default ({
             onInfoClicked={() => {
               doInfoModalOpen(toCamelCase(lever.label))
             }}
+            maxLevel={lever.leverDescriptions.length}
           />
         )
       })}

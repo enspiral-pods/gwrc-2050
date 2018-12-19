@@ -56,7 +56,11 @@ const Levers = ({
                 doToggleLeverGroup={doToggleLeverGroup}
                 doChangeGroupLeverValue={value => {
                   leversByGroup[group].forEach(lever => {
-                    doUpdateLever(toCamelCase(lever.label), value)
+                    const valueForLever =
+                      value > lever.leverDescriptions.length
+                        ? lever.leverDescriptions.length
+                        : value
+                    doUpdateLever(toCamelCase(lever.label), valueForLever)
                   })
                 }}
               />
