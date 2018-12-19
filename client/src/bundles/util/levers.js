@@ -20,20 +20,20 @@ const groups = {
     label: 'Waste & Biofuel',
     tab: tabs.demand
   },
-  transportLightVehicles: {
-    label: 'Transport (Light Vehicles)',
+  passengerLandTransport: {
+    label: 'Passenger Land Transport',
     tab: tabs.demand
   },
-  transportHeavyVehicles: {
-    label: 'Transport (Heavy Vehicles)',
+  freightAviationAndMarineTransport: {
+    label: 'Freight, Aviation and Marine Transport',
     tab: tabs.demand
   },
   buildings: {
     label: 'Buildings',
     tab: tabs.supply
   },
-  refrigerantGases: {
-    label: 'Refrigerant gases',
+  industry: {
+    label: 'Industry',
     tab: tabs.other
   }
 }
@@ -173,7 +173,7 @@ export default {
   travelDemand: {
     label: 'Travel demand',
     value: 1,
-    group: groups.transportLightVehicles,
+    group: groups.passengerLandTransport,
     leverDescriptions: [
       'In 2050, people travel ~12% more than today',
       'People travel the same distance as today',
@@ -184,7 +184,7 @@ export default {
   modeShare: {
     label: 'Mode share',
     value: 1,
-    group: groups.transportLightVehicles,
+    group: groups.passengerLandTransport,
     leverDescriptions: [
       'No change in mode share with ~90% of travel by car & van',
       'Moderate shift towards public & active transport; 82% of travel by car & van in 2050',
@@ -195,7 +195,7 @@ export default {
   vehicleOccupancy: {
     label: 'Vehicle occupancy',
     value: 1,
-    group: groups.transportLightVehicles,
+    group: groups.passengerLandTransport,
     leverDescriptions: [
       'No change, average of ~1.6 passengers per light vehicle',
       'Occupancy increases to ~1.7 passengers per vehicle in 2050',
@@ -206,7 +206,7 @@ export default {
   electrificationOfLightVehicles: {
     label: 'Electrification of light vehicles',
     value: 1,
-    group: groups.transportLightVehicles,
+    group: groups.passengerLandTransport,
     leverDescriptions: [
       '6% of light vehicle travel done in EVs in 2050',
       '24% of light vehicle travel done in EVs in 2050',
@@ -217,7 +217,7 @@ export default {
   electrificationOfPublicTransport: {
     label: 'Electrification of public transport',
     value: 1,
-    group: groups.transportLightVehicles,
+    group: groups.passengerLandTransport,
     leverDescriptions: [
       'No electric buses and no further electrification of rail',
       '45% of bus travel electrified in 2050; no electrification of rail',
@@ -228,7 +228,7 @@ export default {
   vehicleFuelEfficiencies: {
     label: 'Vehicle fuel efficiencies',
     value: 1,
-    group: groups.transportLightVehicles,
+    group: groups.passengerLandTransport,
     leverDescriptions: [
       'No change in fuel efficiency of petrol/diesel cars (~10.5 L/100km); slight improvement for buses',
       'By 2050, car fuel efficiency improves to ~6 L/100km, bus efficiency improves by ~50%',
@@ -239,7 +239,7 @@ export default {
   freightVolume: {
     label: 'Freight volume',
     value: 1,
-    group: groups.transportHeavyVehicles,
+    group: groups.freightAviationAndMarineTransport,
     leverDescriptions: [
       'Freight volume grows by ~50% by 2050',
       'Freight volume grows by ~33%',
@@ -250,7 +250,7 @@ export default {
   electrificationOfTrucks: {
     label: 'Electrification of trucks',
     value: 1,
-    group: groups.transportHeavyVehicles,
+    group: groups.freightAviationAndMarineTransport,
     leverDescriptions: [
       'No electric trucks',
       '10% of truck travel electrified in 2050',
@@ -261,7 +261,7 @@ export default {
   freightModeAndEfficiency: {
     label: 'Freight Mode and efficiency',
     value: 1,
-    group: groups.transportHeavyVehicles,
+    group: groups.freightAviationAndMarineTransport,
     leverDescriptions: [
       'No change from current mode share (19% of tonne-km by rail) or efficiency of road freight',
       'Rail share of tonne-km increases to 25% and road freight efficiency improves by 30% (not including electrification)',
@@ -272,7 +272,7 @@ export default {
   demand: {
     label: 'Demand',
     value: 1,
-    group: groups.transportHeavyVehicles,
+    group: groups.freightAviationAndMarineTransport,
     leverDescriptions: [
       'Passenger numbers nearly triple by 2050 (3% growth per year)',
       'Passenger numbers double (2% growth per year)',
@@ -282,7 +282,7 @@ export default {
   efficiency: {
     label: 'Efficiency',
     value: 1,
-    group: groups.transportHeavyVehicles,
+    group: groups.freightAviationAndMarineTransport,
     leverDescriptions: [
       'Fuel use per passenger falls by 1% per year',
       'Fuel use per passenger falls by 2% per year',
@@ -293,7 +293,7 @@ export default {
   nationalMarineTransport: {
     label: 'National marine transport',
     value: 1,
-    group: groups.transportHeavyVehicles,
+    group: groups.freightAviationAndMarineTransport,
     leverDescriptions: [
       'No change in annual fuel use',
       'Fuel use decreases by 10% by 2050',
@@ -348,7 +348,7 @@ export default {
   growthInManufacturing: {
     label: 'Growth in manufacturing',
     value: 1,
-    group: groups.buildings,
+    group: groups.industry,
     leverDescriptions: [
       'Underlying energy demand increases by around 40% (1% growth per year)',
       'Underlying energy demand stays constant',
@@ -358,7 +358,7 @@ export default {
   energyEfficiencyAndFuelSwitching: {
     label: 'Energy efficiency and fuel switching',
     value: 1,
-    group: groups.buildings,
+    group: groups.industry,
     leverDescriptions: [
       'No energy efficiency improvements beyond BAU; no change in fuel mix',
       'Energy efficiency improves by around 10% beyond BAU; some fuel switching to electricity and biomass',
@@ -410,10 +410,10 @@ export default {
       'Electricity share of cooking increases to 100%'
     ]
   },
-  solventAndProductUse: {
-    label: 'Solvent and product use',
+  refrigerantGases: {
+    label: 'Refrigerant gases',
     value: 1,
-    group: groups.refrigerantGases,
+    group: groups.industry,
     leverDescriptions: [
       'HFC emissions double by 2050',
       'Emissions decrease nearly 90% by 2050 in accordance with the Montreal Protocol'
