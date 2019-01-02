@@ -38,7 +38,7 @@ export default ({
         </Flex>
         {levers.map(lever => (
           <Box
-            bg={'#ddd'}
+            bg={'rgba(255,255,255,0.2)'}
             width={lever.value / 4}
             mb={1}
             css={{ borderRadius: '5px', height: '5px' }}
