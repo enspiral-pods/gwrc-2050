@@ -123,7 +123,7 @@ export default ({
                     dependentAxis
                     tickValues={axesTickValues}
                     tickFormat={d => d.toLocaleString()}
-                    label={'Emissions (ktCO2/yr)'}
+                    label={axes}
                     axisLabelComponent={<GraphLabelMobile />}
                     style={{
                       axisLabel: {

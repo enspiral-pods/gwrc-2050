@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading, Button, Image } from 'rebass'
+import { Flex, Heading, Button, Image, Box, Text } from 'rebass'
 
 import Lever from './Lever'
 
@@ -20,25 +20,31 @@ export default ({
       width={'100%'}
       bg={'darkBackground'}
       variant={'leverGroup'}
-      css={{ minHeight: '130px' }}
+      p={15}
       mb={15}
     >
-      <Button bg={'darkBackground'} onClick={() => doToggleLeverGroup(group)}>
-        <Flex flexDirection={'column'} width={'100%'} p={20}>
-          <Flex
-            flexDirection={'row'}
-            justifyContent={'space-between'}
-            width={'100%'}
-          >
-            <Heading
-              color={'white'}
-              fontSize={16}
-              textAlign={'left'}
-            >{`${group} (${levers.length} levers)`}</Heading>
-            <Image src={rightArrow} height={24} width={24} mr={10} />
-          </Flex>
+      <Box bg={'darkBackground'} onClick={() => doToggleLeverGroup(group)}>
+        <Flex
+          flexDirection={'row'}
+          justifyContent={'space-between'}
+          width={'100%'}
+        >
+          <Heading
+            color={'white'}
+            fontSize={16}
+            textAlign={'left'}
+          >{`${group} (${levers.length} levers)`}</Heading>
+          <Image src={rightArrow} height={24} width={24} mr={10} />
         </Flex>
-      </Button>
+        {levers.map(lever => (
+          <Box
+            bg={'rgba(255,255,255,0.2)'}
+            width={lever.value / 4}
+            mb={1}
+            css={{ borderRadius: '5px', height: '5px' }}
+          />
+        ))}
+      </Box>
       <Lever
         value={groupLeverTotalValue / levers.length}
         onValueChange={doChangeGroupLeverValue}
