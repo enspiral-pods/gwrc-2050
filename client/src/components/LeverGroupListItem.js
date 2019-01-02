@@ -1,5 +1,5 @@
 import React from 'react'
-import { Flex, Heading, Button, Image } from 'rebass'
+import { Flex, Heading, Button, Image, Box } from 'rebass'
 
 import Lever from './Lever'
 
@@ -37,6 +37,14 @@ export default ({
             >{`${group} (${levers.length} levers)`}</Heading>
             <Image src={rightArrow} height={24} width={24} mr={10} />
           </Flex>
+          {levers.map(lever => (
+            <Box
+              bg={'#ddd'}
+              width={lever.value / 4}
+              mb={1}
+              css={{ borderRadius: '5px', height: '5px' }}
+            />
+          ))}
         </Flex>
       </Button>
       <Lever
