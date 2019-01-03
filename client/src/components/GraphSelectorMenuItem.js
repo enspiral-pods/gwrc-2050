@@ -3,13 +3,14 @@ import { Flex, Text, Link, Image } from 'rebass'
 
 import TextRegular from './TextRegular'
 
-import fireSolid from '../assets/images/fire-solid.png'
-
 export default ({ graphName, route, icon }) => {
   return (
-    <Link href={route} css={{ ':hover': { backgroundColor: '#262D33' } }}>
+    <Link
+      href={route}
+      css={{ textDecoration: 'none', ':hover': { backgroundColor: '#262D33' } }}
+    >
       <Flex py={10} alignItems={'center'}>
-        <Image width={20} src={fireSolid} mr={10} />
+        <Image width={20} src={icon} mr={10} />
         <TextRegular fontSize={16}>{graphName}</TextRegular>
       </Flex>
     </Link>

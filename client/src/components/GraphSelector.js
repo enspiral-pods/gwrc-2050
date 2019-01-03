@@ -7,6 +7,13 @@ import FlexWithExtras from './FlexWithExtras'
 import GraphSelectorMenuItem from './GraphSelectorMenuItem'
 
 import rightArrow from '../assets/images/right-arrow.svg'
+import emissionsImage from '../assets/images/emissions.svg'
+import energyDemandImage from '../assets/images/energyDemand.svg'
+import energySupplyImage from '../assets/images/energySupply.svg'
+import electricityDemandImage from '../assets/images/electricityDemand.svg'
+import electricitySupplyImage from '../assets/images/electricitySupply.svg'
+import flowsImage from '../assets/images/flows.svg'
+import overviewImage from '../assets/images/overview.svg'
 
 const GraphSelector = ({
   display,
@@ -72,30 +79,37 @@ const GraphSelector = ({
         <GraphSelectorMenuItem
           graphName={'Emissions'}
           route={'/calculator/emissions'}
+          icon={emissionsImage}
         />
         <GraphSelectorMenuItem
           graphName={'Energy Demand'}
           route={'/calculator/energy-demand'}
+          icon={energyDemandImage}
         />
         <GraphSelectorMenuItem
           graphName={'Energy Supply'}
           route={'/calculator/energy-supply'}
+          icon={energySupplyImage}
         />
         <GraphSelectorMenuItem
           graphName={'Electricity Demand'}
           route={'/calculator/electricity-demand'}
+          icon={electricityDemandImage}
         />
         <GraphSelectorMenuItem
           graphName={'Electricity Supply'}
           route={'/calculator/electricity-supply'}
+          icon={electricitySupplyImage}
         />
         <GraphSelectorMenuItem
           graphName={'Flows'}
           route={'/calculator/flows'}
+          icon={flowsImage}
         />
         <GraphSelectorMenuItem
           graphName={'Overview'}
           route={'/calculator/overview'}
+          icon={overviewImage}
         />
       </Flex>
 
