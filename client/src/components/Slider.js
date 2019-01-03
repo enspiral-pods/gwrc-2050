@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export default styled.input`
   width: 100%;
   -webkit-appearance: none;
+  outline: none;
   &::-moz-range-track,
   &::-webkit-slider-runnable-track {
     height: 8px;
