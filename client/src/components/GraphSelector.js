@@ -1,24 +1,25 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Heading, Button, Image } from 'rebass'
+import { Flex, Heading, Button, Image, Box } from 'rebass'
 
 import TextRegular from './TextRegular'
 import FlexWithExtras from './FlexWithExtras'
 import GraphSelectorMenuItem from './GraphSelectorMenuItem'
 
 import rightArrow from '../assets/images/right-arrow.svg'
-import emissionsImage from '../assets/images/emissions.svg'
-import energyDemandImage from '../assets/images/energyDemand.svg'
-import energySupplyImage from '../assets/images/energySupply.svg'
-import electricityDemandImage from '../assets/images/electricityDemand.svg'
-import electricitySupplyImage from '../assets/images/electricitySupply.svg'
-import flowsImage from '../assets/images/flows.svg'
-import overviewImage from '../assets/images/overview.svg'
+import EmissionsIcon from './graphSelectorIcons/emissionsIcon'
+import EnergyDemandIcon from './graphSelectorIcons/energyDemandIcon'
+import EnergySupplyIcon from './graphSelectorIcons/energySupplyIcon'
+import ElectricityDemandIcon from './graphSelectorIcons/electricityDemandIcon'
+import ElectricitySupplyIcon from './graphSelectorIcons/electricitySupplyIcon'
+import FlowsIcon from './graphSelectorIcons/flowsIcon'
+import OverviewIcon from './graphSelectorIcons/overviewIcon'
 
 const GraphSelector = ({
   display,
   doToggleMobileGraphsMenu,
   selectedTerritorialAuthority,
+  pathname,
   doSelectTerritorialAuthority
 }) => {
   return (
@@ -79,38 +80,54 @@ const GraphSelector = ({
         <GraphSelectorMenuItem
           graphName={'Emissions'}
           route={'/calculator/emissions'}
-          icon={emissionsImage}
-        />
+        >
+          <EmissionsIcon
+            active={
+              pathname === '/calculator/emissions' || pathname === '/calculator'
+            }
+          />
+        </GraphSelectorMenuItem>
         <GraphSelectorMenuItem
           graphName={'Energy Demand'}
           route={'/calculator/energy-demand'}
-          icon={energyDemandImage}
-        />
+        >
+          <EnergyDemandIcon active={pathname === '/calculator/energy-demand'} />
+        </GraphSelectorMenuItem>
+
         <GraphSelectorMenuItem
           graphName={'Energy Supply'}
           route={'/calculator/energy-supply'}
-          icon={energySupplyImage}
-        />
+        >
+          <EnergySupplyIcon active={pathname === '/calculator/energy-supply'} />
+        </GraphSelectorMenuItem>
         <GraphSelectorMenuItem
           graphName={'Electricity Demand'}
           route={'/calculator/electricity-demand'}
-          icon={electricityDemandImage}
-        />
+        >
+          <ElectricityDemandIcon
+            active={pathname === '/calculator/electricity-demand'}
+          />
+        </GraphSelectorMenuItem>
+
         <GraphSelectorMenuItem
           graphName={'Electricity Supply'}
           route={'/calculator/electricity-supply'}
-          icon={electricitySupplyImage}
-        />
-        <GraphSelectorMenuItem
-          graphName={'Flows'}
-          route={'/calculator/flows'}
-          icon={flowsImage}
-        />
+        >
+          <ElectricitySupplyIcon
+            active={pathname === '/calculator/electricity-supply'}
+          />
+        </GraphSelectorMenuItem>
+
+        <GraphSelectorMenuItem graphName={'Flows'} route={'/calculator/flows'}>
+          <FlowsIcon active={pathname === '/calculator/flows'} />
+        </GraphSelectorMenuItem>
+
         <GraphSelectorMenuItem
           graphName={'Overview'}
           route={'/calculator/overview'}
-          icon={overviewImage}
-        />
+        >
+          <OverviewIcon active={pathname === '/calculator/overview'} />
+        </GraphSelectorMenuItem>
       </Flex>
 
       <Flex py={20}>
@@ -122,6 +139,7 @@ const GraphSelector = ({
 
 export default connect(
   'selectSelectedTerritorialAuthority',
+  'selectPathname',
   'doSelectTerritorialAuthority',
   GraphSelector
 )
