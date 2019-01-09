@@ -42,7 +42,7 @@ const EnergySupply = ({
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
   const colors = ['#FFC700', '#3285D9', '#00C06F']
-  const tickValues = [0, 5000, 10000]
+  const tickValues = [0, 5000, 10000, 15000]
 
   return (
     <Calculator>
@@ -50,7 +50,7 @@ const EnergySupply = ({
       <Graph
         name={'Energy Supply'}
         axes={'Energy (TWh/yr)'}
-        // axesTickValues={tickValues}
+        axesTickValues={tickValues}
         data={graphAreas}
         labels={graphNames}
         colors={colors}
