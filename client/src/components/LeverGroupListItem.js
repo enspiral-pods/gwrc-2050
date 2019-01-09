@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Flex, Heading, Button, Image, Box, Text } from 'rebass'
-
+import TextRegular from '../components/TextRegular'
 import Lever from './Lever'
 
 import rightArrow from '../assets/images/right-arrow.svg'
@@ -35,11 +35,17 @@ class LeverGroupListItem extends Component {
             justifyContent={'space-between'}
             width={'100%'}
           >
-            <Heading
+            <TextRegular
               color={'white'}
               fontSize={16}
               textAlign={'left'}
-            >{`${group} (${levers.length} levers)`}</Heading>
+              fontWeight='bold'
+            >
+              {group}{' '}
+              <span style={{ fontWeight: 'normal' }}>{`(${
+                levers.length
+              } levers)`}</span>
+            </TextRegular>
             <Image src={rightArrow} height={24} width={24} mr={10} />
           </Flex>
           {levers.map(lever => (
