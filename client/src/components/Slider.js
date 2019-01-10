@@ -4,9 +4,8 @@ export default styled.input`
   width: 100%;
   -webkit-appearance: none;
   outline: none;
-  &::-moz-range-track,
-  &::-webkit-slider-runnable-track {
-    height: 8px;
+  &::-moz-range-track {
+    height: 20px;
     background: #000000;
     border-radius: 1.3px;
   }
