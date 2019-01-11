@@ -76,10 +76,41 @@ export default ({
                       <VictoryArea
                         key={i}
                         data={d}
+                        events={[
+                          {
+                            target: 'data',
+                            eventHandlers: {
+                              onMouseOver: () => {
+                                return [
+                                  {
+                                    target: 'data',
+                                    mutation: () => ({
+                                      style: {
+                                        opacity: 1,
+                                        fill: `url(#gradient-${
+                                          colors[i % colors.length]
+                                        })`
+                                      }
+                                    })
+                                  }
+                                ]
+                              },
+                              onMouseOut: () => {
+                                return [
+                                  {
+                                    target: 'data',
+                                    mutation: () => {}
+                                  }
+                                ]
+                              }
+                            }
+                          }
+                        ]}
                         style={{
                           data: {
                             fill: d =>
-                              `url(#gradient-${colors[i % colors.length]})`
+                              `url(#gradient-${colors[i % colors.length]})`,
+                            opacity: 0.8
                           }
                         }}
                       />
