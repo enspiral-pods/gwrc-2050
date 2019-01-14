@@ -3,27 +3,13 @@ import { connect } from 'redux-bundler-react'
 import pick from 'lodash/pick'
 import values from 'lodash/values'
 import keys from 'lodash/keys'
-import Onboarding from '../components/Onboarding'
-import First from '../components/onboarding/first'
-import Second from '../components/onboarding/second'
-import Third from '../components/onboarding/third'
-import Fourth from '../components/onboarding/fourth'
 
 import Calculator from '../hocs/Calculator'
 import Graph from '../components/Graph'
 import MobileLegend from '../components/MobileLegend'
 import EmissionsBar from '../components/EmissionsBar'
 
-const Emissions = ({
-  energyEmissions,
-  emissionsDecrease,
-  isMobileUI,
-  isOnboardingOpen,
-  onboardingCurrentStep,
-  doOnBoardingNextStep,
-  doOnBoardingPreviousStep,
-  doOnBoardingClose
-}) => {
+const Emissions = ({ energyEmissions, emissionsDecrease, isMobileUI }) => {
   const usedData = pick(energyEmissions, [
     'Bioenergy credit',
     'LULUCF',
@@ -50,14 +36,6 @@ const Emissions = ({
 
   return (
     <Fragment>
-      <Onboarding
-        isOnboardingOpen={isOnboardingOpen}
-        steps={[<First />, <Second />, <Third />, <Fourth />]}
-        currentStep={onboardingCurrentStep}
-        onNext={doOnBoardingNextStep}
-        onBack={doOnBoardingPreviousStep}
-        onClose={doOnBoardingClose}
-      />
       <Calculator>
         {/* <Table data={usedData} /> */}
         <Graph
@@ -83,10 +61,5 @@ export default connect(
   'selectEnergyEmissions',
   'selectEmissionsDecrease',
   'selectIsMobileUI',
-  'selectIsOnboardingOpen',
-  'selectOnboardingCurrentStep',
-  'doOnBoardingNextStep',
-  'doOnBoardingPreviousStep',
-  'doOnBoardingClose',
   Emissions
 )
