@@ -14,13 +14,15 @@ import ElectricityDemandIcon from './graphSelectorIcons/electricityDemandIcon'
 import ElectricitySupplyIcon from './graphSelectorIcons/electricitySupplyIcon'
 import FlowsIcon from './graphSelectorIcons/flowsIcon'
 import OverviewIcon from './graphSelectorIcons/overviewIcon'
+import helpIcon from '../assets/images/question-circle-solid.svg'
 
 const GraphSelector = ({
   display,
   doToggleMobileGraphsMenu,
   selectedTerritorialAuthority,
   pathname,
-  doSelectTerritorialAuthority
+  doSelectTerritorialAuthority,
+  doOnBoardingOpen
 }) => {
   return (
     <FlexWithExtras
@@ -133,6 +135,18 @@ const GraphSelector = ({
       <Flex py={20}>
         <Button>Share your scenario</Button>
       </Flex>
+      <Flex
+        py={20}
+        css={{
+          textDecoration: 'none',
+          cursor: 'pointer',
+          ':hover': { backgroundColor: '#262D33' }
+        }}
+        onClick={doOnBoardingOpen}
+      >
+        <Image src={helpIcon} height={18} width={18} mr={'5px'} />
+        <TextRegular>Help</TextRegular>
+      </Flex>
     </FlexWithExtras>
   )
 }
@@ -141,5 +155,6 @@ export default connect(
   'selectSelectedTerritorialAuthority',
   'selectPathname',
   'doSelectTerritorialAuthority',
+  'doOnBoardingOpen',
   GraphSelector
 )

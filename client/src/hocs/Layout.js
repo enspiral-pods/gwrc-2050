@@ -1,8 +1,12 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Button } from 'rebass'
 import navHelper from 'internal-nav-helper'
 import InfoModal from '../components/InfoModal'
+import Onboarding from '../components/Onboarding'
+import First from '../components/onboarding/first'
+import Second from '../components/onboarding/second'
+import Third from '../components/onboarding/third'
+import Fourth from '../components/onboarding/fourth'
 
 import FlexWithExtras from '../components/FlexWithExtras'
 
@@ -11,7 +15,12 @@ const Layout = ({
   doInfoModalClose,
   route,
   routeInfo,
-  isInfoModalOpen
+  isInfoModalOpen,
+  isOnboardingOpen,
+  onboardingCurrentStep,
+  doOnBoardingNextStep,
+  doOnBoardingPreviousStep,
+  doOnBoardingClose
 }) => {
   const Page = route
   // TODO: move this logic to a property of a route itself?
@@ -24,6 +33,14 @@ const Layout = ({
       bg={isCalculatorPage ? 'background' : 'white'}
       onClick={navHelper(doUpdateUrl)}
     >
+      <Onboarding
+        isOnboardingOpen={isCalculatorPage ? isOnboardingOpen : false}
+        steps={[<First />, <Second />, <Third />, <Fourth />]}
+        currentStep={onboardingCurrentStep}
+        onNext={doOnBoardingNextStep}
+        onBack={doOnBoardingPreviousStep}
+        onClose={doOnBoardingClose}
+      />
       <Page />
       <InfoModal isInfoModalOpen={isInfoModalOpen} onClose={doInfoModalClose} />
     </FlexWithExtras>
@@ -35,6 +52,11 @@ export default connect(
   'selectRoute',
   'selectRouteInfo',
   'selectIsInfoModalOpen',
+  'selectIsOnboardingOpen',
+  'selectOnboardingCurrentStep',
+  'doOnBoardingNextStep',
+  'doOnBoardingPreviousStep',
+  'doOnBoardingClose',
   'doInfoModalClose',
   Layout
 )
