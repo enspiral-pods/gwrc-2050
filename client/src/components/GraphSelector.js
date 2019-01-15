@@ -133,7 +133,13 @@ const GraphSelector = ({
       </Flex>
 
       <Flex py={20}>
-        <Button>Share your scenario</Button>
+        <Button
+          css={{
+            cursor: 'pointer'
+          }}
+        >
+          Share your scenario
+        </Button>
       </Flex>
       <Flex
         py={20}
