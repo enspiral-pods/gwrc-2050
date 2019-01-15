@@ -49,7 +49,6 @@ export default ({
             return (
               <Box width={width} css={{ height: heightByRatio }}>
                 <VictoryChart
-                  animate={{ duration: 500 }}
                   width={width}
                   height={heightByRatio}
                   padding={{
@@ -60,6 +59,14 @@ export default ({
                   }}
                 >
                   <VictoryStack
+                    animate={{
+                      onLoad: {
+                        duration: 500
+                      },
+                      onExit: {
+                        duration: 100
+                      }
+                    }}
                     labelComponent={
                       <DesktopLegendLabel
                         originalData={data}
