@@ -34,6 +34,7 @@ class LeverGroupListItem extends Component {
             flexDirection={'row'}
             justifyContent={'space-between'}
             width={'100%'}
+            pb={'10px'}
           >
             <TextRegular
               color={'white'}
@@ -53,7 +54,7 @@ class LeverGroupListItem extends Component {
               bg={'rgba(255,255,255,0.2)'}
               width={lever.value / 4}
               mb={1}
-              css={{ borderRadius: '5px', height: '5px' }}
+              css={{ borderRadius: '4px', height: '4px' }}
             />
           ))}
         </Box>
