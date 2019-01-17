@@ -29,7 +29,7 @@ const Layout = ({
 
   return (
     <FlexWithExtras
-      height={isCalculatorPage ? '100%' : 'auto'}
+      css={{ minHeight: isCalculatorPage ? '100%' : 'auto' }}
       width={'100%'}
       bg={isCalculatorPage ? 'background' : 'white'}
       onClick={navHelper(doUpdateUrl)}

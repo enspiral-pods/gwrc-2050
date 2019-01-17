@@ -10,6 +10,11 @@ import {
   VictoryPortal
 } from 'victory'
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer'
+import keys from 'lodash/keys'
+import pick from 'lodash/pick'
+
+import MobileLegend from '../components/MobileLegend'
+import EmissionsBar from '../components/EmissionsBar'
 
 import TextRegular from './TextRegular'
 import LinearGradient from './LinearGradient'
@@ -23,11 +28,22 @@ export default ({
   axesTickValues,
   data,
   labels,
-  colors
+  colors,
+  energyEmissions,
+  emissionsDecrease
 }) => {
   if (!data) {
     return null
   }
+  const usedData = pick(energyEmissions, [
+    'Bioenergy credit',
+    'LULUCF',
+    'Fuel Combustion',
+    'Solvent and Other Product Use',
+    'Agriculture',
+    'Waste'
+  ])
+  const graphNames = keys(usedData)
 
   return (
     <Flex flexDirection={'column'} width={'100%'}>
@@ -179,6 +195,11 @@ export default ({
                     }}
                   />
                 </VictoryChart>
+                <MobileLegend data={graphNames} colors={colors} />
+                <EmissionsBar
+                  emissionsDecrease={emissionsDecrease}
+                  isMobileUI={isMobileUI}
+                />
               </Box>
             )
           }}
