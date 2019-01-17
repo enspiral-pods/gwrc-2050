@@ -132,7 +132,25 @@ const actionCreators = {
   doInfoModalOpen: lever => ({ dispatch }) =>
     dispatch({ type: 'INFO_MODAL_OPEN', payload: lever }),
   doInfoModalClose: () => ({ dispatch }) =>
-    dispatch({ type: 'INFO_MODAL_CLOSE' })
+    dispatch({ type: 'INFO_MODAL_CLOSE' }),
+  doCopyShareLink: () => ({ dispatch }) => {
+    dispatch({ type: 'SHARE_LINK_COPY_START' })
+    const linkEl = document.getElementById('shared-link')
+    const range = document.createRange()
+    const selection = window.getSelection()
+    range.selectNodeContents(linkEl)
+    selection.removeAllRanges()
+    selection.addRange(range)
+
+    try {
+      const success = document.execCommand('copy')
+      if (success) {
+        dispatch({ type: 'SHARE_LINK_COPY_SUCCESS' })
+      }
+    } catch (e) {
+      dispatch({ type: 'SHARE_LINK_COPY_ERROR' })
+    }
+  }
 }
 
 const reactors = {}
