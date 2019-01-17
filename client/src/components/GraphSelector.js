@@ -22,7 +22,8 @@ const GraphSelector = ({
   selectedTerritorialAuthority,
   pathname,
   doSelectTerritorialAuthority,
-  doOnBoardingOpen
+  doOnBoardingOpen,
+  doOpenShareModal
 }) => {
   return (
     <FlexWithExtras
@@ -137,6 +138,7 @@ const GraphSelector = ({
           css={{
             cursor: 'pointer'
           }}
+          onClick={doOpenShareModal}
         >
           Share your scenario
         </Button>
@@ -162,5 +164,6 @@ export default connect(
   'selectPathname',
   'doSelectTerritorialAuthority',
   'doOnBoardingOpen',
+  'doOpenShareModal',
   GraphSelector
 )
