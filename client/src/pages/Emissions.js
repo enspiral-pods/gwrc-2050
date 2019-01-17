@@ -6,8 +6,6 @@ import keys from 'lodash/keys'
 
 import Calculator from '../hocs/Calculator'
 import Graph from '../components/Graph'
-import MobileLegend from '../components/MobileLegend'
-import EmissionsBar from '../components/EmissionsBar'
 
 const Emissions = ({ energyEmissions, emissionsDecrease, isMobileUI }) => {
   const usedData = pick(energyEmissions, [
@@ -46,11 +44,8 @@ const Emissions = ({ energyEmissions, emissionsDecrease, isMobileUI }) => {
           labels={graphNames}
           colors={colors}
           isMobileUI={isMobileUI}
-        />
-        <MobileLegend data={graphNames} colors={colors} />
-        <EmissionsBar
+          energyEmissions={energyEmissions}
           emissionsDecrease={emissionsDecrease}
-          isMobileUI={isMobileUI}
         />
       </Calculator>
     </Fragment>
