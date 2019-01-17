@@ -22,7 +22,8 @@ const GraphSelector = ({
   selectedTerritorialAuthority,
   pathname,
   doSelectTerritorialAuthority,
-  doOnBoardingOpen
+  doOnBoardingOpen,
+  doOpenShareModal
 }) => {
   return (
     <FlexWithExtras
@@ -133,7 +134,14 @@ const GraphSelector = ({
       </Flex>
 
       <Flex py={20}>
-        <Button>Share your scenario</Button>
+        <Button
+          css={{
+            cursor: 'pointer'
+          }}
+          onClick={doOpenShareModal}
+        >
+          Share your scenario
+        </Button>
       </Flex>
       <Flex
         py={20}
@@ -156,5 +164,6 @@ export default connect(
   'selectPathname',
   'doSelectTerritorialAuthority',
   'doOnBoardingOpen',
+  'doOpenShareModal',
   GraphSelector
 )

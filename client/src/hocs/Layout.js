@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'redux-bundler-react'
 import navHelper from 'internal-nav-helper'
 import InfoModal from '../components/InfoModal'
+import ShareModal from '../components/ShareModal'
 import Onboarding from '../components/Onboarding'
 import First from '../components/onboarding/first'
 import Second from '../components/onboarding/second'
@@ -41,6 +42,8 @@ const Layout = ({
         onBack={doOnBoardingPreviousStep}
         onClose={doOnBoardingClose}
       />
+
+      <ShareModal />
       <Page />
       <InfoModal isInfoModalOpen={isInfoModalOpen} onClose={doInfoModalClose} />
     </FlexWithExtras>

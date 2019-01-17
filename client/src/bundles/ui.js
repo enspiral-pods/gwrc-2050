@@ -12,7 +12,10 @@ const initialState = {
   isOnboardingOpen: true,
   onBoardingCurrentStep: 0,
   isInfoModalOpen: false,
-  infoModalLever: null
+  infoModalLever: null,
+  isShareModalLinkCopying: false,
+  didShareModalLinkCopySuccessfully: null,
+  isShareModalOpen: false
 }
 const reducer = (state = initialState, action) => {
   if (action.type === 'SELECT_TERRITORIAL_AUTHORITY') {
@@ -87,6 +90,31 @@ const reducer = (state = initialState, action) => {
     return { ...state, windowWidth: action.payload }
   }
 
+  if (action.type === 'SHARE_OPEN') {
+    return Object.assign({}, state, { isShareModalOpen: true })
+  }
+  if (action.type === 'SHARE_CLOSE') {
+    return Object.assign({}, state, {
+      isShareModalOpen: false,
+      didShareModalLinkCopySuccessfully: null
+    })
+  }
+  if (action.type === 'SHARE_LINK_COPY_START') {
+    return Object.assign({}, state, { isShareModalLinkCopying: true })
+  }
+  if (action.type === 'SHARE_LINK_COPY_SUCCESS') {
+    return Object.assign({}, state, {
+      isShareModalLinkCopying: false,
+      didShareModalLinkCopySuccessfully: true
+    })
+  }
+  if (action.type === 'SHARE_LINK_COPY_ERROR') {
+    return Object.assign({}, state, {
+      isShareModalLinkCopying: false,
+      didShareModalLinkCopySuccessfully: false
+    })
+  }
+
   return state
 }
 
@@ -101,7 +129,11 @@ const selectors = {
   selectIsMobileUI: state => state.ui.windowWidth < 800,
   selectIsOnboardingOpen: state => state.ui.isOnboardingOpen,
   selectOnboardingCurrentStep: state => state.ui.onBoardingCurrentStep,
-  selectIsInfoModalOpen: state => state.ui.isInfoModalOpen
+  selectIsInfoModalOpen: state => state.ui.isInfoModalOpen,
+  selectIsShareModalOpen: state => state.ui.isShareModalOpen,
+  selectIsShareModalLinkCopying: state => state.ui.isShareModalLinkCopying,
+  selectDidShareModalLinkCopySuccessfully: state =>
+    state.ui.didShareModalLinkCopySuccessfully
 }
 
 const actionCreators = {
@@ -132,7 +164,27 @@ const actionCreators = {
   doInfoModalOpen: lever => ({ dispatch }) =>
     dispatch({ type: 'INFO_MODAL_OPEN', payload: lever }),
   doInfoModalClose: () => ({ dispatch }) =>
-    dispatch({ type: 'INFO_MODAL_CLOSE' })
+    dispatch({ type: 'INFO_MODAL_CLOSE' }),
+  doOpenShareModal: () => ({ dispatch }) => dispatch({ type: 'SHARE_OPEN' }),
+  doCloseShareModal: () => ({ dispatch }) => dispatch({ type: 'SHARE_CLOSE' }),
+  doCopyShareLink: () => ({ dispatch }) => {
+    dispatch({ type: 'SHARE_LINK_COPY_START' })
+    const linkEl = document.getElementById('shared-link')
+    const range = document.createRange()
+    const selection = window.getSelection()
+    range.selectNodeContents(linkEl)
+    selection.removeAllRanges()
+    selection.addRange(range)
+
+    try {
+      const success = document.execCommand('copy')
+      if (success) {
+        dispatch({ type: 'SHARE_LINK_COPY_SUCCESS' })
+      }
+    } catch (e) {
+      dispatch({ type: 'SHARE_LINK_COPY_ERROR' })
+    }
+  }
 }
 
 const reactors = {}

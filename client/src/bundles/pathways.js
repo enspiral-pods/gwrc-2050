@@ -66,6 +66,18 @@ bundle.selectInfoModalLeverObject = state =>
     ? state.pathways.levers[state.ui.infoModalLever]
     : null
 
+bundle.selectLeverUrlObject = state => {
+  let urlString = ''
+  for (var key in state.pathways.levers) {
+    if (urlString != '') {
+      urlString += '&'
+    }
+    urlString +=
+      key + '=' + encodeURIComponent(state.pathways.levers[key].value)
+  }
+  return urlString
+}
+
 bundle.selectLeverString = state => oneLineTrim`
   ${state.pathways.levers.biogasPowerGeneration.value}
   ${state.pathways.levers.solarPanelsForElectricity.value}
@@ -121,6 +133,28 @@ bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {
   dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })
   store.doMarkPathwaysAsOutdated()
 }
+
+bundle.doUpdateLeversFromUrl = leversObject => ({ dispatch, store }) => {
+  let newlevers = {}
+  Object.keys(leversObject).map(lever => {
+    newlevers[lever] = store.selectLevers()[lever]
+    newlevers[lever].value = leversObject[lever]
+  })
+
+  dispatch({ type: 'LEVERS_UPDATE_FROM_URL', payload: { levers: newlevers } })
+  store.doReplaceUrl('/calculator')
+}
+
+bundle.reactRenderShareState = createSelector(
+  'selectUrlObject',
+  'selectQueryObject',
+  (urlLocation, queryObject) => {
+    if (urlLocation.pathname === '/share') {
+      return { actionCreator: 'doUpdateLeversFromUrl', args: [queryObject] }
+    }
+    return false
+  }
+)
 
 bundle.reactInitialPathwaysFetch = createSelector(
   'selectPathwaysShouldUpdate',
