@@ -10,6 +10,7 @@ import ElectricitySupply from './pages/ElectricitySupply'
 
 let routes = {
   '/': Landing,
+  '/share': Emissions,
   '/data': Data,
   '/calculator': Emissions,
   '/calculator/emissions': Emissions,
