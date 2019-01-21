@@ -1,25 +1,17 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Box, Flex, Heading } from 'rebass'
-import {
-  VictoryChart,
-  VictoryAxis,
-  VictoryStack,
-  VictoryArea,
-  VictoryLabel,
-  VictoryPortal
-} from 'victory'
+import { VictoryChart, VictoryAxis, VictoryStack, VictoryArea } from 'victory'
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer'
 import keys from 'lodash/keys'
 import pick from 'lodash/pick'
 
-import MobileLegend from '../components/MobileLegend'
+import Legend from '../components/Legend'
 import EmissionsBar from '../components/EmissionsBar'
 
 import TextRegular from './TextRegular'
 import LinearGradient from './LinearGradient'
 import GraphLabelMobile from './GraphLabelMobile'
-import DesktopLegendLabel from './DesktopLegendLabel'
 
 export default ({
   isMobileUI,
@@ -27,7 +19,6 @@ export default ({
   axes,
   axesTickValues,
   data,
-  labels,
   colors,
   energyEmissions,
   emissionsDecrease
@@ -83,16 +74,6 @@ export default ({
                         duration: 100
                       }
                     }}
-                    labelComponent={
-                      <DesktopLegendLabel
-                        originalData={data}
-                        renderInPortal
-                        x={width}
-                        dx={-100}
-                        style={{ fill: 'white', textAnchor: 'start' }}
-                      />
-                    }
-                    labels={labels}
                     style={{ labels: { fill: 'white' } }}
                   >
                     {data.map((d, i) => (
@@ -195,7 +176,7 @@ export default ({
                     }}
                   />
                 </VictoryChart>
-                <MobileLegend data={graphNames} colors={colors} />
+                <Legend data={graphNames} colors={colors} />
                 <EmissionsBar
                   emissionsDecrease={emissionsDecrease}
                   isMobileUI={isMobileUI}

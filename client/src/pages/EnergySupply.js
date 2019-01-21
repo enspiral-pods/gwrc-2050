@@ -8,7 +8,7 @@ import keys from 'lodash/keys'
 import Calculator from '../hocs/Calculator'
 import Table from '../components/Table'
 import Graph from '../components/Graph'
-import MobileLegend from '../components/MobileLegend'
+import Legend from '../components/Legend'
 import EmissionsBar from '../components/EmissionsBar'
 
 const EnergySupply = ({
@@ -27,15 +27,15 @@ const EnergySupply = ({
     'Imported Gas',
     'Imported Oil',
     // Not needed for NZ?
-    'Nuclear fission',
+    // 'Nuclear fission',
     'Solar',
     'Tidal',
     // NZ?
-    'UK Bioenergy',
-    'UK Coal',
-    'UK Gas',
-    'UK Oil',
-    'Wave',
+    // 'UK Bioenergy',
+    // 'UK Coal',
+    // 'UK Gas',
+    // 'UK Oil',
+    // 'Wave',
     'Wind'
   ])
 
@@ -56,7 +56,7 @@ const EnergySupply = ({
         colors={colors}
         isMobileUI={isMobileUI}
       />
-      <MobileLegend data={graphNames} colors={colors} />
+      <Legend data={graphNames} colors={colors} />
       <EmissionsBar
         emissionsDecrease={emissionsDecrease}
         isMobileUI={isMobileUI}
