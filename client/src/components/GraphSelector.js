@@ -3,6 +3,7 @@ import { connect } from 'redux-bundler-react'
 import { Flex, Heading, Button, Image, Box } from 'rebass'
 
 import TextRegular from './TextRegular'
+import TextMedium from './TextMedium'
 import FlexWithExtras from './FlexWithExtras'
 import GraphSelectorMenuItem from './GraphSelectorMenuItem'
 
@@ -15,6 +16,7 @@ import ElectricitySupplyIcon from './graphSelectorIcons/electricitySupplyIcon'
 import FlowsIcon from './graphSelectorIcons/flowsIcon'
 import OverviewIcon from './graphSelectorIcons/overviewIcon'
 import helpIcon from '../assets/images/question-circle-solid.svg'
+import shareIcon from '../assets/images/share.svg'
 
 const GraphSelector = ({
   display,
@@ -79,7 +81,7 @@ const GraphSelector = ({
         </select>
       </Flex>
 
-      <Flex flexDirection={'column'}>
+      <Flex flexDirection={'column'} pb={15}>
         <GraphSelectorMenuItem
           graphName={'Emissions'}
           route={'/calculator/emissions'}
@@ -133,15 +135,17 @@ const GraphSelector = ({
         </GraphSelectorMenuItem>
       </Flex>
 
-      <Flex py={20}>
-        <Button
-          css={{
-            cursor: 'pointer'
-          }}
-          onClick={doOpenShareModal}
-        >
-          Share your scenario
-        </Button>
+      <Flex
+        p={10}
+        css={{
+          textDecoration: 'none',
+          cursor: 'pointer',
+          backgroundColor: '#262D33'
+        }}
+        onClick={doOpenShareModal}
+      >
+        <Image src={shareIcon} width={25} mr={15} />
+        <TextMedium fontSize={16}>Share your scenario</TextMedium>
       </Flex>
       <Flex
         py={20}
