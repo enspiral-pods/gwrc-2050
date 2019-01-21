@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Flex, Heading, Button, Image, Box } from 'rebass'
 
+import Select from './Select'
 import TextRegular from './TextRegular'
 import TextMedium from './TextMedium'
 import FlexWithExtras from './FlexWithExtras'
@@ -67,7 +68,7 @@ const GraphSelector = ({
         <Heading color={'white'} fontSize={12}>
           Select Region
         </Heading>
-        <select
+        <Select
           value={selectedTerritorialAuthority}
           onChange={e => doSelectTerritorialAuthority(e.target.value)}
         >
@@ -78,7 +79,7 @@ const GraphSelector = ({
           <option value={'lower_hutt'}>Lower Hutt</option>
           <option value={'upper_hutt'}>Upper Hutt</option>
           <option value={'wairarapa'}>Wairarapa</option>
-        </select>
+        </Select>
       </Flex>
 
       <Flex flexDirection={'column'} pb={15}>
