@@ -3,7 +3,7 @@ import { Box } from 'rebass'
 
 export default ({ active }) => {
   return (
-    <Box width={20} mr={10}>
+    <Box width={30} mr={10}>
       <svg
         width='24'
         height='24'
