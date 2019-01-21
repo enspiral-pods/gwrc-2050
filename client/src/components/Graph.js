@@ -1,10 +1,7 @@
 import React from 'react'
-import { connect } from 'redux-bundler-react'
 import { Box, Flex, Heading } from 'rebass'
 import { VictoryChart, VictoryAxis, VictoryStack, VictoryArea } from 'victory'
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer'
-import keys from 'lodash/keys'
-import pick from 'lodash/pick'
 
 import Legend from '../components/Legend'
 import EmissionsBar from '../components/EmissionsBar'
@@ -20,22 +17,12 @@ export default ({
   axesTickValues,
   data,
   colors,
-  energyEmissions,
+  labels,
   emissionsDecrease
 }) => {
   if (!data) {
     return null
   }
-  const usedData = pick(energyEmissions, [
-    'Bioenergy credit',
-    'LULUCF',
-    'Fuel Combustion',
-    'Solvent and Other Product Use',
-    'Agriculture',
-    'Waste'
-  ])
-  const graphNames = keys(usedData)
-
   return (
     <Flex flexDirection={'column'} width={'100%'}>
       <Heading color={'white'} fontSize={20} py={'5px'}>
@@ -176,7 +163,7 @@ export default ({
                     }}
                   />
                 </VictoryChart>
-                <Legend data={graphNames} colors={colors} />
+                <Legend data={labels} colors={colors} />
                 <EmissionsBar
                   emissionsDecrease={emissionsDecrease}
                   isMobileUI={isMobileUI}
