@@ -8,7 +8,7 @@ import keys from 'lodash/keys'
 import Calculator from '../hocs/Calculator'
 import Table from '../components/Table'
 import Graph from '../components/Graph'
-import MobileLegend from '../components/MobileLegend'
+import Legend from '../components/Legend'
 import EmissionsBar from '../components/EmissionsBar'
 
 const ElectricitySupply = ({
@@ -42,7 +42,7 @@ const ElectricitySupply = ({
         colors={colors}
         isMobileUI={isMobileUI}
       />
-      <MobileLegend data={graphNames} colors={colors} />
+      <Legend data={graphNames} colors={colors} />
       <EmissionsBar
         emissionsDecrease={emissionsDecrease}
         isMobileUI={isMobileUI}
