@@ -3,8 +3,6 @@ import { connect } from 'redux-bundler-react'
 import { Box, Flex, Heading } from 'rebass'
 import { VictoryChart, VictoryAxis, VictoryStack, VictoryArea } from 'victory'
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer'
-import keys from 'lodash/keys'
-import pick from 'lodash/pick'
 
 import Legend from '../components/Legend'
 import EmissionsBar from '../components/EmissionsBar'
@@ -13,29 +11,20 @@ import TextRegular from './TextRegular'
 import LinearGradient from './LinearGradient'
 import GraphLabelMobile from './GraphLabelMobile'
 
-export default ({
+const Graph = ({
   isMobileUI,
   name,
   axes,
   axesTickValues,
   data,
   colors,
-  energyEmissions,
-  emissionsDecrease
+  labels,
+  emissionsDecrease,
+  doUpdateActiveGraphArea
 }) => {
   if (!data) {
     return null
   }
-  const usedData = pick(energyEmissions, [
-    'Bioenergy credit',
-    'LULUCF',
-    'Fuel Combustion',
-    'Solvent and Other Product Use',
-    'Agriculture',
-    'Waste'
-  ])
-  const graphNames = keys(usedData)
-
   return (
     <Flex flexDirection={'column'} width={'100%'}>
       <Heading color={'white'} fontSize={20} py={'5px'}>
@@ -84,22 +73,28 @@ export default ({
                           {
                             target: 'data',
                             eventHandlers: {
-                              onMouseOver: () => {
+                              onMouseOver: (evt, itemProps) => {
+                                doUpdateActiveGraphArea(
+                                  labels[itemProps.id.split('-')[4]]
+                                )
                                 return [
                                   {
                                     target: 'data',
-                                    mutation: () => ({
-                                      style: {
-                                        opacity: 1,
-                                        fill: `url(#gradient-${
-                                          colors[i % colors.length]
-                                        })`
+                                    mutation: () => {
+                                      return {
+                                        style: {
+                                          opacity: 1,
+                                          fill: `url(#gradient-${
+                                            colors[i % colors.length]
+                                          })`
+                                        }
                                       }
-                                    })
+                                    }
                                   }
                                 ]
                               },
                               onMouseOut: () => {
+                                doUpdateActiveGraphArea(null)
                                 return [
                                   {
                                     target: 'data',
@@ -176,7 +171,7 @@ export default ({
                     }}
                   />
                 </VictoryChart>
-                <Legend data={graphNames} colors={colors} />
+                <Legend data={labels} colors={colors} />
                 <EmissionsBar
                   emissionsDecrease={emissionsDecrease}
                   isMobileUI={isMobileUI}
@@ -189,3 +184,5 @@ export default ({
     </Flex>
   )
 }
+
+export default connect('doUpdateActiveGraphArea', Graph)
