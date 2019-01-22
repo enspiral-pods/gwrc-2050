@@ -1,4 +1,5 @@
 import React from 'react'
+import { connect } from 'redux-bundler-react'
 import { Box, Flex, Heading } from 'rebass'
 import { VictoryChart, VictoryAxis, VictoryStack, VictoryArea } from 'victory'
 import AutoSizer from 'react-virtualized/dist/commonjs/AutoSizer'
@@ -10,7 +11,7 @@ import TextRegular from './TextRegular'
 import LinearGradient from './LinearGradient'
 import GraphLabelMobile from './GraphLabelMobile'
 
-export default ({
+const Graph = ({
   isMobileUI,
   name,
   axes,
@@ -18,7 +19,8 @@ export default ({
   data,
   colors,
   labels,
-  emissionsDecrease
+  emissionsDecrease,
+  doUpdateActiveGraphArea
 }) => {
   if (!data) {
     return null
@@ -71,22 +73,28 @@ export default ({
                           {
                             target: 'data',
                             eventHandlers: {
-                              onMouseOver: () => {
+                              onMouseOver: (evt, itemProps) => {
+                                doUpdateActiveGraphArea(
+                                  labels[itemProps.id.split('-')[4]]
+                                )
                                 return [
                                   {
                                     target: 'data',
-                                    mutation: () => ({
-                                      style: {
-                                        opacity: 1,
-                                        fill: `url(#gradient-${
-                                          colors[i % colors.length]
-                                        })`
+                                    mutation: () => {
+                                      return {
+                                        style: {
+                                          opacity: 1,
+                                          fill: `url(#gradient-${
+                                            colors[i % colors.length]
+                                          })`
+                                        }
                                       }
-                                    })
+                                    }
                                   }
                                 ]
                               },
                               onMouseOut: () => {
+                                doUpdateActiveGraphArea(null)
                                 return [
                                   {
                                     target: 'data',
@@ -176,3 +184,5 @@ export default ({
     </Flex>
   )
 }
+
+export default connect('doUpdateActiveGraphArea', Graph)

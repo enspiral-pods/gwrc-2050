@@ -1,14 +1,14 @@
 import React from 'react'
+import { connect } from 'redux-bundler-react'
 import { Box, Flex } from 'rebass'
 
 import FlexWithExtras from './FlexWithExtras'
 import TextRegular from './TextRegular'
 
-export default ({ data, colors }) => {
+const Legend = ({ data, colors, activeGraphArea }) => {
   if (!data) {
     return null
   }
-
   return (
     <Flex flexDirection={'column'} alignItems={'center'}>
       <FlexWithExtras
@@ -25,6 +25,10 @@ export default ({ data, colors }) => {
               width={'50%'}
               pr={20}
               pb={'5px'}
+              css={{
+                opacity:
+                  activeGraphArea === d || activeGraphArea === null ? 1 : 0.4
+              }}
             >
               <Box
                 width={14}
@@ -40,3 +44,5 @@ export default ({ data, colors }) => {
     </Flex>
   )
 }
+
+export default connect('selectActiveGraphArea', Legend)

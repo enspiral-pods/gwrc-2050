@@ -24,7 +24,8 @@ const initialState = {
   isOutdated: false,
   lastSuccess: null,
   // other state
-  levers: leversState
+  levers: leversState,
+  activeGraphArea: null
 }
 
 const baseReducer = bundle.reducer
@@ -35,6 +36,11 @@ bundle.reducer = (state = initialState, action) => {
     levers[lever].value = value
     return Object.assign({}, state, {
       levers
+    })
+  }
+  if (action.type === 'GRAPH_UPDATE_ACTIVE_AREA') {
+    return Object.assign({}, state, {
+      activeGraphArea: action.payload.keyName
     })
   }
   return baseReducer(state, action)
@@ -128,6 +134,8 @@ bundle.selectLeverString = state => oneLineTrim`
   ${state.pathways.levers.refrigerantGases.value}
 `
 
+bundle.selectActiveGraphArea = state => state.pathways.activeGraphArea
+
 bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {
   dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })
   store.doMarkPathwaysAsOutdated()
@@ -142,6 +150,15 @@ bundle.doUpdateLeversFromUrl = leversObject => ({ dispatch, store }) => {
 
   dispatch({ type: 'LEVERS_UPDATE_FROM_URL', payload: { levers: newlevers } })
   store.doReplaceUrl('/calculator')
+}
+
+bundle.doUpdateActiveGraphArea = keyName => ({ dispatch, store }) => {
+  dispatch({
+    type: 'GRAPH_UPDATE_ACTIVE_AREA',
+    payload: {
+      keyName
+    }
+  })
 }
 
 bundle.reactRenderShareState = createSelector(
