@@ -4,14 +4,11 @@ import { Box } from 'rebass'
 import { sankey, sankeyLinkHorizontal } from 'd3-sankey'
 
 import Calculator from '../hocs/Calculator'
-import Table from '../components/Table'
-import Graph from '../components/Graph'
-import MobileLegend from '../components/MobileLegend'
 import EmissionsBar from '../components/EmissionsBar'
 
 const sankeyGraph = sankey()
-  .nodeWidth(15)
-  .nodePadding(10)
+  .nodeWidth(25)
+  .nodePadding(20)
   .size([1000, 1000])
   .nodeId(d => d.name)
 const sankeyLinkGenerator = sankeyLinkHorizontal()
@@ -84,10 +81,6 @@ const Emissions = ({
           </g>
         </svg>
       </Box>
-      <EmissionsBar
-        emissionsDecrease={emissionsDecrease}
-        isMobileUI={isMobileUI}
-      />
     </Calculator>
   )
 }

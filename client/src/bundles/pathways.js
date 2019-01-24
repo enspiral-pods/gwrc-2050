@@ -2,6 +2,7 @@ import { createSelector, createAsyncResourceBundle } from 'redux-bundler'
 import groupBy from 'lodash/groupBy'
 import flatMap from 'lodash/flatMap'
 import uniq from 'lodash/uniq'
+import filter from 'lodash/filter'
 import { oneLineTrim } from 'common-tags'
 import leversState from './util/levers'
 
@@ -69,9 +70,18 @@ bundle.selectSankeyData = state =>
 bundle.selectSankeyDataNodes = createSelector('selectSankeyData', data => {
   if (!data) return []
   const nodeNames = uniq(
-    flatMap(data, d => {
-      return [d[0], d[1]]
-    })
+    flatMap(
+      filter(data, d => {
+        return (
+          d[d.length - 1] !== 0 &&
+          d[d.length - 1] !== null &&
+          d[d.length - 1] !== 'na'
+        )
+      }),
+      d => {
+        return [d[0], d[1]]
+      }
+    )
   )
   return nodeNames
     .map(n => {
@@ -83,6 +93,13 @@ bundle.selectSankeyDataNodes = createSelector('selectSankeyData', data => {
 bundle.selectSankeyDataLinks = createSelector('selectSankeyData', data => {
   if (!data) return []
   return data
+    .filter(d => {
+      return (
+        d[d.length - 1] !== 0 &&
+        d[d.length - 1] !== null &&
+        d[d.length - 1] !== 'na'
+      )
+    })
     .map(d => {
       return {
         source: d[0],
