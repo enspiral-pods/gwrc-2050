@@ -136,9 +136,8 @@ bundle.selectLeverString = state => oneLineTrim`
 
 bundle.selectActiveGraphArea = state => state.pathways.activeGraphArea
 
-bundle.doUpdateLever = (lever, value) => ({ dispatch, store }) => {
+bundle.doUpdateLever = (lever, value) => ({ dispatch }) => {
   dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })
-  store.doMarkPathwaysAsOutdated()
 }
 
 bundle.doUpdateLeversFromUrl = leversObject => ({ dispatch, store }) => {
