@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Flex, Heading, Button, Image } from 'rebass'
 import keys from 'lodash/keys'
+import debounce from 'lodash/debounce'
 import toCamelCase from 'lodash/camelCase'
 
 import LeverGroupListItem from './LeverGroupListItem'
@@ -17,11 +18,13 @@ const Levers = ({
   leversByGroup,
   leversByTabWithGroup,
   doUpdateLever,
+  doMarkPathwaysAsOutdated,
   isLeverGroupOpen,
   doInfoModalOpen,
   selectedLeverGroup,
   doToggleLeverGroup
 }) => {
+  const debouncedMarkAsOutdated = debounce(doMarkPathwaysAsOutdated, 500)
   return (
     <FlexWithExtras
       display={display}
@@ -35,7 +38,10 @@ const Levers = ({
           doToggleLeverGroup={doToggleLeverGroup}
           selectedLeverGroup={selectedLeverGroup}
           levers={leversByGroup[selectedLeverGroup]}
-          doUpdateLever={doUpdateLever}
+          doUpdateLever={(lever, value) => {
+            doUpdateLever(lever, value)
+            debouncedMarkAsOutdated()
+          }}
           doInfoModalOpen={doInfoModalOpen}
         />
       ) : (
@@ -62,6 +68,7 @@ const Levers = ({
                         ? lever.leverDescriptions.length
                         : value
                     doUpdateLever(toCamelCase(lever.label), valueForLever)
+                    debouncedMarkAsOutdated()
                   })
                 }}
               />
@@ -90,6 +97,7 @@ export default connect(
   'selectLeversByGroup',
   'selectLeversByTabWithGroup',
   'doUpdateLever',
+  'doMarkPathwaysAsOutdated',
   'selectIsLeverGroupOpen',
   'selectSelectedLeverGroup',
   'doToggleLeverGroup',
