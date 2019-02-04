@@ -1,4 +1,6 @@
+import { createSelector } from 'redux-bundler'
 import debounce from 'lodash/debounce'
+import concat from 'lodash/concat'
 
 const name = 'ui'
 
@@ -15,7 +17,8 @@ const initialState = {
   infoModalLever: null,
   isShareModalLinkCopying: false,
   didShareModalLinkCopySuccessfully: null,
-  isShareModalOpen: false
+  isShareModalOpen: false,
+  hoveredSankeyData: null
 }
 const reducer = (state = initialState, action) => {
   if (action.type === 'SELECT_TERRITORIAL_AUTHORITY') {
@@ -114,6 +117,9 @@ const reducer = (state = initialState, action) => {
       didShareModalLinkCopySuccessfully: false
     })
   }
+  if (action.type === 'SANKEY_DATA_HOVER') {
+    return { ...state, hoveredSankeyData: action.payload }
+  }
 
   return state
 }
@@ -133,7 +139,48 @@ const selectors = {
   selectIsShareModalOpen: state => state.ui.isShareModalOpen,
   selectIsShareModalLinkCopying: state => state.ui.isShareModalLinkCopying,
   selectDidShareModalLinkCopySuccessfully: state =>
-    state.ui.didShareModalLinkCopySuccessfully
+    state.ui.didShareModalLinkCopySuccessfully,
+  selectHoveredSankeyData: state => state.ui.hoveredSankeyData,
+  selectSankeyDataToHighlight: createSelector(
+    'selectHoveredSankeyData',
+    'selectSankeyDataNodes',
+    'selectSankeyDataLinks',
+    (hovered, nodes, links) => {
+      if (!hovered) return null
+      if (hovered.type === 'node') {
+        const primaryNode = nodes[hovered.index]
+        const highlightedLinksIndicies = concat(
+          primaryNode.sourceLinks,
+          primaryNode.targetLinks
+        ).map(l => l.index)
+        const linkedNodesIndicies = concat(
+          primaryNode.sourceLinks.map(l => l.target.index),
+          primaryNode.targetLinks.map(l => l.source.index)
+        )
+        const highlightedNodesIndicies = concat(
+          linkedNodesIndicies,
+          primaryNode.index
+        )
+
+        return {
+          nodes: highlightedNodesIndicies,
+          links: highlightedLinksIndicies
+        }
+      } else {
+        const primaryLink = links[hovered.index]
+        const highlightedNodesIndicies = [
+          primaryLink.source.index,
+          primaryLink.target.index
+        ]
+        const highlightedLinksIndicies = [primaryLink.index]
+
+        return {
+          nodes: highlightedNodesIndicies,
+          links: highlightedLinksIndicies
+        }
+      }
+    }
+  )
 }
 
 const actionCreators = {
@@ -184,7 +231,9 @@ const actionCreators = {
     } catch (e) {
       dispatch({ type: 'SHARE_LINK_COPY_ERROR' })
     }
-  }
+  },
+  doHoverSankeyData: data => ({ dispatch }) =>
+    dispatch({ type: 'SANKEY_DATA_HOVER', payload: data })
 }
 
 const reactors = {}
