@@ -11,17 +11,14 @@ const initialState = {
   isLeverGroupOpen: false,
   selectedLeverGroup: null,
   windowWidth: null,
-<<<<<<< HEAD
   isOnboardingOpen: true,
   onBoardingCurrentStep: 0,
   isInfoModalOpen: false,
   infoModalLever: null,
   isShareModalLinkCopying: false,
   didShareModalLinkCopySuccessfully: null,
-  isShareModalOpen: false
-=======
+  isShareModalOpen: false,
   hoveredSankeyData: null
->>>>>>> add hover states to the sankey
 }
 const reducer = (state = initialState, action) => {
   if (action.type === 'SELECT_TERRITORIAL_AUTHORITY') {
@@ -119,6 +116,7 @@ const reducer = (state = initialState, action) => {
       isShareModalLinkCopying: false,
       didShareModalLinkCopySuccessfully: false
     })
+  }
   if (action.type === 'SANKEY_DATA_HOVER') {
     return { ...state, hoveredSankeyData: action.payload }
   }
