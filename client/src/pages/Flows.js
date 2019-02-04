@@ -28,7 +28,7 @@ const Emissions = ({
       <Box width={'100%'}>
         <svg
           style={{ width: '100%', height: 'auto' }}
-          viewBox={'0 0 1000 1000'}
+          viewBox={'-100 -100 1200 1200'}
         >
           <g stroke={'#000'}>
             {nodes.map(n => {
@@ -36,21 +36,34 @@ const Emissions = ({
                 hoveredSankeyData &&
                 sankeyDataToHighlight.nodes.includes(n.index)
               return (
-                <rect
-                  x={n.x0}
-                  y={n.y0}
-                  height={n.y1 - n.y0}
-                  width={n.x1 - n.x0}
-                  fill={
-                    hoveredSankeyData ? (isNodeHovered ? 'red' : 'grey') : 'red'
-                  }
-                  onMouseEnter={() =>
-                    doHoverSankeyData({ type: 'node', index: n.index })
-                  }
-                  onMouseLeave={() => doHoverSankeyData(null)}
-                >
-                  <title>{n.name}</title>
-                </rect>
+                <g>
+                  <text
+                    x={n.x0}
+                    y={n.y0}
+                    stroke={'white'}
+                    style={{ fontFamily: 'Inter-UI-Regular' }}
+                    textAnchor={'middle'}
+                  >
+                    {n.name}
+                  </text>
+                  <rect
+                    x={n.x0}
+                    y={n.y0}
+                    height={n.y1 - n.y0}
+                    width={n.x1 - n.x0}
+                    fill={
+                      hoveredSankeyData
+                        ? isNodeHovered ? '#FFC700' : 'grey'
+                        : '#FFC700'
+                    }
+                    onMouseEnter={() =>
+                      doHoverSankeyData({ type: 'node', index: n.index })
+                    }
+                    onMouseLeave={() => doHoverSankeyData(null)}
+                  >
+                    <title>{n.name}</title>
+                  </rect>
+                </g>
               )
             })}
           </g>
@@ -70,8 +83,8 @@ const Emissions = ({
                     d={sankeyLinkGenerator(l)}
                     stroke={
                       hoveredSankeyData
-                        ? isLinkHovered ? 'green' : 'grey'
-                        : 'green'
+                        ? isLinkHovered ? '#3285D9' : 'grey'
+                        : '#3285D9'
                     }
                     strokeWidth={Math.max(1, l.width)}
                   />
