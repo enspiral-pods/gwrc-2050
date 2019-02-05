@@ -16,8 +16,8 @@ export default ({ emissionsDecrease, isMobileUI }) => {
 
   const tooltipWidth = isMobileUI ? 120 : 150
   const barXPointAsWidthPercentage = isDecrease
-    ? `${percentageChange * 50 + 50}%`
-    : `${(1 - percentageChange) * 50}%`
+    ? `${percentageChange * 40 + 40}%`
+    : `${(1 - percentageChange) * 40}%`
 
   const fill =
     emissionsDecrease < -0.25
@@ -35,11 +35,11 @@ export default ({ emissionsDecrease, isMobileUI }) => {
     >
       <svg height={'100%'} width={'100%'}>
         <g>
-          <rect x='0' y='45' width='100%' height='5' fill={'black'} />
+          <rect x='0' y='45' width='80%' height='5' fill={'black'} />
           <rect
-            x={isDecrease ? '50%' : `${(1 - percentageChange) * 50}%`}
+            x={isDecrease ? '40%' : `${(1 - percentageChange) * 40}%`}
             y='45'
-            width={`${percentageChange * 50}%`}
+            width={`${percentageChange * 40}%`}
             height='5'
             fill={fill}
           />
@@ -77,6 +77,38 @@ export default ({ emissionsDecrease, isMobileUI }) => {
             alignmentBaseline={'middle'}
             textAnchor={'middle'}
           >{`${Math.round(absoluteChange)}% CO2 ${postfix}`}</text>
+        </g>
+
+        <g>
+          <rect
+            x={'80%'}
+            y={isMobileUI ? 70 : 60}
+            rx={3}
+            ry={3}
+            width={tooltipWidth}
+            height={isMobileUI ? 20 : 30}
+            fill={'#575757'}
+            transform={`translate(-${tooltipWidth / 2})`}
+          />
+          <svg overflow={'visible'} x={'80%'} y={60} height={5}>
+            <polygon
+              fill={'#575757'}
+              points={`0,0 -10,0 -5,-5`}
+              transform={`translate(-5)`}
+            />
+          </svg>
+          <text
+            x={`80%`}
+            y={isMobileUI ? 80 : 75}
+            stroke={'white'}
+            fill={'white'}
+            fontSize={isMobileUI ? '10px' : '14px'}
+            fontFamily={'Inter-UI-Regular'}
+            alignmentBaseline={'middle'}
+            textAnchor={'middle'}
+          >
+            2050 Target
+          </text>
         </g>
       </svg>
     </Flex>
