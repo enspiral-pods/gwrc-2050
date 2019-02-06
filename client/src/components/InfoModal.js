@@ -14,20 +14,15 @@ const InfoModal = props => {
     <ReactModal
       style={{
         content: {
-          top: '50%',
+          top: '20%',
           left: '0px',
           right: '0px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          transform: 'translate(0, -50%)',
-          maxWidth: '1041px',
-          maxHeight: '1000px',
-          border: '1px solid #ccc',
-          background: '#fff',
+          maxHeight: '500px',
+          maxWidth: '1000px',
           overflow: 'auto',
           WebkitOverflowScrolling: 'touch',
-          borderRadius: '4px',
-          outline: 'none',
           padding: '20px'
         }
       }}
@@ -35,18 +30,12 @@ const InfoModal = props => {
       onRequestClose={onClose}
       shouldCloseOnOverlayClick
     >
-      <Flex
-        flexDirection={['column', 'row']}
-        width={'100%'}
-        css={{ height: '100%' }}
-        mx={20}
-        justifyContent={'space-between'}
-        alignItems={'center'}
-      >
-        <Flex flexDirection={'column'} width={'100%'}>
-          <Heading fontSize={18} textAlign={'center'}>
+      <Flex flexDirection={['column', 'row']} width={'100%'} mx={20}>
+        <Flex flexDirection={'column'} width={'100%'} alignItems={'center'}>
+          <Heading fontSize={18} textAlign={'center'} pb={10}>
             {infoModalLeverObject.label}
           </Heading>
+          {infoModalLeverObject.content}
         </Flex>
         <Flex flexDirection={'column'} width={'100%'}>
           {infoModalLeverObject.leverDescriptions.map((description, index) => {

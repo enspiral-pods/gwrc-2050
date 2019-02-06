@@ -1,6 +1,11 @@
 // Adding another lever? Make sure to add to `selectLeverString` in the correct location
 // Label must match the key of each object. TODO: fix
 
+import React from 'react'
+import TextRegular from '../../components/TextRegular'
+import { Image } from 'rebass'
+import biogasPowerGenImage from '../../assets/images/info-modal-images/biogas-power-generation.png'
+
 const tabs = {
   demand: 'Demand',
   supply: 'Supply',
@@ -47,7 +52,20 @@ export default {
       '100% of local biogas supply used for electricity generation',
       '50% of local biogas supply used for electricity generation, 50% replaces natural gas',
       '100% of local biogas supply used to replace natural gas'
-    ]
+    ],
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={18} pb={10}>
+          The local supply of biogas is determined by the user’s choices for the
+          waste sector. This lever determines whether that biogas is used to
+          generate electricity (as is currently the case at Southern and
+          Silverstream Landfills) or used directly in the residential,
+          commercial and industrial sectors (assuming it can be fed into the gas
+          distribution network).
+        </TextRegular>
+        <Image src={biogasPowerGenImage} width={'447px'} />
+      </React.Fragment>
+    )
   },
   solarPanelsForElectricity: {
     label: 'Solar panels for electricity',
@@ -58,7 +76,8 @@ export default {
       '9% of households have solar PV and other installations total 7.1 MW',
       '15% of households have solar PV and other installations total 11.9 MW',
       '25% of households have solar PV and other installations total 19.8 MW'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   solarPanelsForHotWater: {
     label: 'Solar panels for hot water',
@@ -69,7 +88,8 @@ export default {
       '5% of households have solar hot water',
       '10% of households have solar hot water',
       '20% of households have solar hot water'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   nationalGridElectricity: {
     label: 'National grid electricity',
@@ -80,7 +100,8 @@ export default {
       'Electricity mix 85% renewable by 2025 and then steady; 2050 emissions factor of 0.085 kgCO2e/kWh',
       'Electricity mix 90% renewable by 2025 and then steady; 2050 emissions factor of 0.053 kgCO2e/kWh',
       'Electricity mix 100% renewable by 2030; emissions factor of 0.023 kgCO2e/kWh in 2050.'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   landUseChange: {
     label: 'Land use change',
@@ -91,7 +112,8 @@ export default {
       '5,000 ha of sheep & beef land converted to dairy (+15%), 45,000 ha planted in forest',
       '65,000 ha (20%) of sheep & beef land planted in forest; no net change in dairy land',
       '125,000 ha (38%) of sheep & beef land planted in forest; no net change in dairy land'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   forestType: {
     label: 'Forest type',
@@ -102,7 +124,8 @@ export default {
       '1/3 of new forest planting is permanent native forest',
       '2/3 of new forest planting is permanent native forest',
       'All new forest planting is permanent native forest'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   livestockStockingRates: {
     label: 'Livestock stocking rates',
@@ -113,7 +136,8 @@ export default {
       'Stocking rates increase by 10% for dairy and 10% for sheep & beef',
       'Stocking rates decrease by 10% for dairy; no change for sheep & beef',
       'Stocking rates decrease by 20% for dairy; no change for sheep & beef'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   livestockEmissionsIntensityPracticeChange: {
     label: 'Livestock emissions intensity practice change',
@@ -124,7 +148,8 @@ export default {
       'Moderate adoption of practice changes, which reduce emissions per animal by 10-15%',
       'High adoption of practice changes, which reduce emissions per animal by 10-15%',
       'Full adoption of practice changes, which reduce emissions per animal by 10-15%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   livestockEmissionsIntensityNewTech: {
     label: 'Livestock emissions intensity new tech',
@@ -135,7 +160,8 @@ export default {
       'Moderate adoption of methane/nitrification inhibitors, which reduce emissions per animal by 20%/50%',
       'High adoption of methane/nitrification inhibitors, which reduce emissions per animal by 20%/50%',
       'Methane vaccine reduces emissions per animal 20-30%; widespread adoption of nitrification inhibitors'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   wasteVolumes: {
     label: 'Waste volumes',
@@ -146,7 +172,8 @@ export default {
       'Waste collected per person reduces by ~30%',
       'Waste collected per person reduces by ~50%',
       'Waste collected per person reduces by ~66%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   landfillGasCaptureAndEfw: {
     label: 'Landfill gas capture and EFW',
@@ -157,7 +184,8 @@ export default {
       'LFG capture increases to 70% in 2050',
       'LFG capture increases to 77%; 25% of food & garden waste processed in anaerobic digesters',
       'LFG capture increases to 77%; 50% of food & garden waste processed in anaerobic digesters'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   biofuelSupply: {
     label: 'Biofuel supply',
@@ -168,7 +196,8 @@ export default {
       'Annual biofuel supply of up to ~100 litres per person by 2050',
       'Annual biofuel supply of up to ~200 litres per person',
       'Annual biofuel supply of up to ~400 litres per person'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   travelDemand: {
     label: 'Travel demand',
@@ -179,7 +208,8 @@ export default {
       'People travel the same distance as today',
       'People travel 10% less than today',
       'People travel 20% less than today'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   modeShare: {
     label: 'Mode share',
@@ -190,7 +220,8 @@ export default {
       'Moderate shift towards public & active transport; 82% of travel by car & van in 2050',
       'Large shift towards public & active transport; 77% of travel by car & van',
       'Very large shift towards public & active transport; 70% of travel by car & van'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   vehicleOccupancy: {
     label: 'Vehicle occupancy',
@@ -201,7 +232,8 @@ export default {
       'Occupancy increases to ~1.7 passengers per vehicle in 2050',
       'Occupancy increases to ~1.8 passengers per vehicle in 2050',
       'Occupancy increases to 1.86 passengers per vehicle in 2050'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   electrificationOfLightVehicles: {
     label: 'Electrification of light vehicles',
@@ -212,7 +244,8 @@ export default {
       '24% of light vehicle travel done in EVs in 2050',
       '46% of light vehicle travel done in EVs in 2050',
       '100% of light vehicle travel done in EVs in 2050'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   electrificationOfPublicTransport: {
     label: 'Electrification of public transport',
@@ -223,7 +256,8 @@ export default {
       '45% of bus travel electrified in 2050; no electrification of rail',
       'Full bus fleet electrified by 2045; Wairarapa line electrified in 2035',
       'Full bus fleet electrified by 2030; Wairarapa line electrified in 2025'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   vehicleFuelEfficiencies: {
     label: 'Vehicle fuel efficiencies',
@@ -234,7 +268,8 @@ export default {
       'By 2050, car fuel efficiency improves to ~6 L/100km, bus efficiency improves by ~50%',
       'Car fuel efficiency improves to ~5 L/100km; bus efficiency more than doubles',
       'Car fuel efficiency improves to ~3.5 L/100km in 2050; bus efficiency nearly triples'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   freightVolume: {
     label: 'Freight volume',
@@ -245,7 +280,8 @@ export default {
       'Freight volume grows by ~33%',
       'Freight volume grows by ~15% (plateauing in 2040)',
       'Freight volume peaks around 2030 then declines'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   electrificationOfTrucks: {
     label: 'Electrification of trucks',
@@ -256,7 +292,8 @@ export default {
       '10% of truck travel electrified in 2050',
       '25% of truck travel electrified in 2050',
       '50% of truck travel electrified in 2050'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   freightModeAndEfficiency: {
     label: 'Freight Mode and efficiency',
@@ -267,7 +304,8 @@ export default {
       'Rail share of tonne-km increases to 25% and road freight efficiency improves by 30% (not including electrification)',
       'Rail share of tonne-km increases to 30% and road freight efficiency improves by 50%',
       'Rail share of tonne-km increases to 40% and road freight efficiency improves by 60%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   demand: {
     label: 'Demand',
@@ -277,7 +315,8 @@ export default {
       'Passenger numbers nearly triple by 2050 (3% growth per year)',
       'Passenger numbers double (2% growth per year)',
       'Passenger numbers grow by around 40% (1% growth per year)'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   efficiency: {
     label: 'Efficiency',
@@ -288,7 +327,8 @@ export default {
       'Fuel use per passenger falls by 2% per year',
       'Fuel use per passenger falls by 2.5% per year',
       'Fuel use per passenger falls by 3% per year'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   nationalMarineTransport: {
     label: 'National marine transport',
@@ -299,7 +339,8 @@ export default {
       'Fuel use decreases by 10% by 2050',
       'Fuel use decreases by 20%',
       'Fuel use decreases by 50%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   homeSpaceAndWaterHeatingDemand: {
     label: 'Home space and water heating demand',
@@ -310,7 +351,8 @@ export default {
       'Space and water heating demand per household reduce by 10%',
       'Space and water heating demand per household reduce by 20%',
       'Space and water heating demand per household reduce by 30%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   homeHeatingTechnology: {
     label: 'Home heating technology',
@@ -321,7 +363,8 @@ export default {
       'New households use electric space & water heating or woodburner; existing coal and diesel heating replaced by wood',
       'As per Level 2, plus half of current gas heating converted to heat pump',
       'As per Level 2, plus all gas heating converted to heat pump'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   homeLightingAndAppliances: {
     label: 'Home lighting and appliances',
@@ -332,7 +375,8 @@ export default {
       'Energy demand per household decreases by 33% by 2050',
       'Energy demand per household decreases by 50% by 2050',
       'Energy demand per household decreases by 67% by 2050'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
@@ -343,7 +387,8 @@ export default {
       'All new households use electricity for cooking',
       'As per Level 2, plus half of existing gas cookers replaced with electricity',
       'All cooking uses electricity by 2050.'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   growthInManufacturing: {
     label: 'Growth in manufacturing',
@@ -353,7 +398,8 @@ export default {
       'Underlying energy demand increases by around 40% (1% growth per year)',
       'Underlying energy demand stays constant',
       'Underlying energy demand decreases by around 40% (1% reduction per year)'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   energyEfficiencyAndFuelSwitching: {
     label: 'Energy efficiency and fuel switching',
@@ -364,7 +410,8 @@ export default {
       'Energy efficiency improves by around 10% beyond BAU; some fuel switching to electricity and biomass',
       'Energy efficiency improves by around 20% beyond BAU; high level of fuel switching to electricity and biomass',
       'Energy efficiency improves by around 40% beyond BAU; very high level of fuel switching to electricity and biomass'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   commercialSpaceAndWaterHeatingDemand: {
     label: 'Commercial space and water heating demand',
@@ -375,7 +422,8 @@ export default {
       'Space and water heating demand per building decrease by 10%',
       'Space and water heating demand per building decrease by 20%',
       'Space and water heating demand per building decrease by 30%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   commercialHeatingTechnology: {
     label: 'Commercial heating technology',
@@ -386,7 +434,8 @@ export default {
       'All new commercial buildings use electric space and water heating, primarily heat pumps.',
       'As per Level 2, plus half of current non-electric heating converted to heat pump.',
       'All non-electric heating converted to heat pump by 2050.'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   commercialLightingAndAppliances: {
     label: 'Commercial lighting and appliances',
@@ -397,7 +446,8 @@ export default {
       'Energy demand per building decreases by 10%',
       'Energy demand per building decreases by 30%',
       'Energy demand per building decreases by 50%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   electrificationOfCommercialCooking: {
     label: 'Electrification of commercial cooking',
@@ -408,7 +458,8 @@ export default {
       'Electricity share of cooking increases to 60%',
       'Electricity share of cooking increases to 75%',
       'Electricity share of cooking increases to 100%'
-    ]
+    ],
+    content: <p>You're doing great</p>
   },
   refrigerantGases: {
     label: 'Refrigerant gases',
@@ -417,6 +468,7 @@ export default {
     leverDescriptions: [
       'HFC emissions double by 2050',
       'Emissions decrease nearly 90% by 2050 in accordance with the Montreal Protocol'
-    ]
+    ],
+    content: <p>You're doing great</p>
   }
 }
