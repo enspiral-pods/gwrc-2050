@@ -3,8 +3,19 @@
 
 import React from 'react'
 import TextRegular from '../../components/TextRegular'
-import { Image } from 'rebass'
+import { Image, Heading } from 'rebass'
 import biogasPowerGenImage from '../../assets/images/info-modal-images/biogas-power-generation.png'
+import solarPanelsForElectricityImage from '../../assets/images/info-modal-images/solarPanelsForElectricity.png'
+import solarPanelsForHotWaterImage from '../../assets/images/info-modal-images/solarPanelsForHotWater.png'
+import nationalGridElectricityImage from '../../assets/images/info-modal-images/nationalGridElectricity.png'
+import landUseChange from '../../assets/images/info-modal-images/landUseChange.png'
+import landUseChangeTwo from '../../assets/images/info-modal-images/landUseChangeTwo.png'
+import forestType from '../../assets/images/info-modal-images/forestType.png'
+import livestockStockingRates from '../../assets/images/info-modal-images/livestockStockingRates.png'
+import livestockEmissionsIntensityPracticeChange from '../../assets/images/info-modal-images/livestockEmissionsIntensityPracticeChange.png'
+import livestockEmissionsIntensityNewTech from '../../assets/images/info-modal-images/livestockEmissionsIntensityNewTech.png'
+import wasteVolumes from '../../assets/images/info-modal-images/wasteVolumes.png'
+import wasteVolumesTwo from '../../assets/images/info-modal-images/wasteVolumesTwo.png'
 
 const tabs = {
   demand: 'Demand',
@@ -55,7 +66,7 @@ export default {
     ],
     content: (
       <React.Fragment>
-        <TextRegular color={'black'} fontSize={18} pb={10}>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
           The local supply of biogas is determined by the user’s choices for the
           waste sector. This lever determines whether that biogas is used to
           generate electricity (as is currently the case at Southern and
@@ -77,7 +88,26 @@ export default {
       '15% of households have solar PV and other installations total 11.9 MW',
       '25% of households have solar PV and other installations total 19.8 MW'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the Wellington region produced an estimated 2.5 GWh of
+          electricity through the use of solar photovoltaic (PV) panels. Around
+          0.3% of households had installed solar PV, with an average system size
+          of 3.3 kW, each producing around 3,900 kWh. Other installations (e.g.
+          on commercial buildings) totalled around 0.2 MW.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Selecting level 4 on this lever at the same time as selecting level 4
+          on the ‘Solar panels for hot water’ lever may yield an unrealistic
+          result, as the two will be competing for roof space.
+        </TextRegular>
+        <Image src={solarPanelsForElectricityImage} width={'522px'} />
+      </React.Fragment>
+    )
   },
   solarPanelsForHotWater: {
     label: 'Solar panels for hot water',
@@ -89,7 +119,18 @@ export default {
       '10% of households have solar hot water',
       '20% of households have solar hot water'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Solar water heating systems (also known as ‘solar thermal’) use solar
+          panels to heat water which is stored in a hot water cylinder. In 2015
+          an estimated 1.4% of households in the Wellington region had solar hot
+          water systems, with an assumed average panel area of 3.0 m² producing
+          around 2160 kWh of heat.
+        </TextRegular>
+        <Image src={solarPanelsForHotWaterImage} width={'532px'} />
+      </React.Fragment>
+    )
   },
   nationalGridElectricity: {
     label: 'National grid electricity',
@@ -101,7 +142,20 @@ export default {
       'Electricity mix 90% renewable by 2025 and then steady; 2050 emissions factor of 0.053 kgCO2e/kWh',
       'Electricity mix 100% renewable by 2030; emissions factor of 0.023 kgCO2e/kWh in 2050.'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In the Calculator, any electricity demand not met by local distributed
+          generation (solar and biogas) is supplied from the national grid.
+          Emissions are allocated using an average national grid emissions
+          factor. In 2015, the grid emissions factor was 0.123 kgCO 2 e per kWh
+          consumed. This has halved since 2005 as the proportion of generation
+          from renewable sources has increased. Level assumptions below are
+          informed by several recent modelling studies.
+        </TextRegular>
+        <Image src={nationalGridElectricityImage} width={'538px'} />
+      </React.Fragment>
+    )
   },
   landUseChange: {
     label: 'Land use change',
@@ -113,7 +167,31 @@ export default {
       '65,000 ha (20%) of sheep & beef land planted in forest; no net change in dairy land',
       '125,000 ha (38%) of sheep & beef land planted in forest; no net change in dairy land'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015 Wellington had an estimated 33,600 hectares (ha) of dairy
+          land, 332,000 ha of sheep &amp; beef land, 77,000 ha of exotic forest,
+          and 318,000 ha of native forest &amp; other vegetation. Total carbon
+          sequestration from forests was estimated at 880 ktCO 2 e.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Forest type’ lever controls how much of the new forest planting
+          is exotic plantation forest or permanent native forest. The ‘Livestock
+          stocking rates’ lever controls the number of livestock per hectare of
+          farm land. The Calculator uses an averaging method for accounting for
+          carbon sequestration from exotic plantation forests. New forest land
+          is assumed to absorb carbon up until it reaches the long-term average
+          carbon storage level over harvest cycles (around 20 years after first
+          planting).
+        </TextRegular>
+        <Image src={landUseChange} width={'537px'} />
+        <Image src={landUseChangeTwo} width={'644px'} />
+      </React.Fragment>
+    )
   },
   forestType: {
     label: 'Forest type',
@@ -125,7 +203,22 @@ export default {
       '2/3 of new forest planting is permanent native forest',
       'All new forest planting is permanent native forest'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever controls how much of the new forest planting is exotic
+          plantation forest or permanent native forest.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Land use change’ lever controls the amount of new land for
+          forests.
+        </TextRegular>
+        <Image src={forestType} width={'459px'} />
+      </React.Fragment>
+    )
   },
   livestockStockingRates: {
     label: 'Livestock stocking rates',
@@ -137,7 +230,27 @@ export default {
       'Stocking rates decrease by 10% for dairy; no change for sheep & beef',
       'Stocking rates decrease by 20% for dairy; no change for sheep & beef'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Stocking rate is the average number of livestock per hectare. Dairy
+          stocking rates have increased over the last two decades, while there
+          has been little change in sheep &amp; beef stocking rates.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Land use change’ lever controls the areas of land dedicated to
+          dairy and sheep &amp; beef farming. Total stock numbers are determined
+          by the combination of land use area and stocking rate. Changes in
+          stocking rate may affect productivity and emissions per animal.
+          Emissions intensity is controlled by two separate levers representing
+          potential improvements from practice changes and new technologies.
+        </TextRegular>
+        <Image src={livestockStockingRates} width={'459px'} />
+      </React.Fragment>
+    )
   },
   livestockEmissionsIntensityPracticeChange: {
     label: 'Livestock emissions intensity practice change',
@@ -149,7 +262,30 @@ export default {
       'High adoption of practice changes, which reduce emissions per animal by 10-15%',
       'Full adoption of practice changes, which reduce emissions per animal by 10-15%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Livestock emissions per unit of milk and meat have steadily improved
+          since 1990, while emissions per animal have grown due to increased
+          productivity. There are several possibilities to improve emissions
+          intensity through practice changes. The levels here are based on
+          varying rates of adoption of selective breeding, changes to feed
+          inputs, and precision agriculture. These are assumed to reduce
+          associated emissions by up to 15%, 10% and 10% respectively.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Livestock emissions intensity – new tech’ lever controls
+          additional emissions reductions from adoption of new technologies.
+        </TextRegular>
+        <Image
+          src={livestockEmissionsIntensityPracticeChange}
+          width={'459px'}
+        />
+      </React.Fragment>
+    )
   },
   livestockEmissionsIntensityNewTech: {
     label: 'Livestock emissions intensity new tech',
@@ -161,7 +297,25 @@ export default {
       'High adoption of methane/nitrification inhibitors, which reduce emissions per animal by 20%/50%',
       'Methane vaccine reduces emissions per animal 20-30%; widespread adoption of nitrification inhibitors'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Several new technologies under development could reduce methane and
+          nitrous oxide emissions from livestock farming. The levels here are
+          based on varying rates of adoption of a methane inhibitor or vaccine,
+          and a nitrification inhibitor. These are assumed to reduce associated
+          emissions by up to 20%, 30% and 50% respectively.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Livestock emissions intensity – practice change’ lever controls
+          emissions reductions from adoption of practice changes.
+        </TextRegular>
+        <Image src={livestockEmissionsIntensityNewTech} width={'455px'} />
+      </React.Fragment>
+    )
   },
   wasteVolumes: {
     label: 'Waste volumes',
@@ -173,7 +327,26 @@ export default {
       'Waste collected per person reduces by ~50%',
       'Waste collected per person reduces by ~66%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Biodegradable waste (e.g. food, garden and paper waste) deposited in
+          landfills produces methane as it breaks down. Waste disposal can be
+          reduced by avoiding the creation of waste, and by composting and
+          recycling.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Methane produced in landfills can be captured and either flared or
+          used for energy. The ‘Landfill gas capture and EFW’ lever controls the
+          proportion of methane captured and used for energy.
+        </TextRegular>
+        <Image src={wasteVolumes} width={'463px'} />
+        <Image src={wasteVolumesTwo} width={'455px'} />
+      </React.Fragment>
+    )
   },
   landfillGasCaptureAndEfw: {
     label: 'Landfill gas capture and EFW',
