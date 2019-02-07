@@ -25,6 +25,13 @@ import vehicleOccupancy from '../../assets/images/info-modal-images/vehicleOccup
 import electrificationOfLightVehicles from '../../assets/images/info-modal-images/electrificationOfLightVehicles.png'
 import electrificationOfPublicTransport from '../../assets/images/info-modal-images/electrificationOfPublicTransport.png'
 import vehicleFuelEfficiencies from '../../assets/images/info-modal-images/vehicleFuelEfficiencies.png'
+import freightVolume from '../../assets/images/info-modal-images/freightVolume.png'
+import electrificationOfTrucks from '../../assets/images/info-modal-images/electrificationOfTrucks.png'
+import freightModeAndEfficiency from '../../assets/images/info-modal-images/freightModeAndEfficiency.png'
+import demand from '../../assets/images/info-modal-images/demand.png'
+import efficiency from '../../assets/images/info-modal-images/efficiency.png'
+import nationalMarineTransport from '../../assets/images/info-modal-images/nationalMarineTransport.png'
+import homeSpaceAndWaterHeatingDemand from '../../assets/images/info-modal-images/homeSpaceAndWaterHeatingDemand.png'
 
 const tabs = {
   demand: 'Demand',
@@ -616,6 +623,7 @@ export default {
       </React.Fragment>
     )
   },
+  // here
   freightVolume: {
     label: 'Freight volume',
     value: 1,
@@ -626,7 +634,29 @@ export default {
       'Freight volume grows by ~15% (plateauing in 2040)',
       'Freight volume peaks around 2030 then declines'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the total movement of goods by road and rail attributed to
+          Wellington is estimated at 1,125 million tonne-kilometres. Freight
+          volume is influenced by levels of consumption, production and export
+          of goods. These in turn are influenced by changes in population and
+          economic activity and structure. Wellington’s population is projected
+          to grow by 15% by 2050.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The share of land freight moved by road versus rail and the energy
+          efficiency of each mode is controlled by the ‘Freight mode and
+          efficiency’ lever. Sea and air freight are covered separately under
+          marine transport and aviation. Biofuels can be chosen as a supply
+          option.
+        </TextRegular>
+        <Image src={freightVolume} width={'514px'} />
+      </React.Fragment>
+    )
   },
   electrificationOfTrucks: {
     label: 'Electrification of trucks',
@@ -638,7 +668,27 @@ export default {
       '25% of truck travel electrified in 2050',
       '50% of truck travel electrified in 2050'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, essentially all trucks and all freight trains in Wellington
+          were powered by diesel. Electric trucks are becoming commercially
+          available as battery technology improves and costs reduce. Rail can be
+          electrified through track electrification or use of battery-powered or
+          hybrid trains. Hydrogen- powered trucks and trains are not explicitly
+          considered but could substitute for electric vehicles.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever controls the level of vehicle electrification. The
+          efficiency of different vehicle technologies is controlled separately
+          through the ‘Freight mode &amp; efficiency’ lever.
+        </TextRegular>
+        <Image src={electrificationOfTrucks} width={'501px'} />
+      </React.Fragment>
+    )
   },
   freightModeAndEfficiency: {
     label: 'Freight Mode and efficiency',
@@ -650,7 +700,27 @@ export default {
       'Rail share of tonne-km increases to 30% and road freight efficiency improves by 50%',
       'Rail share of tonne-km increases to 40% and road freight efficiency improves by 60%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The share of Wellington’s land freight volume (in tonne-kilometres)
+          moved by rail in 2015 is estimated at 19%, with the remaining 81%
+          moved by road. On average, rail freight by diesel train is over three
+          times as efficient as road freight per tonne-km. Efficiency can be
+          improved through more fuel efficient vehicles, higher vehicle loadings
+          and improved logistics.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever controls the efficiency of different vehicle technologies.
+          The level of vehicle electrification is controlled separately through
+          the ‘Electrification of road &amp; rail freight’ lever.
+        </TextRegular>
+        <Image src={freightModeAndEfficiency} width={'498px'} />
+      </React.Fragment>
+    )
   },
   demand: {
     label: 'Demand',
@@ -661,7 +731,34 @@ export default {
       'Passenger numbers double (2% growth per year)',
       'Passenger numbers grow by around 40% (1% growth per year)'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, Wellington Airport recorded around 4.9 million domestic
+          passenger movements. This has grown at an average rate of around 3%
+          per year since 2000. The Calculator follows national emissions
+          accounting conventions and excludes emissions from international
+          flights. Emissions are calculated and attributed based on total jet
+          fuel pumped at Wellington Airport. Domestic air freight is assumed to
+          be included with passenger flights.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Fuel use per passenger is controlled by the ‘Air travel efficiency’
+          lever.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Info on TAs
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          By convention, emissions from air travel are attributed to Wellington
+          City.
+        </TextRegular>
+        <Image src={demand} width={'470px'} />
+      </React.Fragment>
+    )
   },
   efficiency: {
     label: 'Efficiency',
@@ -673,7 +770,27 @@ export default {
       'Fuel use per passenger falls by 2.5% per year',
       'Fuel use per passenger falls by 3% per year'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Emissions from domestic air travel in Wellington have grown much less
+          than passenger numbers due to efficiency improvements. Jet fuel
+          consumption per passenger has decreased by around 2% per year on
+          average since 2000. The Calculator follows national emissions
+          accounting conventions and excludes emissions from international
+          flights. Emissions are calculated and attributed based on total jet
+          fuel pumped at Wellington Airport. Domestic air freight is assumed to
+          be included with passenger flights.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Passenger numbers are controlled by the ‘Air travel demand’ lever.
+        </TextRegular>
+        <Image src={efficiency} width={'498px'} />
+      </React.Fragment>
+    )
   },
   nationalMarineTransport: {
     label: 'National marine transport',
@@ -685,7 +802,27 @@ export default {
       'Fuel use decreases by 20%',
       'Fuel use decreases by 50%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Ferries between Wellington and Picton burned around 51 million litres
+          of fuel oil and diesel in 2015. This estimated annual fuel use is
+          quite stable over the last decade. There was also a small amount of
+          diesel burned by small ferries operating within Wellington City.
+          Marine fuel use from other coastal shipping (including international
+          shipping) is excluded due to lack of available data. Half of the
+          emissions from the Cook Strait ferries are attributed to Wellington.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Info on TAs
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          By convention, emissions from ferry operations are attributed to
+          Wellington City.
+        </TextRegular>
+        <Image src={nationalMarineTransport} width={'459px'} />
+      </React.Fragment>
+    )
   },
   homeSpaceAndWaterHeatingDemand: {
     label: 'Home space and water heating demand',
@@ -697,7 +834,30 @@ export default {
       'Space and water heating demand per household reduce by 20%',
       'Space and water heating demand per household reduce by 30%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the average Wellington household used an estimated 3,040 kWh
+          of heat for space heating and 2,770 kWh for water heating. Demand for
+          heat is influenced by thermal performance (e.g. insulation), household
+          size, and behaviour (e.g. shorter showers).
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interaction with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever sets the demand for end-use heat. The mix of heating
+          technologies (e.g. heat pumps, gas burners) used to provide the heat
+          demand is chosen with the ‘Home heating technology’ lever. Solar hot
+          water uptake is chosen separately as a supply option. Note that
+          different technologies will use different amounts of input energy to
+          provide 1 kWh of heat. For example, an open fire is only around 10%
+          efficient, while heat pumps can provide up to 4 kWh of heat for each
+          kWh of electricity used.
+        </TextRegular>
+        <Image src={homeSpaceAndWaterHeatingDemand} width={'614px'} />
+      </React.Fragment>
+    )
   },
   homeHeatingTechnology: {
     label: 'Home heating technology',
