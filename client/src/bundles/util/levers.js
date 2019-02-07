@@ -16,6 +16,15 @@ import livestockEmissionsIntensityPracticeChange from '../../assets/images/info-
 import livestockEmissionsIntensityNewTech from '../../assets/images/info-modal-images/livestockEmissionsIntensityNewTech.png'
 import wasteVolumes from '../../assets/images/info-modal-images/wasteVolumes.png'
 import wasteVolumesTwo from '../../assets/images/info-modal-images/wasteVolumesTwo.png'
+import landfillGasCaptureAndEfw from '../../assets/images/info-modal-images/landfillGasCaptureAndEfw.png'
+import landfillGasCaptureAndEfwTwo from '../../assets/images/info-modal-images/landfillGasCaptureAndEfwTwo.png'
+import biofuelSupply from '../../assets/images/info-modal-images/biofuelSupply.png'
+import travelDemand from '../../assets/images/info-modal-images/travelDemand.png'
+import modeShare from '../../assets/images/info-modal-images/modeShare.png'
+import vehicleOccupancy from '../../assets/images/info-modal-images/vehicleOccupancy.png'
+import electrificationOfLightVehicles from '../../assets/images/info-modal-images/electrificationOfLightVehicles.png'
+import electrificationOfPublicTransport from '../../assets/images/info-modal-images/electrificationOfPublicTransport.png'
+import vehicleFuelEfficiencies from '../../assets/images/info-modal-images/vehicleFuelEfficiencies.png'
 
 const tabs = {
   demand: 'Demand',
@@ -358,7 +367,34 @@ export default {
       'LFG capture increases to 77%; 25% of food & garden waste processed in anaerobic digesters',
       'LFG capture increases to 77%; 50% of food & garden waste processed in anaerobic digesters'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, an estimated 58% of landfill gas (LFG) from Wellington
+          landfills was captured. 72% of this was combusted to produce energy,
+          and the rest flared.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Waste volumes’ lever controls how much waste is disposed of –
+          less waste disposal means less LFG is generated. The ‘Biogas power
+          generation’ lever controls whether the captured LFG is used for
+          electricity generation or to replace natural gas use.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Info on TAs
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Estimated LFG capture rates differ by landfill. Wellington City’s
+          Southern Landfill has the highest at around 85%, and Levin Landfill
+          (used by Kapiti Coast) has the lowest at around 20%.
+        </TextRegular>
+        <Image src={landfillGasCaptureAndEfw} width={'475px'} />
+        <Image src={landfillGasCaptureAndEfwTwo} width={'503px'} />
+      </React.Fragment>
+    )
   },
   biofuelSupply: {
     label: 'Biofuel supply',
@@ -370,7 +406,33 @@ export default {
       'Annual biofuel supply of up to ~200 litres per person',
       'Annual biofuel supply of up to ~400 litres per person'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, biofuels accounted for less than 0.1% of New Zealand’s liquid
+          fuel supply. Biofuels are produced today from feedstocks such as
+          canola and waste products such as tallow. However, these types of
+          biofuels face limitations on production scale and on their use in many
+          existing vehicles. In the future, potential exists for advanced
+          “drop-in” biofuels that can fully substitute for oil products,
+          produced from feedstocks such as wood waste that do not require arable
+          land. Potential levels of biofuel supply per person have been assessed
+          based on national studies. The biofuels are assumed to be produced
+          outside of the Wellington region.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In the Calculator, available biofuel supply is assumed to substitute
+          for oil-derived fuels in meeting the total liquid fuel demand
+          determined by other lever choices. The types of biofuels produced and
+          where they are being used (e.g. in trucks, shipping or aviation) are
+          not specified within the model.
+        </TextRegular>
+        <Image src={biofuelSupply} width={'453px'} />
+      </React.Fragment>
+    )
   },
   travelDemand: {
     label: 'Travel demand',
@@ -382,7 +444,30 @@ export default {
       'People travel 10% less than today',
       'People travel 20% less than today'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the average travel per Wellington resident (by car, bus,
+          train, bike and foot) is estimated at 12,400 km. Note this excludes
+          travel by plane. Travel demand is influenced by multiple factors
+          including urban form, fuel prices and digital technology.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In the Calculator, emissions from passenger transport are determined
+          by multiple levers: travel demand, mode share, vehicle occupancies,
+          electrification of vehicles , and vehicle fuel efficiencies. Travel in
+          and out of Wellington by plane and ferry are dealt with separately.
+          Biofuels are chosen separately as a supply option. Note that energy
+          demand for passenger transport lowers under all scenarios due to
+          uptake of electric vehicles, which are far more energy efficient than
+          internal combustion engine vehicles.
+        </TextRegular>
+        <Image src={travelDemand} width={'536px'} />
+      </React.Fragment>
+    )
   },
   modeShare: {
     label: 'Mode share',
@@ -394,7 +479,23 @@ export default {
       'Large shift towards public & active transport; 77% of travel by car & van',
       'Very large shift towards public & active transport; 70% of travel by car & van'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the estimated shares of passenger-kilometres by travel mode
+          are: 89.7% by car, van or motorcycle; 4.5% by train; 2.8% by bus; 2.1%
+          by walking; and 0.9% by cycling.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Relative emissions from travel by car, bus and train are affected by
+          changes in vehicle electrification and fuel efficiency.
+        </TextRegular>
+        <Image src={modeShare} width={'477px'} />
+      </React.Fragment>
+    )
   },
   vehicleOccupancy: {
     label: 'Vehicle occupancy',
@@ -406,7 +507,17 @@ export default {
       'Occupancy increases to ~1.8 passengers per vehicle in 2050',
       'Occupancy increases to 1.86 passengers per vehicle in 2050'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The average number of passengers per light vehicle (weighted by trip
+          distance) in 2015 was estimated at 1.58, reflecting a high proportion
+          of single occupant trips. This has been fairly stable over the last
+          decade.
+        </TextRegular>
+        <Image src={vehicleOccupancy} width={'552px'} />
+      </React.Fragment>
+    )
   },
   electrificationOfLightVehicles: {
     label: 'Electrification of light vehicles',
@@ -418,7 +529,26 @@ export default {
       '46% of light vehicle travel done in EVs in 2050',
       '100% of light vehicle travel done in EVs in 2050'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, almost all light vehicles were powered by petrol and diesel,
+          but uptake of electric vehicles (EVs) is rapidly accelerating as they
+          have reduced in cost and improved in performance. There are two types
+          of EVs: battery EVs (BEVs), powered only by the battery, and plug-in
+          hybrids (PHEVs), which have a plug-in battery plus an internal
+          combustion engine for extended range.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Emissions from the use of EVs depend on the emissions intensity of
+          electricity, controlled through the ‘National grid electricity’ lever.
+        </TextRegular>
+        <Image src={electrificationOfLightVehicles} width={'552px'} />
+      </React.Fragment>
+    )
   },
   electrificationOfPublicTransport: {
     label: 'Electrification of public transport',
@@ -430,7 +560,27 @@ export default {
       'Full bus fleet electrified by 2045; Wairarapa line electrified in 2035',
       'Full bus fleet electrified by 2030; Wairarapa line electrified in 2025'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, an estimated 7% of Wellington’s bus passenger-kilometres were
+          travelled on electric trolleybuses, and 93% were travelled on diesel
+          buses. The trolleybus network has since been decommissioned, and
+          battery electric buses are now being trialled. For train travel, an
+          estimated 82% of passenger-kilometres were travelled on electric
+          trains and 18% on diesel trains (primarily on the Wairarapa line).
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Vehicle efficiencies’ lever controls the efficiency of different
+          vehicle technologies, while this lever controls the level of
+          electrification.
+        </TextRegular>
+        <Image src={electrificationOfPublicTransport} width={'490px'} />
+      </React.Fragment>
+    )
   },
   vehicleFuelEfficiencies: {
     label: 'Vehicle fuel efficiencies',
@@ -442,7 +592,29 @@ export default {
       'Car fuel efficiency improves to ~5 L/100km; bus efficiency more than doubles',
       'Car fuel efficiency improves to ~3.5 L/100km in 2050; bus efficiency nearly triples'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, an estimated 7% of Wellington’s bus passenger-kilometres were
+          travelled on electric trolleybuses, and 93% were travelled on diesel
+          buses. The trolleybus network has since been decommissioned, and
+          battery electric buses are now being trialled. For train travel, an
+          estimated 82% of passenger-kilometres were travelled on electric
+          trains and 18% on diesel trains (primarily on the Wairarapa line).
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interactions with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Separate levers control the level of electrification of light vehicles
+          and public transport, while this lever controls the average efficiency
+          of the different vehicle technologies. The average number of
+          passengers per light vehicle is controlled by the ‘Light vehicle
+          occupancy’ lever.
+        </TextRegular>
+        <Image src={vehicleFuelEfficiencies} width={'562px'} />
+      </React.Fragment>
+    )
   },
   freightVolume: {
     label: 'Freight volume',
