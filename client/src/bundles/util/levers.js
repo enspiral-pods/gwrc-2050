@@ -869,7 +869,26 @@ export default {
       'As per Level 2, plus half of current gas heating converted to heat pump',
       'As per Level 2, plus all gas heating converted to heat pump'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever controls the mix of technologies to provide the household
+          space and water heating demand. In 2015, an estimated 66% of space
+          heating was provided by electricity (resistance heaters and heat
+          pumps), 21% from gas, and 13% from wood and other sources. For water
+          heating, 79% was electric, 20% gas, and 1% from other sources.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interaction with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Demand is controlled by the ‘Household heating demand’ lever. Solar
+          hot water is specified separately and used first within the model.
+        </TextRegular>
+        {/* <Image src={homeHeatingTechnology} width={'1176px'} /> */}
+        {/* <Image src={homeHeatingTechnologyTwo} width={'1369px'} /> */}
+      </React.Fragment>
+    )
   },
   homeLightingAndAppliances: {
     label: 'Home lighting and appliances',
