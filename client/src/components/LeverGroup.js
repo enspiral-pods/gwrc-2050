@@ -25,17 +25,20 @@ export default ({
       </Button>
       {levers.map(lever => {
         return (
-          <Lever
-            value={lever.value}
-            label={lever.label}
-            onValueChange={value =>
-              doUpdateLever(toCamelCase(lever.label), value)
-            }
-            onInfoClicked={() => {
-              doInfoModalOpen(toCamelCase(lever.label))
-            }}
-            maxLevel={lever.leverDescriptions.length}
-          />
+          <React.Fragment>
+            <Lever
+              value={lever.value}
+              label={lever.label}
+              leverDescriptions={lever.leverDescriptions}
+              onValueChange={value =>
+                doUpdateLever(toCamelCase(lever.label), value)
+              }
+              onInfoClicked={() => {
+                doInfoModalOpen(toCamelCase(lever.label))
+              }}
+              maxLevel={lever.leverDescriptions.length}
+            />
+          </React.Fragment>
         )
       })}
     </Flex>
