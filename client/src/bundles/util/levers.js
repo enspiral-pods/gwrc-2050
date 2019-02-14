@@ -33,40 +33,69 @@ import efficiency from '../../assets/images/info-modal-images/efficiency.png'
 import nationalMarineTransport from '../../assets/images/info-modal-images/nationalMarineTransport.png'
 import homeSpaceAndWaterHeatingDemand from '../../assets/images/info-modal-images/homeSpaceAndWaterHeatingDemand.png'
 
-const tabs = {
-  demand: 'Demand',
-  supply: 'Supply',
-  other: 'Other'
-}
-
 const groups = {
   electricitySupply: {
     label: 'Electricity Supply',
-    tab: tabs.demand
+    leverDescriptions: [
+      'Minimal change to existing Electricity Supply trends',
+      'Moderate change to existing Electricity Supply trends',
+      'Significant change to existing Electricity Supply trends',
+      'Exceptional change to existing Electricity Supply trends'
+    ]
   },
   agricultureAndLandUse: {
     label: 'Agriculture & Land Use',
-    tab: tabs.demand
+    leverDescriptions: [
+      'Minimal change to existing Agriculture & Land use trends',
+      'Moderate change to existing Agriculture & Land use trends',
+      'Significant change to existing Agriculture & Land use trends',
+      'Exceptional change to existing Agriculture & Land use trends'
+    ]
   },
   wasteAndBiofuel: {
     label: 'Waste & Biofuel',
-    tab: tabs.demand
+    leverDescriptions: [
+      'Minimal change to existing Waste & BioFuel trends',
+      'Moderate change to existing Waste & BioFuel trends',
+      'Significant change to existing Waste & BioFuel trends',
+      'Exceptional change to existing Waste & BioFuel trends'
+    ]
   },
   passengerLandTransport: {
     label: 'Passenger Land Transport',
-    tab: tabs.demand
+    leverDescriptions: [
+      'Minimal change to existing Passenger Land Transport trends',
+      'Moderate change to existing Passenger Land Transport trends',
+      'Significant change to existing Passenger Land Transport trends',
+      'Exceptional change to existing Passenger Land Transport trends'
+    ]
   },
   freightAviationAndMarineTransport: {
     label: 'Freight, Aviation and Marine Transport',
-    tab: tabs.demand
+    leverDescriptions: [
+      'Minimal change to existing Freight, Aviation & Marine Transport trends',
+      'Moderate change to existing Freight, Aviation & Marine Transport trends',
+      'Significant change to existing Freight, Aviation & Marine Transport trends',
+      'Exceptional change to existing Freight, Aviation & Marine Transport trends'
+    ]
   },
   buildings: {
     label: 'Buildings',
-    tab: tabs.supply
+    leverDescriptions: [
+      'Minimal change to existing Building trends',
+      'Moderate change to existing Building trends',
+      'Significant change to existing Building trends',
+      'Exceptional change to existing Building trends'
+    ]
   },
   industry: {
     label: 'Industry',
-    tab: tabs.other
+    leverDescriptions: [
+      'Minimal change to existing Industry trends',
+      'Moderate change to existing Industry trends',
+      'Significant change to existing Industry trends',
+      'Exceptional change to existing Industry trends'
+    ]
   }
 }
 

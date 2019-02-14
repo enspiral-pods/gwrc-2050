@@ -122,8 +122,6 @@ bundle.selectSankeyDataForGraph = createSelector(
 bundle.selectLevers = state => state.pathways.levers
 bundle.selectLeversByGroup = state =>
   groupBy(state.pathways.levers, lever => lever.group.label)
-bundle.selectLeversByTabWithGroup = state =>
-  groupBy(state.pathways.levers, lever => lever.group.tab)
 bundle.selectInfoModalLeverObject = state =>
   state.ui.infoModalLever
     ? state.pathways.levers[state.ui.infoModalLever]
