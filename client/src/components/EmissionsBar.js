@@ -51,14 +51,14 @@ export default ({ emissionsDecrease, isMobileUI }) => {
             rx={3}
             ry={3}
             width={tooltipWidth}
-            height={isMobileUI ? 20 : 30}
+            height={isMobileUI ? 25 : 35}
             fill={fill}
             transform={`translate(-${tooltipWidth / 2})`}
           />
           <svg
             overflow={'visible'}
             x={barXPointAsWidthPercentage}
-            y={30}
+            y={35}
             height={5}
           >
             <polygon
@@ -69,7 +69,7 @@ export default ({ emissionsDecrease, isMobileUI }) => {
           </svg>
           <text
             x={barXPointAsWidthPercentage}
-            y={isMobileUI ? 20 : 15}
+            y={isMobileUI ? 22.5 : 17.5}
             stroke={'white'}
             fill={'white'}
             fontSize={isMobileUI ? '10px' : '14px'}
@@ -86,7 +86,7 @@ export default ({ emissionsDecrease, isMobileUI }) => {
             rx={3}
             ry={3}
             width={tooltipWidth}
-            height={isMobileUI ? 20 : 30}
+            height={isMobileUI ? 25 : 35}
             fill={'#575757'}
             transform={`translate(-${tooltipWidth / 2})`}
           />
@@ -99,7 +99,7 @@ export default ({ emissionsDecrease, isMobileUI }) => {
           </svg>
           <text
             x={`80%`}
-            y={isMobileUI ? 80 : 75}
+            y={isMobileUI ? 82.5 : 77.5}
             stroke={'white'}
             fill={'white'}
             fontSize={isMobileUI ? '10px' : '14px'}
@@ -107,7 +107,7 @@ export default ({ emissionsDecrease, isMobileUI }) => {
             alignmentBaseline={'middle'}
             textAnchor={'middle'}
           >
-            2050 Target
+            Net-Zero 2050
           </text>
         </g>
       </svg>
