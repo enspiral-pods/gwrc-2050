@@ -21,7 +21,7 @@ const EnergyDemand = ({
   ])
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
-  const colors = ['#00C06F', '#FFC700', '#3285D9']
+  const colors = ['#00C06F', '#FFC700', '#3285D9', '#905BFF']
   const tickValues = [0, 5000, 10000, 15000]
   return (
     <Calculator>

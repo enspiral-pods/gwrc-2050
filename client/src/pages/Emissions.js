@@ -22,12 +22,10 @@ const Emissions = ({ energyEmissions, emissionsDecrease, isMobileUI }) => {
   const colors = [
     '#FFC700',
     '#359AFF',
-    '#316BFF',
     '#00C06F',
     '#FF6363',
     '#00B4C0',
-    '#905BFF',
-    '#FC5BFF'
+    '#905BFF'
   ]
   console.log('graphAreas', graphAreas)
   const tickValues = [-3000, -2000, -1000, 0, 1000, 2000, 3000, 4000, 5000]

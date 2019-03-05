@@ -20,7 +20,7 @@ const InfoModal = props => {
           marginLeft: 'auto',
           marginRight: 'auto',
           maxHeight: '500px',
-          maxWidth: '1000px',
+          maxWidth: '1200px',
           overflow: 'auto',
           WebkitOverflowScrolling: 'touch',
           padding: '20px'

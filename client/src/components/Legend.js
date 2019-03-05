@@ -10,36 +10,44 @@ const Legend = ({ data, colors, activeGraphArea }) => {
     return null
   }
   return (
-    <Flex flexDirection={'column'} alignItems={'center'}>
+    <Flex
+      flexDirection={['column', 'row']}
+      alignItems={'center'}
+      pt={[0, 50]}
+      pl={[0, 30]}
+    >
       <FlexWithExtras
         display={'flex'}
-        flexDirection={'row'}
+        flexDirection={['row', 'column']}
         flexWrap={'wrap'}
-        alignItems={'center'}
+        // alignItems={'center'}
       >
-        {data.map((d, i) => {
-          return (
-            <Flex
-              key={i}
-              alignItems={'center'}
-              width={'50%'}
-              pr={20}
-              pb={'5px'}
-              css={{
-                opacity:
-                  activeGraphArea === d || activeGraphArea === null ? 1 : 0.4
-              }}
-            >
-              <Box
-                width={14}
-                css={{ height: '14px', minWidth: '14px' }}
-                bg={colors[i % colors.length]}
-                mr={10}
-              />
-              <TextRegular fontSize={11}>{d}</TextRegular>
-            </Flex>
-          )
-        })}
+        {data
+          .slice(0)
+          .reverse()
+          .map((d, i) => {
+            return (
+              <Flex
+                key={i}
+                alignItems={'center'}
+                width={'50%'}
+                pr={20}
+                pb={['5px', '15px']}
+                css={{
+                  opacity:
+                    activeGraphArea === d || activeGraphArea === null ? 1 : 0.4
+                }}
+              >
+                <Box
+                  width={14}
+                  css={{ height: '14px', minWidth: '14px' }}
+                  bg={colors.slice(0).reverse()[i % colors.length]}
+                  mr={10}
+                />
+                <TextRegular fontSize={11}>{d}</TextRegular>
+              </Flex>
+            )
+          })}
       </FlexWithExtras>
     </Flex>
   )
