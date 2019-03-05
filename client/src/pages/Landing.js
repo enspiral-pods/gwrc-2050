@@ -57,15 +57,21 @@ const Landing = props => {
               </TextRegular>
             </Button>
           </Link>
-          <Button
-            variant={'landingGray'}
-            mr={15}
-            css={{ height: '50px', minWidth: '140px' }}
-          >
-            <TextRegular fontFamily={'bold'} fontSize={16} color={'background'}>
-              Learn More
-            </TextRegular>
-          </Button>
+          <Link href={'/data'}>
+            <Button
+              variant={'landingGray'}
+              mr={15}
+              css={{ height: '50px', minWidth: '140px' }}
+            >
+              <TextRegular
+                fontFamily={'bold'}
+                fontSize={16}
+                color={'background'}
+              >
+                Learn More
+              </TextRegular>
+            </Button>
+          </Link>
         </Flex>
 
         <Image src={landingGraph} />
