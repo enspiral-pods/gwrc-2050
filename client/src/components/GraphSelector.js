@@ -124,7 +124,7 @@ const GraphSelector = ({
           />
         </GraphSelectorMenuItem>
 
-        <GraphSelectorMenuItem graphName={'Flows'} route={'/calculator/flows'}>
+        {/* <GraphSelectorMenuItem graphName={'Flows'} route={'/calculator/flows'}>
           <FlowsIcon active={pathname === '/calculator/flows'} />
         </GraphSelectorMenuItem>
 
@@ -133,7 +133,7 @@ const GraphSelector = ({
           route={'/calculator/overview'}
         >
           <OverviewIcon active={pathname === '/calculator/overview'} />
-        </GraphSelectorMenuItem>
+        </GraphSelectorMenuItem> */}
       </Flex>
 
       <Flex
