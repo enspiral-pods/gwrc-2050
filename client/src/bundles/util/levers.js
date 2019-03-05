@@ -394,8 +394,8 @@ export default {
       </React.Fragment>
     )
   },
-  landfillGasCaptureAndEfw: {
-    label: 'Landfill gas capture and Energy from Waste (EFW)',
+  landfillGasCaptureAndEnergyFromWaste: {
+    label: 'Landfill gas capture and energy from waste',
     value: 1,
     group: groups.wasteAndBiofuel,
     leverDescriptions: [
