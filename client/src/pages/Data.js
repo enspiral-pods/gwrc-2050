@@ -74,7 +74,7 @@ const Data = props => {
               width={290}
             >
               <Heading fontSize={16} mb={'10px'}>
-                Agriculture & Land Use
+                Agriculture & Forestry
               </Heading>
               <TextRegular color={'black'} mb={'6px'}>
                 Landuse change
@@ -107,7 +107,7 @@ const Data = props => {
                 Waste volumes
               </TextRegular>
               <TextRegular color={'black'} mb={'6px'}>
-                Landfill gas capture and EFW
+                Landfill gas capture and Energy from Waste (EFW)
               </TextRegular>
               <TextRegular color={'black'} mb={'6px'}>
                 Biofuel supply

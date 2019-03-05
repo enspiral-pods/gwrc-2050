@@ -44,12 +44,12 @@ const groups = {
     ]
   },
   agricultureAndLandUse: {
-    label: 'Agriculture & Land Use',
+    label: 'Agriculture & Forestry',
     leverDescriptions: [
-      'Minimal change to existing Agriculture & Land use trends',
-      'Moderate change to existing Agriculture & Land use trends',
-      'Significant change to existing Agriculture & Land use trends',
-      'Exceptional change to existing Agriculture & Land use trends'
+      'Minimal change to existing Agriculture & Forestry trends',
+      'Moderate change to existing Agriculture & Forestry trends',
+      'Significant change to existing Agriculture & Forestry trends',
+      'Exceptional change to existing Agriculture & Forestry trends'
     ]
   },
   wasteAndBiofuel: {
@@ -385,8 +385,9 @@ export default {
         </Heading>
         <TextRegular color={'black'} fontSize={16} pb={10}>
           Methane produced in landfills can be captured and either flared or
-          used for energy. The ‘Landfill gas capture and EFW’ lever controls the
-          proportion of methane captured and used for energy.
+          used for energy. The ‘Landfill gas capture and Energy from Waste
+          (EFW)’ lever controls the proportion of methane captured and used for
+          energy.
         </TextRegular>
         <Image src={wasteVolumes} width={'463px'} />
         <Image src={wasteVolumesTwo} width={'455px'} />
@@ -394,7 +395,7 @@ export default {
     )
   },
   landfillGasCaptureAndEfw: {
-    label: 'Landfill gas capture and EFW',
+    label: 'Landfill gas capture and Energy from Waste (EFW)',
     value: 1,
     group: groups.wasteAndBiofuel,
     leverDescriptions: [
@@ -959,10 +960,10 @@ export default {
     value: 1,
     group: groups.industry,
     leverDescriptions: [
-      'No energy efficiency improvements beyond BAU; no change in fuel mix',
-      'Energy efficiency improves by around 10% beyond BAU; some fuel switching to electricity and biomass',
-      'Energy efficiency improves by around 20% beyond BAU; high level of fuel switching to electricity and biomass',
-      'Energy efficiency improves by around 40% beyond BAU; very high level of fuel switching to electricity and biomass'
+      'No energy efficiency improvements beyond Business as Usual; no change in fuel mix',
+      'Energy efficiency improves by around 10% beyond Business as Usual; some fuel switching to electricity and biomass',
+      'Energy efficiency improves by around 20% beyond Business as Usual; high level of fuel switching to electricity and biomass',
+      'Energy efficiency improves by around 40% beyond Business as Usual; very high level of fuel switching to electricity and biomass'
     ],
     content: <p>You're doing great</p>
   },
@@ -1019,7 +1020,7 @@ export default {
     value: 1,
     group: groups.industry,
     leverDescriptions: [
-      'HFC emissions double by 2050',
+      'Hydrofluorocarbons emissions double by 2050',
       'Emissions decrease nearly 90% by 2050 in accordance with the Montreal Protocol'
     ],
     content: <p>You're doing great</p>
