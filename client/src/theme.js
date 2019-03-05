@@ -1,5 +1,5 @@
 export default {
-  breakpoints: ['800px'],
+  breakpoints: ['950px'],
   colors: {
     lightBackground: '#F3F3F3',
     background: '#262D33',

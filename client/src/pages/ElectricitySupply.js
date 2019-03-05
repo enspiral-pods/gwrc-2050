@@ -23,7 +23,14 @@ const ElectricitySupply = ({
   ])
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
-  const colors = ['#FFC700', '#3285D9', '#00C06F']
+  const colors = [
+    '#FFC700',
+    '#359AFF',
+    '#00C06F',
+    '#FF6363',
+    '#00B4C0',
+    '#905BFF'
+  ]
   const tickValues = [0, 1000, 2000, 3000, 4000]
 
   return (
