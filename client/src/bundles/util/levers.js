@@ -35,6 +35,15 @@ import homeSpaceAndWaterHeatingDemand from '../../assets/images/info-modal-image
 import homeHeatingTechnology from '../../assets/images/info-modal-images/homeHeatingTechnology.png'
 import homeHeatingTechnologyTwo from '../../assets/images/info-modal-images/homeHeatingTechnologyTwo.png'
 import homeLightingAndAppliances from '../../assets/images/info-modal-images/homeLightingAndAppliances.png'
+import electrificationOfHomeCooking from '../../assets/images/info-modal-images/electrificationOfHomeCooking.png'
+import growthInManufacturing from '../../assets/images/info-modal-images/growthInManufacturing.png'
+import energyEfficiencyAndFuelSwitching from '../../assets/images/info-modal-images/energyEfficiencyAndFuelSwitching.png'
+import commercialSpaceAndWaterHeatingDemand from '../../assets/images/info-modal-images/commercialSpaceAndWaterHeatingDemand.png'
+import commercialHeatingTechnology from '../../assets/images/info-modal-images/commercialHeatingTechnology.png'
+import commercialHeatingTechnologyTwo from '../../assets/images/info-modal-images/commercialHeatingTechnologyTwo.png'
+import commercialLightingAndAppliances from '../../assets/images/info-modal-images/commercialLightingAndAppliances.png'
+import electrificationOfCommercialCooking from '../../assets/images/info-modal-images/electrificationOfCommercialCooking.png'
+import refrigerantGases from '../../assets/images/info-modal-images/refrigerantGases.png'
 
 const groups = {
   electricitySupply: {
@@ -957,7 +966,18 @@ export default {
       'As per Level 2, plus half of existing gas cookers replaced with electricity',
       'All cooking uses electricity by 2050.'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the average household used an estimated 730 kWh of energy for
+          cooking. Of this, 68% of household cooking used electricity and 32%
+          used gas. Switching from gas to electricity can lower emissions if the
+          electricity is from sufficiently clean sources. Energy demand for
+          household cooking is assumed to scale with the number of households.
+        </TextRegular>
+        <Image src={electrificationOfHomeCooking} width={'1073px'} />
+      </React.Fragment>
+    )
   },
   growthInManufacturing: {
     label: 'Growth in manufacturing',
@@ -968,7 +988,30 @@ export default {
       'Underlying energy demand stays constant',
       'Underlying energy demand decreases by around 40% (1% reduction per year)'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, manufacturing and other industry in Wellington used an
+          estimated 1950 GWh of energy from electricity, gas, liquid fuels and
+          wood. This lever controls the change in underlying energy demand from
+          manufacturing industries (e.g. products from food, metals, wood and
+          plastics). This relates to changes in levels of production, before
+          considering energy efficiency and fuel switching. The options
+          represent different futures for Wellington’s economic activity and
+          structure. Changes in energy demand for construction, mining and
+          utilities are assumed to scale with population.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interaction with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          The ‘Energy efficiency and fuel switching’ lever controls reductions
+          in manufacturing energy demand from energy efficiency and changes to
+          low-emissions energy sources.
+        </TextRegular>
+        <Image src={growthInManufacturing} width={'1487px'} />
+      </React.Fragment>
+    )
   },
   energyEfficiencyAndFuelSwitching: {
     label: 'Energy efficiency and fuel switching',
@@ -980,7 +1023,27 @@ export default {
       'Energy efficiency improves by around 20% beyond Business as Usual; high level of fuel switching to electricity and biomass',
       'Energy efficiency improves by around 40% beyond Business as Usual; very high level of fuel switching to electricity and biomass'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, an estimated 26% of Wellington’s energy use for manufacturing
+          and other industry was from electricity, 14% from liquid fuels, 33%
+          from gas, and 27% from bioenergy (wood). Gas and wood were mostly used
+          for process heat, while liquid fuels were mostly used in engines &amp;
+          machinery. Energy demand can be reduced through energy efficiency
+          measures (e.g. waste heat recovery), and emissions can be reduced by
+          switching from fossil fuels to cleaner energy sources such as wood and
+          electricity.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interaction with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Demand is controlled by the ‘Growth in manufacturing’ lever.
+        </TextRegular>
+        <Image src={energyEfficiencyAndFuelSwitching} width={'1189px'} />
+      </React.Fragment>
+    )
   },
   commercialSpaceAndWaterHeatingDemand: {
     label: 'Commercial space and water heating demand',
@@ -992,7 +1055,31 @@ export default {
       'Space and water heating demand per building decrease by 20%',
       'Space and water heating demand per building decrease by 30%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever controls the amount of heating, cooling and hot water used
+          within commercial and non- residential buildings, such as shops,
+          hotels, offices, and schools. In 2015, these buildings used an
+          estimated 720 GWh of heat for space heating and 150 GWh for water
+          heating. Demand is related to floor area. Total floor area is assumed
+          to scale with resident population
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interaction with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever sets the demand for end-use heat. The mix of heating
+          technologies (e.g. heat pumps, gas burners) used to provide the heat
+          demand is chosen with the ‘Commercial heating technology’ lever. Note
+          that different technologies will use different amounts of input energy
+          to provide 1 kWh of heat. For example, a gas burner is around 80%
+          efficient, while heat pumps can provide up to 4 kWh of heat for each
+          kWh of electricity used.
+        </TextRegular>
+        <Image src={commercialSpaceAndWaterHeatingDemand} width={'1189px'} />
+      </React.Fragment>
+    )
   },
   commercialHeatingTechnology: {
     label: 'Commercial heating technology',
@@ -1004,7 +1091,25 @@ export default {
       'As per Level 2, plus half of current non-electric heating converted to heat pump.',
       'All non-electric heating converted to heat pump by 2050.'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          This lever controls the mix of technologies to provide the commercial
+          space and water heating. In 2015, an estimated 57% of space heating
+          was provided by electricity (resistance heaters and heat pumps), 36%
+          from gas heaters and boilers, and 7% from diesel and coal. For water
+          heating, 70% was electric, 23% gas, and 7% from coal.
+        </TextRegular>
+        <Heading fontSize={16} mb={10}>
+          Interaction with other choices
+        </Heading>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Demand is controlled by the ‘Commercial heating demand’ lever.
+        </TextRegular>
+        <Image src={commercialHeatingTechnology} width={'1202px'} />
+        <Image src={commercialHeatingTechnologyTwo} width={'1409px'} />
+      </React.Fragment>
+    )
   },
   commercialLightingAndAppliances: {
     label: 'Commercial lighting and appliances',
@@ -1016,7 +1121,21 @@ export default {
       'Energy demand per building decreases by 30%',
       'Energy demand per building decreases by 50%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, commercial and non-residential buildings in Wellington used
+          an estimated 566 GWh of electricity for lighting and appliances (e.g.
+          fridges, computers, televisions). This excludes cooking, which is
+          treated with a separate lever. Energy demand for lighting and
+          appliances can be reduced through adoption of more efficient products
+          (e.g. LED lighting) and behaviour change. Commercial energy demand is
+          related to floor area. Total floor area is assumed to scale with
+          resident population
+        </TextRegular>
+        <Image src={commercialLightingAndAppliances} width={'1057px'} />
+      </React.Fragment>
+    )
   },
   electrificationOfCommercialCooking: {
     label: 'Electrification of commercial cooking',
@@ -1028,7 +1147,18 @@ export default {
       'Electricity share of cooking increases to 75%',
       'Electricity share of cooking increases to 100%'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, commercial cooking used an estimated 230 GWh of energy. Of
+          this, 49% was from electricity and 51% was gas. Switching from gas to
+          electricity can lower emissions if the electricity is from
+          sufficiently clean sources. Energy demand for commercial cooking is
+          assumed to grow in proportion to resident population.
+        </TextRegular>
+        <Image src={electrificationOfCommercialCooking} width={'1092px'} />
+      </React.Fragment>
+    )
   },
   refrigerantGases: {
     label: 'Refrigerant gases',
@@ -1038,6 +1168,19 @@ export default {
       'Hydrofluorocarbons emissions double by 2050',
       'Emissions decrease nearly 90% by 2050 in accordance with the Montreal Protocol'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          Wellington’s greenhouse gas emissions from solvent and product use are
+          estimated at 182 ktCO 2 e in 2015. Most emissions in this sector (93%)
+          are from hydrofluorocarbon (HFC) gases used in refrigeration and air
+          conditioning systems. Emissions in this sector have grown very rapidly
+          since 2000, at an average rate of over 10% per year. But, HFC gases
+          are now set to be phased out under a global treaty: the Kigali
+          Amendment to the Montreal Protocol.
+        </TextRegular>
+        <Image src={refrigerantGases} width={'682px'} />
+      </React.Fragment>
+    )
   }
 }
