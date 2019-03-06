@@ -11,7 +11,8 @@ const ElectricityDemand = ({
   electricityDemand,
   emissionsDecrease,
   isMobileUI,
-  doToggleMobileGraphsMenu
+  doToggleMobileGraphsMenu,
+  selectedTerritorialAuthority
 }) => {
   const usedData = pick(electricityDemand, [
     'Heating & cooling',
@@ -22,7 +23,10 @@ const ElectricityDemand = ({
   const graphAreas = values(usedData)
   const graphNames = keys(usedData)
   const colors = ['#00C06F', '#FFC700', '#3285D9']
-  const tickValues = [0, 1000, 2000, 3000, 4000]
+  let tickValues = [0, 1000, 2000, 3000, 4000]
+  if (selectedTerritorialAuthority !== 'greater_wellington') {
+    tickValues = null
+  }
   return (
     <Calculator>
       {/* <Table data={usedData} /> */}
@@ -43,5 +47,6 @@ const ElectricityDemand = ({
 export default connect(
   'selectElectricityDemand',
   'selectEmissionsDecrease',
+  'selectSelectedTerritorialAuthority',
   ElectricityDemand
 )

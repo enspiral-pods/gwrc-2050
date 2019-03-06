@@ -32,6 +32,9 @@ import demand from '../../assets/images/info-modal-images/demand.png'
 import efficiency from '../../assets/images/info-modal-images/efficiency.png'
 import nationalMarineTransport from '../../assets/images/info-modal-images/nationalMarineTransport.png'
 import homeSpaceAndWaterHeatingDemand from '../../assets/images/info-modal-images/homeSpaceAndWaterHeatingDemand.png'
+import homeHeatingTechnology from '../../assets/images/info-modal-images/homeHeatingTechnology.png'
+import homeHeatingTechnologyTwo from '../../assets/images/info-modal-images/homeHeatingTechnologyTwo.png'
+import homeLightingAndAppliances from '../../assets/images/info-modal-images/homeLightingAndAppliances.png'
 
 const groups = {
   electricitySupply: {
@@ -44,12 +47,12 @@ const groups = {
     ]
   },
   agricultureAndLandUse: {
-    label: 'Agriculture & Land Use',
+    label: 'Agriculture & Forestry',
     leverDescriptions: [
-      'Minimal change to existing Agriculture & Land use trends',
-      'Moderate change to existing Agriculture & Land use trends',
-      'Significant change to existing Agriculture & Land use trends',
-      'Exceptional change to existing Agriculture & Land use trends'
+      'Minimal change to existing Agriculture & Forestry trends',
+      'Moderate change to existing Agriculture & Forestry trends',
+      'Significant change to existing Agriculture & Forestry trends',
+      'Exceptional change to existing Agriculture & Forestry trends'
     ]
   },
   wasteAndBiofuel: {
@@ -385,16 +388,17 @@ export default {
         </Heading>
         <TextRegular color={'black'} fontSize={16} pb={10}>
           Methane produced in landfills can be captured and either flared or
-          used for energy. The ‘Landfill gas capture and EFW’ lever controls the
-          proportion of methane captured and used for energy.
+          used for energy. The ‘Landfill gas capture and Energy from Waste
+          (EFW)’ lever controls the proportion of methane captured and used for
+          energy.
         </TextRegular>
         <Image src={wasteVolumes} width={'463px'} />
         <Image src={wasteVolumesTwo} width={'455px'} />
       </React.Fragment>
     )
   },
-  landfillGasCaptureAndEfw: {
-    label: 'Landfill gas capture and EFW',
+  landfillGasCaptureAndEnergyFromWaste: {
+    label: 'Landfill gas capture and energy from waste',
     value: 1,
     group: groups.wasteAndBiofuel,
     leverDescriptions: [
@@ -425,7 +429,7 @@ export default {
         <TextRegular color={'black'} fontSize={16} pb={10}>
           Estimated LFG capture rates differ by landfill. Wellington City’s
           Southern Landfill has the highest at around 85%, and Levin Landfill
-          (used by Kapiti Coast) has the lowest at around 20%.
+          (used by Kāpiti Coast) has the lowest at around 20%.
         </TextRegular>
         <Image src={landfillGasCaptureAndEfw} width={'475px'} />
         <Image src={landfillGasCaptureAndEfwTwo} width={'503px'} />
@@ -914,8 +918,8 @@ export default {
           Demand is controlled by the ‘Household heating demand’ lever. Solar
           hot water is specified separately and used first within the model.
         </TextRegular>
-        {/* <Image src={homeHeatingTechnology} width={'1176px'} /> */}
-        {/* <Image src={homeHeatingTechnologyTwo} width={'1369px'} /> */}
+        <Image src={homeHeatingTechnology} width={'1176px'} />
+        <Image src={homeHeatingTechnologyTwo} width={'1369px'} />
       </React.Fragment>
     )
   },
@@ -929,7 +933,19 @@ export default {
       'Energy demand per household decreases by 50% by 2050',
       'Energy demand per household decreases by 67% by 2050'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the average Wellington household used an estimated 3,910 kWh
+          of electricity for lighting and appliances (e.g. fridges, computers,
+          televisions). This excludes cooking, which is treated with a separate
+          lever. Energy demand for lighting and appliances can be reduced
+          through adoption of more efficient products (e.g. LED lighting) and
+          behaviour change.
+        </TextRegular>
+        <Image src={homeLightingAndAppliances} width={'451px'} />
+      </React.Fragment>
+    )
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
@@ -959,10 +975,10 @@ export default {
     value: 1,
     group: groups.industry,
     leverDescriptions: [
-      'No energy efficiency improvements beyond BAU; no change in fuel mix',
-      'Energy efficiency improves by around 10% beyond BAU; some fuel switching to electricity and biomass',
-      'Energy efficiency improves by around 20% beyond BAU; high level of fuel switching to electricity and biomass',
-      'Energy efficiency improves by around 40% beyond BAU; very high level of fuel switching to electricity and biomass'
+      'No energy efficiency improvements beyond Business as Usual; no change in fuel mix',
+      'Energy efficiency improves by around 10% beyond Business as Usual; some fuel switching to electricity and biomass',
+      'Energy efficiency improves by around 20% beyond Business as Usual; high level of fuel switching to electricity and biomass',
+      'Energy efficiency improves by around 40% beyond Business as Usual; very high level of fuel switching to electricity and biomass'
     ],
     content: <p>You're doing great</p>
   },
@@ -1019,7 +1035,7 @@ export default {
     value: 1,
     group: groups.industry,
     leverDescriptions: [
-      'HFC emissions double by 2050',
+      'Hydrofluorocarbons emissions double by 2050',
       'Emissions decrease nearly 90% by 2050 in accordance with the Montreal Protocol'
     ],
     content: <p>You're doing great</p>

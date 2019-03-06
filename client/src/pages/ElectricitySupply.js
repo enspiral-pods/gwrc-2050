@@ -11,7 +11,8 @@ const ElectricitySupply = ({
   electricitySupply,
   emissionsDecrease,
   isMobileUI,
-  doToggleMobileGraphsMenu
+  doToggleMobileGraphsMenu,
+  selectedTerritorialAuthority
 }) => {
   const usedData = pick(electricitySupply, [
     'Conventional',
@@ -31,7 +32,10 @@ const ElectricitySupply = ({
     '#00B4C0',
     '#905BFF'
   ]
-  const tickValues = [0, 1000, 2000, 3000, 4000]
+  let tickValues = [0, 1000, 2000, 3000, 4000]
+  if (selectedTerritorialAuthority !== 'greater_wellington') {
+    tickValues = null
+  }
 
   return (
     <Calculator>
@@ -53,5 +57,6 @@ const ElectricitySupply = ({
 export default connect(
   'selectElectricitySupply',
   'selectEmissionsDecrease',
+  'selectSelectedTerritorialAuthority',
   ElectricitySupply
 )

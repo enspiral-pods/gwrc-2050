@@ -43,7 +43,7 @@ const Onboarding = props => {
       <Flex
         flexDirection={'column'}
         width={'100%'}
-        css={{ height: '100%' }}
+        // css={{ height: '100%' }}
         px={20}
         justifyContent={'space-between'}
         alignItems={'center'}

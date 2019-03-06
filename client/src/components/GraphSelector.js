@@ -75,7 +75,7 @@ const GraphSelector = ({
           <option value={'greater_wellington'}>Greater Wellington</option>
           <option value={'wellington_city'}>Wellington City</option>
           <option value={'porirua'}>Porirua</option>
-          <option value={'kapiti_coast'}>Kapiti Coast</option>
+          <option value={'kapiti_coast'}>Kāpiti Coast</option>
           <option value={'lower_hutt'}>Lower Hutt</option>
           <option value={'upper_hutt'}>Upper Hutt</option>
           <option value={'wairarapa'}>Wairarapa</option>
@@ -124,7 +124,7 @@ const GraphSelector = ({
           />
         </GraphSelectorMenuItem>
 
-        <GraphSelectorMenuItem graphName={'Flows'} route={'/calculator/flows'}>
+        {/* <GraphSelectorMenuItem graphName={'Flows'} route={'/calculator/flows'}>
           <FlowsIcon active={pathname === '/calculator/flows'} />
         </GraphSelectorMenuItem>
 
@@ -133,7 +133,7 @@ const GraphSelector = ({
           route={'/calculator/overview'}
         >
           <OverviewIcon active={pathname === '/calculator/overview'} />
-        </GraphSelectorMenuItem>
+        </GraphSelectorMenuItem> */}
       </Flex>
 
       <Flex
