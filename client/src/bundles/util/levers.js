@@ -426,7 +426,7 @@ export default {
         <TextRegular color={'black'} fontSize={16} pb={10}>
           Estimated LFG capture rates differ by landfill. Wellington City’s
           Southern Landfill has the highest at around 85%, and Levin Landfill
-          (used by Kapiti Coast) has the lowest at around 20%.
+          (used by Kāpiti Coast) has the lowest at around 20%.
         </TextRegular>
         <Image src={landfillGasCaptureAndEfw} width={'475px'} />
         <Image src={landfillGasCaptureAndEfwTwo} width={'503px'} />
