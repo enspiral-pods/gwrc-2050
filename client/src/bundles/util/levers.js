@@ -32,6 +32,9 @@ import demand from '../../assets/images/info-modal-images/demand.png'
 import efficiency from '../../assets/images/info-modal-images/efficiency.png'
 import nationalMarineTransport from '../../assets/images/info-modal-images/nationalMarineTransport.png'
 import homeSpaceAndWaterHeatingDemand from '../../assets/images/info-modal-images/homeSpaceAndWaterHeatingDemand.png'
+import homeHeatingTechnology from '../../assets/images/info-modal-images/homeHeatingTechnology.png'
+import homeHeatingTechnologyTwo from '../../assets/images/info-modal-images/homeHeatingTechnologyTwo.png'
+import homeLightingAndAppliances from '../../assets/images/info-modal-images/homeLightingAndAppliances.png'
 
 const groups = {
   electricitySupply: {
@@ -915,8 +918,8 @@ export default {
           Demand is controlled by the ‘Household heating demand’ lever. Solar
           hot water is specified separately and used first within the model.
         </TextRegular>
-        {/* <Image src={homeHeatingTechnology} width={'1176px'} /> */}
-        {/* <Image src={homeHeatingTechnologyTwo} width={'1369px'} /> */}
+        <Image src={homeHeatingTechnology} width={'1176px'} />
+        <Image src={homeHeatingTechnologyTwo} width={'1369px'} />
       </React.Fragment>
     )
   },
@@ -930,7 +933,19 @@ export default {
       'Energy demand per household decreases by 50% by 2050',
       'Energy demand per household decreases by 67% by 2050'
     ],
-    content: <p>You're doing great</p>
+    content: (
+      <React.Fragment>
+        <TextRegular color={'black'} fontSize={16} pb={10}>
+          In 2015, the average Wellington household used an estimated 3,910 kWh
+          of electricity for lighting and appliances (e.g. fridges, computers,
+          televisions). This excludes cooking, which is treated with a separate
+          lever. Energy demand for lighting and appliances can be reduced
+          through adoption of more efficient products (e.g. LED lighting) and
+          behaviour change.
+        </TextRegular>
+        <Image src={homeLightingAndAppliances} width={'451px'} />
+      </React.Fragment>
+    )
   },
   electrificationOfHomeCooking: {
     label: 'Electrification of home cooking',
