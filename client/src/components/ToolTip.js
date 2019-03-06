@@ -10,7 +10,7 @@ const ToolTip = styled.span`
   margin-top: -55px;
   background-color: #51575c;
   padding: 10px;
-  width: 350px;
+  max-width: 350px;
   ${props =>
     !props.hover &&
     css`
