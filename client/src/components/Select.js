@@ -12,4 +12,5 @@ export default styled.select`
   background-image: url(${downArrow});
   background-repeat: no-repeat;
   background-position: right;
+  background-origin: content-box;
 `
