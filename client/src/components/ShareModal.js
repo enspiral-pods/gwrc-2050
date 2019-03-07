@@ -52,9 +52,12 @@ const ShareModal = ({
         <Heading color={'black'} fontSize={20} py={'5px'}>
           Share you Scenario
         </Heading>
-        <TextRegular color={'black'} fontSize={[16, 18]}>
-          Copy the custom link (below) to share your 2050 emissions scenario or
-          use the buttons to share directly via email or social media.
+        <TextRegular color={'black'} fontSize={[16, 18]} textAlign={'center'}>
+          Copy this custom link to share your 2050 emissions scenario or use the
+          buttons to share directly via email or social media.
+        </TextRegular>
+        <TextRegular color={'black'} fontSize={[16, 18]} textAlign={'center'}>
+          What will it take to make your scenario a reality?
         </TextRegular>
         <Flex flexDirection={'row'} width={'100%'}>
           <Box
@@ -62,7 +65,7 @@ const ShareModal = ({
             px={2}
             css={{
               flex: 0.8,
-              maxHeight: '50px',
+              maxHeight: '60px',
               alignItems: 'flex-start',
               border: '2px solid #E8E8E8',
               overflowX: 'scroll',
@@ -77,7 +80,7 @@ const ShareModal = ({
             variant={'landingGreen'}
             css={{
               cursor: 'pointer',
-              maxHeight: '50px',
+              maxHeight: '60px',
               flex: 0.2
             }}
             onClick={doCopyShareLink}
