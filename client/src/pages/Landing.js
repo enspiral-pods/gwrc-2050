@@ -74,7 +74,7 @@ const Landing = props => {
           </Link>
         </Flex>
 
-        <Image src={landingGraph} />
+        <Image src={landingGraph} width={'1408px'} />
 
         <Flex flexDirection={'column'} alignItems={'center'}>
           <Text
