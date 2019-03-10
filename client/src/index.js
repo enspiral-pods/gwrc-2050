@@ -1,4 +1,5 @@
 import 'react-app-polyfill/ie11'
+import 'url-polyfill'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'redux-bundler-react'
