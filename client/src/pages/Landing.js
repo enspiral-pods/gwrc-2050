@@ -51,7 +51,11 @@ const Landing = props => {
         </TextRegular>
         <Flex flexDirection={'row'} alignItems={'center'} py={20}>
           <Link href={'/calculator'}>
-            <Button variant={'landingGreen'} mr={15} css={{ height: '50px' }}>
+            <Button
+              variant={'landingGreen'}
+              mr={15}
+              css={{ minHeight: '50px' }}
+            >
               <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
                 Launch the Calculator
               </TextRegular>
@@ -61,7 +65,7 @@ const Landing = props => {
             <Button
               variant={'landingGray'}
               mr={15}
-              css={{ height: '50px', minWidth: '140px' }}
+              css={{ minHeight: '50px', minWidth: '140px' }}
             >
               <TextRegular
                 fontFamily={'bold'}
