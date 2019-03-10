@@ -90,14 +90,14 @@ const Landing = props => {
             A COLLABORATION BETWEEN
           </Text>
           <Flex
-            flexDirection={'row'}
+            flexDirection={['column', 'row']}
             justifyContent={'center'}
             alignItems={'center'}
             width={'100%'}
             py={20}
           >
-            <Image src={gwrcLogo} px={30} />
-            <Image src={bambooLogo} px={30} />
+            <Image src={gwrcLogo} px={[0, 30]} py={[30, 0]} />
+            <Image src={bambooLogo} px={[0, 30]} py={[30, 0]} />
           </Flex>
         </Flex>
 
