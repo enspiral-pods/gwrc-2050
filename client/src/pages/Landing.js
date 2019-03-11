@@ -96,8 +96,12 @@ const Landing = props => {
             width={'100%'}
             py={20}
           >
-            <Image src={gwrcLogo} px={[0, 30]} py={[30, 0]} />
-            <Image src={bambooLogo} px={[0, 30]} py={[30, 0]} />
+            <Link href={'http://www.gw.govt.nz/'}>
+              <Image src={gwrcLogo} px={[0, 30]} py={[30, 0]} />
+            </Link>
+            <Link href={'https://bamboocreative.nz/'}>
+              <Image src={bambooLogo} px={[0, 30]} py={[30, 0]} />
+            </Link>
           </Flex>
         </Flex>
 
@@ -158,8 +162,12 @@ const Landing = props => {
             BROUGHT TO YOU BY:
           </Text>
           <Flex flexDirection={'row'} alignItems={'center'}>
-            <Image src={bambooLogoWhite} pr={30} />
-            <Image src={enspiral} pr={30} />
+            <Link href={'https://bamboocreative.nz/'}>
+              <Image src={bambooLogoWhite} pr={30} />
+            </Link>
+            <Link href={'https://enspiral.com/'}>
+              <Image src={enspiral} pr={30} />
+            </Link>
           </Flex>
         </Box>
       </Flex>
