@@ -176,10 +176,6 @@ const Graph = ({
                       }}
                     />
                   </VictoryChart>
-                  <EmissionsBar
-                    emissionsDecrease={emissionsDecrease}
-                    isMobileUI={isMobileUI}
-                  />
                 </Box>
               )
             }}
@@ -187,6 +183,10 @@ const Graph = ({
         </Flex>
         <Legend data={labels} colors={colors} />
       </Flex>
+      <EmissionsBar
+        emissionsDecrease={emissionsDecrease}
+        isMobileUI={isMobileUI}
+      />
     </Flex>
   )
 }
