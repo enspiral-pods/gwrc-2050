@@ -53,10 +53,7 @@ const Levers = ({
             </Heading>
           </FlexWithExtras>
 
-          <Flex
-            flexDirection={'column'}
-            css={{ overflowY: 'scroll', overflowX: 'hidden' }}
-          >
+          <Flex flexDirection={'column'}>
             {keys(leversByGroup).map(group => (
               <LeverGroupListItem
                 group={group}
