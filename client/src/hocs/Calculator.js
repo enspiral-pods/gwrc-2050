@@ -21,7 +21,8 @@ const Layout = ({
     <Flex
       flexDirection={['column', 'row']}
       width={'100%'}
-      justifyContent={'space-between'}
+      justifyContent={'center'}
+      css={{ minHeight: '100%' }}
     >
       <GraphSelector display={['none', 'flex']} />
       {isMobileGraphsMenuOpen ? (
@@ -39,6 +40,8 @@ const Layout = ({
           flexDirection={'column'}
           alignItems={'center'}
           width={'100%'}
+          ml={[0, '256px']}
+          mr={[0, '400px']}
           css={{ maxWidth: '1000px' }}
           p={15}
         >
