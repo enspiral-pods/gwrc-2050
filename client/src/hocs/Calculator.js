@@ -21,8 +21,8 @@ const Layout = ({
     <Flex
       flexDirection={['column', 'row']}
       width={'100%'}
-      justifyContent={'center'}
-      css={{ minHeight: '100%' }}
+      // justifyContent={'center'}
+      // css={{ minHeight: '100%' }}
     >
       <GraphSelector display={['none', 'flex']} />
       {isMobileGraphsMenuOpen ? (
@@ -36,38 +36,41 @@ const Layout = ({
           doToggleMobileLeversMenu={doToggleMobileLeversMenu}
         />
       ) : (
-        <Flex
-          flexDirection={'column'}
-          alignItems={'center'}
-          width={'100%'}
-          ml={[0, '256px']}
-          mr={[0, '400px']}
-          css={{ maxWidth: '1000px' }}
-          p={15}
-        >
-          <FlexWithExtras display={['flex', 'none']} width={'100%'} mb={10}>
-            <Button onClick={doToggleMobileGraphsMenu} variant={'nav'}>
-              <Flex alignItems={'center'}>
-                <Image src={leftArrow} height={24} width={24} />
-                <Heading color={'white'} fontSize={14}>
-                  {'Graphs'}
-                </Heading>
-              </Flex>
-            </Button>
-          </FlexWithExtras>
-          {children}
-          <FlexWithExtras display={['flex', 'none']} width={'100%'}>
-            <Button
-              onClick={doToggleMobileLeversMenu}
-              bg={'darkFluroGreen'}
-              width={'100%'}
-            >
-              <Flex justifyContent={'center'} alignItems={'center'}>
-                <Image src={upArrow} height={24} width={24} mr={10} />
-                <TextMedium fontSize={16}>{'Choose your actions'}</TextMedium>
-              </Flex>
-            </Button>
-          </FlexWithExtras>
+        <Flex justifyContent={'center'} flex={1} css={{ overflowY: 'scroll' }}>
+          <Flex
+            flexDirection={'column'}
+            alignItems={'center'}
+            flex={1}
+            // width={'100%'}
+            // ml={[0, '256px']}
+            // mr={[0, '400px']}
+            css={{ maxWidth: '1000px' }}
+            p={15}
+          >
+            <FlexWithExtras display={['flex', 'none']} mb={10}>
+              <Button onClick={doToggleMobileGraphsMenu} variant={'nav'}>
+                <Flex alignItems={'center'}>
+                  <Image src={leftArrow} height={24} width={24} />
+                  <Heading color={'white'} fontSize={14}>
+                    {'Graphs'}
+                  </Heading>
+                </Flex>
+              </Button>
+            </FlexWithExtras>
+            {children}
+            <FlexWithExtras display={['flex', 'none']} width={'100%'}>
+              <Button
+                onClick={doToggleMobileLeversMenu}
+                bg={'darkFluroGreen'}
+                width={'100%'}
+              >
+                <Flex justifyContent={'center'} alignItems={'center'}>
+                  <Image src={upArrow} height={24} width={24} mr={10} />
+                  <TextMedium fontSize={16}>{'Choose your actions'}</TextMedium>
+                </Flex>
+              </Button>
+            </FlexWithExtras>
+          </Flex>
         </Flex>
       )}
       <Levers display={['none', 'flex']} />
