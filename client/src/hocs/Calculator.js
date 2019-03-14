@@ -40,11 +40,10 @@ const Layout = ({
           <Flex
             flexDirection={'column'}
             alignItems={'center'}
-            flex={1}
             // width={'100%'}
             // ml={[0, '256px']}
             // mr={[0, '400px']}
-            css={{ maxWidth: '1000px' }}
+            css={{ maxWidth: '1000px', flex: 1 }}
             p={15}
           >
             <FlexWithExtras display={['flex', 'none']} mb={10}>
