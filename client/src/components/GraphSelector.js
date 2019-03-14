@@ -31,10 +31,13 @@ const GraphSelector = ({
   return (
     <FlexWithExtras
       display={display}
+      // position={'fixed'}
+      // left={0}
       flexDirection={'column'}
       width={['100%', 256]}
       bg={'darkBackground'}
       p={15}
+      css={{ maxHeight: '100%', overflowY: 'scroll' }}
     >
       <FlexWithExtras
         display={['flex', 'none']}
@@ -125,15 +128,15 @@ const GraphSelector = ({
         </GraphSelectorMenuItem>
 
         {/* <GraphSelectorMenuItem graphName={'Flows'} route={'/calculator/flows'}>
-          <FlowsIcon active={pathname === '/calculator/flows'} />
-        </GraphSelectorMenuItem>
+            <FlowsIcon active={pathname === '/calculator/flows'} />
+          </GraphSelectorMenuItem>
 
-        <GraphSelectorMenuItem
-          graphName={'Overview'}
-          route={'/calculator/overview'}
-        >
-          <OverviewIcon active={pathname === '/calculator/overview'} />
-        </GraphSelectorMenuItem> */}
+          <GraphSelectorMenuItem
+            graphName={'Overview'}
+            route={'/calculator/overview'}
+          >
+            <OverviewIcon active={pathname === '/calculator/overview'} />
+          </GraphSelectorMenuItem> */}
       </Flex>
 
       <Flex

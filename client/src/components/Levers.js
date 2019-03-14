@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'redux-bundler-react'
-import { Flex, Heading, Button, Image } from 'rebass'
+import { Box, Flex, Heading, Button, Image } from 'rebass'
 import keys from 'lodash/keys'
 import debounce from 'lodash/debounce'
 import toCamelCase from 'lodash/camelCase'
@@ -27,10 +27,12 @@ const Levers = ({
   return (
     <FlexWithExtras
       display={display}
+      // position={'fixed'}
+      // right={0}
       width={['100%', 400]}
       p={20}
       borderLeft={'1px solid rgb(255,255,255,0.1)'}
-      css={{ overflowX: 'auto' }}
+      css={{ maxHeight: '100%', overflowY: 'scroll', overflowX: 'auto' }}
     >
       {isLeverGroupOpen ? (
         <LeverGroup
@@ -51,10 +53,7 @@ const Levers = ({
             </Heading>
           </FlexWithExtras>
 
-          <Flex
-            flexDirection={'column'}
-            css={{ overflowY: 'scroll', overflowX: 'hidden' }}
-          >
+          <Flex flexDirection={'column'}>
             {keys(leversByGroup).map(group => (
               <LeverGroupListItem
                 group={group}
