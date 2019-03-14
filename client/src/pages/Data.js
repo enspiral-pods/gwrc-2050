@@ -24,8 +24,8 @@ const Data = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`The model is based on the Open Source tool originally created for the United Kingdom by the Department of Energy & Climate Change in 2008. The open source code and assumptions for the UK model are available here. 
-
+            {`The model is based on the Open Source tool originally created for the United Kingdom by the Department of Energy & Climate Change in 2008. The open source code and assumptions for the UK model are available here.
+            
             The Wellington Region 2050 Emissions Calculator also draws upon data, modelling and input from government and research entities at various levels of scope ranging from local to regional to national. To read more about the assumptions made by this calculator here.`}
           </TextRegular>
         </Box>
@@ -214,7 +214,28 @@ const Data = props => {
               width={290}
             >
               <Heading fontSize={16} mb={'10px'}>
-                Residential Buildings
+                Industry
+              </Heading>
+              <TextRegular color={'black'} mb={'6px'}>
+                Refrigerant gases
+              </TextRegular>
+              <TextRegular color={'black'} mb={'6px'}>
+                Energy efficiency and fuel switching
+              </TextRegular>
+              <TextRegular color={'black'} mb={'6px'}>
+                Refrigerant gases
+              </TextRegular>
+            </Flex>
+            <Flex
+              flexDirection={'column'}
+              bg={'lightBackground'}
+              p={15}
+              mr={15}
+              mb={15}
+              width={290}
+            >
+              <Heading fontSize={16} mb={'10px'}>
+                Buildings
               </Heading>
               <TextRegular color={'black'} mb={'6px'}>
                 Home space & water heating demand
@@ -228,50 +249,17 @@ const Data = props => {
               <TextRegular color={'black'} mb={'6px'}>
                 Electrification of home cooking
               </TextRegular>
-            </Flex>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Commercial Buildings
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Growth in manufacturing
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Energy efficiency and fuel switching
-              </TextRegular>
               <TextRegular color={'black'} mb={'6px'}>
                 Commercial space & water heating demand
               </TextRegular>
               <TextRegular color={'black'} mb={'6px'}>
-                Commercial heating demand
+                Commercial heating technology
               </TextRegular>
               <TextRegular color={'black'} mb={'6px'}>
                 Commercial lighting & appliances
               </TextRegular>
               <TextRegular color={'black'} mb={'6px'}>
                 Electrification of commercial cooking
-              </TextRegular>
-            </Flex>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Solvent & Product Use
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Solvent & product use
               </TextRegular>
             </Flex>
           </Flex>
@@ -297,7 +285,7 @@ const Data = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`A full explanation of the calculator, the data sources, methodoalogy and assumptions can be found here. NEED to brainstorm some other links!`}
+            {`This project was partly based on the Open Souce project initiated by the Department of Energy & Climate Change in the UK.`}
           </TextRegular>
         </Box>
       </Flex>

@@ -19,12 +19,12 @@ const Onboarding = props => {
     <ReactModal
       style={{
         content: {
-          top: '50%',
+          // top: '50%',
           left: '0px',
           right: '0px',
           marginLeft: 'auto',
           marginRight: 'auto',
-          transform: 'translate(0, -50%)',
+          // transform: 'translate(0, -50%)',
           maxWidth: '513px',
           maxHeight: '410px',
           border: '1px solid #ccc',
@@ -43,7 +43,7 @@ const Onboarding = props => {
       <Flex
         flexDirection={'column'}
         width={'100%'}
-        // css={{ height: '100%' }}
+        css={{ height: '100%' }}
         px={20}
         justifyContent={'space-between'}
         alignItems={'center'}

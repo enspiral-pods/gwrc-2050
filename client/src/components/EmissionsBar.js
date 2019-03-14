@@ -1,7 +1,5 @@
 import React from 'react'
-import { Box, Flex, Heading } from 'rebass'
-
-import FlexWithExtras from './FlexWithExtras'
+import { Flex } from 'rebass'
 
 export default ({ emissionsDecrease, isMobileUI }) => {
   if (!emissionsDecrease) {
@@ -12,7 +10,13 @@ export default ({ emissionsDecrease, isMobileUI }) => {
   const postfix = isDecrease ? 'Decrease' : 'Increase'
   const roundedChange = (emissionsDecrease * 100).toFixed(2)
   const absoluteChange = Math.abs(roundedChange)
-  const percentageChange = absoluteChange / 100
+  let percentageChange = absoluteChange / 100
+
+  // to prevent emissions bar from overflowing
+  if (percentageChange > 1) {
+    percentageChange = 1
+  }
+  console.log('emissions decrease: ', percentageChange)
 
   const tooltipWidth = isMobileUI ? 120 : 150
   const barXPointAsWidthPercentage = isDecrease
@@ -30,10 +34,11 @@ export default ({ emissionsDecrease, isMobileUI }) => {
     <Flex
       flexDirection={'column'}
       justifyContent={'center'}
+      alignItems={'center'}
       width={'100%'}
       p={20}
     >
-      <svg height={'100%'} width={'100%'}>
+      <svg height={'100%'} width={'80%'} overflow={'visible'}>
         <g>
           <rect x='0' y='45' width='80%' height='5' fill={'black'} />
           <rect

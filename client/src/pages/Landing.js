@@ -30,28 +30,30 @@ const Landing = props => {
             <Heading fontSize={18} mb={10}>
               A.
             </Heading>
-            <Heading fontSize={25}>Electrify 100% of light vehicles?</Heading>
+            <Heading fontSize={25}>Electrify 100% of light vehicles</Heading>
           </Flex>
           <Flex flexDirection={'column'} width={'50%'}>
             <Heading fontSize={18} mb={10}>
               B.
             </Heading>
-            <Heading fontSize={25}>
-              Convert all marginal land to native forestry?
-            </Heading>
+            <Heading fontSize={25}>Convert 15% of all land to forestry</Heading>
           </Flex>
         </Flex>
 
         <TextRegular color={'black'} fontSize={18}>
-          What choices would reduce the emissions most in the Wellington Region?
-          How much would you need to to do to hit climate targets? 2050
-          Emissions Calculator lets you simulate changes to the economy in the
-          Wellington Region to forecast our emissions leading up to 2050 to help
-          you consider the challenges and opportunities in front of us.{' '}
+          What choices will see the biggest reduction in the Wellington Region’s
+          emissions? What do we need to do in order to meet emissions targets?
+          The Wellington Region 2050 Emissions Calculator lets you model changes
+          within the Greater Wellington Region in order to forecast our future
+          emissions.
         </TextRegular>
         <Flex flexDirection={'row'} alignItems={'center'} py={20}>
           <Link href={'/calculator'}>
-            <Button variant={'landingGreen'} mr={15} css={{ height: '50px' }}>
+            <Button
+              variant={'landingGreen'}
+              mr={15}
+              css={{ minHeight: '50px' }}
+            >
               <TextRegular fontFamily={'bold'} fontSize={16} color={'white'}>
                 Launch the Calculator
               </TextRegular>
@@ -61,7 +63,7 @@ const Landing = props => {
             <Button
               variant={'landingGray'}
               mr={15}
-              css={{ height: '50px', minWidth: '140px' }}
+              css={{ minHeight: '50px', minWidth: '140px' }}
             >
               <TextRegular
                 fontFamily={'bold'}
@@ -81,19 +83,24 @@ const Landing = props => {
             fontFamily={'black'}
             fontSize={14}
             mb={10}
+            pt={35}
             css={{ opacity: 0.2 }}
           >
             A COLLABORATION BETWEEN
           </Text>
           <Flex
-            flexDirection={'row'}
+            flexDirection={['column', 'row']}
             justifyContent={'center'}
             alignItems={'center'}
             width={'100%'}
             py={20}
           >
-            <Image src={gwrcLogo} px={30} />
-            <Image src={bambooLogo} px={30} />
+            <Link href={'http://www.gw.govt.nz/'}>
+              <Image src={gwrcLogo} px={[0, 30]} py={[30, 0]} />
+            </Link>
+            <Link href={'https://bamboocreative.nz/'}>
+              <Image src={bambooLogo} px={[0, 30]} py={[30, 0]} />
+            </Link>
           </Flex>
         </Flex>
 
@@ -106,11 +113,27 @@ const Landing = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`The New Zealand Government has stated its ambition to reduce emissions to become net zero by 2050.  By achieving this target, we would fulfil our contribution to achieving the goal of the Paris Agreement, becoming part of the climate solution rather than part of the climate problem. But changes need to start happening today to get there.
-
-            Everyone, from central, regional and local government, businesses, community groups and individuals, needs to play their part. This tool lets you take control and make your own choices for things like where we get out energy, how we get about and what land is used for, and then see what effect this would have on the emissions of the region and individual districts.
-
-            When we understand what needs to change in practice, we can talk seriously about the policies that  could be used to make these changes happen.`}
+            The New Zealand Government has stated its ambition to reduce
+            emissions to net zero by 2050. By achieving this target, we will
+            fulfil our obligations as set out in the Paris Agreement, of which
+            New Zealand is a signatory. But in order to meet get to net zero by
+            2050, we need to be bold, we need to work together and we need to
+            start now.<br />
+            <br />
+            Government, businesses, communities and individuals all need to play
+            their part in order to make this happen but in order to get there,
+            we need to understand where we’re at and the opportunities in front
+            of us.<br />
+            <br />
+            This tool ebnables you to model our emissions future by adjusting
+            key levers relating to energy supply & demand, transport, land use &
+            agrciulture and more. By adjusting these levers (which have varying
+            levels of ambition) we’re able to see effect this would have on the
+            total emissions of the Greater Wellington region and the individual
+            territorial authorities.<br />
+            <br />
+            Once we understand what we can do, we can work seriously towards the
+            policies and actions needed to make these changes happen.
           </TextRegular>
         </Flex>
       </Flex>
@@ -135,7 +158,7 @@ const Landing = props => {
             The Wellington Region 2050 Emissions Calculator also draws upon
             data, modelling and input from government and research entities at
             various levels of scope ranging from local to regional to national.
-            To read more about the assumptions made by this calculator here.{' '}
+            To read more about the assumptions made by this calculator here
           </TextRegular>
           <Link href={'/data'}>
             <Button
@@ -154,8 +177,12 @@ const Landing = props => {
             BROUGHT TO YOU BY:
           </Text>
           <Flex flexDirection={'row'} alignItems={'center'}>
-            <Image src={bambooLogoWhite} pr={30} />
-            <Image src={enspiral} pr={30} />
+            <Link href={'https://bamboocreative.nz/'}>
+              <Image src={bambooLogoWhite} pr={30} />
+            </Link>
+            <Link href={'https://enspiral.com/'}>
+              <Image src={enspiral} pr={30} />
+            </Link>
           </Flex>
         </Box>
       </Flex>
