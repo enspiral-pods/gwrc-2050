@@ -36,7 +36,7 @@ const Layout = ({
           doToggleMobileLeversMenu={doToggleMobileLeversMenu}
         />
       ) : (
-        <Flex justifyContent={'center'} flex={1} css={{ overflowY: 'scroll' }}>
+        <Flex justifyContent={'center'} css={{ overflowY: 'scroll', flex: 1 }}>
           <Flex
             flexDirection={'column'}
             alignItems={'center'}
