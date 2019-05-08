@@ -121,11 +121,14 @@ const Landing = props => {
             css={{ whiteSpace: 'pre-line' }}
           >
             The New Zealand Government has stated its ambition to reduce
-            emissions to net zero by 2050. By achieving this target, we will
-            fulfil our obligations as set out in the Paris Agreement, of which
-            New Zealand is a signatory. But in order to meet get to net zero by
-            2050, we need to be bold, we need to work together and we need to
-            start now.<br />
+            emissions to{' '}
+            <Text fontFamily={'bold'} css={{ display: 'inline' }}>
+              net zero by 2050.
+            </Text>{' '}
+            By achieving this target, we will fulfil our obligations as set out
+            in the Paris Agreement, of which New Zealand is a signatory. But in
+            order to meet get to net zero by 2050, we need to be bold, we need
+            to work together and we need to start now.<br />
             <br />
             Government, businesses, communities and individuals all need to play
             their part in order to make this happen but in order to get there,
@@ -165,7 +168,8 @@ const Landing = props => {
             The Wellington Region 2050 Emissions Calculator also draws upon
             data, modelling and input from government and research entities at
             various levels of scope ranging from local to regional to national.
-            To read more about the assumptions made by this calculator here
+            To read more about the assumptions made by this calculator, click
+            the button below to go to the data page.
           </TextRegular>
           <Link href={'/data'}>
             <Button
