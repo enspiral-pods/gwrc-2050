@@ -44,7 +44,7 @@ const Emissions = ({
         {/* <Table data={usedData} /> */}
         <Graph
           name={'Greenhouse Gas Emissions'}
-          axes={'ktCO2/yr / Date'}
+          axes={'Emissions (ktCO2/yr)'}
           axesTickValues={tickValues}
           data={graphAreas}
           labels={graphNames}
