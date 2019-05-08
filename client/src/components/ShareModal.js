@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 import { connect } from 'redux-bundler-react'
-import { Flex, Button, Box, Heading, Image } from 'rebass'
+import { Flex, Button, Box, Heading, Image, Text, Link } from 'rebass'
 
 import TextRegular from './TextRegular'
 
@@ -21,6 +21,9 @@ const ShareModal = ({
   const copyText = isShareModalLinkCopying
     ? 'Copying...'
     : didShareModalLinkCopySuccessfully ? 'Copied!' : 'Copy Link'
+  const encodedUrl = encodeURIComponent(
+    `${window.location.origin}/share?${leverUrlObject}`
+  )
   return (
     <ReactModal
       isOpen={isShareModalOpen}
@@ -51,12 +54,12 @@ const ShareModal = ({
         p={20}
         alignItems={'center'}
       >
-        <Heading color={'black'} fontSize={20} pt={'5px'} pb={20}>
+        <Heading color={'black'} fontSize={22} pt={'5px'} pb={20}>
           Share your Scenario
         </Heading>
         <TextRegular
           color={'black'}
-          fontSize={[16, 18]}
+          fontSize={16}
           py={'5px'}
           textAlign={'center'}
         >
@@ -65,7 +68,7 @@ const ShareModal = ({
         </TextRegular>
         <TextRegular
           color={'black'}
-          fontSize={[16, 18]}
+          fontSize={16}
           py={'5px'}
           textAlign={'center'}
         >
@@ -75,6 +78,7 @@ const ShareModal = ({
           <Box
             py={2}
             px={2}
+            bg={'#F4F4F4'}
             css={{
               maxHeight: '60px',
               alignItems: 'flex-start',
@@ -102,126 +106,133 @@ const ShareModal = ({
           </Button>
         </Flex>
         <Flex flexDirection={'column'}>
-          <TextRegular fontSize={14} color={'black'}>
+          <Text
+            fontFamily={'black'}
+            fontSize={12}
+            letterSpacing={'2px'}
+            color={'#262D33'}
+            mb={10}
+            css={{ opacity: 0.5 }}
+          >
             SOCIAL SHARING
-          </TextRegular>
+          </Text>
           <Flex flexDirection={'row'} flexWrap={'wrap'}>
-            <Flex
-              alignItems={'center'}
-              width={200}
-              p={10}
-              mr={10}
-              mb={10}
-              bg={'#38A1F3'}
-              css={{
-                borderRadius: '3px',
-                cursor: 'pointer',
-                ':hover': { opacity: 0.7 }
-              }}
-              onClick={() => {
-                const encoded = encodeURIComponent(
-                  `${window.location.origin}/share?${leverUrlObject}`
-                )
-                window.open(`https://twitter.com/share?url=${encoded}`)
-              }}
+            <Link
+              href={`https://twitter.com/share?url=${encodedUrl}`}
+              target='_blank'
+              css={{ textDecoration: 'none' }}
             >
-              <Image
-                src={twitterLogo}
-                width={[60, 30]}
-                height={[60, 30]}
-                mr={15}
-              />
-              <TextRegular fontSize={14} color={'white'}>
-                Share on Twitter
-              </TextRegular>
-            </Flex>
-            <Flex
-              alignItems={'center'}
-              width={200}
-              p={10}
-              mr={10}
-              mb={10}
-              bg={'#4267B2'}
-              css={{
-                borderRadius: '3px',
-                cursor: 'pointer',
-                ':hover': { opacity: 0.7 }
-              }}
-              onClick={() => {
-                // TODO: need a facebook app ID, but currently bailing on me creating one :(
-                // window.location = `https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F`
-              }}
+              <Flex
+                alignItems={'center'}
+                width={200}
+                p={10}
+                mr={10}
+                mb={10}
+                bg={'#38A1F3'}
+                css={{
+                  borderRadius: '3px',
+                  cursor: 'pointer',
+                  ':hover': { opacity: 0.7 }
+                }}
+              >
+                <Image
+                  src={twitterLogo}
+                  width={[60, 30]}
+                  height={[60, 30]}
+                  mr={15}
+                />
+                <TextRegular fontSize={14} color={'white'}>
+                  Share on Twitter
+                </TextRegular>
+              </Flex>
+            </Link>
+            <Link
+              href={`https://facebook.com/`}
+              target='_blank'
+              css={{ textDecoration: 'none' }}
             >
-              <Image
-                src={facebookLogo}
-                width={[52, 26]}
-                height={[60, 30]}
-                mr={15}
-              />
-              <TextRegular fontSize={14} color={'white'}>
-                Share on Facebook
-              </TextRegular>
-            </Flex>
-            <Flex
-              alignItems={'center'}
-              width={200}
-              p={10}
-              mr={10}
-              mb={10}
-              bg={'#333333'}
-              css={{
-                borderRadius: '3px',
-                cursor: 'pointer',
-                ':hover': { opacity: 0.7 }
-              }}
-              onClick={() => {
-                const encoded = encodeURIComponent(
-                  `${window.location.origin}/share?${leverUrlObject}`
-                )
-                window.location = `mailto:?body=${encoded}`
-              }}
+              <Flex
+                alignItems={'center'}
+                width={200}
+                p={10}
+                mr={10}
+                mb={10}
+                bg={'#4267B2'}
+                css={{
+                  borderRadius: '3px',
+                  cursor: 'pointer',
+                  ':hover': { opacity: 0.7 }
+                }}
+              >
+                <Image
+                  src={facebookLogo}
+                  width={[52, 26]}
+                  height={[60, 30]}
+                  mr={15}
+                />
+                <TextRegular fontSize={14} color={'white'}>
+                  Share on Facebook
+                </TextRegular>
+              </Flex>
+            </Link>
+            <Link
+              href={`mailto:?body=${encodedUrl}`}
+              target='_blank'
+              css={{ textDecoration: 'none' }}
             >
-              <Image
-                src={emailLogo}
-                width={[64, 32]}
-                height={[64, 32]}
-                mr={15}
-              />
-              <TextRegular fontSize={14} color={'white'}>
-                Share via email
-              </TextRegular>
-            </Flex>
-            <Flex
-              alignItems={'center'}
-              width={200}
-              p={10}
-              mr={10}
-              mb={10}
-              bg={'#4B5E6F'}
-              css={{
-                borderRadius: '3px',
-                cursor: 'pointer',
-                ':hover': { opacity: 0.7 }
-              }}
-              onClick={() => {
-                const encoded = encodeURIComponent(
-                  `${window.location.origin}/share?${leverUrlObject}`
-                )
-                window.open(
-                  `https://www.linkedin.com/shareArticle?mini=true&url=${encoded}`
-                )
-              }}
+              <Flex
+                alignItems={'center'}
+                width={200}
+                p={10}
+                mr={10}
+                mb={10}
+                bg={'#333333'}
+                css={{
+                  borderRadius: '3px',
+                  cursor: 'pointer',
+                  ':hover': { opacity: 0.7 }
+                }}
+              >
+                <Image
+                  src={emailLogo}
+                  width={[64, 32]}
+                  height={[64, 32]}
+                  mr={15}
+                />
+                <TextRegular fontSize={14} color={'white'}>
+                  Share via email
+                </TextRegular>
+              </Flex>
+            </Link>
+            <Link
+              href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}`}
+              target='_blank'
+              css={{ textDecoration: 'none' }}
             >
-              <Image
-                src={linkedinLogo}
-                width={[52, 26]}
-                height={[60, 30]}
-                mr={15}
-              />
-              <TextRegular fontSize={14} color={'white'}>
-                Share on Linkedin
-              </TextRegular>
-            </Flex>
+              <Flex
+                alignItems={'center'}
+                width={200}
+                p={10}
+                mr={10}
+                mb={10}
+                bg={'#4B5E6F'}
+                css={{
+                  borderRadius: '3px',
+                  cursor: 'pointer',
+                  ':hover': { opacity: 0.7 }
+                }}
+              >
+                <Image
+                  src={linkedinLogo}
+                  width={[52, 26]}
+                  height={[60, 30]}
+                  mr={15}
+                />
+                <TextRegular fontSize={14} color={'white'}>
+                  Share on Linkedin
+                </TextRegular>
+              </Flex>
+            </Link>
           </Flex>
         </Flex>
       </Flex>
