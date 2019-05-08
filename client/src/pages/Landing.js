@@ -135,12 +135,12 @@ const Landing = props => {
             we need to understand where we’re at and the opportunities in front
             of us.<br />
             <br />
-            This tool ebnables you to model our emissions future by adjusting
-            key levers relating to energy supply & demand, transport, land use &
+            This tool enables you to model our emissions future by adjusting key
+            levers relating to energy supply & demand, transport, land use &
             agrciulture and more. By adjusting these levers (which have varying
-            levels of ambition) we’re able to see effect this would have on the
-            total emissions of the Greater Wellington region and the individual
-            territorial authorities.<br />
+            levels of ambition) we’re able to see the effect this would have on
+            the total emissions of the Greater Wellington region and the
+            individual territorial areas.<br />
             <br />
             Once we understand what we can do, we can work seriously towards the
             policies and actions needed to make these changes happen.

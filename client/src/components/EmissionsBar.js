@@ -81,7 +81,7 @@ export default ({ emissionsDecrease, isMobileUI }) => {
             fontFamily={'Inter-UI-Regular'}
             alignmentBaseline={'middle'}
             textAnchor={'middle'}
-          >{`${Math.round(absoluteChange)}% CO2 ${postfix}`}</text>
+          >{`${Math.round(absoluteChange)}% CO\u{2082}-e ${postfix}`}</text>
         </g>
 
         <g>

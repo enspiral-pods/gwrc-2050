@@ -25,8 +25,8 @@ const Data = props => {
             css={{ whiteSpace: 'pre-line' }}
           >
             {`The model is based on the Open Source tool originally created for the United Kingdom by the Department of Energy & Climate Change in 2008. The open source code and assumptions for the UK model are available here.
-            
-            The Wellington Region 2050 Emissions Calculator also draws upon data, modelling and input from government and research entities at various levels of scope ranging from local to regional to national. To read more about the assumptions made by this calculator here.`}
+
+            The Wellington Region 2050 Emissions Calculator also draws upon data, modelling and input from government and research entities at various levels of scope ranging from local to regional to national. To read more about the assumptions made by this calculator click here.`}
           </TextRegular>
         </Box>
 
@@ -40,7 +40,7 @@ const Data = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`We need to rapidly reduce our emissions of greenhouse gases to prevent the worst effects of climate change. The Paris Agreement which NZ is a party to says the whole world must have net-zero emissions by the second half of this century, if not sooner.  This calculator lets adjust the economy of the Wellington Region and the technologies that support it to see what effect this has on our emissions out to 2050.`}
+            {`We need to rapidly reduce our emissions of greenhouse gases to prevent the worst effects of climate change. The Paris Agreement which NZ is a party to says the whole world must have net-zero emissions by the second half of this century, if not sooner.  This calculator lets you adjust the economy of the Wellington Region and the technologies that support it to see what effect this has on our emissions out to 2050.`}
           </TextRegular>
         </Box>
 
