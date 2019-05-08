@@ -10,7 +10,14 @@ import landingGraph from '../assets/images/landing-graph.jpg'
 import bambooLogo from '../assets/images/Bamboo-logo.png'
 import gwrcLogo from '../assets/images/GRWC-logo.png'
 import nz from '../assets/images/landing-nz.jpg'
-import tas from '../assets/images/tas.png'
+import upperHutt from '../assets/images/upper-hutt.png'
+import masterton from '../assets/images/masterton.png'
+import kapitiCoast from '../assets/images/kapiti-coast.png'
+import southWairarapa from '../assets/images/south-wairarapa.png'
+import huttCity from '../assets/images/hutt-city.png'
+import carterton from '../assets/images/carterton.png'
+import porirua from '../assets/images/porirua.png'
+import greaterWellington from '../assets/images/greater-wellington.png'
 import bambooLogoWhite from '../assets/images/Bamboo-logo-white.png'
 import enspiral from '../assets/images/enspiral.png'
 
@@ -95,10 +102,10 @@ const Landing = props => {
             width={'100%'}
             py={20}
           >
-            <Link href={'http://www.gw.govt.nz/'}>
+            <Link href={'http://www.gw.govt.nz/'} target='_blank'>
               <Image src={gwrcLogo} px={[0, 30]} py={[30, 0]} />
             </Link>
-            <Link href={'https://bamboocreative.nz/'}>
+            <Link href={'https://bamboocreative.nz/'} target='_blank'>
               <Image src={bambooLogo} px={[0, 30]} py={[30, 0]} />
             </Link>
           </Flex>
@@ -172,16 +179,95 @@ const Landing = props => {
               </TextRegular>
             </Button>
           </Link>
-          <Image my={90} src={tas} />
+          <Flex
+            my={90}
+            flexDirection={'row'}
+            flexWrap={'wrap'}
+            alignItems={'center'}
+            justifyContent={'center'}
+          >
+            <Link
+              href={'https://upperhuttcity.com/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={upperHutt} />
+            </Link>
+            <Link
+              href={'https://mstn.govt.nz/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={masterton} />
+            </Link>
+            <Link
+              href={'https://www.kapiticoast.govt.nz/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={kapitiCoast} />
+            </Link>
+            <Link
+              href={'https://www.swdc.govt.nz/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={southWairarapa} />
+            </Link>
+            <Link
+              href={'http://www.huttcity.govt.nz/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={huttCity} />
+            </Link>
+            <Link
+              href={'http://cdc.govt.nz/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={carterton} />
+            </Link>
+            <Link
+              href={'https://poriruacity.govt.nz/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={porirua} />
+            </Link>
+            <Link
+              href={'http://www.gw.govt.nz/'}
+              target='_blank'
+              mr={50}
+              mb={50}
+              ml={[50, 0]}
+            >
+              <Image src={greaterWellington} />
+            </Link>
+          </Flex>
           <Text fontFamily={'black'} color={'white'} fontSize={14}>
             BROUGHT TO YOU BY:
           </Text>
           <Flex flexDirection={'row'} alignItems={'center'}>
-            <Link href={'https://bamboocreative.nz/'}>
-              <Image src={bambooLogoWhite} pr={30} />
+            <Link href={'https://bamboocreative.nz/'} target='_blank'>
+              <Image src={bambooLogoWhite} mr={50} />
             </Link>
-            <Link href={'https://enspiral.com/'}>
-              <Image src={enspiral} pr={30} />
+            <Link href={'https://enspiral.com/'} target='_blank'>
+              <Image src={enspiral} mr={50} />
             </Link>
           </Flex>
         </Box>
