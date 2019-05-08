@@ -118,6 +118,12 @@ const ShareModal = ({
                 cursor: 'pointer',
                 ':hover': { opacity: 0.7 }
               }}
+              onClick={() => {
+                const encoded = encodeURIComponent(
+                  `${window.location.origin}/share?${leverUrlObject}`
+                )
+                window.open(`https://twitter.com/share?url=${encoded}`)
+              }}
             >
               <Image
                 src={twitterLogo}
@@ -140,6 +146,10 @@ const ShareModal = ({
                 borderRadius: '3px',
                 cursor: 'pointer',
                 ':hover': { opacity: 0.7 }
+              }}
+              onClick={() => {
+                // TODO: need a facebook app ID, but currently bailing on me creating one :(
+                // window.location = `https://www.facebook.com/dialog/share?app_id=145634995501895&display=popup&href=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2F`
               }}
             >
               <Image
@@ -164,6 +174,12 @@ const ShareModal = ({
                 cursor: 'pointer',
                 ':hover': { opacity: 0.7 }
               }}
+              onClick={() => {
+                const encoded = encodeURIComponent(
+                  `${window.location.origin}/share?${leverUrlObject}`
+                )
+                window.location = `mailto:?body=${encoded}`
+              }}
             >
               <Image
                 src={emailLogo}
@@ -186,6 +202,14 @@ const ShareModal = ({
                 borderRadius: '3px',
                 cursor: 'pointer',
                 ':hover': { opacity: 0.7 }
+              }}
+              onClick={() => {
+                const encoded = encodeURIComponent(
+                  `${window.location.origin}/share?${leverUrlObject}`
+                )
+                window.open(
+                  `https://www.linkedin.com/shareArticle?mini=true&url=${encoded}`
+                )
               }}
             >
               <Image
