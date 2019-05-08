@@ -4,6 +4,7 @@ import { connect } from 'redux-bundler-react'
 import { Flex, Button, Box, Heading, Image, Text, Link } from 'rebass'
 
 import TextRegular from './TextRegular'
+import FlexWithExtras from './FlexWithExtras'
 
 import twitterLogo from '../assets/images/twitter.png'
 import facebookLogo from '../assets/images/facebook.png'
@@ -120,12 +121,13 @@ const ShareModal = ({
             <Link
               href={`https://twitter.com/share?url=${encodedUrl}`}
               target='_blank'
-              css={{ textDecoration: 'none' }}
+              flex={1}
+              css={{ textDecoration: 'none', minWidth: '200px' }}
             >
-              <Flex
+              <FlexWithExtras
                 alignItems={'center'}
-                width={200}
-                p={10}
+                height={45}
+                px={10}
                 mr={10}
                 mb={10}
                 bg={'#38A1F3'}
@@ -135,26 +137,22 @@ const ShareModal = ({
                   ':hover': { opacity: 0.7 }
                 }}
               >
-                <Image
-                  src={twitterLogo}
-                  width={[60, 30]}
-                  height={[60, 30]}
-                  mr={15}
-                />
+                <Image src={twitterLogo} width={26} height={26} mr={15} />
                 <TextRegular fontSize={14} color={'white'}>
                   Share on Twitter
                 </TextRegular>
-              </Flex>
+              </FlexWithExtras>
             </Link>
             <Link
               href={`https://facebook.com/`}
               target='_blank'
-              css={{ textDecoration: 'none' }}
+              flex={1}
+              css={{ textDecoration: 'none', minWidth: '200px' }}
             >
-              <Flex
+              <FlexWithExtras
                 alignItems={'center'}
-                width={200}
-                p={10}
+                height={45}
+                px={10}
                 mr={10}
                 mb={10}
                 bg={'#4267B2'}
@@ -164,26 +162,22 @@ const ShareModal = ({
                   ':hover': { opacity: 0.7 }
                 }}
               >
-                <Image
-                  src={facebookLogo}
-                  width={[52, 26]}
-                  height={[60, 30]}
-                  mr={15}
-                />
+                <Image src={facebookLogo} width={26} height={30} mr={15} />
                 <TextRegular fontSize={14} color={'white'}>
                   Share on Facebook
                 </TextRegular>
-              </Flex>
+              </FlexWithExtras>
             </Link>
             <Link
               href={`mailto:?body=${encodedUrl}`}
               target='_blank'
-              css={{ textDecoration: 'none' }}
+              flex={1}
+              css={{ textDecoration: 'none', minWidth: '200px' }}
             >
-              <Flex
+              <FlexWithExtras
                 alignItems={'center'}
-                width={200}
-                p={10}
+                height={45}
+                px={10}
                 mr={10}
                 mb={10}
                 bg={'#333333'}
@@ -193,26 +187,22 @@ const ShareModal = ({
                   ':hover': { opacity: 0.7 }
                 }}
               >
-                <Image
-                  src={emailLogo}
-                  width={[64, 32]}
-                  height={[64, 32]}
-                  mr={15}
-                />
+                <Image src={emailLogo} width={26} height={26} mr={15} />
                 <TextRegular fontSize={14} color={'white'}>
                   Share via email
                 </TextRegular>
-              </Flex>
+              </FlexWithExtras>
             </Link>
             <Link
               href={`https://www.linkedin.com/shareArticle?mini=true&url=${encodedUrl}`}
               target='_blank'
-              css={{ textDecoration: 'none' }}
+              flex={1}
+              css={{ textDecoration: 'none', minWidth: '200px' }}
             >
-              <Flex
+              <FlexWithExtras
                 alignItems={'center'}
-                width={200}
-                p={10}
+                height={45}
+                px={10}
                 mr={10}
                 mb={10}
                 bg={'#4B5E6F'}
@@ -222,16 +212,11 @@ const ShareModal = ({
                   ':hover': { opacity: 0.7 }
                 }}
               >
-                <Image
-                  src={linkedinLogo}
-                  width={[52, 26]}
-                  height={[60, 30]}
-                  mr={15}
-                />
+                <Image src={linkedinLogo} width={26} height={30} mr={15} />
                 <TextRegular fontSize={14} color={'white'}>
                   Share on Linkedin
                 </TextRegular>
-              </Flex>
+              </FlexWithExtras>
             </Link>
           </Flex>
         </Flex>
