@@ -16,7 +16,7 @@ const Data = props => {
 
         <Box mt={60}>
           <Heading fontSize={30} mb={20}>
-            About the Calculator
+            How were the Wellington region’s current emissions estimated?
           </Heading>
 
           <TextRegular
@@ -24,15 +24,15 @@ const Data = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`The model is based on the Open Source tool originally created for the United Kingdom by the Department of Energy & Climate Change in 2008. The open source code and assumptions for the UK model are available here.
+            {`The Calculator is calibrated to regional greenhouse gas inventories produced for the 2012/13 and 2014/15 financial years. These inventories estimated the region’s greenhouse gas emissions in line with international emissions reporting guidelines. Emissions were calculated from a range of measured activity data (such as electricity consumption, fuel sales and livestock numbers) and estimates. The Calculator draws on these same data alongside a wide range of complementary data sources. Results align with the inventory estimates except where there are differences in accounting methods (such as forestry accounting rules) or updates to underlying data sources.
 
-            The Wellington Region 2050 Emissions Calculator also draws upon data, modelling and input from government and research entities at various levels of scope ranging from local to regional to national. To read more about the assumptions made by this calculator click here.`}
+            For energy and road transport emissions, the inventories only provide data at an aggregated level (i.e. total consumption of electricity, natural gas, petrol and diesel). Where necessary, we have used other data sources and assumptions to disaggregate the inventory data into segments (such as household energy use and light vehicle transport). These disaggregated estimates are less reliable and should be treated as indicative.`}
           </TextRegular>
         </Box>
 
         <Box mt={60}>
           <Heading fontSize={30} mb={20}>
-            About the Model
+            How were emissions estimated for the territorial authorities?
           </Heading>
 
           <TextRegular
@@ -40,244 +40,17 @@ const Data = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`We need to rapidly reduce our emissions of greenhouse gases to prevent the worst effects of climate change. The Paris Agreement which NZ is a party to says the whole world must have net-zero emissions by the second half of this century, if not sooner.  This calculator lets you adjust the economy of the Wellington Region and the technologies that support it to see what effect this has on our emissions out to 2050.`}
+            {`Emissions at the territorial authority (TA) level are more uncertain than at the regional level and should be treated as indicative only.
+
+            In some sectors (such as agriculture, forestry and waste), robust data are available for individual TAs. In other sectors (such as energy and transport) sub-regional data are not available or are subject to problems such as boundary issues. For these sectors, TA level emissions estimates are therefore more reliant on assumptions. For example, household and commercial energy demand are assumed proportional to the TA’s share of regional population and employment respectively.
+
+            Future changes were largely assumed to be uniform across the TAs – such as travel patterns, electric vehicle uptake and household energy use. Exceptions to this include land use change, where regional changes were allocated according to current land use patterns, and landfill gas capture, where each landfill was considered separately.`}
           </TextRegular>
         </Box>
 
-        <Image src={map} my={40} />
-
-        <Box>
-          <Heading fontSize={20} mb={20}>
-            Levers
-          </Heading>
-
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`The ‘levers’ are the aspects of our economy in the Calculator that users can adjust. Each lever (actually a slider) has up to four positions. The further the slider is set to the right, the larger the change is compared to the present  ‘business as usual’ trajectory we are on, and the larger the resulting emissions reduction is. The effect of certain levers is related to where other levers are set. For example, if all transport is electricified, the emissions reduction from increasing renewable energy supply is larger, but the reduction in emissions from switching more car journeys to walking and public transport is reduced.`}
-          </TextRegular>
-        </Box>
-
-        <Box mt={30}>
-          <Heading fontSize={18} mb={18}>
-            Supply
-          </Heading>
-          <Flex flexDirection={'row'} flexWrap={'wrap'}>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Agriculture & Forestry
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Landuse change
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Forest type
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Livestock stocking rates
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Livestock emissions intensity - practice change
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Livestock emissions intensity - new tech
-              </TextRegular>
-            </Flex>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Waste & BioFuels
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Waste volumes
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Landfill gas capture and Energy from Waste (EFW)
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Biofuel supply
-              </TextRegular>
-            </Flex>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Electricity Supply
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Biogas power generation
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Solar panels for electricity
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Solar panels for hot water
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                National grid electricity
-              </TextRegular>
-            </Flex>
-          </Flex>
-        </Box>
-
-        <Box mt={30}>
-          <Heading fontSize={18} mb={18}>
-            Demand
-          </Heading>
-          <Flex flexDirection={'row'} flexWrap={'wrap'}>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Transport (Light Vehicles)
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Travel demand
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Mode share
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Vehicle occupancy
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Electrification of light vehicles
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Electrification of public transport
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Vehicle fuel efficiencies
-              </TextRegular>
-            </Flex>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Transport (Heavy Vehicles)
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Freight volumes
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Electrification of trucks
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Freight mode and efficiency
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Demand
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Efficiency
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                National marine transport
-              </TextRegular>
-            </Flex>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Industry
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Refrigerant gases
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Energy efficiency and fuel switching
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Refrigerant gases
-              </TextRegular>
-            </Flex>
-            <Flex
-              flexDirection={'column'}
-              bg={'lightBackground'}
-              p={15}
-              mr={15}
-              mb={15}
-              width={290}
-            >
-              <Heading fontSize={16} mb={'10px'}>
-                Buildings
-              </Heading>
-              <TextRegular color={'black'} mb={'6px'}>
-                Home space & water heating demand
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Home heating technology
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Home lighting & appliances
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Electrification of home cooking
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Commercial space & water heating demand
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Commercial heating technology
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Commercial lighting & appliances
-              </TextRegular>
-              <TextRegular color={'black'} mb={'6px'}>
-                Electrification of commercial cooking
-              </TextRegular>
-            </Flex>
-          </Flex>
-        </Box>
-
-        <Box mt={40}>
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`Each setting of each lever has an explanation of what change it is making within the emissions calculation which appears when you select it. Levers can be moved as a group to rapidly make adjustments, but you can also adjust them individually by clicking the small arrow beside the group’s name to show the full suite of options.`}
-          </TextRegular>
-        </Box>
-
-        <Box my={60}>
+        <Box mt={60}>
           <Heading fontSize={30} mb={20}>
-            Related links & tools
+            How were the lever assumptions determined?
           </Heading>
 
           <TextRegular
@@ -285,7 +58,152 @@ const Data = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`This project was partly based on the Open Souce project initiated by the Department of Energy & Climate Change in the UK.`}
+            {`The Calculator is designed for exploring a range of plausible future pathways depending on choices and developments that happen over the next 30 years. Most levers can be varied between Level 1, representing the potential change in that variable with no effort to reduce emissions, and Level 4, representing the potential change with maximum effort to reduce emissions. Some levers can be varied between Options A to C or D, representing different choices that are not necessarily related to efforts to reduce emissions.
+
+            Where possible, the lever assumptions have been set based on published reports and projections from credible New Zealand sources such as government agencies and research institutes. However, in many cases such data were either unavailable or outdated. In these cases, assumptions were set by informed judgement based on analysis of historical trends and underlying drivers. A list of data and information sources used is provided below. The evidence base on emissions reduction options for New Zealand is evolving rapidly, and several new pieces of analysis have been published since this version of the Calculator model was completed (for example, reports from the Government’s Biological Emissions Reference Group).`}
+          </TextRegular>
+        </Box>
+
+        <Box mt={30}>
+          <Heading fontSize={18} mb={18}>
+            List of data and information sources
+          </Heading>
+
+          <Heading
+            color={'black'}
+            fontSize={18}
+            mb={'8px'}
+            mt={'14px'}
+            css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
+          >
+            {`Cross-cutting`}
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`URS New Zealand (2014), Greenhouse Gas Inventory for the Wellington Region
+            AECOM (2016), Community Greenhouse Gas Inventory for Wellington City and the Greater Wellington Region 2000-2015
+            StatsNZ, Subnational population and household projections`}
+          </TextRegular>
+          <Heading
+            color={'black'}
+            fontSize={18}
+            mb={'8px'}
+            mt={'14px'}
+            css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
+          >
+            {`Transport`}
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`MoT, Transport indicators (various)
+            MoT, Future Demand
+            MoT, New Zealand Household Travel Survey
+            NZTA, Public Transport Performance Data
+            MoT, New Zealand Vehicle Fleet Statistics
+            MoT, regional VKT
+            NZTA, regional VKT
+            Kiwirail, data on passenger and freight movements and energy consumption
+            GWRC, Wellington Transport Strategy Model
+            MoT, Transport Outlook
+            Productivity Commission Low Emissions Economy report (EV scenarios)
+            MoT, National Freight Demand Survey
+            MBIE, Energy in New Zealand (to calculate road freight fuel efficiency)
+            Sobiecki & Chapman
+            UK 2050 Calculator (potential vehicle efficiency improvements)
+            Wellington International Airport annual reports`}
+          </TextRegular>
+          <Heading
+            color={'black'}
+            fontSize={18}
+            mb={'8px'}
+            mt={'14px'}
+            css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
+          >
+            {`Household and commercial energy`}
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`EECA, Energy End Use Database`}
+          </TextRegular>
+          <Heading
+            color={'black'}
+            fontSize={18}
+            mb={'8px'}
+            mt={'14px'}
+            css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
+          >
+            {`Industry`}
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`Infometrics, Wellington Region Economic Profile
+            MBIE, Modelled Territorial Authority GDP`}
+          </TextRegular>
+          <Heading
+            color={'black'}
+            fontSize={18}
+            mb={'8px'}
+            mt={'14px'}
+            css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
+          >
+            {`Electricity supply`}
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`MBIE, Electricity Demand and Generation Scenarios
+            Electricity Authority, distributed generation data (solar PV)`}
+          </TextRegular>
+          <Heading
+            color={'black'}
+            fontSize={18}
+            mb={'8px'}
+            mt={'14px'}
+            css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
+          >
+            {`Agriculture`}
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`StatsNZ agricultural census
+            New Zealand Dairy Statistics
+            Vivid Economics`}
+          </TextRegular>
+          <Heading
+            color={'black'}
+            fontSize={18}
+            mb={'8px'}
+            mt={'14px'}
+            css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
+          >
+            {`Forestry`}
+          </Heading>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
+            css={{ whiteSpace: 'pre-line' }}
+          >
+            {`GWRC land use data
+            MPI, National Exotic Forest Description reports
+            Land Cover Database 4.1
+            Scion Bionergy Options Transition Analysis`}
           </TextRegular>
         </Box>
       </Flex>
