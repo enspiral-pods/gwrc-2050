@@ -26,16 +26,17 @@ const Levers = ({
   const debouncedMarkAsOutdated = debounce(doMarkPathwaysAsOutdated, 500)
   return (
     <FlexWithExtras
-      flex={0.4}
+      flex={['initial', 0.4]}
       display={display}
       p={20}
+      width={['100%', 'auto']}
+      maxWidth={['auto', '400px']}
+      minWidth={['auto', '200px']}
       width={['100%', 'auto']}
       borderLeft={'1px solid rgb(255,255,255,0.1)'}
       css={{
         overflowY: 'scroll',
-        overflowX: 'auto',
-        maxWidth: '400px',
-        minWidth: '200px'
+        overflowX: 'auto'
       }}
     >
       {isLeverGroupOpen ? (
