@@ -66,7 +66,7 @@ const Landing = props => {
               </TextRegular>
             </Button>
           </Link>
-          <Link href={'/data'}>
+          <Link href={'/about'}>
             <Button
               variant={'landingGray'}
               mr={15}
