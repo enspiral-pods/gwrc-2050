@@ -2,6 +2,7 @@ import { createRouteBundle } from 'redux-bundler'
 
 import Landing from './pages/Landing'
 import Data from './pages/Data'
+import About from './pages/About'
 import Emissions from './pages/Emissions'
 import EnergyDemand from './pages/EnergyDemand'
 import EnergySupply from './pages/EnergySupply'
@@ -13,6 +14,7 @@ let routes = {
   '/': Landing,
   '/share': Emissions,
   '/data': Data,
+  '/about': About,
   '/calculator': Emissions,
   '/calculator/emissions': Emissions,
   '/calculator/energy-demand': EnergyDemand,

@@ -194,10 +194,10 @@ export default {
     value: 1,
     group: groups.electricitySupply,
     leverDescriptions: [
-      'Electricity mix remains similar to today; emissions factor increases to 0.17 kgCO2e/kWh',
-      'Electricity mix 85% renewable by 2025 and then steady; 2050 emissions factor of 0.085 kgCO2e/kWh',
-      'Electricity mix 90% renewable by 2025 and then steady; 2050 emissions factor of 0.053 kgCO2e/kWh',
-      'Electricity mix 100% renewable by 2030; emissions factor of 0.023 kgCO2e/kWh in 2050.'
+      'Electricity mix remains similar to today; emissions factor increases to 0.17 kgCO\u{2082}-e/kWh',
+      'Electricity mix 85% renewable by 2025 and then steady; 2050 emissions factor of 0.085 kgCO\u{2082}-e/kWh',
+      'Electricity mix 90% renewable by 2025 and then steady; 2050 emissions factor of 0.053 kgCO\u{2082}-e/kWh',
+      'Electricity mix 100% renewable by 2030; emissions factor of 0.023 kgCO\u{2082}-e/kWh in 2050.'
     ],
     content: (
       <React.Fragment>
