@@ -25,7 +25,10 @@ const Layout = ({
 }) => {
   const Page = route
   // TODO: move this logic to a property of a route itself?
-  const isCalculatorPage = routeInfo.url !== '/' && routeInfo.url !== '/data'
+  const isCalculatorPage =
+    routeInfo.url !== '/' &&
+    routeInfo.url !== '/data' &&
+    routeInfo.url !== '/about'
 
   return (
     <FlexWithExtras

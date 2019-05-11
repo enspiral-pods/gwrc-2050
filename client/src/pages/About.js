@@ -26,7 +26,8 @@ const About = props => {
           >
             {`The model is based on the Open Source tool originally created for the United Kingdom by the Department of Energy & Climate Change in 2008. The open source code and assumptions for the UK model are available here.
 
-            The Wellington Region 2050 Emissions Calculator also draws upon data, modelling and input from government and research entities at various levels of scope ranging from local to regional to national. To read more about the assumptions made by this calculator click here.`}
+            The Wellington Region 2050 Emissions Calculator also draws upon data, modelling and input from government and research entities at various levels of scope ranging from local to regional to national. To read more about the assumptions made by this calculator click `}
+            <Link href='/data'>{`here.`}</Link>
           </TextRegular>
         </Box>
 
