@@ -17,6 +17,16 @@ class TwentyFiftyServer < Sinatra::Base
     send_file 'model/model.xlsx'
   end
 
+  get '/calculator-bot-check/:leverString' do |leverString|
+    botAgentStrings = ['facebookexternalhit', 'Twitterbot', 'LinkedInBot']
+    puts 'user agent'
+    if botAgentStrings.any?{|bot| request.user_agent.include?(bot)}
+      "<!DOCTYPE html><html><head></head><body><h1>Hello World!</h1></body></html>"
+    else
+      redirect "https://gwrc.2050calculator.nz/share/#{leverString}?bot=false"
+    end
+  end
+
   if development?
     # This is the main method for getting data
     get '/pathways/:region/:id/data' do |region, id|

@@ -41,6 +41,11 @@ bundle.reducer = (state = initialState, action) => {
       levers
     })
   }
+  if (action.type === 'LEVERS_UPDATE_FROM_URL') {
+    return Object.assign({}, state, {
+      levers: action.payload
+    })
+  }
   if (action.type === 'GRAPH_UPDATE_ACTIVE_AREA') {
     return Object.assign({}, state, {
       activeGraphArea: action.payload.keyName
@@ -140,53 +145,53 @@ bundle.selectLeverUrlObject = state => {
 }
 
 bundle.selectLeverString = state => oneLineTrim`
-  ${state.pathways.levers.biogasPowerGeneration.value}
-  ${state.pathways.levers.solarPanelsForElectricity.value}
-  ${state.pathways.levers.solarPanelsForHotWater.value}
-  ${state.pathways.levers.nationalGridElectricity.value}
+  ${state.pathways.levers[leversOrder[0]].value}
+  ${state.pathways.levers[leversOrder[1]].value}
+  ${state.pathways.levers[leversOrder[2]].value}
+  ${state.pathways.levers[leversOrder[3]].value}
   0
-  ${state.pathways.levers.landUseChange.value}
-  ${state.pathways.levers.forestType.value}
-  ${state.pathways.levers.livestockStockingRates.value}
-  ${state.pathways.levers.livestockEmissionsIntensityPracticeChange.value}
-  ${state.pathways.levers.livestockEmissionsIntensityNewTech.value}
+  ${state.pathways.levers[leversOrder[4]].value}
+  ${state.pathways.levers[leversOrder[5]].value}
+  ${state.pathways.levers[leversOrder[6]].value}
+  ${state.pathways.levers[leversOrder[7]].value}
+  ${state.pathways.levers[leversOrder[8]].value}
   0
-  ${state.pathways.levers.wasteVolumes.value}
-  ${state.pathways.levers.landfillGasCaptureAndEnergyFromWaste.value}
+  ${state.pathways.levers[leversOrder[9]].value}
+  ${state.pathways.levers[leversOrder[10]].value}
   0
-  ${state.pathways.levers.biofuelSupply.value}
+  ${state.pathways.levers[leversOrder[11]].value}
   0
   0
-  ${state.pathways.levers.travelDemand.value}
-  ${state.pathways.levers.modeShare.value}
-  ${state.pathways.levers.vehicleOccupancy.value}
-  ${state.pathways.levers.electrificationOfLightVehicles.value}
-  ${state.pathways.levers.electrificationOfPublicTransport.value}
-  ${state.pathways.levers.vehicleFuelEfficiencies.value}
+  ${state.pathways.levers[leversOrder[12]].value}
+  ${state.pathways.levers[leversOrder[13]].value}
+  ${state.pathways.levers[leversOrder[14]].value}
+  ${state.pathways.levers[leversOrder[15]].value}
+  ${state.pathways.levers[leversOrder[16]].value}
+  ${state.pathways.levers[leversOrder[17]].value}
   0
-  ${state.pathways.levers.freightVolume.value}
-  ${state.pathways.levers.electrificationOfTrucks.value}
-  ${state.pathways.levers.freightModeAndEfficiency.value}
+  ${state.pathways.levers[leversOrder[18]].value}
+  ${state.pathways.levers[leversOrder[19]].value}
+  ${state.pathways.levers[leversOrder[20]].value}
   0
-  ${state.pathways.levers.demand.value}
-  ${state.pathways.levers.efficiency.value}
-  ${state.pathways.levers.nationalMarineTransport.value}
+  ${state.pathways.levers[leversOrder[21]].value}
+  ${state.pathways.levers[leversOrder[22]].value}
+  ${state.pathways.levers[leversOrder[23]].value}
   0
-  ${state.pathways.levers.homeSpaceAndWaterHeatingDemand.value}
-  ${state.pathways.levers.homeHeatingTechnology.value}
+  ${state.pathways.levers[leversOrder[24]].value}
+  ${state.pathways.levers[leversOrder[25]].value}
   0
-  ${state.pathways.levers.homeLightingAndAppliances.value}
-  ${state.pathways.levers.electrificationOfHomeCooking.value}
+  ${state.pathways.levers[leversOrder[26]].value}
+  ${state.pathways.levers[leversOrder[27]].value}
   0
-  ${state.pathways.levers.growthInManufacturing.value}
-  ${state.pathways.levers.energyEfficiencyAndFuelSwitching.value}
+  ${state.pathways.levers[leversOrder[28]].value}
+  ${state.pathways.levers[leversOrder[29]].value}
   0
-  ${state.pathways.levers.commercialSpaceAndWaterHeatingDemand.value}
-  ${state.pathways.levers.commercialHeatingTechnology.value}
+  ${state.pathways.levers[leversOrder[30]].value}
+  ${state.pathways.levers[leversOrder[31]].value}
   0
-  ${state.pathways.levers.commercialLightingAndAppliances.value}
-  ${state.pathways.levers.electrificationOfCommercialCooking.value}
-  ${state.pathways.levers.refrigerantGases.value}
+  ${state.pathways.levers[leversOrder[32]].value}
+  ${state.pathways.levers[leversOrder[33]].value}
+  ${state.pathways.levers[leversOrder[34]].value}
 `
 
 bundle.selectActiveGraphArea = state => state.pathways.activeGraphArea
@@ -195,14 +200,19 @@ bundle.doUpdateLever = (lever, value) => ({ dispatch }) => {
   dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })
 }
 
-bundle.doUpdateLeversFromUrl = leversObject => ({ dispatch, store }) => {
+bundle.doUpdateLeversFromUrl = leverString => ({ dispatch, store }) => {
   let newlevers = {}
-  Object.keys(leversObject).map(lever => {
-    newlevers[lever] = store.selectLevers()[lever]
-    newlevers[lever].value = leversObject[lever]
+
+  leverString.split('').forEach((leverVal, i) => {
+    // val of 0 does not correspond to a lever in the model
+    if (leverVal !== '0') {
+      const leverName = leversOrder[i]
+      newlevers[leverName] = store.selectLevers()[leverName]
+      newlevers[leverName].value = leverVal
+    }
   })
 
-  dispatch({ type: 'LEVERS_UPDATE_FROM_URL', payload: { levers: newlevers } })
+  dispatch({ type: 'LEVERS_UPDATE_FROM_URL', payload: newlevers })
   store.doReplaceUrl('/calculator')
 }
 
@@ -217,10 +227,14 @@ bundle.doUpdateActiveGraphArea = keyName => ({ dispatch, store }) => {
 
 bundle.reactRenderShareState = createSelector(
   'selectUrlObject',
-  'selectQueryObject',
-  (urlLocation, queryObject) => {
-    if (urlLocation.pathname === '/share') {
-      return { actionCreator: 'doUpdateLeversFromUrl', args: [queryObject] }
+  urlLocation => {
+    if (urlLocation.pathname.includes('/share')) {
+      // use the lever string part of the pathname with all 0's removed
+      const leverString = urlLocation.pathname
+        .split('/')
+        .slice(-1)[0]
+        .replace(/0/g, '')
+      return { actionCreator: 'doUpdateLeversFromUrl', args: [leverString] }
     }
     return false
   }
@@ -236,3 +250,41 @@ bundle.reactInitialPathwaysFetch = createSelector(
 )
 
 export default bundle
+
+const leversOrder = [
+  'biogasPowerGeneration',
+  'solarPanelsForElectricity',
+  'solarPanelsForHotWater',
+  'nationalGridElectricity',
+  'landUseChange',
+  'forestType',
+  'livestockStockingRates',
+  'livestockEmissionsIntensityPracticeChange',
+  'livestockEmissionsIntensityNewTech',
+  'wasteVolumes',
+  'landfillGasCaptureAndEnergyFromWaste',
+  'biofuelSupply',
+  'travelDemand',
+  'modeShare',
+  'vehicleOccupancy',
+  'electrificationOfLightVehicles',
+  'electrificationOfPublicTransport',
+  'vehicleFuelEfficiencies',
+  'freightVolume',
+  'electrificationOfTrucks',
+  'freightModeAndEfficiency',
+  'demand',
+  'efficiency',
+  'nationalMarineTransport',
+  'homeSpaceAndWaterHeatingDemand',
+  'homeHeatingTechnology',
+  'homeLightingAndAppliances',
+  'electrificationOfHomeCooking',
+  'growthInManufacturing',
+  'energyEfficiencyAndFuelSwitching',
+  'commercialSpaceAndWaterHeatingDemand',
+  'commercialHeatingTechnology',
+  'commercialLightingAndAppliances',
+  'electrificationOfCommercialCooking',
+  'refrigerantGases'
+]
