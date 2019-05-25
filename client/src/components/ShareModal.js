@@ -17,13 +17,16 @@ const ShareModal = ({
   doCopyShareLink,
   isShareModalLinkCopying,
   didShareModalLinkCopySuccessfully,
-  leverString
+  leverString,
+  selectedTerritorialAuthority
 }) => {
   const copyText = isShareModalLinkCopying
     ? 'Copying...'
     : didShareModalLinkCopySuccessfully ? 'Copied!' : 'Copy Link'
   const encodedUrl = encodeURIComponent(
-    `${window.location.origin}/share/${leverString}`
+    `${
+      window.location.origin
+    }/share/${selectedTerritorialAuthority}/${leverString}`
   )
   return (
     <ReactModal
@@ -89,7 +92,9 @@ const ShareModal = ({
             }}
           >
             <TextRegular id={'shared-link'} fontSize={14} color={'black'}>
-              {`${window.location.origin}/share/${leverString}`}
+              {`${
+                window.location.origin
+              }/share/${selectedTerritorialAuthority}/${leverString}`}
             </TextRegular>
           </Box>
           <Button
@@ -232,5 +237,6 @@ export default connect(
   'selectIsShareModalLinkCopying',
   'selectDidShareModalLinkCopySuccessfully',
   'selectLeverString',
+  'selectSelectedTerritorialAuthority',
   ShareModal
 )

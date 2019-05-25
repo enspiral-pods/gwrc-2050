@@ -43,7 +43,7 @@ bundle.reducer = (state = initialState, action) => {
   }
   if (action.type === 'LEVERS_UPDATE_FROM_URL') {
     return Object.assign({}, state, {
-      levers: action.payload
+      levers: action.payload.levers
     })
   }
   if (action.type === 'GRAPH_UPDATE_ACTIVE_AREA') {
@@ -200,7 +200,10 @@ bundle.doUpdateLever = (lever, value) => ({ dispatch }) => {
   dispatch({ type: 'LEVER_UPDATE', payload: { lever, value } })
 }
 
-bundle.doUpdateLeversFromUrl = leverString => ({ dispatch, store }) => {
+bundle.doUpdateLeversFromUrl = (region, leverString) => ({
+  dispatch,
+  store
+}) => {
   let newlevers = {}
 
   leverString.split('').forEach((leverVal, i) => {
@@ -212,7 +215,10 @@ bundle.doUpdateLeversFromUrl = leverString => ({ dispatch, store }) => {
     }
   })
 
-  dispatch({ type: 'LEVERS_UPDATE_FROM_URL', payload: newlevers })
+  dispatch({
+    type: 'LEVERS_UPDATE_FROM_URL',
+    payload: { levers: newlevers, region }
+  })
   store.doReplaceUrl('/calculator')
 }
 
@@ -230,11 +236,13 @@ bundle.reactRenderShareState = createSelector(
   urlLocation => {
     if (urlLocation.pathname.includes('/share')) {
       // use the lever string part of the pathname with all 0's removed
-      const leverString = urlLocation.pathname
-        .split('/')
-        .slice(-1)[0]
-        .replace(/0/g, '')
-      return { actionCreator: 'doUpdateLeversFromUrl', args: [leverString] }
+      const pathPieces = urlLocation.pathname.split('/').filter(p => p !== '/')
+      const region = pathPieces[1]
+      const leverString = pathPieces[2].replace(/0/g, '')
+      return {
+        actionCreator: 'doUpdateLeversFromUrl',
+        args: [region, leverString]
+      }
     }
     return false
   }
