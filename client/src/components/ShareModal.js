@@ -149,7 +149,7 @@ const ShareModal = ({
               </FlexWithExtras>
             </Link>
             <Link
-              href={`https://facebook.com/`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
               target='_blank'
               flex={1}
               css={{ textDecoration: 'none', minWidth: '200px' }}
