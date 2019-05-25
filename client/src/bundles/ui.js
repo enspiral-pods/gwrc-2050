@@ -27,6 +27,12 @@ const reducer = (state = initialState, action) => {
     })
   }
 
+  if (action.type === 'LEVERS_UPDATE_FROM_URL') {
+    return Object.assign({}, state, {
+      selectedTerritorialAuthority: action.payload.region
+    })
+  }
+
   if (action.type === 'TOGGLE_MOBILE_GRAPHS_MENU') {
     return Object.assign({}, state, {
       isMobileGraphsMenuOpen: !state.isMobileGraphsMenuOpen

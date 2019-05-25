@@ -17,6 +17,21 @@ class TwentyFiftyServer < Sinatra::Base
     send_file 'model/model.xlsx'
   end
 
+  get '/calculator-bot-check/:region/:id' do |region, id|
+    botAgentStrings = ['facebookexternalhit', 'Twitterbot', 'LinkedInBot']
+    if botAgentStrings.any?{|bot| request.user_agent.include?(bot)}
+      puts "bot request, user agent #{request.user_agent}"
+      # need to use the id and do
+      result = DataFromModel.new.calculate_pathway(region, id)
+      # then use that return emissions change value as part of the basis of the link to our og image service
+      percentage = result['output_emissions_percentage_reduction']
+      "<!DOCTYPE html><html><head><meta property=\"og:title\" content=\"2050 Climate Calculator\"><meta property=\"og:image\" content=\"https://og-image.2050calculator.nz/#{(percentage.abs * 100).floor}?increase=#{percentage < 0}
+\"><meta property=\"og:image:width\" content=\"2048\"><meta property=\"og:image:height\" content=\"1170\"><meta name=\"twitter:card\" content=\"summary_large_image\"></meta></head><body></body></html>"
+    else
+      redirect "https://2050calculator.nz/share/#{region}/#{id}?bot=false"
+    end
+  end
+
   if development?
     # This is the main method for getting data
     get '/pathways/:region/:id/data' do |region, id|

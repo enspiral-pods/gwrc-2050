@@ -12,7 +12,7 @@ import Flows from './pages/Flows'
 
 let routes = {
   '/': Landing,
-  '/share': Emissions,
+  '/share/:region/:leverString': Emissions,
   '/data': Data,
   '/about': About,
   '/calculator': Emissions,

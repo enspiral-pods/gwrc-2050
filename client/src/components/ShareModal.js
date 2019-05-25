@@ -17,13 +17,16 @@ const ShareModal = ({
   doCopyShareLink,
   isShareModalLinkCopying,
   didShareModalLinkCopySuccessfully,
-  leverUrlObject
+  leverString,
+  selectedTerritorialAuthority
 }) => {
   const copyText = isShareModalLinkCopying
     ? 'Copying...'
     : didShareModalLinkCopySuccessfully ? 'Copied!' : 'Copy Link'
   const encodedUrl = encodeURIComponent(
-    `${window.location.origin}/share?${leverUrlObject}`
+    `${
+      window.location.origin
+    }/share/${selectedTerritorialAuthority}/${leverString}`
   )
   return (
     <ReactModal
@@ -89,7 +92,9 @@ const ShareModal = ({
             }}
           >
             <TextRegular id={'shared-link'} fontSize={14} color={'black'}>
-              {`${window.location.origin}/share?${leverUrlObject}`}
+              {`${
+                window.location.origin
+              }/share/${selectedTerritorialAuthority}/${leverString}`}
             </TextRegular>
           </Box>
           <Button
@@ -144,7 +149,7 @@ const ShareModal = ({
               </FlexWithExtras>
             </Link>
             <Link
-              href={`https://facebook.com/`}
+              href={`https://www.facebook.com/sharer/sharer.php?u=${encodedUrl}`}
               target='_blank'
               flex={1}
               css={{ textDecoration: 'none', minWidth: '200px' }}
@@ -231,6 +236,7 @@ export default connect(
   'doCopyShareLink',
   'selectIsShareModalLinkCopying',
   'selectDidShareModalLinkCopySuccessfully',
-  'selectLeverUrlObject',
+  'selectLeverString',
+  'selectSelectedTerritorialAuthority',
   ShareModal
 )
