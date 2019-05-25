@@ -17,17 +17,18 @@ class TwentyFiftyServer < Sinatra::Base
     send_file 'model/model.xlsx'
   end
 
-  get '/calculator-bot-check/:region/:leverString' do |leverString|
+  get '/calculator-bot-check/:region/:leverString' do |region, leverString|
     botAgentStrings = ['facebookexternalhit', 'Twitterbot', 'LinkedInBot']
     puts 'user agent'
     if botAgentStrings.any?{|bot| request.user_agent.include?(bot)}
       # need to use the leverString and do
-      # DataFromModel.new.calculate_pathway(region, id).to_json
-        # how to do the region??
+      result = DataFromModel.new.calculate_pathway(region, id)
       # then use that return emissions change value as part of the basis of the link to our og image service
-      "<!DOCTYPE html><html><head><meta property="og:title" content="your_link_title"><meta property="og:image" content="your_image_url"></head><body><h1>Hello World!</h1></body></html>"
+      percentage = result['output_emissions_percentage_reduction']
+      "<!DOCTYPE html><html><head><meta property=\"og:title\" content=\"2050 Climate Calculator\"><meta property=\"og:image\" content=\"http://og-image-iainkirkpatrick.root-systems.now.sh/#{percentage.abs * 100}?increase=#{percentage < 0}
+\"></head><body></body></html>"
     else
-      redirect "https://2050calculator.nz/share/#{leverString}?bot=false"
+      redirect "https://2050calculator.nz/share/#{region}/#{leverString}?bot=false"
     end
   end
 

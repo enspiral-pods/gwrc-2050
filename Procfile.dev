@@ -1,3 +1,2 @@
 web: cd client && PORT=3000 yarn start
 api: bundle exec rackup -o 0.0.0.0 -p 3001
-image-service: cd client && node server.js
