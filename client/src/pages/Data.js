@@ -58,7 +58,7 @@ const Data = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            {`The Calculator is designed for exploring a range of plausible future pathways depending on choices and developments that happen over the next 30 years. Most levers can be varied between Level 1, representing the potential change in that variable with no effort to reduce emissions, and Level 4, representing the potential change with maximum effort to reduce emissions. Some levers can be varied between Options A to C or D, representing different choices that are not necessarily related to efforts to reduce emissions.
+            {`The Calculator is designed for exploring a range of plausible future pathways depending on choices and developments that happen over the next 30 years. Most levers can be varied between Level 1, representing the potential change in that variable with no effort to reduce emissions, and Level 4, representing the potential change with maximum effort to reduce emissions. Some levers can be adjusted between Levels 1 to 3 or 4, representing different choices that are not necessarily related to efforts to reduce emissions.
 
             Where possible, the lever assumptions have been set based on published reports and projections from credible New Zealand sources such as government agencies and research institutes. However, in many cases such data were either unavailable or outdated. In these cases, assumptions were set by informed judgement based on analysis of historical trends and underlying drivers. A list of data and information sources used is provided below. The evidence base on emissions reduction options for New Zealand is evolving rapidly, and several new pieces of analysis have been published since this version of the Calculator model was completed (for example, `}
             <Link
@@ -69,7 +69,7 @@ const Data = props => {
           </TextRegular>
         </Box>
 
-        <Box mt={30}>
+        <Box my={30}>
           <Heading fontSize={18} mb={18}>
             List of data and information sources
           </Heading>
@@ -138,6 +138,7 @@ const Data = props => {
             css={{ whiteSpace: 'pre-line' }}
           >
             {`EECA, Energy End Use Database`}
+            <sup>1</sup>
           </TextRegular>
           <Heading
             color={'black'}
@@ -203,6 +204,7 @@ const Data = props => {
           <TextRegular
             color={'black'}
             fontSize={18}
+            mb={'8px'}
             css={{ whiteSpace: 'pre-line' }}
           >
             {`GWRC land use data
@@ -210,6 +212,11 @@ const Data = props => {
             Land Cover Database 4.1
             Scion Bionergy Options Transition Analysis`}
           </TextRegular>
+          <sub>
+            1. The Energy End Use Database previously included regional
+            estimates for the 2012 year. This function has since been removed as
+            the methodology is under review.
+          </sub>
         </Box>
       </Flex>
     </Flex>
