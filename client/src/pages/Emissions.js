@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { connect } from 'redux-bundler-react'
 import pick from 'lodash/pick'
+import omit from 'lodash/omit'
 import values from 'lodash/values'
 import keys from 'lodash/keys'
 
@@ -21,8 +22,12 @@ const Emissions = ({
     'Agriculture',
     'Waste'
   ])
-  const graphAreas = values(usedData)
-  const graphNames = keys(usedData)
+  const usedDataRenamed = omit(
+    { ...usedData, 'Land Use Change & Forestry': usedData['LULUCF'] },
+    'LULUCF'
+  )
+  const graphAreas = values(usedDataRenamed)
+  const graphNames = keys(usedDataRenamed)
 
   const colors = [
     '#FFC700',
