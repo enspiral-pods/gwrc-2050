@@ -16,7 +16,6 @@ export default ({ emissionsDecrease, isMobileUI }) => {
   if (percentageChange > 1) {
     percentageChange = 1
   }
-  console.log('emissions decrease: ', percentageChange)
 
   const tooltipWidth = isMobileUI ? 120 : 150
   const barXPointAsWidthPercentage = isDecrease

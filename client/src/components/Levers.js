@@ -24,7 +24,6 @@ const Levers = ({
   doToggleLeverGroup
 }) => {
   const debouncedMarkAsOutdated = debounce(doMarkPathwaysAsOutdated, 500)
-  console.log('leversByGroup', leversByGroup)
   return (
     <FlexWithExtras
       flex={['initial', 0.4]}

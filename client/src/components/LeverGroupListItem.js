@@ -71,8 +71,8 @@ export default ({
       <Box
         onMouseEnter={() => setHover(true)}
         onTouchStart={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        onTouchEnd={() => setHover(false)}
+        onMouseLeave={() => window.setTimeout(() => setHover(false), 1000)}
+        onTouchEnd={() => window.setTimeout(() => setHover(false), 1000)}
       >
         <Lever
           value={leverValue}

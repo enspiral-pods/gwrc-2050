@@ -61,8 +61,8 @@ export default ({
         onChange={event => onValueChange(parseInt(event.target.value))}
         onMouseEnter={() => setHover(true)}
         onTouchStart={() => setHover(true)}
-        onMouseLeave={() => setHover(false)}
-        onTouchEnd={() => setHover(false)}
+        onMouseLeave={() => window.setTimeout(() => setHover(false), 1000)}
+        onTouchEnd={() => window.setTimeout(() => setHover(false), 1000)}
         // to show all lever steps as the same distance.
         style={{ width: `${sliderWidth}%` }}
       />
