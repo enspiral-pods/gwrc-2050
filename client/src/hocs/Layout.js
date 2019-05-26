@@ -28,7 +28,7 @@ const Layout = ({
   const isCalculatorPage =
     routeInfo.url !== '/' &&
     routeInfo.url !== '/data' &&
-    routeInfo.url !== '/about'
+    routeInfo.url !== '/how-it-works'
 
   return (
     <FlexWithExtras
