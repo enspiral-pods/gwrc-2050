@@ -33,7 +33,7 @@ export default () => {
             About the data
           </TextRegular>
         </Link>
-        <Link href={'/calculator'}>
+        <Link href={'/calculator'} target='_blank'>
           <Button
             variant={'landingGray'}
             ml={40}

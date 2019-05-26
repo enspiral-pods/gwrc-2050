@@ -55,7 +55,7 @@ const Landing = props => {
           emissions.
         </TextRegular>
         <Flex flexDirection={'row'} alignItems={'center'} py={20}>
-          <Link href={'/calculator'}>
+          <Link href={'/calculator'} target='_blank'>
             <Button
               variant={'landingGreen'}
               mr={15}
