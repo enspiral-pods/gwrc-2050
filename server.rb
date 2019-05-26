@@ -25,7 +25,7 @@ class TwentyFiftyServer < Sinatra::Base
       result = DataFromModel.new.calculate_pathway(region, id)
       # then use that return emissions change value as part of the basis of the link to our og image service
       percentage = result['output_emissions_percentage_reduction']
-      "<!DOCTYPE html><html><head><meta property=\"og:title\" content=\"2050 Climate Calculator\"><meta property=\"og:image\" content=\"https://og-image.2050calculator.nz/#{(percentage.abs * 100).floor}?increase=#{percentage < 0}
+      "<!DOCTYPE html><html><head><meta property=\"og:title\" content=\"2050 Climate Calculator\"><meta property=\"og:image\" content=\"https://og-image.2050calculator.nz/#{(percentage.abs * 100).round}?increase=#{percentage < 0}
 \"><meta property=\"og:image:width\" content=\"2048\"><meta property=\"og:image:height\" content=\"1170\"><meta name=\"twitter:card\" content=\"summary_large_image\"></meta></head><body></body></html>"
     else
       redirect "https://2050calculator.nz/share/#{region}/#{id}?bot=false"
