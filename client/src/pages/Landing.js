@@ -32,21 +32,6 @@ const Landing = props => {
       >
         <Navbar />
 
-        <Flex flexDirection={'row'} py={60}>
-          <Flex flexDirection={'column'} width={'50%'}>
-            <Heading fontSize={18} mb={10}>
-              A.
-            </Heading>
-            <Heading fontSize={25}>Electrify 100% of light vehicles</Heading>
-          </Flex>
-          <Flex flexDirection={'column'} width={'50%'}>
-            <Heading fontSize={18} mb={10}>
-              B.
-            </Heading>
-            <Heading fontSize={25}>Convert 15% of all land to forestry</Heading>
-          </Flex>
-        </Flex>
-
         <TextRegular color={'black'} fontSize={18}>
           What choices will see the biggest reduction in the Wellington Region’s
           emissions? What do we need to do in order to meet emissions targets?
@@ -84,32 +69,6 @@ const Landing = props => {
         </Flex>
 
         <Image src={landingGraph} width={'1408px'} />
-
-        <Flex flexDirection={'column'} alignItems={'center'}>
-          <Text
-            fontFamily={'black'}
-            fontSize={14}
-            mb={10}
-            pt={35}
-            css={{ opacity: 0.2 }}
-          >
-            A COLLABORATION BETWEEN
-          </Text>
-          <Flex
-            flexDirection={['column', 'row']}
-            justifyContent={'center'}
-            alignItems={'center'}
-            width={'100%'}
-            py={20}
-          >
-            <Link href={'http://www.gw.govt.nz/'} target='_blank'>
-              <Image src={gwrcLogo} px={[0, 30]} py={[30, 0]} />
-            </Link>
-            <Link href={'https://bamboocreative.nz/'} target='_blank'>
-              <Image src={bambooLogo} px={[0, 30]} py={[30, 0]} />
-            </Link>
-          </Flex>
-        </Flex>
 
         <Flex flexDirection={'column'} py={80}>
           <Heading fontSize={25} mb={20}>
