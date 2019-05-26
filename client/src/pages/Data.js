@@ -60,7 +60,12 @@ const Data = props => {
           >
             {`The Calculator is designed for exploring a range of plausible future pathways depending on choices and developments that happen over the next 30 years. Most levers can be varied between Level 1, representing the potential change in that variable with no effort to reduce emissions, and Level 4, representing the potential change with maximum effort to reduce emissions. Some levers can be varied between Options A to C or D, representing different choices that are not necessarily related to efforts to reduce emissions.
 
-            Where possible, the lever assumptions have been set based on published reports and projections from credible New Zealand sources such as government agencies and research institutes. However, in many cases such data were either unavailable or outdated. In these cases, assumptions were set by informed judgement based on analysis of historical trends and underlying drivers. A list of data and information sources used is provided below. The evidence base on emissions reduction options for New Zealand is evolving rapidly, and several new pieces of analysis have been published since this version of the Calculator model was completed (for example, reports from the Government’s Biological Emissions Reference Group).`}
+            Where possible, the lever assumptions have been set based on published reports and projections from credible New Zealand sources such as government agencies and research institutes. However, in many cases such data were either unavailable or outdated. In these cases, assumptions were set by informed judgement based on analysis of historical trends and underlying drivers. A list of data and information sources used is provided below. The evidence base on emissions reduction options for New Zealand is evolving rapidly, and several new pieces of analysis have been published since this version of the Calculator model was completed (for example, `}
+            <Link
+              href='https://www.mpi.govt.nz/protection-and-response/environment-and-natural-resources/biological-emissions-reference-group/'
+              target='_blank'
+            >{`reports from the Government’s Biological Emissions Reference Group`}</Link>
+            {`).`}
           </TextRegular>
         </Box>
 

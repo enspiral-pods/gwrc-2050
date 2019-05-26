@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar'
 import TextMedium from '../components/TextMedium'
 import TextRegular from '../components/TextRegular'
 
-import landingGraph from '../assets/images/landing-graph.jpg'
+import landingGraph from '../assets/images/calculator.gif'
 import bambooLogo from '../assets/images/Bamboo-logo.png'
 import gwrcLogo from '../assets/images/GRWC-logo.png'
 import nz from '../assets/images/landing-nz.jpg'
@@ -19,7 +19,7 @@ import carterton from '../assets/images/carterton.png'
 import porirua from '../assets/images/porirua.png'
 import greaterWellington from '../assets/images/greater-wellington.png'
 import bambooLogoWhite from '../assets/images/Bamboo-logo-white.png'
-import enspiral from '../assets/images/enspiral.png'
+import enspiral from '../assets/images/enspiral-logo.svg'
 
 const Landing = props => {
   return (
@@ -120,30 +120,26 @@ const Landing = props => {
             fontSize={18}
             css={{ whiteSpace: 'pre-line' }}
           >
-            The New Zealand Government has stated its ambition to reduce
-            emissions to{' '}
-            <Text fontFamily={'bold'} css={{ display: 'inline' }}>
-              net zero by 2050.
-            </Text>{' '}
-            By achieving this target, we will fulfil our obligations as set out
-            in the Paris Agreement, of which New Zealand is a signatory. But in
-            order to meet get to net zero by 2050, we need to be bold, we need
-            to work together and we need to start now.<br />
+            The climate crisis is impacting communities around the world and in
+            New Zealand, now. Time is running out to avoid the worst affects.
+            Emissions of human generated greenhouse gases need to drop steeply.
+            In order to achieve a healthy, safe climate, we need to be bold, we
+            need to work together and we need to start now.<br />
             <br />
             Government, businesses, communities and individuals all need to play
             their part in order to make this happen but in order to get there,
             we need to understand where we’re at and the opportunities in front
             of us.<br />
             <br />
-            This tool enables you to model our emissions future by adjusting key
-            levers relating to energy supply & demand, transport, land use &
-            agrciulture and more. By adjusting these levers (which have varying
-            levels of ambition) we’re able to see the effect this would have on
-            the total emissions of the Greater Wellington region and the
-            individual territorial areas.<br />
+            Here's the good news! This tool puts you in charge of our emissions
+            future. By adjusting key levers relating to energy supply & demand,
+            transport, land use & agrciulture and more, we’re able to see the
+            effect this would have on the total emissions of the Greater
+            Wellington region and the individual territorial areas.<br />
             <br />
             Once we understand what we can do, we can work seriously towards the
-            policies and actions needed to make these changes happen.
+            policies and collective action needed to make a healthy, safe
+            climate a reality.
           </TextRegular>
         </Flex>
       </Flex>
@@ -166,10 +162,10 @@ const Landing = props => {
           </Heading>
           <TextRegular color={'white'} fontSize={18}>
             The Wellington Region 2050 Emissions Calculator also draws upon
-            data, modelling and input from government and research entities at
-            various levels of scope ranging from local to regional to national.
+            data, modelling and input from government, commercial and research
+            entities at various levels of specificity - from local to national.
             To read more about the assumptions made by this calculator, click
-            the button below to go to the data page.
+            the button below.
           </TextRegular>
           <Link href={'/data'}>
             <Button
