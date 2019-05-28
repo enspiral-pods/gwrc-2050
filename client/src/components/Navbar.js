@@ -1,6 +1,7 @@
 import React from 'react'
 import { Flex, Button, Image, Link, Box } from 'rebass'
 
+import FlexWithExtras from '../components/FlexWithExtras'
 import TextMedium from '../components/TextMedium'
 import TextRegular from '../components/TextRegular'
 import WorldLogo from '../components/WorldLogo'
@@ -23,6 +24,16 @@ export default () => {
         </Flex>
       </Link>
       <Flex flexDirection={'row'} alignItems={'center'}>
+        <Link href={'/how-it-works'} css={{ minWidth: '120px' }}>
+          <TextRegular
+            fontFamily={'bold'}
+            fontSize={16}
+            color={'black'}
+            css={{ textDecoration: 'underline', opacity: 0.6 }}
+          >
+            How it works
+          </TextRegular>
+        </Link>
         <Link href={'/data'} css={{ minWidth: '120px' }}>
           <TextRegular
             fontFamily={'bold'}
@@ -33,17 +44,23 @@ export default () => {
             About the data
           </TextRegular>
         </Link>
-        <Link href={'/calculator'} target='_blank'>
-          <Button
-            variant={'landingGray'}
-            ml={40}
-            css={{ height: '50px', minWidth: '100px' }}
-          >
-            <TextRegular fontFamily={'bold'} fontSize={16} color={'background'}>
-              Launch
-            </TextRegular>
-          </Button>
-        </Link>
+        <FlexWithExtras display={['none', 'initial']}>
+          <Link href={'/calculator'} target='_blank'>
+            <Button
+              variant={'landingGray'}
+              ml={40}
+              css={{ height: '50px', minWidth: '100px' }}
+            >
+              <TextRegular
+                fontFamily={'bold'}
+                fontSize={16}
+                color={'background'}
+              >
+                Launch
+              </TextRegular>
+            </Button>
+          </Link>
+        </FlexWithExtras>
       </Flex>
     </Flex>
   )
