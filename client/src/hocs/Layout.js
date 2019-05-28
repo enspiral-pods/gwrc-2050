@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { connect } from 'redux-bundler-react'
 import navHelper from 'internal-nav-helper'
+import OldBrowserModal from '../components/OldBrowserModal'
 import InfoModal from '../components/InfoModal'
 import ShareModal from '../components/ShareModal'
 import Onboarding from '../components/Onboarding'
@@ -10,6 +11,8 @@ import Third from '../components/onboarding/third'
 import Fourth from '../components/onboarding/fourth'
 
 import FlexWithExtras from '../components/FlexWithExtras'
+
+import detectIE from '../util/detect-IE'
 
 const Layout = ({
   doUpdateUrl,
@@ -29,7 +32,12 @@ const Layout = ({
     routeInfo.url !== '/' &&
     routeInfo.url !== '/data' &&
     routeInfo.url !== '/how-it-works'
-
+  const [isOldBrowserModalOpen, setOldBrowserModalOpenState] = useState(
+    isCalculatorPage &&
+      detectIE() < 12 &&
+      !window.localStorage.GWRC_SEEN_OLD_BROWSER
+  )
+  console.log('isOldBrowserModalOpen', isOldBrowserModalOpen)
   return (
     <FlexWithExtras
       css={{ minHeight: isCalculatorPage ? '100%' : 'auto' }}
@@ -48,6 +56,10 @@ const Layout = ({
 
       <ShareModal />
       <Page />
+      <OldBrowserModal
+        isOpen={isOldBrowserModalOpen}
+        setModalOpenState={setOldBrowserModalOpenState}
+      />
       <InfoModal isInfoModalOpen={isInfoModalOpen} onClose={doInfoModalClose} />
     </FlexWithExtras>
   )
