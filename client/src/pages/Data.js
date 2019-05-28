@@ -69,7 +69,7 @@ const Data = props => {
           </TextRegular>
         </Box>
 
-        <Box my={30}>
+        <Box mt={30} mb={60}>
           <Heading fontSize={18} mb={18}>
             List of data and information sources
           </Heading>
@@ -138,7 +138,9 @@ const Data = props => {
             css={{ whiteSpace: 'pre-line' }}
           >
             {`EECA, Energy End Use Database`}
-            <sup>1</sup>
+            <sup style={{ fontFamily: 'Inter-UI-Regular', fontSize: '12px' }}>
+              1
+            </sup>
           </TextRegular>
           <Heading
             color={'black'}
@@ -212,7 +214,7 @@ const Data = props => {
             Land Cover Database 4.1
             Scion Bionergy Options Transition Analysis`}
           </TextRegular>
-          <sub>
+          <sub style={{ fontFamily: 'Inter-UI-Regular', fontSize: '12px' }}>
             1. The Energy End Use Database previously included regional
             estimates for the 2012 year. This function has since been removed as
             the methodology is under review.
