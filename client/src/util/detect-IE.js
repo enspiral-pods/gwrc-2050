@@ -1,7 +1,6 @@
 // taken from https://codepen.io/gapcode/pen/vEJNZN
 
 export default () => {
-  return 8
   var ua = window.navigator.userAgent
 
   var msie = ua.indexOf('MSIE ')
