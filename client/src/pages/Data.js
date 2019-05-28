@@ -8,6 +8,8 @@ import TextRegular from '../components/TextRegular'
 
 import map from '../assets/images/map.svg'
 
+import DataSource from '../components/data-source'
+
 const Data = props => {
   return (
     <Flex flexDirection={'column'} width={'100%'}>
@@ -77,57 +79,149 @@ const Data = props => {
           <Heading
             color={'black'}
             fontSize={18}
-            mb={'8px'}
-            mt={'14px'}
+            mb={10}
+            mt={24}
             css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
           >
             {`Cross-cutting`}
           </Heading>
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`URS New Zealand (2014), Greenhouse Gas Inventory for the Wellington Region
-            AECOM (2016), Community Greenhouse Gas Inventory for Wellington City and the Greater Wellington Region 2000-2015
-            StatsNZ, Subnational population and household projections`}
-          </TextRegular>
+          <DataSource
+            source={
+              'URS New Zealand (2014), Greenhouse Gas Inventory for the Wellington Region'
+            }
+            link={
+              'http://www.gw.govt.nz/assets/About-GW-the-region/WellingtonRegionGHGInventoryReportFINALVERSION7April2014.PDF'
+            }
+          />
+          <DataSource
+            source={
+              'AECOM (2016), Community Greenhouse Gas Inventory for Wellington City and the Greater Wellington Region 2000-2015'
+            }
+            link={
+              'http://www.gw.govt.nz/assets/Climate-change/CommuntityGHGInventoryWlgtnCityRegion2016.pdf'
+            }
+          />
+          <DataSource
+            source={'StatsNZ, Subnational population and household projections'}
+            link={
+              'http://archive.stats.govt.nz/browse_for_stats/population/estimates_and_projections/subnational-family-and-household-projections-info-releases.aspx'
+            }
+          />
+
           <Heading
             color={'black'}
             fontSize={18}
-            mb={'8px'}
-            mt={'14px'}
+            mb={10}
+            mt={24}
             css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
           >
             {`Transport`}
           </Heading>
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`MoT, Transport indicators (various)
-            MoT, Future Demand
-            MoT, New Zealand Household Travel Survey
-            NZTA, Public Transport Performance Data
-            MoT, New Zealand Vehicle Fleet Statistics
-            MoT, regional VKT
-            NZTA, regional VKT
-            Kiwirail, data on passenger and freight movements and energy consumption
-            GWRC, Wellington Transport Strategy Model
-            MoT, Transport Outlook
-            Productivity Commission Low Emissions Economy report (EV scenarios)
-            MoT, National Freight Demand Survey
-            MBIE, Energy in New Zealand (to calculate road freight fuel efficiency)
-            Sobiecki & Chapman
-            UK 2050 Calculator (potential vehicle efficiency improvements)
-            Wellington International Airport annual reports`}
-          </TextRegular>
+          <DataSource
+            source={'MoT, Transport indicators (various)'}
+            link={
+              'https://www.transport.govt.nz/mot-resources/transport-dashboard/'
+            }
+          />
+          <DataSource
+            source={'MoT, Future Demand'}
+            link={
+              'https://www.transport.govt.nz/multi-modal/keystrategiesandplans/strategic-policy-programme/future-demand/'
+            }
+          />
+          <DataSource
+            source={'MoT, New Zealand Household Travel Survey'}
+            link={
+              'https://www.transport.govt.nz/mot-resources/household-travel-survey/'
+            }
+          />
+          <DataSource
+            source={'NZTA, Public Transport Performance Data'}
+            link={'https://nzta.govt.nz/resources/public-transport-data/'}
+          />
+          <DataSource
+            source={'MoT, New Zealand Vehicle Fleet Statistics'}
+            link={
+              'https://www.transport.govt.nz/mot-resources/vehicle-fleet-statistics/'
+            }
+          />
+          <DataSource
+            source={'MoT, regional VKT'}
+            link={
+              'https://www.transport.govt.nz/mot-resources/transport-dashboard/2-road-transport/rd023-vehicle-fleet-composition-by-region/rd016-vehicle-kilometres-travelled-by-vehicle-type-billion-km/'
+            }
+          />
+          <DataSource
+            source={'NZTA, regional VKT'}
+            link={
+              'http://www.nzta.govt.nz/assets/userfiles/transport-data/VKT.html'
+            }
+          />
+          <DataSource
+            source={
+              'Kiwirail, data on passenger and freight movements and energy consumption'
+            }
+          />
+          <DataSource
+            source={'GWRC, Wellington Transport Strategy Model'}
+            link={
+              'http://www.gw.govt.nz/wellington-transport-models-technical-reports/'
+            }
+          />
+          <DataSource
+            source={'MoT, Transport Outlook'}
+            link={
+              'https://www.transport.govt.nz/mot-resources/transport-outlook/'
+            }
+          />
+          <DataSource
+            source={
+              'Productivity Commission Low Emissions Economy report (EV scenarios)'
+            }
+            link={
+              'https://www.productivity.govt.nz/sites/default/files/Productivity%20Commission_Low-emissions%20economy_Final%20Report_FINAL.pdf'
+            }
+          />
+          <DataSource
+            source={'MoT, National Freight Demand Survey'}
+            link={
+              'https://www.transport.govt.nz/mot-resources/freight-resources/nationalfreightdemandsstudy'
+            }
+          />
+          <DataSource
+            source={
+              'MBIE, Energy in New Zealand (to calculate road freight fuel efficiency)'
+            }
+            link={
+              'https://www.mbie.govt.nz/building-and-energy/energy-and-natural-resources/energy-statistics-and-modelling/energy-publications-and-technical-papers/energy-in-new-zealand/'
+            }
+          />
+          <DataSource
+            source={
+              'Sobiecki & Chapman: The future of Wellington’s bus fleet: The environmental and health implications of different upgrade options for Wellington’s bus fleet'
+            }
+            attribution={
+              'NZCSC Policy Paper, Victoria University of Wellington and New Zealand Centre for Sustainable Cities, Wellington, May 2016'
+            }
+          />
+          <DataSource
+            source={
+              'UK 2050 Calculator (potential vehicle efficiency improvements)'
+            }
+            link={'http://2050-calculator-tool.decc.gov.uk/#/home'}
+          />
+          <DataSource
+            source={'Wellington International Airport annual reports'}
+            link={
+              'https://www.wellingtonairport.co.nz/business/investor-services/annual-reports/'
+            }
+          />
+
           <Heading
             color={'black'}
             fontSize={18}
-            mb={'8px'}
-            mt={'14px'}
+            mb={10}
+            mt={24}
             css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
           >
             {`Household and commercial energy`}
@@ -142,78 +236,106 @@ const Data = props => {
               1
             </sup>
           </TextRegular>
+
           <Heading
             color={'black'}
             fontSize={18}
-            mb={'8px'}
-            mt={'14px'}
+            mb={10}
+            mt={24}
             css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
           >
             {`Industry`}
           </Heading>
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`Infometrics, Wellington Region Economic Profile
-            MBIE, Modelled Territorial Authority GDP`}
-          </TextRegular>
+          <DataSource
+            source={'Infometrics, Wellington Region Economic Profile'}
+            link={'https://ecoprofile.infometrics.co.nz/Wellington%20Region'}
+          />
+          <DataSource
+            source={'MBIE, Modelled Territorial Authority GDP'}
+            link={
+              'https://www.mbie.govt.nz/business-and-employment/economic-development/regional-economic-development/modelled-territorial-authority-gross-domestic-product/'
+            }
+          />
+
           <Heading
             color={'black'}
             fontSize={18}
-            mb={'8px'}
-            mt={'14px'}
+            mb={10}
+            mt={24}
             css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
           >
             {`Electricity supply`}
           </Heading>
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`MBIE, Electricity Demand and Generation Scenarios
-            Electricity Authority, distributed generation data (solar PV)`}
-          </TextRegular>
+          <DataSource
+            source={'MBIE, Electricity Demand and Generation Scenarios'}
+            link={
+              'https://www.mbie.govt.nz/building-and-energy/energy-and-natural-resources/energy-statistics-and-modelling/energy-modelling/electricity-demand-and-generation-scenarios/'
+            }
+          />
+          <DataSource
+            source={
+              'Electricity Authority, distributed generation data (solar PV)'
+            }
+            link={
+              'https://www.ea.govt.nz/operations/distribution/distributed-generation/'
+            }
+          />
+
           <Heading
             color={'black'}
             fontSize={18}
-            mb={'8px'}
-            mt={'14px'}
+            mb={10}
+            mt={24}
             css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
           >
             {`Agriculture`}
           </Heading>
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`StatsNZ agricultural census
-            New Zealand Dairy Statistics
-            Vivid Economics`}
-          </TextRegular>
+          <DataSource
+            source={'StatsNZ agricultural census'}
+            link={'https://www.stats.govt.nz/topics/agriculture'}
+          />
+          <DataSource
+            source={'New Zealand Dairy Statistics'}
+            link={
+              'https://www.dairynz.co.nz/publications/dairy-industry/new-zealand-dairy-statistics-2017-18/'
+            }
+          />
+          <DataSource source={'Vivid Economics'} />
+
           <Heading
             color={'black'}
             fontSize={18}
-            mb={'8px'}
-            mt={'14px'}
+            mb={10}
+            mt={24}
             css={{ whiteSpace: 'pre-line', fontStyle: 'italic' }}
           >
             {`Forestry`}
           </Heading>
-          <TextRegular
-            color={'black'}
-            fontSize={18}
-            mb={'8px'}
-            css={{ whiteSpace: 'pre-line' }}
-          >
-            {`GWRC land use data
-            MPI, National Exotic Forest Description reports
-            Land Cover Database 4.1
-            Scion Bionergy Options Transition Analysis`}
-          </TextRegular>
+          <DataSource
+            source={'GWRC land use data'}
+            link={
+              'http://www.gw.govt.nz/selected-land-use-register-slur-register-search/'
+            }
+          />
+          <DataSource
+            source={'MPI, National Exotic Forest Description reports'}
+            link={
+              'https://www.mpi.govt.nz/news-and-resources/open-data-and-forecasting/forestry/new-zealands-forests/'
+            }
+          />
+          <DataSource
+            source={'Land Cover Database 4.1'}
+            link={
+              'https://lris.scinfo.org.nz/layer/48423-lcdb-v41-land-cover-database-version-41-mainland-new-zealand/'
+            }
+          />
+          <DataSource
+            source={'Scion Bionergy Options Transition Analysis'}
+            link={
+              'https://www.scionresearch.com/science/bioenergy/bioenergy-options'
+            }
+          />
+
           <hr style={{ marginTop: '20px' }} />
           <sub style={{ fontFamily: 'Inter-UI-Regular', fontSize: '12px' }}>
             1. The Energy End Use Database previously included regional
