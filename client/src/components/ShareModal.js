@@ -48,7 +48,8 @@ const ShareModal = ({
           WebkitOverflowScrolling: 'touch',
           borderRadius: '4px',
           outline: 'none',
-          padding: '20px'
+          padding: '20px',
+          minHeight: '440px'
         }
       }}
     >
@@ -133,7 +134,7 @@ const ShareModal = ({
                 alignItems={'center'}
                 height={45}
                 px={10}
-                mr={10}
+                mr={[0, 10]}
                 mb={10}
                 bg={'#38A1F3'}
                 css={{
@@ -158,7 +159,7 @@ const ShareModal = ({
                 alignItems={'center'}
                 height={45}
                 px={10}
-                mr={10}
+                mr={[0, 10]}
                 mb={10}
                 bg={'#4267B2'}
                 css={{
@@ -183,7 +184,7 @@ const ShareModal = ({
                 alignItems={'center'}
                 height={45}
                 px={10}
-                mr={10}
+                mr={[0, 10]}
                 mb={10}
                 bg={'#333333'}
                 css={{
@@ -208,7 +209,7 @@ const ShareModal = ({
                 alignItems={'center'}
                 height={45}
                 px={10}
-                mr={10}
+                mr={[0, 10]}
                 mb={10}
                 bg={'#4B5E6F'}
                 css={{
