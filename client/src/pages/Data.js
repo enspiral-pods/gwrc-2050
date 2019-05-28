@@ -214,6 +214,7 @@ const Data = props => {
             Land Cover Database 4.1
             Scion Bionergy Options Transition Analysis`}
           </TextRegular>
+          <hr style={{ marginTop: '20px' }} />
           <sub style={{ fontFamily: 'Inter-UI-Regular', fontSize: '12px' }}>
             1. The Energy End Use Database previously included regional
             estimates for the 2012 year. This function has since been removed as
