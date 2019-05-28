@@ -324,6 +324,19 @@ const About = props => {
           <TextRegular
             color={'black'}
             fontSize={18}
+            css={{ whiteSpace: 'pre-line', marginBottom: '30px' }}
+          >
+            {`- You can find our code and the associated licence `}{' '}
+            <Link
+              href='https://github.com/enspiral-pods/gwrc-2050'
+              target='_blank'
+            >{`here.`}</Link>
+            {` Everything is Open Source so if you’d like to adapt it, feel free! If you’re interested in developing a tool for your city/region/country/planet, `}
+            <Link href='mailto:hello@bamboocreative.nz'>{`contact us.`}</Link>
+          </TextRegular>
+          <TextRegular
+            color={'black'}
+            fontSize={18}
             css={{ whiteSpace: 'pre-line', marginBottom: '10px' }}
           >
             <Link
