@@ -13,7 +13,8 @@ import {
   bottom,
   left,
   borders,
-  zIndex
+  zIndex,
+  textAlign
 } from 'styled-system'
 
 export default styled(Flex)(
@@ -29,5 +30,6 @@ export default styled(Flex)(
   bottom,
   left,
   borders,
-  zIndex
+  zIndex,
+  textAlign
 )

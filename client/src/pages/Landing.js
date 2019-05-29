@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'redux-bundler-react'
 import { Flex, Button, Image, Heading, Text, Link, Box } from 'rebass'
 
+import FlexWithExtras from '../components/FlexWithExtras'
 import Navbar from '../components/Navbar'
 import TextMedium from '../components/TextMedium'
 import TextRegular from '../components/TextRegular'
@@ -221,7 +222,11 @@ const Landing = props => {
           <Text fontFamily={'black'} color={'white'} fontSize={14} mb={20}>
             BROUGHT TO YOU BY:
           </Text>
-          <Flex flexDirection={['column', 'row']} alignItems={'center'}>
+          <FlexWithExtras
+            flexDirection={['column', 'row']}
+            alignItems={'center'}
+            textAlign={['center', 'initial']}
+          >
             <Link
               href={'https://bamboocreative.nz/'}
               target='_blank'
@@ -230,6 +235,7 @@ const Landing = props => {
               <Image
                 src={bambooLogoWhite}
                 mr={[0, 50]}
+                mb={[20, 0]}
                 width={['100%', 'initial']}
               />
             </Link>
@@ -238,9 +244,9 @@ const Landing = props => {
               target='_blank'
               width={['100%', '50%']}
             >
-              <Image src={enspiral} mr={[0, 50]} width={['100%', 'initial']} />
+              <Image src={enspiral} mr={[0, 50]} mb={[20, 0]} width={'110px'} />
             </Link>
-          </Flex>
+          </FlexWithExtras>
         </Box>
       </Flex>
     </Flex>
