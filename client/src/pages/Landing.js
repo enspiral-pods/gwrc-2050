@@ -80,25 +80,25 @@ const Landing = props => {
             css={{ whiteSpace: 'pre-line' }}
           >
             The climate crisis is impacting communities around the world and in
-            New Zealand, now. Time is running out to avoid the worst affects.
-            Emissions of human generated greenhouse gases need to drop steeply.
-            In order to achieve a healthy, safe climate, we need to be bold, we
-            need to work together and we need to start now.<br />
+            New Zealand now. Time is running out to avoid the worst effects.
+            Emissions of human-made greenhouse gases need to drop steeply. In
+            order to reduce emissions, we need to be bold, we need to work
+            together and we need to start now.<br />
             <br />
             Government, businesses, communities and individuals all need to play
             their part in order to make this happen but in order to get there,
             we need to understand where we’re at and the opportunities in front
             of us.<br />
             <br />
-            Here's the good news! This tool puts you in charge of our emissions
-            future. By adjusting key levers relating to energy supply & demand,
-            transport, land use & agrciulture and more, we’re able to see the
-            effect this would have on the total emissions of the Greater
-            Wellington region and the individual territorial areas.<br />
+            Here’s the good news! This tool puts you in charge of the Wellington
+            Region by allowing you to adjust key levers relating to energy
+            supply & demand, transport, land use & agriculture and more. By
+            adjusting these levers you can see what will offer the biggest
+            emissions reductions for the Greater Wellington region and the
+            individual council areas.<br />
             <br />
-            Once we understand what we can do, we can work seriously towards the
-            policies and collective action needed to make a healthy, safe
-            climate a reality.
+            Once we understand what we need to do, we can work seriously towards
+            the policies and actions needed to make this future a reality.
           </TextRegular>
         </Flex>
       </Flex>
