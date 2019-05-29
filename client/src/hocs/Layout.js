@@ -34,6 +34,7 @@ const Layout = ({
     routeInfo.url !== '/how-it-works'
   const [isOldBrowserModalOpen, setOldBrowserModalOpenState] = useState(
     isCalculatorPage &&
+      detectIE() &&
       detectIE() < 12 &&
       !window.localStorage.GWRC_SEEN_OLD_BROWSER
   )
