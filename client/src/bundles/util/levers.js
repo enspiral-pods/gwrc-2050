@@ -202,13 +202,13 @@ export default {
     content: (
       <React.Fragment>
         <TextRegular color={'black'} fontSize={16} pb={10}>
-          In the Calculator, any electricity demand not met by local distributed
+          {`In the Calculator, any electricity demand not met by local distributed
           generation (solar and biogas) is supplied from the national grid.
           Emissions are allocated using an average national grid emissions
           factor. In 2015, the grid emissions factor was 0.123 kgCO\u{2082}-e
           per kWh consumed. This has halved since 2005 as the proportion of
           generation from renewable sources has increased. Level assumptions
-          below are informed by several recent modelling studies.
+          below are informed by several recent modelling studies.`}
         </TextRegular>
         <Image src={nationalGridElectricityImage} width={'538px'} />
       </React.Fragment>
@@ -227,10 +227,10 @@ export default {
     content: (
       <React.Fragment>
         <TextRegular color={'black'} fontSize={16} pb={10}>
-          In 2015 Wellington had an estimated 33,600 hectares (ha) of dairy
+          {`In 2015 Wellington had an estimated 33,600 hectares (ha) of dairy
           land, 332,000 ha of sheep &amp; beef land, 77,000 ha of exotic forest,
           and 318,000 ha of native forest &amp; other vegetation. Total carbon
-          sequestration from forests was estimated at 880 ktCO\u{2082}-e.
+          sequestration from forests was estimated at 880 ktCO\u{2082}-e.`}
         </TextRegular>
         <Heading fontSize={16} mb={10}>
           Interactions with other choices
@@ -1171,13 +1171,13 @@ export default {
     content: (
       <React.Fragment>
         <TextRegular color={'black'} fontSize={16} pb={10}>
-          Wellington’s greenhouse gas emissions from solvent and product use are
+          {`Wellington’s greenhouse gas emissions from solvent and product use are
           estimated at 182 ktCO\u{2082}-e in 2015. Most emissions in this sector
           (93%) are from hydrofluorocarbon (HFC) gases used in refrigeration and
           air conditioning systems. Emissions in this sector have grown very
           rapidly since 2000, at an average rate of over 10% per year. But, HFC
           gases are now set to be phased out under a global treaty: the Kigali
-          Amendment to the Montreal Protocol.
+          Amendment to the Montreal Protocol.`}
         </TextRegular>
         <Image src={refrigerantGases} width={'682px'} />
       </React.Fragment>
