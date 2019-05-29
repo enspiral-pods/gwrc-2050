@@ -15,6 +15,7 @@ ENV['RACK_ENV'] = ENV['RAILS_ENV'] if ENV['RAILS_ENV']
 
 # This sets up the bits of the server
 # enable CORS for the client app
+puts "#{ENV['CLIENT_URL']}"
 use Rack::Cors do |config|
   config.allow do |allow|
     allow.origins "#{ENV['CLIENT_URL']}"
