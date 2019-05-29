@@ -19,7 +19,7 @@ import carterton from '../assets/images/carterton.png'
 import porirua from '../assets/images/porirua.png'
 import greaterWellington from '../assets/images/greater-wellington.png'
 import bambooLogoWhite from '../assets/images/Bamboo-logo-white.png'
-import enspiral from '../assets/images/enspiral-logo.svg'
+import enspiral from '../assets/images/enspiral.png'
 
 const Landing = props => {
   return (
@@ -218,15 +218,27 @@ const Landing = props => {
               <Image src={greaterWellington} />
             </Link>
           </Flex>
-          <Text fontFamily={'black'} color={'white'} fontSize={14}>
+          <Text fontFamily={'black'} color={'white'} fontSize={14} mb={20}>
             BROUGHT TO YOU BY:
           </Text>
-          <Flex flexDirection={'row'} alignItems={'center'}>
-            <Link href={'https://bamboocreative.nz/'} target='_blank'>
-              <Image src={bambooLogoWhite} mr={50} />
+          <Flex flexDirection={['column', 'row']} alignItems={'center'}>
+            <Link
+              href={'https://bamboocreative.nz/'}
+              target='_blank'
+              width={['100%', '50%']}
+            >
+              <Image
+                src={bambooLogoWhite}
+                mr={[0, 50]}
+                width={['100%', 'initial']}
+              />
             </Link>
-            <Link href={'https://enspiral.com/'} target='_blank'>
-              <Image src={enspiral} mr={50} />
+            <Link
+              href={'https://enspiral.com/'}
+              target='_blank'
+              width={['100%', '50%']}
+            >
+              <Image src={enspiral} mr={[0, 50]} width={['100%', 'initial']} />
             </Link>
           </Flex>
         </Box>
