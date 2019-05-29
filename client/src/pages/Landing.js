@@ -230,7 +230,7 @@ const Landing = props => {
             <Link
               href={'https://bamboocreative.nz/'}
               target='_blank'
-              width={['100%', '50%']}
+              width={['100%', 'initial']}
             >
               <Image
                 src={bambooLogoWhite}
@@ -242,7 +242,7 @@ const Landing = props => {
             <Link
               href={'https://enspiral.com/'}
               target='_blank'
-              width={['100%', '50%']}
+              width={['100%', 'initial']}
             >
               <Image src={enspiral} mr={[0, 50]} mb={[20, 0]} width={'110px'} />
             </Link>
