@@ -228,8 +228,8 @@ export default {
       <React.Fragment>
         <TextRegular color={'black'} fontSize={16} pb={10}>
           {`In 2015 Wellington had an estimated 33,600 hectares (ha) of dairy
-          land, 332,000 ha of sheep &amp; beef land, 77,000 ha of exotic forest,
-          and 318,000 ha of native forest &amp; other vegetation. Total carbon
+          land, 332,000 ha of sheep & beef land, 77,000 ha of exotic forest,
+          and 318,000 ha of native forest & other vegetation. Total carbon
           sequestration from forests was estimated at 880 ktCO\u{2082}-e.`}
         </TextRegular>
         <Heading fontSize={16} mb={10}>
