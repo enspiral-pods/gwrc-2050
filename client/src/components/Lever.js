@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { Flex, Image } from 'rebass'
+import React, { useState, useRef, useEffect } from 'react'
+import { Flex, Image, Box } from 'rebass'
 
 import TextRegular from './TextRegular'
 import Slider from './Slider'
@@ -16,26 +16,31 @@ export default ({
   leverDescriptions
 }) => {
   const [hover, setHover] = useState(false)
-  const sliderWidth = maxLevel === 2 ? 40 : maxLevel === 3 ? 69 : 100
+  const [hoverTimeout, setHoverTimeout] = useState(null)
+  const [sliderWidth, setSliderWidth] = useState(0)
+
+  const sliderContainerEl = useRef(null)
+  const toolTipEl = useRef(null)
+
+  // N.B. (IK) hardcoded '4' in calculations here, was too tricky to retro-fit better calculations
+  const buttonPosition = sliderContainerEl.current
+    ? (value - 1) * (sliderContainerEl.current.offsetWidth / (4 - 1) - 8)
+    : null
+  // we don't easily know the 'width' of the tooltip to begin (due to the copy length), so for now just a simple decision as to whether left or right
+  const isToolTipOnRight = value > (4 + 1) / 2
+
+  useEffect(() => {
+    setSliderWidth(
+      maxLevel === 2
+        ? sliderContainerEl.current.offsetWidth * 0.4
+        : maxLevel === 3
+          ? sliderContainerEl.current.offsetWidth * 0.69
+          : sliderContainerEl.current.offsetWidth
+    )
+  })
+
   return (
     <Flex flexDirection={'column'} py={10}>
-      {leverDescriptions ? (
-        <ToolTip hover={hover}>
-          <TextRegular fontSize={14} textAlign={'center'}>
-            {leverDescriptions[value - 1]}
-          </TextRegular>
-          <div
-            style={{
-              marginLeft: '-10px',
-              borderWidth: '15px 15px 0',
-              borderColor: '#51575C transparent',
-              borderStyle: 'solid',
-              width: 0,
-              marginBottom: '-15px'
-            }}
-          />
-        </ToolTip>
-      ) : null}
       {label ? (
         <Flex
           flexDirection={'row'}
@@ -52,20 +57,71 @@ export default ({
           />
         </Flex>
       ) : null}
-
-      <Slider
-        value={value}
-        type='range'
-        min='1'
-        max={maxLevel}
-        onChange={event => onValueChange(parseInt(event.target.value))}
-        onMouseEnter={() => setHover(true)}
-        onTouchStart={() => setHover(true)}
-        onMouseLeave={() => window.setTimeout(() => setHover(false), 1000)}
-        onTouchEnd={() => window.setTimeout(() => setHover(false), 1000)}
-        // to show all lever steps as the same distance.
-        style={{ width: `${sliderWidth}%` }}
-      />
+      <Box
+        onMouseEnter={() => {
+          if (hoverTimeout) window.clearTimeout(hoverTimeout)
+          setHover(true)
+        }}
+        onTouchStart={() => {
+          if (hoverTimeout) window.clearTimeout(hoverTimeout)
+          setHover(true)
+        }}
+        onMouseLeave={() => {
+          setHoverTimeout(
+            window.setTimeout(() => {
+              setHover(false)
+            }, 1000)
+          )
+        }}
+        onTouchEnd={() => {
+          setHoverTimeout(
+            window.setTimeout(() => {
+              setHover(false)
+            }, 1000)
+          )
+        }}
+        css={{ position: 'relative' }}
+        ref={sliderContainerEl}
+      >
+        {leverDescriptions ? (
+          <ToolTip
+            ref={toolTipEl}
+            hover={hover}
+            left={isToolTipOnRight ? 'auto' : `${buttonPosition}px`}
+            right={isToolTipOnRight ? '0px' : 'auto'}
+          >
+            <TextRegular fontSize={14} textAlign={'center'}>
+              {leverDescriptions[value - 1]}
+            </TextRegular>
+            <div
+              style={{
+                position: 'absolute',
+                left: isToolTipOnRight ? 'auto' : 8,
+                right:
+                  isToolTipOnRight && sliderContainerEl.current
+                    ? sliderContainerEl.current.offsetWidth -
+                      buttonPosition -
+                      20
+                    : 'auto',
+                bottom: '-5px',
+                borderWidth: '5px 5px 0',
+                borderColor: '#51575C transparent',
+                borderStyle: 'solid',
+                width: 0
+              }}
+            />
+          </ToolTip>
+        ) : null}
+        <Slider
+          value={value}
+          type='range'
+          min='1'
+          max={maxLevel}
+          onChange={event => onValueChange(parseInt(event.target.value))}
+          // to show all lever steps as the same distance.
+          style={{ width: `${sliderWidth}px` }}
+        />
+      </Box>
     </Flex>
   )
 }
