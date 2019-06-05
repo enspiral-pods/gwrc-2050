@@ -7,7 +7,6 @@ const easeIn = keyframes`
 `
 const ToolTip = styled.span`
   position: absolute;
-  margin-top: -55px;
   background-color: #51575c;
   padding: 10px;
   max-width: 350px;

@@ -38,7 +38,6 @@ const Layout = ({
       detectIE() < 12 &&
       !window.localStorage.GWRC_SEEN_OLD_BROWSER
   )
-  console.log('isOldBrowserModalOpen', isOldBrowserModalOpen)
   return (
     <FlexWithExtras
       css={{ minHeight: isCalculatorPage ? '100%' : 'auto' }}

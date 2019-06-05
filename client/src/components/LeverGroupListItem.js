@@ -13,6 +13,7 @@ export default ({
   doChangeGroupLeverValue
 }) => {
   const [hover, setHover] = useState(false)
+  const [hoverTimeout, setHoverTimeout] = useState(null)
   const [leverValue, setLeverValue] = useState(1)
 
   return (
@@ -69,10 +70,29 @@ export default ({
         ))}
       </Box>
       <Box
-        onMouseEnter={() => setHover(true)}
-        onTouchStart={() => setHover(true)}
-        onMouseLeave={() => window.setTimeout(() => setHover(false), 1000)}
-        onTouchEnd={() => window.setTimeout(() => setHover(false), 1000)}
+        onMouseEnter={() => {
+          if (hoverTimeout) window.clearTimeout(hoverTimeout)
+          setHover(true)
+        }}
+        onTouchStart={() => {
+          if (hoverTimeout) window.clearTimeout(hoverTimeout)
+          setHover(true)
+        }}
+        onMouseLeave={() => {
+          setHoverTimeout(
+            window.setTimeout(() => {
+              setHover(false)
+            }, 1000)
+          )
+        }}
+        onTouchEnd={() => {
+          setHoverTimeout(
+            window.setTimeout(() => {
+              setHover(false)
+            }, 1000)
+          )
+        }}
+        css={{ border: '1px solid red' }}
       >
         <Lever
           value={leverValue}
