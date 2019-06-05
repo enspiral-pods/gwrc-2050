@@ -237,8 +237,8 @@ bundle.reactRenderShareState = createSelector(
     if (urlLocation.pathname.includes('/share')) {
       // use the lever string part of the pathname with all 0's removed
       const pathPieces = urlLocation.pathname.split('/').filter(p => p !== '/')
-      const region = pathPieces[1]
-      const leverString = pathPieces[2].replace(/0/g, '')
+      const region = pathPieces[2]
+      const leverString = pathPieces[3].replace(/0/g, '')
       return {
         actionCreator: 'doUpdateLeversFromUrl',
         args: [region, leverString]
