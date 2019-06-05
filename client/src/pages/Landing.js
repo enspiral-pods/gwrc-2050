@@ -19,7 +19,7 @@ import huttCity from '../assets/images/hutt-city.png'
 import carterton from '../assets/images/carterton.png'
 import porirua from '../assets/images/porirua.png'
 import greaterWellington from '../assets/images/greater-wellington.png'
-import bambooLogoWhite from '../assets/images/Bamboo-logo-white.png'
+import bambooLogoWhite from '../assets/images/Bamboo-outline-white@2x.png'
 import enspiral from '../assets/images/enspiral.png'
 
 const Landing = props => {
