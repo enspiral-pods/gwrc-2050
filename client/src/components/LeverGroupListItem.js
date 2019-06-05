@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Flex, Image, Box } from 'rebass'
+
 import TextRegular from '../components/TextRegular'
 import Lever from './Lever'
 import ToolTip from './ToolTip'
@@ -15,6 +16,17 @@ export default ({
   const [hover, setHover] = useState(false)
   const [hoverTimeout, setHoverTimeout] = useState(null)
   const [leverValue, setLeverValue] = useState(1)
+  const maxLevel = 4
+
+  const sliderContainerEl = useRef(null)
+  const toolTipEl = useRef(null)
+
+  const buttonPosition = sliderContainerEl.current
+    ? (leverValue - 1) *
+      (sliderContainerEl.current.offsetWidth / (maxLevel - 1) - 8)
+    : null
+  // we don't easily know the 'width' of the tooltip to begin (due to the copy length), so for now just a simple decision as to whether left or right
+  const isToolTipOnRight = leverValue > (maxLevel + 1) / 2
 
   return (
     <Flex
@@ -25,21 +37,6 @@ export default ({
       p={15}
       mb={15}
     >
-      <ToolTip hover={hover}>
-        <TextRegular fontSize={14} textAlign={'center'}>
-          {levers[0].group.leverDescriptions[leverValue - 1]}
-        </TextRegular>
-        <div
-          style={{
-            marginLeft: '-10px',
-            borderWidth: '15px 15px 0',
-            borderColor: '#51575C transparent',
-            borderStyle: 'solid',
-            width: 0,
-            marginBottom: '-15px'
-          }}
-        />
-      </ToolTip>
       <Box bg={'darkBackground'} onClick={() => doToggleLeverGroup(group)}>
         <Flex
           flexDirection={'row'}
@@ -92,15 +89,40 @@ export default ({
             }, 1000)
           )
         }}
-        css={{ border: '1px solid red' }}
+        css={{ position: 'relative' }}
+        ref={sliderContainerEl}
       >
+        <ToolTip
+          ref={toolTipEl}
+          hover={hover}
+          left={isToolTipOnRight ? 'auto' : `${buttonPosition}px`}
+          right={isToolTipOnRight ? '0px' : 'auto'}
+        >
+          <TextRegular fontSize={14} textAlign={'center'}>
+            {levers[0].group.leverDescriptions[leverValue - 1]}
+          </TextRegular>
+          <div
+            style={{
+              position: 'absolute',
+              left: isToolTipOnRight ? 'auto' : 8,
+              right: isToolTipOnRight
+                ? sliderContainerEl.current.offsetWidth - buttonPosition - 20
+                : 'auto',
+              bottom: '-5px',
+              borderWidth: '5px 5px 0',
+              borderColor: '#51575C transparent',
+              borderStyle: 'solid',
+              width: 0
+            }}
+          />
+        </ToolTip>
         <Lever
           value={leverValue}
           onValueChange={value => {
             setLeverValue(value)
             doChangeGroupLeverValue(value)
           }}
-          maxLevel={4}
+          maxLevel={maxLevel}
         />
       </Box>
     </Flex>

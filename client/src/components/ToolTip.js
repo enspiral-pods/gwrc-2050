@@ -7,9 +7,12 @@ const easeIn = keyframes`
 `
 const ToolTip = styled.span`
   position: absolute;
+  left: ${props => props.left};
+  right: ${props => props.right};
+  bottom: 100%;
   background-color: #51575c;
   padding: 10px;
-  max-width: 350px;
+  max-width: 100%;
   ${props =>
     !props.hover &&
     css`
