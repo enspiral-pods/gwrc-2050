@@ -97,6 +97,7 @@ export default ({
           hover={hover}
           left={isToolTipOnRight ? 'auto' : `${buttonPosition}px`}
           right={isToolTipOnRight ? '0px' : 'auto'}
+          group
         >
           <TextRegular fontSize={14} textAlign={'center'}>
             {levers[0].group.leverDescriptions[leverValue - 1]}

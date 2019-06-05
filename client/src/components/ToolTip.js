@@ -9,7 +9,7 @@ const ToolTip = styled.span`
   position: absolute;
   left: ${props => props.left};
   right: ${props => props.right};
-  bottom: 100%;
+  bottom: ${props => (props.group ? '100%' : '130%')};
   background-color: #51575c;
   padding: 10px;
   max-width: 100%;
