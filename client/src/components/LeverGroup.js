@@ -14,7 +14,7 @@ export default ({
   doInfoModalOpen
 }) => {
   return (
-    <Flex flexDirection={'column'}>
+    <Flex flexDirection={'column'} width='100%'>
       <Button variant={'nav'} onClick={() => doToggleLeverGroup()} mb={40}>
         <Flex flexDirection={'row'} alignItems={'center'}>
           <Image src={leftArrow} height={24} width={24} mr={10} />
@@ -25,20 +25,18 @@ export default ({
       </Button>
       {levers.map(lever => {
         return (
-          <React.Fragment>
-            <Lever
-              value={lever.value}
-              label={lever.label}
-              leverDescriptions={lever.leverDescriptions}
-              onValueChange={value =>
-                doUpdateLever(toCamelCase(lever.label), value)
-              }
-              onInfoClicked={() => {
-                doInfoModalOpen(toCamelCase(lever.label))
-              }}
-              maxLevel={lever.leverDescriptions.length}
-            />
-          </React.Fragment>
+          <Lever
+            value={lever.value}
+            label={lever.label}
+            leverDescriptions={lever.leverDescriptions}
+            onValueChange={value =>
+              doUpdateLever(toCamelCase(lever.label), value)
+            }
+            onInfoClicked={() => {
+              doInfoModalOpen(toCamelCase(lever.label))
+            }}
+            maxLevel={lever.leverDescriptions.length}
+          />
         )
       })}
     </Flex>
