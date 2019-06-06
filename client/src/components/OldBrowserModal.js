@@ -15,8 +15,6 @@ export default props => {
       style={{
         content: {
           top: '20%',
-          left: '0px',
-          right: '0px',
           marginLeft: 'auto',
           marginRight: 'auto',
           maxWidth: '513px',
@@ -39,7 +37,7 @@ export default props => {
           fontFamily='bold'
           color='black'
           textAlign='center'
-          css={{ maxWidth: '100px' }}
+          css={{ maxWidth: '200px' }}
         >
           This application has been optimised for Google Chrome and Firefox -
           for best results, open the calculator in those browsers.
