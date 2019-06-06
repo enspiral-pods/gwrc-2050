@@ -35,7 +35,12 @@ export default props => {
     >
       <Flex flexDirection={'column'} alignItems='center' width={'100%'} p={20}>
         <Image width='181px' height='137px' src={oldComputer} mb={20} ml={30} />
-        <TextRegular fontFamily='bold' color='black' textAlign='center'>
+        <TextRegular
+          fontFamily='bold'
+          color='black'
+          textAlign='center'
+          css={{ maxWidth: '100px' }}
+        >
           This application has been optimised for Google Chrome and Firefox -
           for best results, open the calculator in those browsers.
         </TextRegular>
