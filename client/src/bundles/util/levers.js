@@ -573,10 +573,10 @@ export default {
     value: 1,
     group: groups.passengerLandTransport,
     leverDescriptions: [
-      '6% of light vehicle travel done in EVs in 2050',
-      '24% of light vehicle travel done in EVs in 2050',
-      '46% of light vehicle travel done in EVs in 2050',
-      '100% of light vehicle travel done in EVs in 2050'
+      'Level 1 assumes that by 2050, 45% of light vehicle travel is done in EVs (36% in BEVs; 9% in PHEVs).',
+      'Level 2 assumes that by 2050, 70% of light vehicle travel is done in EVs (56% in BEVs; 14% in PHEVs).',
+      'Level 3 assumes that by 2050, 85% of light vehicle travel is done in EVs (68% in BEVs; 17% in PHEVs).',
+      'Level 4 assumes that by 2050, 100% of light vehicle travel is done in EVs (80% in BEVs; 20% in PHEVs).'
     ],
     content: (
       <React.Fragment>
